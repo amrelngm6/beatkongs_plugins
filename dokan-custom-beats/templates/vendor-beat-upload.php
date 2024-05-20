@@ -1,31 +1,114 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+/**
+ *  Dokan Dashboard Template
+ *
+ *  Dokan Main Dashboard template for Fron-end
+ *
+ * @since   2.4
+ *
+ * @package dokan
+ */
 ?>
+<?php do_action( 'dokan_dashboard_wrap_start' ); ?>
 
 <div class="dokan-dashboard-wrap">
+    <?php
+
+    /**
+     *  Added dokan_dashboard_content_before hook
+     *
+     * @hooked get_dashboard_side_navigation
+     *
+     * @since  2.4
+     */
+    do_action( 'dokan_dashboard_content_before' );
+    ?>
+
     <div class="dokan-dashboard-content">
-        <article class="dokan-dashboard-article">
-            <header class="dokan-dashboard-header">
-                <h1 class="entry-title"><?php _e( 'Upload Beat', 'dokan-custom-beats' ); ?></h1>
-            </header>
-            <div class="entry-content">
-                <!-- Your HTML code for beat upload form -->
-                <form method="post" enctype="multipart/form-data">
-                    <div class="dokan-form-group">
-                        <label for="beat_title"><?php _e( 'Beat Title', 'dokan-custom-beats' ); ?></label>
-                        <input type="text" id="beat_title" name="beat_title" class="dokan-form-control" required>
-                    </div>
-                    <div class="dokan-form-group">
-                        <label for="beat_file"><?php _e( 'Beat File', 'dokan-custom-beats' ); ?></label>
-                        <input type="file" id="beat_file" name="beat_file" class="dokan-form-control" required>
-                    </div>
-                    <div class="dokan-form-group">
-                        <button type="submit" class="dokan-btn dokan-btn-theme"><?php _e( 'Upload', 'dokan-custom-beats' ); ?></button>
-                    </div>
-                </form>
+
+        <?php
+
+        /**
+         *  Added dokan_dashboard_content_before hook
+         *
+         * @hooked show_seller_dashboard_notice
+         *
+         * @since  2.4
+         */
+        do_action( 'dokan_dashboard_content_inside_before' );
+        ?>
+
+        <article class="dashboard-content-area">
+
+            <?php
+
+            /**
+             *  Added dokan_dashboard_before_widgets hook
+             *
+             * @hooked dokan_show_profile_progressbar
+             *
+             * @since  2.4
+             */
+            do_action( 'dokan_dashboard_before_widgets' );
+            ?>
+
+            <div class="dokan-w6 dokan-dash-left">
+
+                <?php
+
+                /**
+                 *  Added dokan_dashboard_left_widgets hook
+                 *
+                 * @hooked get_big_counter_widgets
+                 * @hooked get_orders_widgets
+                 * @hooked get_products_widgets
+                 *
+                 * @since  2.4
+                 */
+                do_action( 'dokan_dashboard_left_widgets' );
+                ?>
+
+            </div> <!-- .col-md-6 -->
+
+            <div class="dokan-w6 dokan-dash-right">
+                <?php
+                /**
+                 *  Added dokan_dashboard_right_widgets hook
+                 *
+                 * @hooked get_sales_report_chart_widget
+                 *
+                 * @since  2.4
+                 */
+                do_action( 'dokan_dashboard_right_widgets' );
+                ?>
+
             </div>
-        </article>
-    </div>
-</div>
+
+        </article><!-- .dashboard-content-area -->
+
+        <?php
+
+        /**
+         *  Added dokan_dashboard_content_inside_after hook
+         *
+         * @since 2.4
+         */
+        do_action( 'dokan_dashboard_content_inside_after' );
+        ?>
+
+
+    </div><!-- .dokan-dashboard-content -->
+
+    <?php
+
+    /**
+     *  Added dokan_dashboard_content_after hook
+     *
+     * @since 2.4
+     */
+    do_action( 'dokan_dashboard_content_after' );
+    ?>
+
+</div><!-- .dokan-dashboard-wrap -->
+
+<?php do_action( 'dokan_dashboard_wrap_end' ); ?>
