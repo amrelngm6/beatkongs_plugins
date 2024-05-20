@@ -1,0 +1,355 @@
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-img.dummy-image {
+    background: none;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 {
+    background: rgba(00, 0, 0, 0.1);
+    height: 170px;
+    margin-bottom: 160px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-summery-wrapper .profile-info-summery {
+    background: transparent;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-summery-wrapper {
+    background: white;
+    width: 100%;
+    /* margin: auto; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin-top: 160px;
+    padding: 0px 130px 0px 0px;
+    /* position: relative; */
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-head {
+    position: absolute;
+    right: 130px;
+    top: -31px;
+    transform: scale(1.2);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-img {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-summery-wrapper .profile-info-summery .profile-info .dokan-store-info {
+    position: inherit;
+    color: black;
+    margin-top: 60px;
+    font-size: 1.1em;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-summery-wrapper .profile-info-summery .profile-info-head .profile-img.profile-img-square img {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info .store-name {
+    position: absolute;
+    right: 263px;
+    top: -10px;
+    text-transform: capitalize;
+    font-weight: 530;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info .dokan-store-phone {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info .dokan-store-rating {
+    color: black;
+    position: absolute;
+    right: 260px;
+    top: 42px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info .dokan-store-rating i {
+    color: goldenrod;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info .store-social {
+    right: 0px;
+    position: absolute;
+    top: 60px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info .store-social-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 260px !important;
+}
+
+
+/* temp1 */
+
+
+
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-img.dummy-image {
+    background: none;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 {
+    background: rgba(00, 0, 0, 0.1);
+    height: 170px;
+    margin-bottom: 160px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-summery-wrapper .profile-info-summery {
+    background: transparent;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-summery-wrapper {
+    background: white;
+    width: 100%;
+    /* margin: auto; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin-top: 160px;
+    padding: 0px 130px 0px 0px;
+    /* position: relative; */
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-head {
+    position: absolute;
+    right: 130px;
+    top: -31px;
+    transform: scale(1.2);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-head img {
+    border-radius: 30px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-img {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-summery-wrapper .profile-info-summery .profile-info .dokan-store-info {
+    position: inherit;
+    color: black;
+    margin-top: 60px;
+    font-size: 1.1em;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-summery-wrapper .profile-info-summery .profile-info-head .profile-img.profile-img-square img {
+    border-radius: 70px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info {
+    margin-top: -20px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info .store-name {
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    text-transform: capitalize;
+    font-weight: 530;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info .dokan-store-phone {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info .dokan-store-rating {
+    color: black;
+    position: absolute;
+    right: 100px;
+    top: 101px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info .dokan-store-rating i {
+    color: goldenrod;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info .store-social {
+    right: 0px;
+    position: absolute;
+    top: 60px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info .store-social-wrapper {
+    position: absolute;
+    top: 142px;
+    right: 100px !important;
+}
+
+
+/* temp2 */
+
+
+
+
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-img.dummy-image {
+    background: none;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 {
+    background: rgba(00, 0, 0, 0.1);
+    height: 170px;
+    margin-bottom: 160px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper .profile-info-summery {
+    background: transparent;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper {
+    background: white;
+    width: 100%;
+    /* margin: auto; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin-top: 160px;
+    padding: 0px 130px 0px 0px;
+    /* position: relative; */
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-head {
+    position: absolute;
+    left: 50px;
+    top: -31px;
+    transform: scale(1.2);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-head img {
+    border-radius: 30px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-img {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper .profile-info-summery .profile-info .dokan-store-info {
+    position: inherit;
+    color: black;
+    margin-top: 60px;
+    font-size: 1.1em;
+    margin-left: 160px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper .profile-info-summery .profile-info-head .profile-img.profile-img-square img {border-radius: 0px;}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info {
+    margin-top: -20px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info .store-name {
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    text-transform: capitalize;
+    font-weight: 530;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info .dokan-store-phone {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info .dokan-store-rating {
+    color: black;
+    position: absolute;
+    left: 30px;
+    top: 101px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info .dokan-store-rating i {
+    color: goldenrod;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info .store-social {
+    right: 0px;
+    position: absolute;
+    top: 60px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info .store-social-wrapper {
+    position: absolute;
+    top: 142px;
+    right: 100px !important;
+}
+
+
+/* temp3 */
+
+
+
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-img.dummy-image {
+    background: none;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 {
+    background: rgba(00, 0, 0, 0.1);
+    height: 170px;
+    margin-bottom: 160px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-summery-wrapper .profile-info-summery {
+    background: transparent;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-summery-wrapper {
+    background: white;
+    width: 100%;
+    /* margin: auto; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin-top: 160px;
+    padding: 0px 130px 0px 0px;
+    /* position: relative; */
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-head {
+    position: absolute;
+    left: 50px;
+    top: -31px;
+    transform: scale(1.2);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-head img {
+    border-radius: 30px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-img {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-summery-wrapper .profile-info-summery .profile-info .dokan-store-info {
+    position: inherit;
+    color: black;
+    margin-top: 60px;
+    font-size: 1.1em;
+    margin-left: 160px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-summery-wrapper .profile-info-summery .profile-info-head .profile-img.profile-img-square img {border-radius: 100px;}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info {
+    margin-top: -20px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info .store-name {
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    text-transform: capitalize;
+    font-weight: 530;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info .dokan-store-phone {}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info .dokan-store-rating {
+    color: black;
+    position: absolute;
+    left: 30px;
+    top: 101px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info .dokan-store-rating i {
+    color: goldenrod;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info .store-social {
+    right: 0px;
+    position: absolute;
+    top: 60px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info .store-social-wrapper {
+    position: absolute;
+    top: 142px;
+    right: 100px !important;
+}
+
+
+/* temp4 */

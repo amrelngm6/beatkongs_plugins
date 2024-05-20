@@ -1,0 +1,168 @@
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-summery-wrapper .profile-info-summery{
+    background: transparent;
+    width: 100%;
+    display:grid;
+    grid-template-columns: 170px calc(100% - 170px);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1{
+ background: rgba(00,0,0,0.1);
+ border-radius: 30px;
+ box-shadow: 0px 0px 16px rgba(0,0,0,0.2);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-head{
+ position: relative;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-img{
+ height: 160px !important;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout1 .profile-info-summery-wrapper .profile-info-summery .profile-info .dokan-store-info{
+ position: absolute;
+ color: black;
+ right: 40px;
+ height: 100%;
+ top: 0px;
+ display: grid;
+ justify-items: center;
+ align-items: center;
+}
+
+/* temp1 */
+
+
+
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-summery-wrapper .profile-info-summery{
+ background: transparent;
+ width: 100%;
+ display:grid;
+ grid-template-columns: 170px calc(100% - 170px);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2{
+/* background: rgba(00,0,0,0.1); */
+border-radius: 30px;
+box-shadow: 0px 0px 16px rgba(0,0,0,0.2);
+width: 470px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-head{
+position: relative;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-img{
+height: 160px !important;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-summery-wrapper .profile-info-summery .profile-info .dokan-store-info{
+/* position: absolute; */
+color: black;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info-summery-wrapper .profile-info-summery .profile-info-head .profile-img.profile-img-square img{
+ border-radius: 300px;
+}
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout2 .profile-info{
+ text-align: center;
+}
+
+/* temp2 */
+
+
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper .profile-info-summery{
+ background: #f05025;
+ width: 100%;
+ display:grid;
+ grid-template-columns: 170px calc(100% - 170px);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3{
+/* background: rgba(00,0,0,0.1); */
+border-radius: 30px;
+box-shadow: 0px 0px 16px rgba(0,0,0,0.2);
+width: 470px;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-head{
+position: relative;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-img{
+height: 160px !important;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper .profile-info-summery .profile-info ,
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper .profile-info-summery .profile-info *{
+/* position: absolute; */
+color: white;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info-summery-wrapper .profile-info-summery .profile-info-head .profile-img.profile-img-square img{
+ border-radius: 300px;
+}
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout3 .profile-info{
+ /* text-align: center; */
+}
+/* temp3 */
+
+
+
+
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-summery-wrapper .profile-info-summery{
+ background: transparent;
+ width: 100%;
+ display:grid;
+ grid-template-columns: 170px calc(100% - 170px);
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4{
+/* background: rgba(00,0,0,0.1); */
+border-radius: 30px;
+box-shadow: 0px 0px 16px rgba(0,0,0,0.2);
+width: 470px;
+position: fixed;
+bottom: 0px;
+right: 0px;
+z-index: 999;
+opacity: 0.3;
+transition: 0.4s;
+}
+
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4:hover{
+ /* background: rgba(00,0,0,0.1); */
+ border-radius: 30px;
+ box-shadow: 0px 0px 16px rgba(0,0,0,0.2);
+ width: 470px;
+ position: fixed;
+ bottom: 0px;
+ right: 0px;
+ opacity: 1;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-head{
+position: relative;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-img{
+height: 160px !important;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-summery-wrapper .profile-info-summery .profile-info .dokan-store-info{
+/* position: absolute; */
+color: black;
+}
+
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info-summery-wrapper .profile-info-summery .profile-info-head .profile-img.profile-img-square img{
+ border-radius: 300px;
+}
+.dokan-single-store .profile-frame .profile-info-box.profile-layout-onc_layout4 .profile-info{
+ text-align: center;
+}
+
+/* temp4 */
