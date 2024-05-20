@@ -6,7 +6,6 @@ use WeDevs\Dokan\Dashboard\Templates\Dashboard;
 use WeDevs\Dokan\Dashboard\Templates\Main;
 use WeDevs\Dokan\Dashboard\Templates\Orders;
 use WeDevs\Dokan\Dashboard\Templates\Products;
-use WeDevs\Dokan\Dashboard\Templates\Beats;
 use WeDevs\Dokan\Dashboard\Templates\Settings;
 use WeDevs\Dokan\Dashboard\Templates\Withdraw;
 use WeDevs\Dokan\Dashboard\Templates\MultiStepCategories;
@@ -26,7 +25,6 @@ class Manager {
     public function __construct() {
         $this->container['main']               = new Main();
         $this->container['dashboard']          = new Dashboard();
-        $this->container['beats']               = new Beats();
         $this->container['products']           = new Products();
         $this->container['orders']             = new Orders();
         $this->container['settings']           = new Settings();

@@ -8858,7 +8858,7 @@ msgstr ""
 #: templates/products/add-new-product-modal.php:2
 #: templates/products/edit-product-single.php:147
 #: templates/products/new-product.php:107
-msgid "Add New Products"
+msgid "Add New Product"
 msgstr ""
 
 #: templates/products/catalog-mode-content.php:24

@@ -21585,7 +21585,7 @@ msgstr ""
 #: assets/client/admin/wp-admin-scripts/command-palette.js:1
 #: assets/client/blocks/all-products.js:26
 #: assets/client/blocks/price-filter.js:5
-msgid "add new beat"
+msgid "Add new product"
 msgstr ""
 
 #: includes/class-wc-post-types.php:329
@@ -42972,7 +42972,7 @@ msgstr ""
 
 #: assets/client/admin/app/index.js:2
 #: assets/client/admin/product-editor/index.js:2
-msgid "add new beat"
+msgid "Add New Product"
 msgstr ""
 
 #: assets/client/admin/app/index.js:2

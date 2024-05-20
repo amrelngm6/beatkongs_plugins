@@ -324,7 +324,7 @@ class WC_Post_Types {
 						'all_items'             => __( 'All Products', 'woocommerce' ),
 						'menu_name'             => _x( 'Products', 'Admin menu name', 'woocommerce' ),
 						'add_new'               => __( 'Add New', 'woocommerce' ),
-						'add_new_item'          => __( 'Add new Beat', 'woocommerce' ),
+						'add_new_item'          => __( 'Add new product', 'woocommerce' ),
 						'edit'                  => __( 'Edit', 'woocommerce' ),
 						'edit_item'             => __( 'Edit product', 'woocommerce' ),
 						'new_item'              => __( 'New product', 'woocommerce' ),

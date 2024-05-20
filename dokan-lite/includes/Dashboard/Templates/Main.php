@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 class Main {
 
     public function __construct() {
-        // add_action( 'dokan_dashboard_content_before', [ self::class, 'dashboard_side_navigation' ] );
+        add_action( 'dokan_dashboard_content_before', [ self::class, 'dashboard_side_navigation' ] );
         add_filter( 'dokan_vendor_dashboard_menu_title', [ $this, 'add_notification_count' ], 10, 2 );
     }
 

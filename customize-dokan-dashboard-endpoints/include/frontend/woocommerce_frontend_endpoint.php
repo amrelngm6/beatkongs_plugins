@@ -33,7 +33,7 @@ if (!class_exists('cddep_add_frontend_class')) {
             
             $endpoint_name = $value['endpoint_name'];
 
-            $core_fields       = array('dashboard','products' ,'beats','orders','withdraw','settings','store','payment','followers','return-request','coupons','reviews','reports','tools','analytics','staffs','announcement','delivery-time-dashboard','support');
+            $core_fields       = array('dashboard','products','orders','withdraw','settings','store','payment','followers','return-request','coupons','reviews','reports','tools','analytics','staffs','announcement','delivery-time-dashboard','support');
 
             if (isset($endpoint_name) && ($endpoint_name != "") && (!in_array($endkey, $core_fields))) {
                 
@@ -79,7 +79,7 @@ if (!class_exists('cddep_add_frontend_class')) {
             }
             
 
-             $core_fields       = array('dashboard','products', 'beats' ,'upload-beat', 'orders','withdraw','settings','store','payment','followers','return-request','coupons','reviews','reports','tools','analytics','staffs','announcement','delivery-time-dashboard','support');
+             $core_fields       = array('dashboard','products','orders','withdraw','settings','store','payment','followers','return-request','coupons','reviews','reports','tools','analytics','staffs','announcement','delivery-time-dashboard','support');
 
             if (isset($endpoint_name) && ($endpoint_name != "") && (!in_array($endkey, $core_fields))) {
                 

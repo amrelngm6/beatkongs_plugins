@@ -102,16 +102,6 @@ class VendorDashboardController extends \WP_REST_Controller {
             ]
         );
         register_rest_route(
-            $this->namespace, '/' . $this->base . '/beats', [
-                [
-                    'methods'             => WP_REST_Server::READABLE,
-                    'callback'            => [ $this, 'get_products_summary' ],
-                    'args'                => [],
-                    'permission_callback' => 'is_user_logged_in',
-                ],
-            ]
-        );
-        register_rest_route(
             $this->namespace, '/' . $this->base . '/orders', [
                 [
                     'methods'             => WP_REST_Server::READABLE,

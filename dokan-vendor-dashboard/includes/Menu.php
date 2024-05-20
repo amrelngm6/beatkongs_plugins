@@ -307,14 +307,6 @@ class Menu {
 				'sidebar'       => true,
 				'is_supported'  => true,
 			],
-			'beats' => [
-				'title'         => __( 'Beats', 'dokan-vendor-dashboard' ),
-				'url'           => '/beats',
-				'component'     => 'Beats',
-				'icon'          => 'dokan-icon-products',
-				'sidebar'       => true,
-				'is_supported'  => true,
-			],
 			'products' => [
 				'title'         => __( 'Products', 'dokan-vendor-dashboard' ),
 				'url'           => '/products',

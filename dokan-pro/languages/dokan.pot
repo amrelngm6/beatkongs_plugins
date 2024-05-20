@@ -2747,7 +2747,7 @@ msgid "Vendor Dashboard Menu Appearance"
 msgstr ""
 
 #: includes/MenuManager/Admin/Settings.php:43
-msgid "Menu Manager Settingss"
+msgid "Menu Manager Settings"
 msgstr ""
 
 #: includes/MenuManager/Admin/Settings.php:44

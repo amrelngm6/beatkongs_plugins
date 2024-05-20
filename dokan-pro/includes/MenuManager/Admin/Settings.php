@@ -40,7 +40,7 @@ class Settings {
             'icon_url'             => DOKAN_PRO_PLUGIN_ASSEST . '/images/admin-settings-icons/menu-manager.svg',
             'description'          => __( 'Vendor Dashboard Menu Appearance', 'dokan' ),
             'document_link'        => 'https://dokan.co/docs/wordpress/dokan-dashboard/vendor-dashboard-menu-manager/',
-            'settings_title'       => __( 'Menu Manager Settingsss', 'dokan' ),
+            'settings_title'       => __( 'Menu Manager Settings', 'dokan' ),
             'settings_description' => __( 'Reorder, Rename, Activate, and Deactivate menus for your vendor dashboard.', 'dokan' ),
         ];
 

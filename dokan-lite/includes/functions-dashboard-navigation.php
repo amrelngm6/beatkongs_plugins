@@ -33,13 +33,6 @@ function dokan_get_dashboard_nav(): array {
             'pos'        => 10,
             'permission' => 'dokan_view_overview_menu',
         ],
-        'beatslist'  => [
-            'title'      => __( 'Beatsa', 'dokan-lite' ),
-            'icon'       => '<i class="fas fa-briefcase"></i>',
-            'url'        => dokan_get_navigation_url( 'beats' ),
-            'pos'        => 30,
-            'permission' => 'dokan_view_product_menu',
-        ],
         'products'  => [
             'title'      => __( 'Products', 'dokan-lite' ),
             'icon'       => '<i class="fas fa-briefcase"></i>',
