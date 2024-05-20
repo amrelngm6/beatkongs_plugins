@@ -53,11 +53,14 @@ function dcb_add_custom_menu_items( $urls ) {
 
 add_action( 'dokan_load_custom_template', 'dcb_load_custom_templates' );
 function dcb_load_custom_templates( $query_vars ) {
+    echo 'aaamr444';
     if ( isset( $query_vars['vendor-beats'] ) ) {
+        echo 'aaamr2';
         include dirname( __FILE__ ) . '/templates/vendor-beats.php';
     }
 
     if ( isset( $query_vars['vendor-beat-upload'] ) ) {
+        echo 'aaamr3';
         include dirname( __FILE__ ) . '/templates/vendor-beat-upload.php';
     }
 }
