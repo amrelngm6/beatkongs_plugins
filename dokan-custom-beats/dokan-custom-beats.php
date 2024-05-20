@@ -44,7 +44,7 @@ function dcb_add_custom_menu_items( $urls ) {
     $urls['vendor-beat-upload'] = array(
         'title' => __( 'Upload Beat', 'dokan-custom-beats' ),
         'icon'  => '<i class="fas fa-upload"></i>',
-        'url'   => dokan_get_navigation_url( 'vendor-beat-upload' ),
+        'url'   => dokan_get_navigation_url( '#/vendor-beat-upload' ),
         'pos'   => 56
     );
 
