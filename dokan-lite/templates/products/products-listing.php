@@ -268,7 +268,7 @@
                         <div class="dokan-dashboard-product-listing-wrapper dokan-dashboard-not-product-found">
                             <img src="<?php echo esc_url( plugins_url( 'assets/images/no-product-found.svg', DOKAN_FILE ) ); ?>" alt="dokan setup" class="no-product-found-icon">
                             <h4 class="dokan-blank-product-message">
-                                <?php esc_html_e( 'No Products Found!', 'dokan-lite' ); ?>
+                                <?php esc_html_e( 'No Beats Found!', 'dokan-lite' ); ?>
                             </h4>
 
                             <?php if ( dokan_is_seller_enabled( dokan_get_current_user_id() ) ) : ?>

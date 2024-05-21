@@ -19,6 +19,7 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 .dokan-dashboard-wrap
 {
   color: #514843;
+  background-color: #fff;
 }
 @media (max-width: 767px) {
   body.dokan-dashboard .dokan-dash-sidebar{
