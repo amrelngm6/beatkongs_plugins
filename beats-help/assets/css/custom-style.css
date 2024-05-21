@@ -71,7 +71,7 @@ input.input-pad
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
 }
 
 .fbu-close {
@@ -92,6 +92,11 @@ input.input-pad
 #fbu-category-list {
   list-style-type: none;
   padding: 0;
+}
+.choose-genre
+{
+  cursor: pointer;
+  padding: 4px 6px ;
 }
 
 #fbu-category-list li {

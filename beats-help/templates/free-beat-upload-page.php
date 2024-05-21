@@ -317,7 +317,7 @@ if ( $new_product ) {
                             
                             foreach ($list as $key => $value) {
                             ?>
-                                <li class="choose-genre" data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
+                                <li class="choose-genre cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
                             <?php 
                             }
                             ?>
