@@ -82,3 +82,18 @@ input.input-pad
   text-decoration: none;
   cursor: pointer;
 }
+
+
+#fbu-category-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#fbu-category-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#fbu-category-list li:hover {
+  background-color: #ddd;
+}

@@ -12,7 +12,8 @@
         var modal = $('#fbu-category-modal');
         var btn = $('#fbu-category-select');
         var span = $('.fbu-close');
-        var chooseBtn = $('#fbu-category-choose');
+        var categoryList = $('#dokan-single-categories');
+        var categoryInput = $('#fbu-category');
     
         // Open the modal
         btn.on('click', function() {
@@ -32,9 +33,10 @@
         });
     
         // Handle category selection
-        chooseBtn.on('click', function() {
-            var selectedCategory = $('#fbu-category-list option:selected').text();
-            $('#fbu-category').val(selectedCategory);
+        // Handle category selection
+        categoryList.on('click', 'li', function() {
+            var selectedCategory = $(this).text();
+            categoryInput.val(selectedCategory);
             modal.hide();
         });
     });
