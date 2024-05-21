@@ -69,5 +69,6 @@ add_action('wp_enqueue_scripts', 'enqueue_dokan_beats_page_scripts');
 function enqueue_dokan_beats_page_scripts() {
     if (is_page() && get_query_var('dokan_beats_page')) {
         wp_enqueue_script('dokan-beats-page-js', plugin_dir_url(__FILE__) . 'assets/js/beats-page.js', array('wp-element'), '1.0', true);
+        wp_enqueue_style('dokan-beats-page-css', plugin_dir_url(__FILE__) . 'assets/css/beats-page.css', array('wp-element'), '1.0', true);
     }
 }
