@@ -35,7 +35,7 @@
         // Close the modal when clicking outside of the modal content
         $(window).on('click', function(event) {
             if ($(event.target).is(modal)) {
-                modal.hide();
+                // modal.hide();
             }
         });
         
