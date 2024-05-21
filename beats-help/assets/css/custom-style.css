@@ -105,9 +105,12 @@ ul.dokan-single-categories
   padding-left: 0;
 }
 
-#fbu-category-list li {
-  padding: 10px;
+#fbu-modal li {
   cursor: pointer;
+  background: #f0f0f0;
+  padding: 4px 15px;
+  margin: 10px 0;
+  font-weight: 600;
 }
 
 #fbu-category-list li:hover {
