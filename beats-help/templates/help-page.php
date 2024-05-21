@@ -13,6 +13,7 @@ do_action('dokan_dashboard_wrap_start');
 Amr is here
 [dokan_help_page]
 <?php
+echo do_shortcode('[dokan_help_page]');
 
 // Load Dokan's vendor dashboard footer
 do_action('dokan_dashboard_wrap_end');
