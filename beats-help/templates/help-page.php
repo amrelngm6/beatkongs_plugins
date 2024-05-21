@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
-wp_header();
+get_header();
 
 // Load Dokan's vendor dashboard header
 do_action('dokan_dashboard_wrap_start');
