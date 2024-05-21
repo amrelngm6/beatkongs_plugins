@@ -4,12 +4,14 @@ if (!defined('ABSPATH')) {
 }
 get_header();
 
+
 // Load Dokan's vendor dashboard header
 do_action('dokan_dashboard_wrap_start');
 
 // Display the main content of the help page
 
 ?>
+<link href="https://beatkongs.medianssolutions.com/wp-content/plugins/dokan-vendor-dashboard/build/main.css" type="text/css"  rel="stylesheet"  />
 <div id="dokan-help-page-root"></div>
 
 <div class="dokan-dashboard-wrap">
