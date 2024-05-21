@@ -14,7 +14,7 @@
         
         $('#open-category-modal').on('click', function(e) {
             
-            modal = $($(e.target).data('modal'));
+            modal = $($(this).data('modal'));
             categoryInput = $($(this).data('input'));
             categoryText = $($(this).data('text'));
             console.log(modal, categoryInput, categoryText)
@@ -23,7 +23,7 @@
 
         $('#open-station-modal').on('click', function(e) {
             
-            modal = $($(e.target).data('modal'));
+            modal = $($(this).data('modal'));
             categoryInput = $($(this).data('input'));
             categoryText = $($(this).data('text'));
             console.log(modal, categoryInput, categoryText)
