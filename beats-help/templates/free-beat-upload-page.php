@@ -125,7 +125,7 @@ if ( $new_product ) {
                         </div>
                         <div class="flex  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
                             <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-g">
-                                <label for="fbu-category" class="font-semibold form-label">Category:</label>
+                                <label for="fbu-category" class="form-label"><?php esc_html_e( 'Category', 'dokan-lite' ); ?></label>
                                 <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected text-sm font-semibold" id="fbu-category-text"><span>Select Genre</span></span></div>
                             </div>
                             <div  class="w-full " >
@@ -136,7 +136,7 @@ if ( $new_product ) {
                         
                         <div class="flex  open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
                             <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-stations-g">
-                                <label for="fbu-station" class="font-semibold form-label">Station:</label>
+                                <label for="fbu-station" class="form-label"><?php esc_html_e( 'Station', 'dokan-lite' ); ?></label>
                                 <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected text-sm font-semibold" id="fbu-station-text"><span>Select station</span></span></div>
                             </div>
                             <div  class="w-full">
