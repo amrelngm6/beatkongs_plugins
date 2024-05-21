@@ -174,7 +174,7 @@ if ( $new_product ) {
                           echo $image; ?>
                          <input type="hidden" name="myprefix_image_id" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
                          <input type='button' class="button-primary" value="<?php esc_attr_e( 'Select a image', 'mytextdomain' ); ?>" id="myprefix_media_manager"/>
-                         
+
                         <?php do_action( 'dokan_product_edit_after_product_tags', $post, $post_id ); ?>
                     </div><!-- .content-half-part -->
 
@@ -291,6 +291,7 @@ if ( $new_product ) {
          *  @since 2.4
          */
         do_action( 'dokan_product_content_inside_area_after' );
+        do_action( 'wp_enqueue_scripts' );
 
         /**
          *  Adding dokan_dashboard_content_after hook

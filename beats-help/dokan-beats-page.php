@@ -165,10 +165,8 @@ add_action('init', 'fbu_handle_form_submission');
 
 function load_wp_media_files( $page ) {
   // change to the $page where you want to enqueue the script
-  if( $page == 'options-general.php' ) {
     // Enqueue WordPress media scripts
     wp_enqueue_media();
-  }
 }
 
 
