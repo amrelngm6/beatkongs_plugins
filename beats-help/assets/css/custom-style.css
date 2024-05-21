@@ -2,6 +2,10 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 {
   display: block;
 }
+.vendor-toggle-menu
+{
+  display: none;
+}
 @media (max-width: 767px) {
   body.dokan-dashboard .dokan-dash-sidebar{
     position: fixed;
@@ -10,5 +14,12 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
     height: 100vh;
     width: 85%;
     z-index: 1;
+  }
+  .vendor-toggle-menu
+  {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
   }
 }
