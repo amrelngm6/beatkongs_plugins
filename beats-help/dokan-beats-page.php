@@ -156,7 +156,7 @@ function fbu_handle_form_submission() {
         }
     }
 
-    add_action( 'dokan_beats_category_popup', 'dokan_beats_category_popup' );
+    add_action( 'dokan_beats_category', 'dokan_beats_category_popup' );
 
 }
 
