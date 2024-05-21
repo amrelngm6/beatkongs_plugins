@@ -11,16 +11,16 @@ global $post;
 $from_shortcode = false;
 $new_product    = false;
 
-if (
-    ! isset( $post->ID )
-    && (
-        ! isset( $_GET['_dokan_edit_product_nonce'] ) ||
-        ! wp_verify_nonce( sanitize_key( $_GET['_dokan_edit_product_nonce'] ), 'dokan_edit_product_nonce' ) ||
-        ! isset( $_GET['product_id'] )
-    )
-) {
-    wp_die( esc_html__( 'Access Denied, No product found', 'dokan-lite' ) );
-}
+// if (
+//     ! isset( $post->ID )
+//     && (
+//         ! isset( $_GET['_dokan_edit_product_nonce'] ) ||
+//         ! wp_verify_nonce( sanitize_key( $_GET['_dokan_edit_product_nonce'] ), 'dokan_edit_product_nonce' ) ||
+//         ! isset( $_GET['product_id'] )
+//     )
+// ) {
+//     wp_die( esc_html__( 'Access Denied, No product found', 'dokan-lite' ) );
+// }
 
 if ( isset( $post->ID ) && $post->ID && 'product' === $post->post_type ) {
     $post_id      = $post->ID;
