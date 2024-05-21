@@ -125,3 +125,7 @@ ul.dokan-single-categories
 {
   width: 100%;
 }
+.tagify__dropdown *
+{
+  color: #aaa
+}
