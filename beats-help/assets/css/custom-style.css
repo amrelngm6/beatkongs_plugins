@@ -108,7 +108,7 @@ ul.dokan-single-categories
 .fbu-modal li:hover {
   background: #f0f0f0;
 }
-.fbu-modal li {
+.dokan-dashboard .dokan-dashboard-content .fbu-modal li {
   cursor: pointer;
   padding: 4px 15px;
   margin: 10px 0;
