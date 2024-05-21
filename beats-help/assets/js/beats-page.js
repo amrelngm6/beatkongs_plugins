@@ -1,5 +1,6 @@
 (function ($) {
     $(document).ready(function () {
+        $('body').addClass('dokan-dashboard');
         if ($('.vendor-toggle-menu'))
         {
             jQuery(document).on('click', '.vendor-toggle-menu', function (e) {
