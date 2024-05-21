@@ -16,6 +16,10 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
   text-decoration: none;
   font-size: 20px;
 }
+.dokan-dashboard-wrap
+{
+  color: #514843;
+}
 @media (max-width: 767px) {
   body.dokan-dashboard .dokan-dash-sidebar{
     position: fixed;
