@@ -86,7 +86,7 @@
                      console.log(selected)
                      console.log(gallery_ids)
                      jQuery('input#myprefix_image_id').val(ids);
-                     Refresh_Image(selected[]);
+                     Refresh_Image(selected);
                   });
 
                  image_frame.on('open',function() {
