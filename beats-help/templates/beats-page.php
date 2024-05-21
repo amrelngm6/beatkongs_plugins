@@ -26,10 +26,11 @@ do_action('dokan_dashboard_wrap_start');
  */
 do_action( 'dokan_dashboard_content_before' );
 
-echo do_shortcode('[beats_page]');
+// echo do_shortcode('[beats_page]');
 
 // Load Dokan's vendor dashboard footer
 do_action('dokan_dashboard_wrap_end');
+
 get_footer();
 
 ?>
