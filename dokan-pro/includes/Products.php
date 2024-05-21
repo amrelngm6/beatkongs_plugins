@@ -717,7 +717,7 @@ class Products {
         );
 
         if ( version_compare( WC_VERSION, '2.7', '>' ) ) {
-            $product_types['grouped'] = __( 'Group Product', 'dokan' );
+            // $product_types['grouped'] = __( 'Group Product', 'dokan' );
         }
 
         return $product_types;
