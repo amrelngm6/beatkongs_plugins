@@ -38,7 +38,7 @@
         // Close the modal when clicking outside of the modal content
         $(window).on('click', function(event) {
             if ($(event.target).is(modal)) {
-                // modal.hide();
+                modal.hide();
             }
         });
         
@@ -46,8 +46,6 @@
         jQuery(document).on('click', 'li.choose-genre', function() {
             console.log(this)
             var selectedCategory = $(this).text();
-            // var categoryInput = $(this).data('input');
-            // var categoryText = $(this).data('text');
             $(categoryInput).val(selectedCategory);
             $(categoryText).html(selectedCategory);
             modal.hide();
