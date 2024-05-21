@@ -202,5 +202,12 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
+    // Register Mood Taxonomy
+    register_taxonomy('tag', 'free_beat', array(
+        'label' => __('Tag'),
+        'rewrite' => array('slug' => 'tag'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
 }
 add_action('init', 'fbu_register_taxonomies');
