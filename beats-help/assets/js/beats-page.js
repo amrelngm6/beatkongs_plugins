@@ -14,7 +14,7 @@
         });
 
         $('#open-station-modal').on('click', function() {
-            t (this);
+            t ($(this));
         });
 
         function t (btn)
