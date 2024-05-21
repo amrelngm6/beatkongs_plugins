@@ -212,10 +212,6 @@ function set_default_beat_types( $beat_types ) {
         'sell' => __( 'Sell beat', 'dokan' ),
     );
 
-    if ( version_compare( WC_VERSION, '2.7', '>' ) ) {
-        // $beat_types['grouped'] = __( 'Group Product', 'dokan' );
-    }
-    
     return $beat_types;
 }
 

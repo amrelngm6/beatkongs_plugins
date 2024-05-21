@@ -113,7 +113,7 @@ if ( $new_product ) {
                             <input type="hidden" value="<?php echo esc_attr( $post->post_name ); ?>" name="beat_title" class="dokan-hide" id="edited-post-name-dokan">
                         </div>
 
-                        <?php $beat_types = apply_filters('default_beat_types'); ?>
+                        <?php $beat_types = apply_filters('default_beat_types', 'free'); ?>
 
                         <div class="dokan-form-group">
                             <label for="beat_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
