@@ -712,9 +712,8 @@ class Products {
      */
     public function set_default_product_types( $product_types ) {
         $product_types = array(
-            'simple'   => __( 'Simple', 'dokan' ),
-            'variable' => __( 'Variable', 'dokan' ),
-            'external' => __( 'External/Affiliate product', 'dokan' ),
+            'free'   => __( 'Free beat', 'dokan' ),
+            'sell' => __( 'Sell beat', 'dokan' ),
         );
 
         if ( version_compare( WC_VERSION, '2.7', '>' ) ) {
