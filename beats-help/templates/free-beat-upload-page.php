@@ -116,10 +116,10 @@ if ( $new_product ) {
                         <?php $beat_types = ['free_beat'=>'Free beat', 'sell_beat'=>'Sell beat']; ?>
 
                         <div class="dokan-form-group">
-                            <label for="product_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
-                            <select name="product_type" class="dokan-form-control" id="product_type">
-                                <?php foreach ( $product_types as $key => $value ) : ?>
-                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $product_type, $key ); ?>><?php echo esc_html( $value ); ?></option>
+                            <label for="beat_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
+                            <select name="beat_type" class="dokan-form-control" id="beat_type">
+                                <?php foreach ( $beat_types as $key => $value ) : ?>
+                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $beat_type ?? 'free_beat', $key ); ?>><?php echo esc_html( $value ); ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
