@@ -161,3 +161,35 @@ function fbu_enqueue_media_library() {
 }
 
 add_action('wp_enqueue_scripts', 'fbu_enqueue_media_library');
+
+
+
+
+
+
+function fbu_register_taxonomies() {
+    // Register Category Taxonomy
+    register_taxonomy('category', 'free_beat', array(
+        'label' => __('Category'),
+        'rewrite' => array('slug' => 'category'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Register Station Taxonomy
+    register_taxonomy('station', 'free_beat', array(
+        'label' => __('Station'),
+        'rewrite' => array('slug' => 'station'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Register Mood Taxonomy
+    register_taxonomy('mood', 'free_beat', array(
+        'label' => __('Mood'),
+        'rewrite' => array('slug' => 'mood'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
+}
+add_action('init', 'fbu_register_taxonomies');
