@@ -136,7 +136,7 @@ if ( $new_product ) {
                                 <label for="fbu-category" class="font-semibold form-label">Category:</label>
                                 <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected" id="fbu-category-text"></span></div>
                             </div>
-                            <div  class="w-full  open-modal" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
+                            <div  class="w-full  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
                             <input type="hidden" id="fbu-category" name="fbu-category" readonly required>
@@ -149,7 +149,7 @@ if ( $new_product ) {
                                 <label for="fbu-station" class="font-semibold form-label">Station:</label>
                                 <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected" id="fbu-station-text"></span></div>
                             </div>
-                            <div  class="w-full open-modal" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
+                            <div  class="w-full open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
                             <input type="hidden" id="fbu-station" name="fbu-stations" readonly required>
