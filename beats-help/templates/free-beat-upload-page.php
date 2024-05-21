@@ -132,7 +132,7 @@ if ( $new_product ) {
                             <?php endif; ?>
                         <?php endif; ?>
                         <div class="flex">
-                            <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-select">
+                            <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-g">
                                 <label for="fbu-category">Category:</label>
                                 <span id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected" id="fbu-category-text"></span></span>
                             </div>
