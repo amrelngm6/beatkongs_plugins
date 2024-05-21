@@ -133,12 +133,11 @@ if ( $new_product ) {
                         <?php endif; ?>
                         <p>
                             <label for="fbu-category">Category:</label>
-                            <div  class="dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0" id="dokan-category-open-modal">
+                            <div  class="dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-select">
                                 <span id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected">Hip Hop</span></span>
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
                             <input type="text" id="fbu-category" name="fbu-category" readonly required>
-                            <button type="button" id="fbu-category-select">Select Category</button>
                         </p>
                         <div class="dokan-form-group">
                             <label for="fbu-category">Category:</label>
