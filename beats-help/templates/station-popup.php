@@ -9,8 +9,8 @@
                 <div class="dokan-product-category-modal-content">
                     <div class="dokan-product-category-modal-header flex">
                         <div class="dokan-product-category-title w-full">
-                            <span class="dokan-single-title"><?php esc_html_e( 'Add new Genre', 'dokan-lite' ); ?></span>
-                            <span class="dokan-single-des"><?php esc_html_e( 'Please choose the right Genre for this beat', 'dokan-lite' ); ?></span>
+                            <span class="dokan-single-title"><?php esc_html_e( 'Add new Station', 'dokan-lite' ); ?></span>
+                            <span class="dokan-single-des"><?php esc_html_e( 'Please choose up-to 3 stations', 'dokan-lite' ); ?></span>
                         </div>
                         <div class="dokan-product-category-close">
                             <span class="close" id="dokan-category-close-modal">&times;</span>
