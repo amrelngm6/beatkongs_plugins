@@ -132,7 +132,6 @@ if ( $new_product ) {
                             <?php endif; ?>
                         <?php endif; ?>
 
-                        <?php do_action( 'dokan_product_edit_after_title', $post, $post_id ); ?>
 
                         <div class="show_if_simple dokan-clearfix show_if_external">
 
