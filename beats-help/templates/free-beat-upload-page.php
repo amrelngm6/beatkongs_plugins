@@ -281,6 +281,8 @@ if ( $new_product ) {
                 <?php echo esc_html( dokan_seller_not_enabled_notice() ); ?>
             </div>
         <?php endif; ?>
+        <?php do_shortcode( 'beats_category_popup' ); ?>
+
 
     <?php else : ?>
 
@@ -307,7 +309,6 @@ if ( $new_product ) {
         do_action( 'dokan_dashboard_content_after' );
         
         
-        do_shortcode( 'beats_category_popup' );
         ?>
         <!-- Modal Popup for Category Selection -->
         
