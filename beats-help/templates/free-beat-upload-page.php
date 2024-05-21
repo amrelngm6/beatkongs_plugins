@@ -132,10 +132,14 @@ if ( $new_product ) {
                             <?php endif; ?>
                         <?php endif; ?>
                         <p>
-            <label for="fbu-category">Category:</label>
-            <input type="text" id="fbu-category" name="fbu-category" readonly required>
-            <button type="button" id="fbu-category-select">Select Category</button>
-        </p>
+                            <label for="fbu-category">Category:</label>
+                            <div  class="dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0" id="dokan-category-open-modal">
+                                <span id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected">Hip Hop</span></span>
+                                <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
+                            </div>
+                            <input type="text" id="fbu-category" name="fbu-category" readonly required>
+                            <button type="button" id="fbu-category-select">Select Category</button>
+                        </p>
                         <div class="dokan-form-group">
                             <label for="fbu-category">Category:</label>
                             <?php
@@ -313,22 +317,77 @@ if ( $new_product ) {
          */
         do_action( 'dokan_dashboard_content_after' );
         ?>
- <!-- Modal Popup for Category Selection -->
- <div id="fbu-category-modal" class="fbu-modal">
-        <div class="fbu-modal-content">
-            <span class="fbu-close">&times;</span>
-            <h2>Select Category</h2>
-            <?php
-            wp_dropdown_categories(array(
-                'taxonomy' => 'category',
-                'hide_empty' => false,
-                'name' => 'fbu-category-list',
-                'id' => 'fbu-category-list'
-            ));
-            ?>
-            <button type="button" id="fbu-category-choose">Choose</button>
+        <!-- Modal Popup for Category Selection -->
+        <div id="fbu-category-modal" class="fbu-modal">
+            <div class="fbu-modal-content">
+                <span class="fbu-close">&times;</span>
+                <h2>Select Category</h2>
+                <?php
+                wp_dropdown_categories(array(
+                    'taxonomy' => 'category',
+                    'hide_empty' => false,
+                    'name' => 'fbu-category-list',
+                    'id' => 'fbu-category-list'
+                ));
+                ?>
+                <button type="button" id="fbu-category-choose">Choose</button>
+                <?php
+
+$from           = ! empty( $from ) ? $from : '-';
+$hide_cat_title = ! empty( $hide_cat_title ) && 'yes' === $hide_cat_title;
+
+$initial_category_for_modal = 0;
+
+// If there are no chosen category and also there is a default category set then initial category box set as default category
+if ( count( $chosen_cat ) < 1 && ! empty( $default_product_cat->term_id ) ) {
+    $initial_category_for_modal = $default_product_cat->term_id;
+}
+
+// If no category is set then add a empty category box.
+if ( count( $chosen_cat ) < 1 ) {
+    array_push( $chosen_cat, $initial_category_for_modal );
+}
+?>
+
+<!-- Trigger/Open The Modal -->
+<?php if ( ! $hide_cat_title ) : ?>
+<div class="dokan-form-group dokan-new-cat-ui-title">
+    <label for="product_cat" class="form-label"><?php esc_html_e( 'Genre', 'dokan-lite' ); ?></label>
+</div>
+<?php endif; ?>
+<span class="dokan-add-new-cat-box cat_box_for_<?php echo esc_attr( $from ); ?>">
+    <?php foreach ( $chosen_cat as $key => $term_id ) : ?>
+        <div data-activate="no" class="dokan-select-product-category-container dokan_select_cat_for_<?php echo esc_attr( $from ); ?>_<?php echo esc_attr( $key ); ?>">
+            <div data-selectfor="<?php echo esc_attr( $from ); ?>" class="dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="<?php echo esc_attr( $key ); ?>" id="dokan-category-open-modal">
+                <span id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-<?php echo esc_attr( $key ); ?>"><?php echo empty( $term_id ) ? __( '- Select a category -', 'dokan-lite' ) : Helper::get_ancestors_html( $term_id ); ?></span>
+                <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
+
+            </div>
+            <?php if ( ! $is_single ) : ?>
+                <div class="dokan-select-product-category-remove-container">
+                    <span class="dokan-select-product-category-remove"><i class="fas fa-times"></i></span>
+                </div>
+            <?php endif; ?>
+            <span class="dokan-cat-inputs-holder dokan-cih-level-<?php echo esc_attr( $key ); ?>" >
+                <?php if ( ! empty( $term_id ) ) : ?>
+                    <input data-field-name="chosen_product_cat" type="hidden" class="dokan_chosen_product_cat dokan_chosen_product_cat_<?php echo esc_attr( $term_id ); ?>" name="chosen_product_cat[]" value="<?php echo esc_attr( $term_id ); ?>"/>
+                <?php endif; ?>
+            </span>
+        </div>
+    <?php endforeach; ?>
+</span>
+<?php if ( ! $is_single ) : ?>
+    <div class="dokan-form-group dokan-add-more-single-cat-container">
+        <div class="dokan-single-cat-add-btn" data-selectfor="<?php echo esc_attr( $from ); ?>">
+            <span><?php esc_html_e( '+ Add new Genre', 'dokan-lite' ); ?></span>
         </div>
     </div>
+<?php endif; ?>
+
+            </div>
+        </div>
+
+        
     </div><!-- .dokan-dashboard-wrap -->
 
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
