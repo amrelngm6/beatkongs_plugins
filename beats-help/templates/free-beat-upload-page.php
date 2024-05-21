@@ -307,7 +307,7 @@ if ( $new_product ) {
         do_action( 'dokan_dashboard_content_after' );
         
         
-        do_action( 'dokan_beats_category_popup' );
+        do_action( 'category_popup' );
         ?>
         <!-- Modal Popup for Category Selection -->
         
