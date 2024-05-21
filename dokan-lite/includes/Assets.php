@@ -266,8 +266,10 @@ class Assets {
         $styles = [
             
             'custom-style'                   => [
-                'src'     => DOKAN_PLUGIN_ASSEST . '/../../beats-help/assets/css/custom-style.css',
-                'version' => filemtime( DOKAN_DIR . '/../beats-help/assets/css/custom-style.css' ),
+                // 'src'     => DOKAN_PLUGIN_ASSEST . '/../../beats-help/assets/css/custom-style.css',
+                // 'version' => filemtime( DOKAN_DIR . '/../beats-help/assets/css/custom-style.css' ),
+                'src'     => DOKAN_PLUGIN_ASSEST . '/css/custom-style.css',
+                'version' => filemtime( DOKAN_DIR . '/assets/css/custom-style.css' ),
             ],
             'dokan-style'                   => [
                 'src'     => DOKAN_PLUGIN_ASSEST . '/css/style.css',
