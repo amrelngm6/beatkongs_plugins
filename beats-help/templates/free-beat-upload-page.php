@@ -114,7 +114,22 @@ if ( $new_product ) {
                             <input type="hidden" name="editable-post-name" class="dokan-hide" id="editable-post-name-full-dokan">
                             <input type="hidden" value="<?php echo esc_attr( $post->post_name ); ?>" name="edited-post-name" class="dokan-hide" id="edited-post-name-dokan">
                         </div>
-
+ <!-- Modal Popup for Category Selection -->
+ <div id="fbu-category-modal" class="fbu-modal">
+        <div class="fbu-modal-content">
+            <span class="fbu-close">&times;</span>
+            <h2>Select Category</h2>
+            <?php
+            wp_dropdown_categories(array(
+                'taxonomy' => 'category',
+                'hide_empty' => false,
+                'name' => 'fbu-category-list',
+                'id' => 'fbu-category-list'
+            ));
+            ?>
+            <button type="button" id="fbu-category-choose">Choose</button>
+        </div>
+    </div>
                         <?php $product_types = apply_filters( 'dokan_product_types', [ 'simple' => __( 'Simple', 'dokan-lite' ) ] ); ?>
 
                         <?php if ( is_array( $product_types ) ) : ?>
