@@ -48,7 +48,7 @@ use WeDevs\Dokan\Walkers\TaxonomyDropdown;
                 </div>
                 <div class="content-half-part dokan-product-field-content">
                     <div class="dokan-form-group">
-                        <input type="text" class="dokan-form-control" name="post_title" placeholder="<?php esc_attr_e( 'Product name..', 'dokan-lite' ); ?>">
+                        <input type="text" class="dokan-form-control" name="post_title" placeholder="<?php esc_attr_e( 'Beat name..', 'dokan-lite' ); ?>">
                     </div>
 
                     <div class="dokan-clearfix">
