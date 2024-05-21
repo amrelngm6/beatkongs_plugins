@@ -349,7 +349,22 @@ if ( $new_product ) {
                         <span><i class="fas fa-chevron-left"></i></span>
                     </span>
                 </span>
-                <div class="dokan-single-categories" id="dokan-single-categories"></div>
+                <div class="dokan-single-categories" id="dokan-single-categories">
+                    
+                <?php
+                $list = array(
+                    'taxonomy' => 'category',
+                    'hide_empty' => false,
+                    'name' => 'fbu-category-list',
+                    'id' => 'fbu-category-list'
+                );
+                foreach ($list as $key => $value) {
+                ?>
+                
+                <?php 
+                }
+                ?>
+                </div>
                 <span class="dokan-single-categories-right dokan-single-categories-arrow dokan-hide">
                     <span class="dokan-single-categories-right-box">
                         <span><i class="fas fa-chevron-right"></i></span>
@@ -374,19 +389,6 @@ if ( $new_product ) {
     
                 <span class="fbu-close">&times;</span>
                 <h2>Select Category</h2>
-                <?php
-                $list = array(
-                    'taxonomy' => 'category',
-                    'hide_empty' => false,
-                    'name' => 'fbu-category-list',
-                    'id' => 'fbu-category-list'
-                );
-                foreach ($list as $key => $value) {
-                ?>
-                
-                <?php 
-                }
-                ?>
                 <button type="button" id="fbu-category-choose">Choose</button>
             </div>
         </div>
