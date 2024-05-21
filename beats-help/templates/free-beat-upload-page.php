@@ -6,7 +6,30 @@ use WeDevs\Dokan\ProductCategory\Helper;
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+<script>
+    // Define the available tags
+    var availableTags = [
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "React",
+        "Vue",
+        "Angular"
+    ];
 
+    // Get the input element
+    var input = document.querySelector('input[name=tags]');
+
+    // Initialize Tagify on the input element
+    new Tagify(input, {
+        whitelist: availableTags,
+        enforceWhitelist: true,  // Only allow tags from the whitelist
+        dropdown: {
+            enabled: 1  // Suggest tags after the first character typed
+        }
+    });
+</script>
 <div class="dokan-dashboard-wrap">
 
     <?php
@@ -142,6 +165,7 @@ if ( $new_product ) {
                             <input type="hidden" id="fbu-category" name="fbu-category" readonly required>
                         </div>
 
+                        <input name='tags' placeholder='Add tags...'>
 
                         
                         <div class="flex  open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
@@ -154,29 +178,7 @@ if ( $new_product ) {
                             </div>
                             <input type="hidden" id="fbu-station" name="fbu-stations" readonly required>
                         </div>
-
-                        <div class="dokan-form-group">
-                            <label for="fbu-category">stations:</label>
-                            <?php
-                            wp_dropdown_categories(array(
-                                'taxonomy' => 'station',
-                                'hide_empty' => false,
-                                'name' => 'fbu-station',
-                                'id' => 'fbu-station'
-                            ));
-                            ?>
-                        </div>
                         
-                        <div class="dokan-form-group">
-                        <?php
-                            do_action( 'dokan_product_edit_after_pricing', $post, $post_id );
-
-                            $data = Helper::get_saved_products_category( $post_id );
-                            $data['from'] = 'edit_product';
-
-                            dokan_get_template_part( 'products/dokan-category-header-ui', '', $data );
-                        ?>
-                        </div>
 
                         <div class="dokan-form-group">
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
