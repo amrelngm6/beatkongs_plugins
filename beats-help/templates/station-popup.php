@@ -33,7 +33,7 @@
                             
                             foreach ($list as $key => $value) {
                             ?>
-                                <li data-text="#fbu-station-text" data-input="#fbu-station" class="choose-genre cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
+                                <li class="choose-genre cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
                             <?php 
                             }
                             ?>

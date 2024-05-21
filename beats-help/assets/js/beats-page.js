@@ -46,7 +46,8 @@
         jQuery(document).on('click', 'li.choose-genre', function() {
             console.log(this)
             var selectedCategory = $(this).text();
-            $(categoryInput).val(selectedCategory);
+            var selectedId = $(this).attr('data-id');
+            $(categoryInput).val(selectedId);
             $(categoryText).html(selectedCategory);
             modal.hide();
         });

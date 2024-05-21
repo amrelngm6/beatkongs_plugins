@@ -110,20 +110,9 @@ function fbu_handle_form_submission()
             $categories = sanitize_text_field($_POST['beat_category']);
             $tags = sanitize_text_field($_POST['beat_station']);
             $tags = sanitize_text_field($_POST['beat_tags']);
+            $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
+            $beat_picture = sanitize_text_field($_POST['beat_picture']);
             
-            print_r(media_handle_upload('beat_picture', 0));
-            print_r(media_handle_upload('beat_mp3', 0));
-            // Handle file uploads
-            $picture_id = media_handle_upload('beat_picture', 0);
-            $mp3_id = media_handle_upload('beat_mp3', 0);
-    
-            if (is_wp_error($picture_id) || is_wp_error($mp3_id)) {
-                print_r(is_wp_error($picture_id));
-                print_r(is_wp_error($mp3_id));
-                echo 'Error uploading files.';
-                die();
-                return;
-            }
             
             // Create a new post of custom post type 'beat'
             $beat_post = array(
@@ -135,8 +124,8 @@ function fbu_handle_form_submission()
                     'beat_type' => $type,
                     'beat_categories' => $categories,
                     'beat_tags' => $tags,
-                    'beat_picture' => $picture_id,
-                    'beat_mp3' => $mp3_id,
+                    'beat_picture' => $beat_picture,
+                    'beat_mp3' => $beat_mp3,
                 ),
             );
             
