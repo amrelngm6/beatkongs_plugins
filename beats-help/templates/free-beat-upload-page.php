@@ -414,3 +414,4 @@ do_action( 'dokan_product_content_inside_area_after' );
     </div><!-- .dokan-dashboard-wrap -->
 
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
+<?php get_footer(); ?>
