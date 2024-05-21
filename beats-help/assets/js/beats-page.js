@@ -12,19 +12,19 @@
         var modal, span,categoryInput,categoryText;
         
         $('#open-category-modal').on('click', function() {
-            modal = $(btn.data('modal'));
+            modal = $(this).data('modal');
             span = $('.fbu-close');
-            categoryInput = $(btn.data('input'));
-            categoryText = $(btn.data('text'));
+            categoryInput = $(this).data('input');
+            categoryText = $(this).data('text');
             modal.show();
         });
 
         $('#open-station-modal').on('click', function() {
             
-            modal = $(btn.data('modal'));
+            modal = $(this).data('modal');
             span = $('.fbu-close');
-            categoryInput = $(btn.data('input'));
-            categoryText = $(btn.data('text'));
+            categoryInput = $(this).data('input');
+            categoryText = $(this).data('text');
             modal.show();
         });
 
