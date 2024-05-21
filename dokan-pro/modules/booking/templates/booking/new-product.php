@@ -160,7 +160,7 @@ if ( empty( $post_id ) || $new_product_form ) {
                             <div class="dokan-product-title-alert dokan-hide dokan-alert dokan-alert-danger">
                                 <?php _e( 'Please choose a Name !!!', 'dokan' ); ?>
                             </div>
-                            <?php dokan_post_input_box( $post_id, 'post_title', array( 'placeholder' => __( 'Beat name..', 'dokan' ), 'value' => $post_title ) ); ?>
+                            <?php dokan_post_input_box( $post_id, 'post_title', array( 'placeholder' => __( 'Product name..', 'dokan' ), 'value' => $post_title ) ); ?>
                         </div>
                         <div class="dokan-form-group virtual-checkbox">
                             <label>
