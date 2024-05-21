@@ -28,7 +28,7 @@ function add_custom_beats_upload_menu($urls) {
 add_action('init', 'register_dokan_beats_page_rewrite_rule');
 
 function register_dokan_beats_page_rewrite_rule() {
-    add_rewrite_rule('^dokan-beats/?', 'index.php?dokan_beats_page=1', 'top');
+    add_rewrite_rule('^import/dokan-beats/?', 'index.php?dokan_beats_page=1', 'top');
     add_rewrite_tag('%dokan_beats_page%', '([^&]+)');
 }
 
