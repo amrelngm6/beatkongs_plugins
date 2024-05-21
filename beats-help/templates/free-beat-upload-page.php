@@ -66,9 +66,9 @@ if ( isset( $_GET['product_id'] ) && 0 === absint( $_GET['product_id'] ) ) {
     $new_product    = true;
 }
 
-if ( ! dokan_is_product_author( $post_id ) ) {
-    wp_die( esc_html__( 'Access Denied', 'dokan-lite' ) );
-}
+// if ( ! dokan_is_product_author( $post_id ) ) {
+    // wp_die( esc_html__( 'Access Denied', 'dokan-lite' ) );
+// }
 
 $_regular_price         = get_post_meta( $post_id, '_regular_price', true );
 $_sale_price            = get_post_meta( $post_id, '_sale_price', true );
