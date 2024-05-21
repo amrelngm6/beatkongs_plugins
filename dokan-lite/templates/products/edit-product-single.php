@@ -467,7 +467,7 @@ do_action( 'dokan_dashboard_wrap_before', $post, $post_id );
                             <?php do_action( 'dokan_new_product_form', $post, $post_id ); ?>
                             <?php do_action( 'dokan_product_edit_after_main', $post, $post_id ); ?>
 
-                            <?php do_action( 'dokan_product_edit_after_inventory_variants', $post, $post_id ); ?>
+                            <?php //do_action( 'dokan_product_edit_after_inventory_variants', $post, $post_id ); ?>
 
                             <?php if ( $post_id ) : ?>
                                 <?php do_action( 'dokan_product_edit_after_options', $post_id ); ?>
