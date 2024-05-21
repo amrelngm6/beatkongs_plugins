@@ -291,8 +291,8 @@ if ( $new_product ) {
                 </div>
                 <!-- Modal content -->
                 <div class="dokan-product-category-modal-content">
-                    <div class="dokan-product-category-modal-header">
-                        <div class="dokan-product-category-title">
+                    <div class="dokan-product-category-modal-header flex">
+                        <div class="dokan-product-category-title w-full">
                             <span class="dokan-single-title"><?php esc_html_e( 'Add new Genre', 'dokan-lite' ); ?></span>
                             <span class="dokan-single-des"><?php esc_html_e( 'Please choose the right Genre for this beat', 'dokan-lite' ); ?></span>
                         </div>
