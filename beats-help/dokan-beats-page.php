@@ -163,15 +163,16 @@ add_action('init', 'fbu_handle_form_submission');
 
 
 
-
-function fbu_enqueue_media_library() {
-    if (is_admin()) {
-        return;
-    }
+function load_wp_media_files( $page ) {
+  // change to the $page where you want to enqueue the script
+  if( $page == 'options-general.php' ) {
+    // Enqueue WordPress media scripts
     wp_enqueue_media();
+  }
 }
 
-add_action('wp_enqueue_scripts', 'fbu_enqueue_media_library');
+
+add_action('wp_enqueue_scripts', 'load_wp_media_files');
 
 
 

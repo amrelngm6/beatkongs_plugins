@@ -161,7 +161,20 @@ if ( $new_product ) {
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
                             <input name='tags' placeholder='Choose tags...'>
                         </div>
+                        <?php
+                        $image_id = get_option( 'myprefix_image_id' );
+                        if( intval( $image_id ) > 0 ) {
+                            // Change with the image size you want to use
+                            $image = wp_get_attachment_image( $image_id, 'medium', false, array( 'id' => 'myprefix-preview-image' ) );
+                        } else {
+                            // Some default image
+                            $image = '<img id="myprefix-preview-image" src="https://some.default.image.jpg" />';
+                        }
                         
+                          echo $image; ?>
+                         <input type="hidden" name="myprefix_image_id" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
+                         <input type='button' class="button-primary" value="<?php esc_attr_e( 'Select a image', 'mytextdomain' ); ?>" id="myprefix_media_manager"/>
+                         
                         <?php do_action( 'dokan_product_edit_after_product_tags', $post, $post_id ); ?>
                     </div><!-- .content-half-part -->
 
