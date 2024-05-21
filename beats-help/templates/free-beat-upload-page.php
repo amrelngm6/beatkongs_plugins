@@ -6,30 +6,6 @@ use WeDevs\Dokan\ProductCategory\Helper;
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
-<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
-<script>
-    // Define the available tags
-    var availableTags = [
-        "JavaScript",
-        "CSS",
-        "HTML",
-        "React",
-        "Vue",
-        "Angular"
-    ];
-
-    // Get the input element
-    var input = document.querySelector('input[name=tags]');
-
-    // Initialize Tagify on the input element
-    new Tagify(input, {
-        whitelist: availableTags,
-        enforceWhitelist: true,  // Only allow tags from the whitelist
-        dropdown: {
-            enabled: 1  // Suggest tags after the first character typed
-        }
-    });
-</script>
 <div class="dokan-dashboard-wrap">
 
     <?php
@@ -333,4 +309,29 @@ if ( $new_product ) {
     </div><!-- .dokan-dashboard-wrap -->
 
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
+
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+<script>
+    // Define the available tags
+    var availableTags = [
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "React",
+        "Vue",
+        "Angular"
+    ];
+
+    // Get the input element
+    var input = document.querySelector('input[name=tags]');
+
+    // Initialize Tagify on the input element
+    new Tagify(input, {
+        whitelist: availableTags,
+        enforceWhitelist: true,  // Only allow tags from the whitelist
+        dropdown: {
+            enabled: 1  // Suggest tags after the first character typed
+        }
+    });
+</script>
 <?php get_footer(); ?>
