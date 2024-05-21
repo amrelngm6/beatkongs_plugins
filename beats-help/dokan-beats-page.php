@@ -160,7 +160,7 @@ function fbu_enqueue_media_library() {
     wp_enqueue_media();
 }
 
-add_action('wp_enqueue_scripts', 'fbu_enqueue_media_library');
+// add_action('wp_enqueue_scripts', 'fbu_enqueue_media_library');
 
 
 
