@@ -4,7 +4,6 @@ $active_class = ' class="active"'
 ?>
 
 <div class="dokan-dash-sidebar">
-    1
     <?php
     global $allowedposttags;
     do_action( 'dokan_dashboard_sidebar_start' );
