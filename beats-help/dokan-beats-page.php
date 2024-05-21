@@ -215,6 +215,8 @@ function set_default_beat_types( $beat_types ) {
     if ( version_compare( WC_VERSION, '2.7', '>' ) ) {
         // $beat_types['grouped'] = __( 'Group Product', 'dokan' );
     }
-
+    
     return $beat_types;
 }
+
+add_filters('default_beat_types', 'set_default_beat_types');
