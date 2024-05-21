@@ -13,19 +13,18 @@
         var span = $('.fbu-close');
         
         $('#open-category-modal').on('click', function() {
-            modal = $($(this).data('modal'));
-            console.log(modal)
-            categoryInput = $(this).data('input');
-            categoryText = $(this).data('text');
+            
+            modal = $($(e.target).data('modal'));
+            categoryInput = $($(this).data('input'));
+            categoryText = $($(this).data('text'));
             modal.show();
         });
 
         $('#open-station-modal').on('click', function(e) {
             
             modal = $($(e.target).data('modal'));
-            console.log(modal)
-            categoryInput = $(this).data('input');
-            categoryText = $(this).data('text');
+            categoryInput = $($(this).data('input'));
+            categoryText = $($(this).data('text'));
             modal.show();
         });
 
