@@ -18,6 +18,24 @@ function register_dokan_beats_page_rewrite_rule() {
     add_rewrite_tag('%dokan_beats_page%', '([^&]+)');
 }
 
+// Initialize the plugin when all plugins are loaded
+add_action( 'plugins_loaded', 'dokan_beats_page_init' );
+
+function dokan_beats_page_init() {
+    if ( ! class_exists( 'WeDevs_Dokan' ) ) {
+        return;
+    }
+
+    // Hook to add custom menu item to Dokan vendor dashboard
+    add_filter( 'dokan_get_dashboard_nav', 'dokan_beats_page_sidebar_menu', 10, 1 );
+
+    // Hook to add custom query var
+    add_filter( 'dokan_query_var_filter', 'dokan_beats_page_query_var' );
+
+    // Hook to load custom template
+    add_action( 'dokan_load_custom_template', 'dokan_beats_page_load_template' );
+}
+
 // Add query vars
 add_filter('query_vars', 'dokan_beats_page_query_vars');
 
