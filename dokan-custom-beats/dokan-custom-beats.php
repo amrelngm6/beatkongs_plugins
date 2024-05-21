@@ -10,6 +10,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+// Register a custom rewrite rule
+add_action('init', 'register_dokan_custom_product_view_rewrite_rule');
+
+function register_dokan_custom_product_view_rewrite_rule() {
+    add_rewrite_rule('^dokan-custom-view/?', 'index.php?dokan_custom_product_view=1', 'top');
+    add_rewrite_tag('%dokan_custom_product_view%', '([^&]+)');
+}
+
 // Initialize the plugin when all plugins are loaded
 add_action( 'plugins_loaded', 'dokan_custom_product_view_init' );
 
@@ -33,7 +41,7 @@ function dokan_custom_product_view_sidebar_menu( $urls ) {
     $urls['custom-product-view'] = array(
         'title' => __( 'Custom Product View', 'dokan' ),
         'icon'  => '<i class="fas fa-eye"></i>',
-        'url'   => dokan_get_navigation_url( 'custom-product-view' ),
+        'url'   => dokan_get_navigation_url( '../custom-product-view' ),
         'pos'   => 150,
     );
     return $urls;
@@ -47,11 +55,18 @@ function dokan_custom_product_view_query_var( $query_vars ) {
 
 // Function to load custom template
 function dokan_custom_product_view_load_template( $query_vars ) {
-    if ( isset( $query_vars['custom-product-view'] ) ) {
-        add_action( 'dokan_dashboard_content_before', 'dokan_custom_product_view_content' );
-        add_action( 'dokan_dashboard_content_after', 'dokan_custom_product_view_wrap_end' );
-        remove_action( 'dokan_dashboard_content_before', 'dokan_account_migration_banner' );
-    }
+    
+    $beats_content = '
+    <div class="dokan-beats-page">
+        <h1>Custom Beats Page</h1>
+        <p>Welcome to the beats page. Here you can find useful information and resources to assist you.</p>
+        <ul>
+            <li><a href="#">Beat 1</a></li>
+            <li><a href="#">Beat 2</a></li>
+        </ul>
+    </div>';
+    
+    echo $beats_content;
 }
 
 // Function to display custom content
