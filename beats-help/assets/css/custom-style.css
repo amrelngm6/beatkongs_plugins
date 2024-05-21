@@ -2,7 +2,11 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 {
   display: block;
 }
-
+.flex {
+  display: flex;
+}
+.w-full
+{width: 100%;}
 .vendor-toggle-menu 
 {
   position: fixed;
