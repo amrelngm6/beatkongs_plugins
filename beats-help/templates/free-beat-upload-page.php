@@ -162,7 +162,7 @@ if ( $new_product ) {
                             <input name='tags' placeholder='Choose tags...'>
                         </div>
 
-                        <div id="mp3_media_manager" >
+                        <div id="mp3_media_manager" data-btn="upload-mp3-button" data-id="" data-preview="" >
                                 <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
                                 <?php
                                 $image_id = get_option( 'myprefix_image_id' );
@@ -171,9 +171,9 @@ if ( $new_product ) {
                                     : '<img id="myprefix-preview-image" src="https://some.default.image.jpg" />';
                                 ?>
                                 <input type="hidden" name="myprefix_image_id" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
-                                <div id="upload-cover-button">
+                                <div id="upload-mp3-button">
                                     <i class="fas fa-cloud-upload-alt"></i>
-                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
+                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
                                 </div>
                             </div>
 

@@ -107,6 +107,9 @@
         jQuery('#mp3_media_manager').click(function(e) {
 
             e.preventDefault();
+            $(this).attr('data-preview')
+            $(this).attr('data-id')
+            $(this).attr('data-btn')
             var image_frame;
             if(image_frame){
                 image_frame.open();
