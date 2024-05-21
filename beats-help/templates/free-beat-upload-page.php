@@ -100,7 +100,7 @@ if ( $new_product ) {
                                 $post_id,
                                 'post_title',
                                 [
-                                    'placeholder' => __( 'Product name..', 'dokan-lite' ),
+                                    'placeholder' => __( 'Beat name..', 'dokan-lite' ),
                                     'value'       => $post_title,
                                 ]
                             );
@@ -122,7 +122,7 @@ if ( $new_product ) {
                                 <input type="hidden" id="product_type" name="product_type" value="simple">
                             <?php else : ?>
                                 <div class="dokan-form-group">
-                                    <label for="product_type" class="form-label"><?php esc_html_e( 'Product Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
+                                    <label for="product_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
                                     <select name="product_type" class="dokan-form-control" id="product_type">
                                         <?php foreach ( $product_types as $key => $value ) : ?>
                                             <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $product_type, $key ); ?>><?php echo esc_html( $value ); ?></option>
@@ -182,7 +182,7 @@ if ( $new_product ) {
 
                             <div class="dokan-form-group dokan-clearfix dokan-price-container">
                                 <div class="dokan-product-less-price-alert dokan-hide">
-                                    <?php esc_html_e( 'Product price can\'t be less than the vendor fee!', 'dokan-lite' ); ?>
+                                    <?php esc_html_e( 'Beat price can\'t be less than the vendor fee!', 'dokan-lite' ); ?>
                                 </div>
                             </div>
 
