@@ -189,13 +189,14 @@ if ( $new_product ) {
                                     : '<img id="myprefix-preview-image" src="https://some.default.image.jpg" />';
                                 ?>
                                 <input type="hidden" name="myprefix_image_id" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
+                                <div id="upload-cover-button">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
+                                </div>
                             </div>
 
                             <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
                                 <a class="close dokan-remove-feat-image">&times;</a>
-                                
                                 
                                 <?php if ( $feat_image_id ) : ?>
                                     <?php

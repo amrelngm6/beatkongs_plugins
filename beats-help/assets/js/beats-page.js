@@ -85,6 +85,7 @@
                 if(ids.length === 0) return true;//if closed withput selecting an image
                 jQuery('#myprefix-preview-image').attr('src', selected );
                 jQuery('input#myprefix_image_id').val(ids);
+                jQuery('#upload-cover-button').html(' ');
             });
 
             image_frame.on('open',function() {
