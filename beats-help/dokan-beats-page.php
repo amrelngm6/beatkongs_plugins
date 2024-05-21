@@ -44,9 +44,9 @@ function dokan_beats_page_query_vars($vars) {
 add_action('template_redirect', 'dokan_beats_page_template_redirect');
 
 function dokan_beats_page_template_redirect() {
+    include plugin_dir_path(__FILE__) . 'templates/beats-page.php';
     if (get_query_var('dokan_beats_page')) {
-        include plugin_dir_path(__FILE__) . 'templates/beats-page.php';
-        exit;
+        // exit;
     }
 }
 
