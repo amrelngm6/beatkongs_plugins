@@ -17,6 +17,7 @@
             modal = $($(e.target).data('modal'));
             categoryInput = $($(this).data('input'));
             categoryText = $($(this).data('text'));
+            console.log(modal, categoryInput, categoryText)
             modal.show();
         });
 
