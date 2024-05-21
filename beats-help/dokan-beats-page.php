@@ -100,6 +100,8 @@ function fbu_handle_form_submission() {
         $category = intval($_POST['fbu-category']);
         $station = intval($_POST['fbu-station']);
         $mood = intval($_POST['fbu-mood']);
+        
+        error_log(json_encode($_POST));
 
         $post_id = wp_insert_post(array(
             'post_title' => $title,
