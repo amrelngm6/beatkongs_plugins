@@ -2,6 +2,7 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
+use WeDevs\Dokan\ProductCategory\Helper;
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
