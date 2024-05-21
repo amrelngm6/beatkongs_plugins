@@ -23,7 +23,6 @@
                                     <span><i class="fas fa-chevron-left"></i></span>
                                 </span>
                             </span>
-                            <?php echo do_action('dokan_load_category'); ?>
                             <ul class="dokan-single-categories" id="dokan-single-categories">
                                 
                             <?php

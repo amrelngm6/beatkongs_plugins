@@ -282,6 +282,7 @@ if ( $new_product ) {
             </div>
         <?php endif; ?>
 
+        <?php echo do_action('dokan_load_category'); ?>
              
     <?php else : ?>
 

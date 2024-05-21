@@ -164,7 +164,6 @@ add_action('init', 'fbu_handle_form_submission');
 add_action( 'dokan_load_category', 'dokan_custom_product_view_load_template' );
 // Function to load custom template
 function dokan_custom_product_view_load_template(  ) {
-    
      include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
 }
 
