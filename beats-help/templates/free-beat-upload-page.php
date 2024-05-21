@@ -140,8 +140,6 @@ if ( $new_product ) {
                             </div>
                             <input type="hidden" id="fbu-category" name="fbu-category" readonly required>
                         </div>
-
-
                         
                         <div class="flex  open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
                             <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-stations-g">
@@ -154,18 +152,16 @@ if ( $new_product ) {
                             <input type="hidden" id="fbu-station" name="fbu-stations" readonly required>
                         </div>
                         
+                        <div class="dokan-form-group">
+                            <label for="product_moods_edit" class="form-label"><?php esc_html_e( 'Moods', 'dokan-lite' ); ?></label>
+                            <input name='moods' placeholder='Choose moods...'>
+                        </div>
 
                         <div class="dokan-form-group">
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
                             <input name='tags' placeholder='Choose tags...'>
                         </div>
                         
-
-                        <div class="dokan-form-group">
-                            <label for="product_moods_edit" class="form-label"><?php esc_html_e( 'Moods', 'dokan-lite' ); ?></label>
-                            <input name='moods' placeholder='Choose moods...'>
-                        </div>
-
                         <?php do_action( 'dokan_product_edit_after_product_tags', $post, $post_id ); ?>
                     </div><!-- .content-half-part -->
 
