@@ -38,17 +38,18 @@
                 }
             });
         
-            // Handle category selection
-            jQuery(document).on('click', 'li.choose-genre', function() {
-                console.log(this)
-                var selectedCategory = $(this).text();
-                console.log(categoryInput)
-                console.log(categoryText)
-                categoryInput.val(selectedCategory);
-                categoryText.html(selectedCategory);
-                modal.hide();
-            });
         }
+    
+        // Handle category selection
+        jQuery(document).on('click', 'li.choose-genre', function() {
+            console.log(this)
+            var selectedCategory = $(this).text();
+            var categoryInput = $(this).data('input');
+            var categoryText = $(this).data('text');
+            $(categoryInput).val(selectedCategory);
+            $(categoryText).html(selectedCategory);
+            modal.hide();
+        });
     });
 })(jQuery);
 
