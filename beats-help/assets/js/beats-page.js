@@ -73,16 +73,17 @@
                      // On close, get selections and save to the hidden input
                      // plus other AJAX stuff to refresh the image preview
                      var selection =  image_frame.state().get('selection');
-                     var gallery_ids = new Array();
-                     var my_index = 0;
+                     var gallery_ids, selected = new Array();
+                     var i = 0;
                      selection.each(function(attachment) {
-                        console.log(attachment.attributes.url)
-                        gallery_ids[my_index] = attachment['id'];
-                        my_index++;
+                        selected[i] = attachment.attributes.url
+                        gallery_ids[i] = attachment['id'];
+                        i++;
                      });
                      var ids = gallery_ids.join(",");
                      if(ids.length === 0) return true;//if closed withput selecting an image
-                     console.log(selection)
+                     console.log(selected)
+                     console.log(gallery_ids)
                      jQuery('input#myprefix_image_id').val(ids);
                      Refresh_Image(ids);
                   });
