@@ -3,7 +3,7 @@ $home_url     = home_url();
 $active_class = ' class="active"'
 ?>
 
-<div class="dokan-dash-sidebar">
+<div class="dokan-dash-sidebar" id="vendor-main-sidebar">
     <?php
     global $allowedposttags;
     do_action( 'dokan_dashboard_sidebar_start' );
