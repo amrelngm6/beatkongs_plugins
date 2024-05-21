@@ -14,10 +14,10 @@ if (!defined('ABSPATH')) {
 // Add custom menu item to Dokan Vendor Dashboard
 add_filter('dokan_get_dashboard_nav', 'add_custom_beats_upload_menu');
 function add_custom_beats_upload_menu($urls) {
-    $urls['upload-beat'] = array(
-        'title' => __('Upload Beat', 'beat-upload-plugin'),
+    $urls['dokan-beats'] = array(
+        'title' => __('Beats', 'beat-upload-plugin'),
         'icon'  => '<i class="fas fa-music"></i>',
-        'url'   => dokan_get_navigation_url('upload-beat'),
+        'url'   => dokan_get_navigation_url('dokan-beats'),
         'pos'   => 50
     );
     return $urls;
