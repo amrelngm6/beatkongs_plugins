@@ -131,8 +131,18 @@ if ( $new_product ) {
                                 </div>
                             <?php endif; ?>
                         <?php endif; ?>
-
-
+                        
+                        <div class="dokan-form-group">
+                            <label for="fbu-category">Category:</label>
+                            <?php
+                            wp_dropdown_categories(array(
+                                'taxonomy' => 'category',
+                                'hide_empty' => false,
+                                'name' => 'fbu-category',
+                                'id' => 'fbu-category'
+                            ));
+                            ?>
+                        </div>
                         
                         <div class="dokan-form-group">
                         <?php
