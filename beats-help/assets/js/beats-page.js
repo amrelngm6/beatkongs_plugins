@@ -1,5 +1,11 @@
 (function ($) {
     $(document).ready(function () {
+        if ($('.dokan-dash-sidebar'))
+        {
+            jQuery(document).on('click', '.dokan-dash-sidebar', function (e) {
+                console.log(e)
+            })   
+        }
         if (document.getElementById('dokan-beats-page-root')) {
             const { createElement } = wp.element;
 
