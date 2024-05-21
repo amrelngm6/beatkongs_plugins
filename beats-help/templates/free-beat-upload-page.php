@@ -162,7 +162,7 @@ if ( $new_product ) {
                             <input name='tags' placeholder='Choose tags...'>
                         </div>
 
-                        <div id="mp3_media_manager" data-btn="#upload-mp3-button" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
+                        <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
                             <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
