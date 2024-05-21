@@ -281,8 +281,8 @@ if ( $new_product ) {
                 <?php echo esc_html( dokan_seller_not_enabled_notice() ); ?>
             </div>
         <?php endif; ?>
-        <?php  do_shortcode( '[dokan_beats_category]' ); ?>
 
+        <?php  do_shortcode( 'dokan_beats_category' ); ?>
 
     <?php else : ?>
 
