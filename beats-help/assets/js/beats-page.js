@@ -111,12 +111,12 @@
             var inputElement = $(this).attr('data-input')
             var btnElement = $(this).attr('data-btn')
 
-            var image_frame;
-            if(image_frame){
-                image_frame.open();
+            var mp3_frame;
+            if(mp3_frame){
+                mp3_frame.open();
             }
-            // Define image_frame as wp.media object
-            image_frame = wp.media({
+            // Define mp3_frame as wp.media object
+            mp3_frame = wp.media({
                 title: 'Select Media',
                 multiple : false,
                 library : {
@@ -124,10 +124,10 @@
                 }
             });
 
-            image_frame.on('close',function() {
+            mp3_frame.on('close',function() {
                 // On close, get selections and save to the hidden input
                 // plus other AJAX stuff to refresh the image preview
-                var selection =  image_frame.state().get('selection');
+                var selection =  mp3_frame.state().get('selection');
                 var gallery_ids = new Array();
                 var selected = new Array();
                 var i = 0;
@@ -143,10 +143,10 @@
                 jQuery(previewElement).attr('src', selected );
             });
 
-            image_frame.on('open',function() {
+            mp3_frame.on('open',function() {
                 // On open, get the id from the hidden input
                 // and select the appropiate images in the media manager
-                var selection =  image_frame.state().get('selection');
+                var selection =  mp3_frame.state().get('selection');
                 var ids = jQuery(inputElement).val().split(',');
                 ids.forEach(function(id) {
                     console.log(id)
@@ -157,7 +157,7 @@
                 });
             });
 
-            image_frame.open();
+            mp3_frame.open();
         });
 
 
