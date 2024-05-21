@@ -163,15 +163,17 @@ if ( $new_product ) {
                         </div>
 
                         <div id="mp3_media_manager" data-btn="#upload-mp3-button" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
-                                <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
-                                
-                                <input type="hidden" name="mp3_file" id="mp3_upload_input" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
-                                <div id="upload-mp3-demo"></div>
-                                <div id="upload-mp3-button">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
-                                </div>
+                            <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
+
+                            <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
+                            
+                            <input type="hidden" name="mp3_file" id="mp3_upload_input" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
+                            <div id="upload-mp3-demo"></div>
+                            <div id="upload-mp3-button">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
                             </div>
+                        </div>
 
                         <?php do_action( 'dokan_product_edit_after_product_tags', $post, $post_id ); ?>
                     </div><!-- .content-half-part -->
