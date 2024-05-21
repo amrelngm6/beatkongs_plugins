@@ -57,3 +57,21 @@ function enqueue_dokan_help_page_scripts() {
         wp_enqueue_script('dokan-help-page-js', plugin_dir_url(__FILE__) . 'assets/js/help-page.js', array('wp-element'), '1.0', true);
     }
 }
+
+// Create the help page template
+function create_dokan_help_page_template() {
+    $help_content = '
+    <div class="dokan-help-page">
+        <h1>Help Page</h1>
+        <p>Welcome to the help page. Here you can find useful information and resources to assist you.</p>
+        <ul>
+            <li><a href="#">Help Topic 1</a></li>
+            <li><a href="#">Help Topic 2</a></li>
+            <li><a href="#">Help Topic 3</a></li>
+        </ul>
+    </div>';
+    
+    echo $help_content;
+}
+
+add_shortcode('dokan_help_page', 'create_dokan_help_page_template');
