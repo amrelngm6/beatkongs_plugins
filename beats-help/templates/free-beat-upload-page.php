@@ -320,7 +320,7 @@ $tags = get_terms(array(
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 <script>
     // Define the available tags
-    var availableTags = <?php echo json_encode(array_column($tags, 'name', 'term_id')); ?>
+    var availableTags = <?php echo json_encode($tags); ?>
 
     // Get the input element
     var input = document.querySelector('input[name=tags]');
