@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Dokan Vendor Help Page
+Plugin Name: Dokan Vendor Beats Page
 Description: A plugin to add a static beats page in the Dokan vendors' dashboard.
 Version: 1.0
 Author: Your Name
@@ -41,7 +41,7 @@ add_action('dokan_vendor_dashboard_menu', 'add_dokan_beats_page_menu', 10);
 
 function add_dokan_beats_page_menu($urls) {
     $urls['beats'] = array(
-        'title' => __('Help', 'dokan'),
+        'title' => __('Beats', 'dokan'),
         'url'   => site_url('/dokan-beats'),
         'icon'  => '<i class="fa fa-question-circle"></i>',
         'pos'   => 190,
@@ -62,7 +62,7 @@ function enqueue_dokan_beats_page_scripts() {
 function create_dokan_beats_page_template() {
     $beats_content = '
     <div class="dokan-beats-page">
-        <h1>Help Page</h1>
+        <h1>Beats Page</h1>
         <p>Welcome to the beats page. Here you can find useful information and resources to assist you.</p>
         <ul>
             <li><a href="#">Station 1</a></li>
