@@ -76,4 +76,4 @@ function enqueue_dokan_beats_page_scripts() {
     }
 }
 
-add_shortcode('dokan_beats_page', 'dokan_beats_page_template_redirect');
+add_shortcode('beats_page', 'dokan_beats_page_template_redirect');
