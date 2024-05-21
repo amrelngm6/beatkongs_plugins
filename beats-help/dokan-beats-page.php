@@ -121,6 +121,7 @@ function fbu_handle_form_submission()
                 print_r(is_wp_error($picture_id));
                 print_r(is_wp_error($mp3_id));
                 echo 'Error uploading files.';
+                die();
                 return;
             }
             
