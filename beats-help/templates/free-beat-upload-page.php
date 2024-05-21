@@ -364,14 +364,6 @@ if ( $new_product ) {
                 <?php do_action( 'dokan_new_product_form', $post, $post_id ); ?>
                 <?php do_action( 'dokan_product_edit_after_main', $post, $post_id ); ?>
 
-                <?php do_action( 'dokan_product_edit_after_inventory_variants', $post, $post_id ); ?>
-
-                <?php if ( $post_id ) : ?>
-                    <?php do_action( 'dokan_product_edit_after_options', $post_id ); ?>
-                <?php endif; ?>
-
-                <?php wp_nonce_field( 'dokan_edit_product', 'dokan_edit_product_nonce' ); ?>
-
                 <input type="hidden" name="dokan_product_id" id="dokan_product_id" value="<?php echo esc_attr( $post_id ); ?>" />
                 <!--hidden input for Firefox issue-->
                 <input type="hidden" name="dokan_update_product" value="<?php esc_attr_e( 'Save Product', 'dokan-lite' ); ?>"/>
