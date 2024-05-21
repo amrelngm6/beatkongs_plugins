@@ -81,7 +81,7 @@
                      });
                      var ids = gallery_ids.join(",");
                      if(ids.length === 0) return true;//if closed withput selecting an image
-                     console.log(ids)
+                     console.log(selection)
                      jQuery('input#myprefix_image_id').val(ids);
                      Refresh_Image(ids);
                   });
