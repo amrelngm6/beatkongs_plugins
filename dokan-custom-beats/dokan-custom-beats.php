@@ -21,6 +21,9 @@ function dokan_custom_product_view_init() {
     // Hook to add custom menu item to Dokan vendor dashboard
     add_filter( 'dokan_get_dashboard_nav', 'dokan_custom_product_view_sidebar_menu', 10, 1 );
 
+    // Hook to add custom query var
+    add_filter( 'dokan_query_var_filter', 'dokan_custom_product_view_query_var' );
+
     // Hook to load custom template
     add_action( 'dokan_load_custom_template', 'dokan_custom_product_view_load_template' );
 }
@@ -34,6 +37,12 @@ function dokan_custom_product_view_sidebar_menu( $urls ) {
         'pos'   => 150,
     );
     return $urls;
+}
+
+// Function to add custom query var
+function dokan_custom_product_view_query_var( $query_vars ) {
+    $query_vars[] = 'custom-product-view';
+    return $query_vars;
 }
 
 // Function to load custom template
