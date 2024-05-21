@@ -142,6 +142,19 @@ if ( $new_product ) {
                             <input type="hidden" id="fbu-category" name="fbu-category" readonly required>
                         </div>
 
+
+                        
+                        <div class="flex">
+                            <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-stations-g">
+                                <label for="fbu-stations" class="font-semibold form-label">Station:</label>
+                                <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected" id="fbu-stations-text"></span></div>
+                            </div>
+                            <div  class="w-full open-modal" data-dokansclevel="0"  id="fbu-popup-select" data-modal="#fbu-stations-modal" data-text="#fbu-stations-text" data-input="#fbu-stations">
+                                <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
+                            </div>
+                            <input type="hidden" id="fbu-stations" name="fbu-stations" readonly required>
+                        </div>
+
                         <div class="dokan-form-group">
                             <label for="fbu-category">stations:</label>
                             <?php

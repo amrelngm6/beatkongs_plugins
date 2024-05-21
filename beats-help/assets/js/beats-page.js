@@ -9,7 +9,7 @@
             })   
         }
        
-        var btn = $('#fbu-popup-select');
+        var btn = $('.open-modal');
         var modal = $(btn.data('modal'));
         
         var span = $('.fbu-close');
