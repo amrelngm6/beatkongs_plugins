@@ -79,9 +79,9 @@ function enqueue_dokan_beats_page_scripts() {
 
 add_shortcode('beats_page', 'dokan_beats_page_template_view');
 function dokan_beats_page_template_view() {
-        include plugin_dir_path(__FILE__) . 'templates/beats-page.php';
+    include plugin_dir_path(__FILE__) . 'templates/beats-page.php';
 }
 add_shortcode('free_beat_upload_page', 'dokan_free_beat_upload_page_template');
 function dokan_free_beat_upload_page_template() {
-        include plugin_dir_path(__FILE__) . 'templates/free-beat-upload-page.php';
+    include plugin_dir_path(__FILE__) . 'templates/free-beat-upload-page.php';
 }

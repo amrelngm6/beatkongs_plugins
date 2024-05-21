@@ -8,8 +8,8 @@ use WeDevs\Dokan\ProductCategory\Helper;
 // phpcs:disable WordPress.WP.GlobalVariablesOverride.Prohibited
 global $post;
 
-$from_shortcode = false;
-$new_product    = false;
+// $from_shortcode = false;
+$new_product    = true;
 
 // if (
 //     ! isset( $post->ID )
@@ -90,9 +90,6 @@ $product_type     = ( ! empty( $terms ) ) ? sanitize_title( current( $terms )->n
 $variations_class = ( $product_type === 'simple' ) ? 'dokan-hide' : '';
 $_visibility      = ( version_compare( WC_VERSION, '2.7', '>' ) ) ? $product->get_catalog_visibility() : get_post_meta( $post_id, '_visibility', true );
 
-if ( ! $from_shortcode ) {
-    get_header();
-}
 
 if ( ! empty( $_GET['errors'] ) ) {
     dokan()->dashboard->templates->products->set_errors( array_map( 'sanitize_text_field', wp_unslash( $_GET['errors'] ) ) );
