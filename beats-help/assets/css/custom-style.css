@@ -121,3 +121,7 @@ ul.dokan-single-categories
 #fbu-category-list li:hover {
   background-color: #ddd;
 }
+.tagify
+{
+  width: 100%;
+}
