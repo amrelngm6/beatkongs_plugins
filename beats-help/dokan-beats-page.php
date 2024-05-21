@@ -95,7 +95,7 @@ function dokan_station_popup_template(  ) {
 
 
 function fbu_handle_form_submission() {
-    if (isset($_POST['fbu-submit'])) {
+    if (isset($_POST['upload_beat'])) {
         $title = sanitize_text_field($_POST['fbu-title']);
         $category = intval($_POST['fbu-category']);
         $station = intval($_POST['fbu-station']);

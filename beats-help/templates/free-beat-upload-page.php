@@ -82,7 +82,7 @@ if ( $new_product ) {
     <?php if ( apply_filters( 'dokan_can_post', true ) ) : ?>
         <?php if ( dokan_is_seller_enabled( get_current_user_id() ) ) : ?>
             <form class="dokan-product-edit-form" role="form" method="post" id="post">
-
+                <input type="hidden" value="upload_beat" />
                 <?php do_action( 'dokan_product_data_panel_tabs' ); ?>
                 <?php do_action( 'dokan_product_edit_before_main' ); ?>
 
