@@ -267,19 +267,17 @@ if ( $new_product ) {
         <?php do_action( 'dokan_can_post_notice' ); ?>
 
     <?php endif; ?>
-</div> <!-- #primary .content-area -->
+    </div> <!-- #primary .content-area -->
 
-<?php
-/**
- * Action took to fire inside Beat content after.
- *
- *  @since 2.4
- */
-do_action( 'dokan_product_content_inside_area_after' );
-?>
 </div>
 
         <?php
+        /**
+         * Action took to fire inside Beat content after.
+         *
+         *  @since 2.4
+         */
+        do_action( 'dokan_product_content_inside_area_after' );
 
         /**
          *  Adding dokan_dashboard_content_after hook
