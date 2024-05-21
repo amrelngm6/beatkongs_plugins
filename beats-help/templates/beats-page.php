@@ -3,20 +3,16 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-get_header();
 // Load Dokan's vendor dashboard header
 do_action('dokan_dashboard_wrap_start');
 
-// Display the main content of the help page
+// Display the main content of the beats page
 ?>
-<div id="dokan-help-page-root"></div>
-Amr is here
-[dokan_help_page]
+<div id="dokan-beats-page-root"></div>
 <?php
-echo do_shortcode('[dokan_help_page]');
+
+echo do_shortcode('[dokan_beats_page]');
 
 // Load Dokan's vendor dashboard footer
 do_action('dokan_dashboard_wrap_end');
-
-get_footer();
 ?>

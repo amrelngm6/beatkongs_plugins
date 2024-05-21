@@ -18,24 +18,6 @@ function register_dokan_beats_page_rewrite_rule() {
     add_rewrite_tag('%dokan_beats_page%', '([^&]+)');
 }
 
-// Initialize the plugin when all plugins are loaded
-add_action( 'plugins_loaded', 'dokan_beats_page_init' );
-
-function dokan_beats_page_init() {
-    if ( ! class_exists( 'WeDevs_Dokan' ) ) {
-        return;
-    }
-
-    // Hook to add custom menu item to Dokan vendor dashboard
-    add_filter( 'dokan_get_dashboard_nav', 'dokan_beats_page_sidebar_menu', 10, 1 );
-
-    // Hook to add custom query var
-    add_filter( 'dokan_query_var_filter', 'dokan_beats_page_query_var' );
-
-    // Hook to load custom template
-    add_action( 'dokan_load_custom_template', 'dokan_beats_page_load_template' );
-}
-
 // Add query vars
 add_filter('query_vars', 'dokan_beats_page_query_vars');
 
@@ -61,7 +43,7 @@ function add_dokan_beats_page_menu($urls) {
     $urls['beats'] = array(
         'title' => __('Beats', 'dokan'),
         'url'   => site_url('/dokan-beats'),
-        'icon'  => '<i class="fa fa-question-circle"></i>',
+        'icon'  => '<i class="fa fa-music"></i>',
         'pos'   => 190,
     );
     return $urls;
@@ -75,21 +57,3 @@ function enqueue_dokan_beats_page_scripts() {
         wp_enqueue_script('dokan-beats-page-js', plugin_dir_url(__FILE__) . 'assets/js/beats-page.js', array('wp-element'), '1.0', true);
     }
 }
-
-// Create the beats page template
-function create_dokan_beats_page_template() {
-    $beats_content = '
-    <div class="dokan-beats-page">
-        <h1>Beats Page</h1>
-        <p>Welcome to the beats page. Here you can find useful information and resources to assist you.</p>
-        <ul>
-            <li><a href="#">Station 1</a></li>
-            <li><a href="#">Station 2</a></li>
-            <li><a href="#">Station 3</a></li>
-        </ul>
-    </div>';
-    
-    echo $beats_content;
-}
-
-add_shortcode('dokan_beats_page', 'create_dokan_beats_page_template');
