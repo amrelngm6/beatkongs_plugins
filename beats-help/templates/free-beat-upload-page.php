@@ -158,9 +158,7 @@ if ( $new_product ) {
                         <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
-                            <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
-                            
-                            <input type="hidden" name="mp3_file" id="mp3_upload_input" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
+                            <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
                             <div id="upload-mp3-demo"></div>
                             <div id="upload-mp3-button">
                                 <i class="fas fa-cloud-upload-alt"></i>
@@ -194,7 +192,7 @@ if ( $new_product ) {
                                     ? wp_get_attachment_image( $image_id, 'medium', false, array( 'id' => 'myprefix-preview-image' ) )
                                     : '<img id="myprefix-preview-image" src="https://some.default.image.jpg" />';
                                 ?>
-                                <input type="hidden" name="myprefix_image_id" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
+                                <input type="hidden" name="beat_picture" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
                                 <div id="upload-cover-button">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
