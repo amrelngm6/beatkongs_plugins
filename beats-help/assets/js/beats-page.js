@@ -18,6 +18,7 @@
     
         // Open the modal
         btn.on('click', function() {
+            console.log(this)
             modal.show();
         });
     
