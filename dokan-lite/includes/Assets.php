@@ -264,6 +264,11 @@ class Assets {
      */
     public function get_styles() {
         $styles = [
+            
+            'custom-style'                   => [
+                'src'     => DOKAN_PLUGIN_ASSEST . '../../beats-help/assets/css/custom-style.css',
+                'version' => filemtime( DOKAN_DIR . '../../beats-help/assets/css/custom-style.css' ),
+            ],
             'dokan-style'                   => [
                 'src'     => DOKAN_PLUGIN_ASSEST . '/css/style.css',
                 'version' => filemtime( DOKAN_DIR . '/assets/css/style.css' ),
