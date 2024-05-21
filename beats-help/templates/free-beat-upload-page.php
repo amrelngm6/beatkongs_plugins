@@ -327,6 +327,7 @@ $tags = get_terms(array(
 
     // Initialize Tagify on the input element
     new Tagify(input, {
+        maxTags: 3,
         whitelist: availableTags,
         enforceWhitelist: true,  // Only allow tags from the whitelist
         dropdown: {
