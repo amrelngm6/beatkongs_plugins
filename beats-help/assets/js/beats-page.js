@@ -34,7 +34,7 @@
     
         // Handle category selection
         // Handle category selection
-        categoryList.on('click', 'li', function() {
+        jQuery(document).on('click', 'li.choose-genre', function() {
             var selectedCategory = $(this).text();
             categoryInput.val(selectedCategory);
             modal.hide();
