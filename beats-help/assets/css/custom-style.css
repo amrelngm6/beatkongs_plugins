@@ -21,5 +21,6 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
       top: 10px;
       left: 10px;
       z-index: 999;
+      display: block;
   }
 }
