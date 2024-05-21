@@ -24,14 +24,7 @@
             var categoryInput = $(btn.data('input'));
             var categoryText = $(btn.data('text'));
             
-            console.log(modal)
-            console.log(categoryInput)
-            console.log(categoryText)
-            // Open the modal
-            btn.on('click', function() {
-                console.log(this)
-                modal.show();
-            });
+            modal.show();
         
             // Close the modal
             span.on('click', function() {
