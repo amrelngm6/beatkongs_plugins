@@ -156,11 +156,29 @@ function fbu_handle_form_submission() {
         }
     }
 
-    add_action( 'dokan_beats_category', 'dokan_beats_category_popup' );
+}
+add_action('init', 'fbu_handle_form_submission');
 
+
+
+add_action( 'dokan_load_category', 'dokan_custom_product_view_load_template' );
+// Function to load custom template
+function dokan_custom_product_view_load_template( $query_vars ) {
+    
+    $beats_content = '
+    <div class="dokan-beats-page">
+        <h1>Custom Beats Page</h1>
+        <p>Welcome to the beats page. Here you can find useful information and resources to assist you.</p>
+        <ul>
+            <li><a href="#">Beat 1</a></li>
+            <li><a href="#">Beat 2</a></li>
+        </ul>
+    </div>';
+    
+    echo $beats_content;
 }
 
-add_action('init', 'fbu_handle_form_submission');
+
 
 
 function fbu_enqueue_media_library() {
