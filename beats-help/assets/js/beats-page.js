@@ -76,6 +76,7 @@
                      var gallery_ids = new Array();
                      var my_index = 0;
                      selection.each(function(attachment) {
+                        console.log(attachment)
                         gallery_ids[my_index] = attachment['id'];
                         my_index++;
                      });
