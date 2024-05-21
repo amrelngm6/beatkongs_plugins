@@ -254,7 +254,7 @@ do_action( 'dokan_dashboard_wrap_before', $post, $post_id );
                                                         $post_id,
                                                         '_regular_price',
                                                         [
-                                                            'class'       => 'dokan-product-regular-price',
+                                                            'class'       => 'dokan-product-regular-price input-pad',
                                                             'placeholder' => __( '0.00', 'dokan-lite' ),
                                                         ],
                                                         'price'
