@@ -310,18 +310,17 @@ if ( $new_product ) {
     </div><!-- .dokan-dashboard-wrap -->
 
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
+<?php
+$tags = get_terms(array(
+    'taxonomy' => 'tag',
+    'hide_empty' => false,
+));
+?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 <script>
     // Define the available tags
-    var availableTags = [
-        "JavaScript",
-        "CSS",
-        "HTML",
-        "React",
-        "Vue",
-        "Angular"
-    ];
+    var availableTags = <?php echo json_encode(array_column($tags, 'name', 'term_id')); ?>
 
     // Get the input element
     var input = document.querySelector('input[name=tags]');
