@@ -315,17 +315,18 @@ $tags = get_terms(array(
     'taxonomy' => 'tag',
     'hide_empty' => false,
 ));
+
+$moods = get_terms(array(
+    'taxonomy' => 'mood',
+    'hide_empty' => false,
+));
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 <script>
     // Define the available tags
     var availableTags = <?php echo json_encode(array_column($tags, 'name')); ?>
-
-    // Get the input element
     var input = document.querySelector('input[name=tags]');
-
-    // Initialize Tagify on the input element
     new Tagify(input, {
         maxTags: 3,
         whitelist: availableTags,
@@ -334,5 +335,18 @@ $tags = get_terms(array(
             enabled: 1  // Suggest tags after the first character typed
         }
     });
+
+
+    var availableMoods = <?php echo json_encode(array_column($moods, 'name')); ?>
+    var input = document.querySelector('input[name=tags]');
+    new Tagify(input, {
+        maxTags: 3,
+        whitelist: availableMoods,
+        enforceWhitelist: true,  // Only allow tags from the whitelist
+        dropdown: {
+            enabled: 1  // Suggest tags after the first character typed
+        }
+    });
+
 </script>
 <?php get_footer(); ?>
