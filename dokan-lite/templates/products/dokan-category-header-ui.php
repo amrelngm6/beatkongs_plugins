@@ -20,7 +20,7 @@ if ( count( $chosen_cat ) < 1 ) {
 <!-- Trigger/Open The Modal -->
 <?php if ( ! $hide_cat_title ) : ?>
 <div class="dokan-form-group dokan-new-cat-ui-title">
-    <label for="product_cat" class="form-label"><?php esc_html_e( 'Category', 'dokan-lite' ); ?></label>
+    <label for="product_cat" class="form-label"><?php esc_html_e( 'Genre', 'dokan-lite' ); ?></label>
 </div>
 <?php endif; ?>
 <span class="dokan-add-new-cat-box cat_box_for_<?php echo esc_attr( $from ); ?>">
@@ -47,7 +47,7 @@ if ( count( $chosen_cat ) < 1 ) {
 <?php if ( ! $is_single ) : ?>
     <div class="dokan-form-group dokan-add-more-single-cat-container">
         <div class="dokan-single-cat-add-btn" data-selectfor="<?php echo esc_attr( $from ); ?>">
-            <span><?php esc_html_e( '+ Add new category', 'dokan-lite' ); ?></span>
+            <span><?php esc_html_e( '+ Add new Genre', 'dokan-lite' ); ?></span>
         </div>
     </div>
 <?php endif; ?>
