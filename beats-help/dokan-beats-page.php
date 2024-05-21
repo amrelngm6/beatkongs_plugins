@@ -116,6 +116,8 @@ function fbu_handle_form_submission()
             $mp3_id = media_handle_upload('beat_mp3', 0);
     
             if (is_wp_error($picture_id) || is_wp_error($mp3_id)) {
+                print_r(is_wp_error($picture_id));
+                print_r(is_wp_error($mp3_id));
                 echo 'Error uploading files.';
                 return;
             }
