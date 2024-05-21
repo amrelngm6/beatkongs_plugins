@@ -104,7 +104,7 @@ do_action( 'dokan_new_product_wrap_before' );
 
             <header class="dokan-dashboard-header dokan-clearfix">
                 <h1 class="entry-title">
-                    <?php esc_html_e( 'Add New Product', 'dokan-lite' ); ?>
+                    <?php esc_html_e( 'Add New Beat', 'dokan-lite' ); ?>
                 </h1>
             </header><!-- .entry-header -->
 
@@ -161,7 +161,7 @@ do_action( 'dokan_new_product_wrap_before' );
                                             <div class="instruction-inside <?php echo esc_attr( $hide_instruction ); ?>">
                                                 <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
                                                 <i class="fas fa-cloud-upload-alt"></i>
-                                                <a href="#" class="dokan-feat-image-btn dokan-btn"><?php esc_html_e( 'Upload Product Image', 'dokan-lite' ); ?></a>
+                                                <a href="#" class="dokan-feat-image-btn dokan-btn"><?php esc_html_e( 'Upload Beat Image', 'dokan-lite' ); ?></a>
                                             </div>
 
                                             <div class="image-wrap <?php echo esc_attr( $hide_img_wrap ); ?>">
@@ -212,7 +212,7 @@ do_action( 'dokan_new_product_wrap_before' );
 
                                 <div class="content-half-part dokan-product-meta">
                                     <div class="dokan-form-group">
-                                        <input class="dokan-form-control" name="post_title" id="post-title" type="text" placeholder="<?php esc_attr_e( 'Product name..', 'dokan-lite' ); ?>" value="<?php echo esc_attr( $post_title ); ?>">
+                                        <input class="dokan-form-control" name="post_title" id="post-title" type="text" placeholder="<?php esc_attr_e( 'Beat name..', 'dokan-lite' ); ?>" value="<?php echo esc_attr( $post_title ); ?>">
                                     </div>
 
                                     <div class="dokan-form-group">
@@ -315,7 +315,7 @@ do_action( 'dokan_new_product_wrap_before' );
                                         <?php esc_attr_e( 'Create & Add New', 'dokan-lite' ); ?>
                                     </button>
                                 <?php endif; ?>
-                                <button type="submit" name="add_product" class="dokan-btn dokan-btn-default dokan-btn-theme" value="create_new"><?php esc_attr_e( 'Create Product', 'dokan-lite' ); ?></button>
+                                <button type="submit" name="add_product" class="dokan-btn dokan-btn-default dokan-btn-theme" value="create_new"><?php esc_attr_e( 'Create Beat', 'dokan-lite' ); ?></button>
                             </div>
                         </form>
                     <?php else : ?>
