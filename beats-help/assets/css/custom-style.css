@@ -4,7 +4,6 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 }
 .vendor-toggle-menu
 {
-  display: none;
 }
 @media (max-width: 767px) {
   body.dokan-dashboard .dokan-dash-sidebar{
