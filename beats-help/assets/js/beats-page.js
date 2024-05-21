@@ -15,7 +15,10 @@
         var span = $('.fbu-close');
         var categoryInput = $(btn.data('input'));
         var categoryText = $(btn.data('text'));
-    
+        
+        console.log(modal)
+        console.log(categoryInput)
+        console.log(categoryText)
         // Open the modal
         btn.on('click', function() {
             console.log(this)
