@@ -85,7 +85,7 @@
                      console.log(selected)
                      console.log(gallery_ids)
                      jQuery('input#myprefix_image_id').val(ids);
-                     Refresh_Image(ids);
+                     Refresh_Image(selected[0]);
                   });
 
                  image_frame.on('open',function() {
@@ -106,9 +106,9 @@
         });
 
         // Ajax request to refresh the image preview
-        function Refresh_Image(the_id){
-            console.log(the_id)
-            jQuery('#myprefix-preview-image').replaceWith( the_id );
+        function Refresh_Image(src){
+            console.log(src)
+            jQuery('#myprefix-preview-image').attr('src', src );
         }
 
 
