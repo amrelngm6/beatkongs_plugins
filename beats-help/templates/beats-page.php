@@ -45,7 +45,7 @@ if (!defined('ABSPATH')) {
                         ],
                         dokan_get_navigation_url( 'new-product' )
                     );
-                    $new_product_url         = '/free-beat-upload';
+                    $new_product_url         = '/upload-free-beat';
                     $product_listing_args    = [
                         'author'         => dokan_get_current_user_id(),
                         'posts_per_page' => 1,
