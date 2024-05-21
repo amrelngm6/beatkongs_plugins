@@ -1,4 +1,4 @@
-<div class="dokan-linked-product-options dokan-edit-row dokan-clearfix hide_if_external">
+<!-- <div class="dokan-linked-product-options dokan-edit-row dokan-clearfix hide_if_external">
     <div class="dokan-section-heading" data-togglehandler="dokan_linked_product_options">
         <h2><i class="fas fa-link" aria-hidden="true"></i> <?php _e( 'Linked Products', 'dokan' ); ?></h2>
         <p><?php _e( 'Set your linked products for upsell and cross-sells', 'dokan' ); ?></p>
@@ -45,4 +45,4 @@
 
         <?php do_action( 'dokan_after_linked_product_fields', $post, $post_id ); ?>
     </div>
-</div>
+</div> -->
