@@ -16,7 +16,7 @@
             span = $('.fbu-close');
             categoryInput = $(btn.data('input'));
             categoryText = $(btn.data('text'));
-            t ($(this));
+            modal.show();
         });
 
         $('#open-station-modal').on('click', function() {
@@ -25,27 +25,21 @@
             span = $('.fbu-close');
             categoryInput = $(btn.data('input'));
             categoryText = $(btn.data('text'));
-            t ($(this));
+            modal.show();
         });
 
-        function t ()
-        {
-            modal.show();
-        
-            // Close the modal
-            span.on('click', function() {
-                modal.hide();
-            });
-        
-            // Close the modal when clicking outside of the modal content
-            $(window).on('click', function(event) {
-                if ($(event.target).is(modal)) {
-                    modal.hide();
-                }
-            });
-        
-        }
+        // Close the modal
+        span.on('click', function() {
+            modal.hide();
+        });
     
+        // Close the modal when clicking outside of the modal content
+        $(window).on('click', function(event) {
+            if ($(event.target).is(modal)) {
+                modal.hide();
+            }
+        });
+        
         // Handle category selection
         jQuery(document).on('click', 'li.choose-genre', function() {
             console.log(this)
