@@ -40,7 +40,7 @@ if ( $new_product ) {
 <header class="dokan-dashboard-header dokan-clearfix">
     <h1 class="entry-title">
         <?php
-            esc_html_e( 'Add New Beat', 'dokan-lite' );
+            esc_html_e( 'Free Beat', 'dokan-lite' );
         ?>
         <span class="dokan-label <?php echo esc_attr( dokan_get_post_status_label_class( $post->post_status ) ); ?> dokan-product-status-label">
             <?php echo esc_html( dokan_get_post_status( $post->post_status ) ); ?>
