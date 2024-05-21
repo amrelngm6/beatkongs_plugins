@@ -302,7 +302,7 @@ if ( $new_product ) {
                     </div>
                     <div class="dokan-product-category-modal-body">
                         <div class="dokan-single-categories-container">
-                            <span class="dokan-single-categories-left dokan-single-categories-arrow dokan-hide">
+                            <span class="fbu-close dokan-single-categories-left dokan-single-categories-arrow dokan-hide">
                                 <span class="dokan-single-categories-left-box">
                                     <span><i class="fas fa-chevron-left"></i></span>
                                 </span>
