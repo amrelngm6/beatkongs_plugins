@@ -20,6 +20,11 @@
         });
 
         $('#open-station-modal').on('click', function() {
+            
+            modal = $(btn.data('modal'));
+            span = $('.fbu-close');
+            categoryInput = $(btn.data('input'));
+            categoryText = $(btn.data('text'));
             t ($(this));
         });
 
