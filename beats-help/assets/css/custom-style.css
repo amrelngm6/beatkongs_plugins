@@ -17,10 +17,13 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
   }
   .vendor-toggle-menu
   {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 999;
-      display: block;
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    z-index: 999;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
   }
 }
