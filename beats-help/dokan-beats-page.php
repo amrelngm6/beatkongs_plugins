@@ -83,15 +83,14 @@ add_shortcode('free_beat_upload_page', 'dokan_free_beat_upload_page_template');
 function dokan_free_beat_upload_page_template() {
     include plugin_dir_path(__FILE__) . 'templates/free-beat-upload-page.php';
 }
-
-function dokan_beats_category_popup() {
-    include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
+add_action( 'dokan_load_category', 'dokan_custom_product_view_load_template' );
+function dokan_custom_product_view_load_template(  ) {
+     include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
 }
-
-// add_action('category_popup', 'dokan_beats_category_popup');
-// function dokan_beats_category_popup() {
-//     include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
-// }
+add_action( 'dokan_load_station', 'dokan_custom_product_view_load_template' );
+function dokan_station_popup_template(  ) {
+     include plugin_dir_path(__FILE__) . 'templates/station-popup.php';
+}
 
 
 
@@ -161,11 +160,6 @@ add_action('init', 'fbu_handle_form_submission');
 
 
 
-add_action( 'dokan_load_category', 'dokan_custom_product_view_load_template' );
-// Function to load custom template
-function dokan_custom_product_view_load_template(  ) {
-     include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
-}
 
 
 

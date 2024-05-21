@@ -136,7 +136,7 @@ if ( $new_product ) {
                                 <label for="fbu-category" class="font-semibold form-label">Category:</label>
                                 <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected" id="fbu-category-text"></span></div>
                             </div>
-                            <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-select">
+                            <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-popup-select" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
                             <input type="hidden" id="fbu-category" name="fbu-category" readonly required>
@@ -283,6 +283,7 @@ if ( $new_product ) {
         <?php endif; ?>
 
         <?php echo do_action('dokan_load_category'); ?>
+        <?php echo do_action('dokan_load_station'); ?>
              
     <?php else : ?>
 

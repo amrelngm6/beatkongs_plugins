@@ -9,12 +9,12 @@
             })   
         }
        
-        var modal = $('#fbu-category-modal');
-        var btn = $('#fbu-category-select');
+        var btn = $('#fbu-popup-select');
+        var modal = $(btn.data('modal'));
+        
         var span = $('.fbu-close');
-        var categoryList = $('#dokan-single-categories');
-        var categoryInput = $('#fbu-category');
-        var categoryText = $('#fbu-category-text');
+        var categoryInput = $(btn.data('input'));
+        var categoryText = $(btn.data('text'));
     
         // Open the modal
         btn.on('click', function() {
