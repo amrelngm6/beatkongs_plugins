@@ -17,7 +17,7 @@ function add_custom_beats_upload_menu($urls) {
     $urls['dokan-beats'] = array(
         'title' => __('Beats', 'beat-upload-plugin'),
         'icon'  => '<i class="fas fa-music"></i>',
-        'url'   => dokan_get_navigation_url('beats'),
+        'url'   => dokan_get_navigation_url('/import-copy'),
         'pos'   => 50
     );
     return $urls;
