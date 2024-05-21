@@ -216,3 +216,41 @@ function set_default_beat_types( $beat_types ) {
 }
 
 add_filter('default_beat_types', 'set_default_beat_types');
+
+
+
+
+
+
+
+add_action('init', 'register_beat_post_type');
+
+function register_beat_post_type() {
+    $labels = array(
+        'name' => 'Beats',
+        'singular_name' => 'Beat',
+        'menu_name' => 'Beats',
+        'name_admin_bar' => 'Beat',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Beat',
+        'new_item' => 'New Beat',
+        'edit_item' => 'Edit Beat',
+        'view_item' => 'View Beat',
+        'all_items' => 'All Beats',
+        'search_items' => 'Search Beats',
+        'parent_item_colon' => 'Parent Beats:',
+        'not_found' => 'No beats found.',
+        'not_found_in_trash' => 'No beats found in Trash.'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-format-audio',
+    );
+
+    register_post_type('beat', $args);
+}
