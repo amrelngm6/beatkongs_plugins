@@ -11,6 +11,7 @@ do_action('dokan_dashboard_wrap_start');
 ?>
 <div id="dokan-help-page-root"></div>
 Amr is here
+[dokan_help_page]
 <?php
 
 // Load Dokan's vendor dashboard footer
