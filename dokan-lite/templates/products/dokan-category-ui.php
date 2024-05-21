@@ -5,8 +5,8 @@
     <div class="dokan-product-category-modal-content">
         <div class="dokan-product-category-modal-header">
             <div class="dokan-product-category-title">
-                <span class="dokan-single-title"><?php esc_html_e( 'Add new category', 'dokan-lite' ); ?></span>
-                <span class="dokan-single-des"><?php esc_html_e( 'Please choose the right category for this product', 'dokan-lite' ); ?></span>
+                <span class="dokan-single-title"><?php esc_html_e( 'Add new Genre', 'dokan-lite' ); ?></span>
+                <span class="dokan-single-des"><?php esc_html_e( 'Please choose the right Genre for this beat', 'dokan-lite' ); ?></span>
             </div>
             <div class="dokan-product-category-close">
                 <span class="close" id="dokan-category-close-modal">&times;</span>
@@ -16,7 +16,7 @@
             <div class="dokan-category-search-container">
                 <div class="dokan-cat-search-box">
                     <span class="dokan-cat-search-icon"><i class="fas fa-search"></i></span>
-                    <input maxlength="100" id="dokan-single-cat-search-input" class="dokan-cat-search-input" type="text" placeholder="<?php esc_attr_e( 'Search category', 'dokan-lite' ); ?>">
+                    <input maxlength="100" id="dokan-single-cat-search-input" class="dokan-cat-search-input" type="text" placeholder="<?php esc_attr_e( 'Search Genre', 'dokan-lite' ); ?>">
                     <span class="dokan-cat-search-text-limit"><span id="dokan-cat-search-text-limit"><?php echo number_format_i18n( 0 ); ?></span>/<?php echo number_format_i18n( 100 ); ?></span>
                 </div>
                 <div id="dokan-cat-search-res" class="dokan-cat-search-res dokan-hide">
@@ -42,7 +42,7 @@
             <div class="dokan-selected-category-label-container">
                 <span class="dokan-selected-category-label"><?php esc_html_e( 'Selected: ', 'dokan-lite' ); ?></span>
                 <span class="dokan-selected-category-span" id="dokan-selected-category-span">
-                    <span class="dokan-selected-category-product"><?php esc_html_e( 'No category', 'dokan-lite' ); ?></span>
+                    <span class="dokan-selected-category-product"><?php esc_html_e( 'No Genres', 'dokan-lite' ); ?></span>
                 </span>
             </div>
             <div class="dokan-product-category-button-container">
