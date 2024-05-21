@@ -10,7 +10,7 @@
         }
        
         $('#open-category-modal').on('click', function() {
-            t (this);
+            t ($(this));
         });
 
         $('#open-station-modal').on('click', function() {
