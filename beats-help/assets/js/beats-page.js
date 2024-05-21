@@ -1,8 +1,8 @@
 (function ($) {
     $(document).ready(function () {
-        if ($('.dokan-dash-sidebar'))
+        if ($('.vendor-toggle-menu'))
         {
-            jQuery(document).on('click', '.dokan-dash-sidebar', function (e) {
+            jQuery(document).on('click', '.vendor-toggle-menu', function (e) {
                 console.log(e)
             })   
         }
