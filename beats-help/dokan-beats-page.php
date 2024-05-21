@@ -97,6 +97,13 @@ function dokan_station_popup_template(  ) {
 function fbu_handle_form_submission() 
 {
     if (isset($_POST['upload_beat'])) {
+        
+        if ( ! function_exists('media_handle_upload') ) {
+            require_once(ABSPATH . 'wp-admin/includes/file.php');
+            require_once(ABSPATH . 'wp-admin/includes/media.php');
+            require_once(ABSPATH . 'wp-admin/includes/image.php');
+        }
+
         if (isset($_POST['beat_title'])) {
             $title = sanitize_text_field($_POST['beat_title']);
             $type = sanitize_text_field($_POST['beat_type']);
