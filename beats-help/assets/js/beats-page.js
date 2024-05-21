@@ -107,9 +107,10 @@
         jQuery('#mp3_media_manager').click(function(e) {
 
             e.preventDefault();
-            $(this).attr('data-preview')
-            $(this).attr('data-id')
-            $(this).attr('data-btn')
+            var previewElement = $(this).attr('data-preview')
+            var inputElement = $(this).attr('data-input')
+            var btnElement = $(this).attr('data-btn')
+
             var image_frame;
             if(image_frame){
                 image_frame.open();
@@ -131,28 +132,29 @@
                 var selected = new Array();
                 var i = 0;
                 selection.each(function(attachment) {
-                selected[i] = attachment.attributes.url;
-                gallery_ids[i] = attachment['id'];
-                i++;
+                    selected[i] = attachment.attributes.url;
+                    gallery_ids[i] = attachment['id'];
+                    i++;
                 });
                 var ids = gallery_ids.join(",");
                 if(ids.length === 0) return true;//if closed withput selecting an image
-                jQuery('#myprefix-preview-image').attr('src', selected );
-                jQuery('input#myprefix_image_id').val(ids);
-                jQuery('#upload-cover-button').html(' ');
+                jQuery(btnElement).html(' ');
+                jQuery(inputElement).val(ids);
+                jQuery(previewElement).attr('src', selected );
             });
 
             image_frame.on('open',function() {
-            // On open, get the id from the hidden input
-            // and select the appropiate images in the media manager
-            var selection =  image_frame.state().get('selection');
-            var ids = jQuery('input#myprefix_image_id').val().split(',');
-            ids.forEach(function(id) {
-                var attachment = wp.media.attachment(id);
-                attachment.fetch();
-                selection.add( attachment ? [ attachment ] : [] );
-            });
-
+                // On open, get the id from the hidden input
+                // and select the appropiate images in the media manager
+                var selection =  image_frame.state().get('selection');
+                var ids = jQuery(inputElement).val().split(',');
+                ids.forEach(function(id) {
+                    console.log(id)
+                    var attachment = wp.media.attachment(id);
+                    attachment.fetch();
+                    console.log(attachment)
+                    selection.add( attachment ? [ attachment ] : [] );
+                });
             });
 
             image_frame.open();
