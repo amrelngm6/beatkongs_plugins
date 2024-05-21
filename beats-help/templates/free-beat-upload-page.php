@@ -307,7 +307,7 @@ if ( $new_product ) {
                                     <span><i class="fas fa-chevron-left"></i></span>
                                 </span>
                             </span>
-                            <?php do_action('dokan_load_category'); ?>
+                            <?php echo do_action('dokan_load_category'); ?>
                             <ul class="dokan-single-categories" id="dokan-single-categories">
                                 
                             <?php
