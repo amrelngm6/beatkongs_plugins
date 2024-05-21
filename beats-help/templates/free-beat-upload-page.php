@@ -359,7 +359,7 @@ if ( $new_product ) {
                 
                 foreach ($list as $key => $value) {
                 ?>
-                    <li data-id="<?php echo $category->term_id; ?>">  <?php echo $value->name; ?> </li>
+                    <li data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
                 <?php 
                 }
                 ?>
