@@ -174,7 +174,7 @@ function dokan_custom_product_view_load_template( $query_vars ) {
             <li><a href="#">Beat 2</a></li>
         </ul>
     </div>';
-    echo include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
+    echo  plugin_dir_path(__FILE__) . 'templates/category-popup.php';
 }
 
 
