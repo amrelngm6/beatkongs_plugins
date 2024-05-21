@@ -21,9 +21,10 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
   color: #514843;
   background-color: #fff;
 }
-input.input-pad[
+input.input-pad 
+{
   padding: 6px;
-]
+}
 @media (max-width: 767px) {
   body.dokan-dashboard .dokan-dash-sidebar{
     position: fixed;
