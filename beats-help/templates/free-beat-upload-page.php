@@ -307,7 +307,7 @@ if ( $new_product ) {
                                     <span><i class="fas fa-chevron-left"></i></span>
                                 </span>
                             </span>
-                            <div class="dokan-single-categories" id="dokan-single-categories">
+                            <ul class="dokan-single-categories" id="dokan-single-categories">
                                 
                             <?php
                             $list = $categories = get_terms(array(
@@ -321,12 +321,7 @@ if ( $new_product ) {
                             <?php 
                             }
                             ?>
-                            </div>
-                            <span class="dokan-single-categories-right dokan-single-categories-arrow dokan-hide">
-                                <span class="dokan-single-categories-right-box">
-                                    <span><i class="fas fa-chevron-right"></i></span>
-                                </span>
-                            </span>
+                            </ul>
                         </div>
 
                     </div>
@@ -336,9 +331,6 @@ if ( $new_product ) {
                             <span class="dokan-selected-category-span" id="dokan-selected-category-span">
                                 <span class="dokan-selected-category-product"><?php esc_html_e( 'No Genres', 'dokan-lite' ); ?></span>
                             </span>
-                        </div>
-                        <div class="dokan-product-category-button-container">
-                            <button class="dokan-single-cat-select-btn dokan-btn dokan-btn-default dokan-btn-theme" id="dokan-single-cat-select-btn" type='button'><?php esc_html_e( 'Done', 'dokan-lite' ); ?></button>
                         </div>
                     </div>
                 </div>
