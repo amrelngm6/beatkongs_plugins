@@ -87,7 +87,7 @@ add_action( 'dokan_load_category', 'dokan_custom_product_view_load_template' );
 function dokan_custom_product_view_load_template(  ) {
      include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
 }
-add_action( 'dokan_load_station', 'dokan_custom_product_view_load_template' );
+add_action( 'dokan_load_station', 'dokan_station_popup_template' );
 function dokan_station_popup_template(  ) {
      include plugin_dir_path(__FILE__) . 'templates/station-popup.php';
 }
