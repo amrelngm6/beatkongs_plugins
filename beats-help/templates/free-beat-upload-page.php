@@ -26,7 +26,7 @@ use WeDevs\Dokan\ProductCategory\Helper;
 
 <?php
 /**
- * Action hook to fire inside product content area before
+ * Action hook to fire inside Beat content area before
  *
  *  @since 2.4
  */
@@ -40,11 +40,7 @@ if ( $new_product ) {
 <header class="dokan-dashboard-header dokan-clearfix">
     <h1 class="entry-title">
         <?php
-        if ( $new_product || 'auto-draft' === $post->post_status ) {
-            esc_html_e( 'Add New Product', 'dokan-lite' );
-        } else {
-            esc_html_e( 'Edit Product', 'dokan-lite' );
-        }
+            esc_html_e( 'Add New Beat', 'dokan-lite' );
         ?>
         <span class="dokan-label <?php echo esc_attr( dokan_get_post_status_label_class( $post->post_status ) ); ?> dokan-product-status-label">
             <?php echo esc_html( dokan_get_post_status( $post->post_status ) ); ?>
@@ -52,7 +48,7 @@ if ( $new_product ) {
 
         <?php if ( $post->post_status === 'publish' ) : ?>
             <span class="dokan-right">
-                <a class="dokan-btn dokan-btn-theme dokan-btn-sm" href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" target="_blank"><?php esc_html_e( 'View Product', 'dokan-lite' ); ?></a>
+                <a class="dokan-btn dokan-btn-theme dokan-btn-sm" href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" target="_blank"><?php esc_html_e( 'View Beat', 'dokan-lite' ); ?></a>
             </span>
         <?php endif; ?>
 
@@ -62,7 +58,7 @@ if ( $new_product ) {
     </h1>
 </header><!-- .entry-header -->
 
-<div class="product-edit-new-container product-edit-container">
+<div class="product-edit-new-container Beat-edit-container">
     <?php if ( dokan()->dashboard->templates->products->has_errors() ) : ?>
         <div class="dokan-alert dokan-alert-danger">
             <a class="dokan-close" data-dismiss="alert">&times;</a>
@@ -76,10 +72,10 @@ if ( $new_product ) {
     <?php if ( isset( $_GET['message'] ) && $_GET['message'] === 'success' ) : ?>
         <div class="dokan-message">
             <button type="button" class="dokan-close" data-dismiss="alert">&times;</button>
-            <strong><?php esc_html_e( 'Success!', 'dokan-lite' ); ?></strong> <?php esc_html_e( 'The product has been saved successfully.', 'dokan-lite' ); ?>
+            <strong><?php esc_html_e( 'Success!', 'dokan-lite' ); ?></strong> <?php esc_html_e( 'The Beat has been saved successfully.', 'dokan-lite' ); ?>
 
             <?php if ( $post->post_status === 'publish' ) : ?>
-                <a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>" target="_blank"><?php esc_html_e( 'View Product &rarr;', 'dokan-lite' ); ?></a>
+                <a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>" target="_blank"><?php esc_html_e( 'View Beat &rarr;', 'dokan-lite' ); ?></a>
             <?php endif; ?>
         </div>
     <?php endif; ?>
@@ -110,7 +106,7 @@ if ( $new_product ) {
                             );
                             ?>
                             <div class="dokan-product-title-alert dokan-hide">
-                                <?php esc_html_e( 'Please enter product title!', 'dokan-lite' ); ?>
+                                <?php esc_html_e( 'Please enter Beat title!', 'dokan-lite' ); ?>
                             </div>
 
                             <div id="edit-slug-box" class="hide-if-no-js"></div>
@@ -126,7 +122,7 @@ if ( $new_product ) {
                                 <input type="hidden" id="product_type" name="product_type" value="simple">
                             <?php else : ?>
                                 <div class="dokan-form-group">
-                                    <label for="product_type" class="form-label"><?php esc_html_e( 'Product Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your product has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
+                                    <label for="product_type" class="form-label"><?php esc_html_e( 'Product Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
                                     <select name="product_type" class="dokan-form-control" id="product_type">
                                         <?php foreach ( $product_types as $key => $value ) : ?>
                                             <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $product_type, $key ); ?>><?php echo esc_html( $value ); ?></option>
@@ -223,7 +219,7 @@ if ( $new_product ) {
                             <?php
                             $terms            = wp_get_post_terms( $post_id, 'product_tag', array( 'fields' => 'all' ) );
                             $can_create_tags  = dokan_get_option( 'product_vendors_can_create_tags', 'dokan_selling' );
-                            $tags_placeholder = 'on' === $can_create_tags ? __( 'Select tags/Add tags', 'dokan-lite' ) : __( 'Select product tags', 'dokan-lite' );
+                            $tags_placeholder = 'on' === $can_create_tags ? __( 'Select tags/Add tags', 'dokan-lite' ) : __( 'Select Beat tags', 'dokan-lite' );
 
                             $drop_down_tags = array(
                                 'hide_empty' => 0,
@@ -260,7 +256,7 @@ if ( $new_product ) {
                                 <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
 
                                 <i class="fas fa-cloud-upload-alt"></i>
-                                <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a product cover image', 'dokan-lite' ); ?></a>
+                                <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
                             </div>
 
                             <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
@@ -366,8 +362,8 @@ if ( $new_product ) {
 
                 <input type="hidden" name="dokan_product_id" id="dokan_product_id" value="<?php echo esc_attr( $post_id ); ?>" />
                 <!--hidden input for Firefox issue-->
-                <input type="hidden" name="dokan_update_product" value="<?php esc_attr_e( 'Save Product', 'dokan-lite' ); ?>"/>
-                <input type="submit" name="dokan_update_product" id="publish" class="dokan-btn dokan-btn-theme dokan-btn-lg dokan-right" value="<?php esc_attr_e( 'Save Product', 'dokan-lite' ); ?>"/>
+                <input type="hidden" name="dokan_update_product" value="<?php esc_attr_e( 'Save Beat', 'dokan-lite' ); ?>"/>
+                <input type="submit" name="dokan_update_product" id="publish" class="dokan-btn dokan-btn-theme dokan-btn-lg dokan-right" value="<?php esc_attr_e( 'Save Beat', 'dokan-lite' ); ?>"/>
                 <div class="dokan-clearfix"></div>
             </form>
         <?php else : ?>
@@ -385,7 +381,7 @@ if ( $new_product ) {
 
 <?php
 /**
- * Action took to fire inside product content after.
+ * Action took to fire inside Beat content after.
  *
  *  @since 2.4
  */
