@@ -134,7 +134,7 @@ if ( $new_product ) {
                         <div class="flex">
                             <label for="fbu-category">Category:</label>
                             <div  class="dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-select">
-                                <span id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected" id="fbu-category"></span></span>
+                                <span id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected" id="fbu-category-text"></span></span>
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
                             <input type="hidden" id="fbu-category" name="fbu-category" readonly required>

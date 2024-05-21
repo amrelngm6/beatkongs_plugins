@@ -14,6 +14,7 @@
         var span = $('.fbu-close');
         var categoryList = $('#dokan-single-categories');
         var categoryInput = $('#fbu-category');
+        var categoryText = $('#fbu-category-text');
     
         // Open the modal
         btn.on('click', function() {
@@ -38,6 +39,7 @@
             console.log(this)
             var selectedCategory = $(this).text();
             categoryInput.val(selectedCategory);
+            categoryText.text(selectedCategory);
             modal.hide();
         });
     });
