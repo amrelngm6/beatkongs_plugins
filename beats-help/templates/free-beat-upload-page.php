@@ -157,24 +157,13 @@ if ( $new_product ) {
 
                         <div class="dokan-form-group">
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
-                            <?php
-                            $terms            = wp_get_post_terms( $post_id, 'product_tag', array( 'fields' => 'all' ) );
-                            $can_create_tags  = dokan_get_option( 'product_vendors_can_create_tags', 'dokan_selling' );
-                            $tags_placeholder = 'on' === $can_create_tags ? __( 'Select tags/Add tags', 'dokan-lite' ) : __( 'Select Beat tags', 'dokan-lite' );
+                            <input name='tags' placeholder='Choose tags...'>
+                        </div>
+                        
 
-                            $drop_down_tags = array(
-                                'hide_empty' => 0,
-                            );
-                            ?>
-                        <input name='tags' placeholder='Add tags...'>
-
-                            <select multiple="multiple" id="product_tag_edit" name="product_tag[]" class="product_tag_search dokan-form-control" data-placeholder="<?php echo esc_attr( $tags_placeholder ); ?>">
-                                <?php if ( ! empty( $terms ) ) : ?>
-                                    <?php foreach ( $terms as $tax_term ) : ?>
-                                        <option value="<?php echo esc_attr( $tax_term->term_id ); ?>" selected="selected" ><?php echo esc_html( $tax_term->name ); ?></option>
-                                    <?php endforeach ?>
-                                <?php endif ?>
-                            </select>
+                        <div class="dokan-form-group">
+                            <label for="product_moods_edit" class="form-label"><?php esc_html_e( 'Moods', 'dokan-lite' ); ?></label>
+                            <input name='moods' placeholder='Choose moods...'>
                         </div>
 
                         <?php do_action( 'dokan_product_edit_after_product_tags', $post, $post_id ); ?>
@@ -338,7 +327,7 @@ $moods = get_terms(array(
 
 
     var availableMoods = <?php echo json_encode(array_column($moods, 'name')); ?>
-    var input = document.querySelector('input[name=tags]');
+    var input = document.querySelector('input[name=moods]');
     new Tagify(input, {
         maxTags: 3,
         whitelist: availableMoods,
