@@ -352,12 +352,11 @@ if ( $new_product ) {
                 <div class="dokan-single-categories" id="dokan-single-categories">
                     
                 <?php
-                $list = array(
+                $list = $categories = get_terms(array(
                     'taxonomy' => 'category',
-                    'hide_empty' => true,
-                    'name' => 'fbu-category-list',
-                    'id' => 'fbu-category-list'
-                );
+                    'hide_empty' => false,
+                ));
+                
                 foreach ($list as $key => $value) {
                 ?>
                     <li>  <?php echo $value; ?> </li>
