@@ -194,8 +194,8 @@ if ( $new_product ) {
                                     <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
                                 </div>
                             </div>
-
-                            <div id="mp3_media_manager" class="instruction-inside<?php echo esc_attr( $instruction_class ); ?>">
+                            
+                            <div id="mp3_media_manager" >
                                 <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
                                 <?php
                                 $image_id = get_option( 'myprefix_image_id' );
