@@ -215,4 +215,4 @@ function set_default_beat_types( $beat_types ) {
     return $beat_types;
 }
 
-add_filters('default_beat_types', 'set_default_beat_types');
+add_filter('default_beat_types', 'set_default_beat_types');
