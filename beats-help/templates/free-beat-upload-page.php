@@ -144,6 +144,19 @@ if ( $new_product ) {
                             ?>
                         </div>
                         
+
+                        <div class="dokan-form-group">
+                            <label for="fbu-category">stations:</label>
+                            <?php
+                            wp_dropdown_categories(array(
+                                'taxonomy' => 'station',
+                                'hide_empty' => false,
+                                'name' => 'fbu-station',
+                                'id' => 'fbu-station'
+                            ));
+                            ?>
+                        </div>
+                        
                         <div class="dokan-form-group">
                         <?php
                             do_action( 'dokan_product_edit_after_pricing', $post, $post_id );

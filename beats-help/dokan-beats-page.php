@@ -85,3 +85,79 @@ add_shortcode('free_beat_upload_page', 'dokan_free_beat_upload_page_template');
 function dokan_free_beat_upload_page_template() {
     include plugin_dir_path(__FILE__) . 'templates/free-beat-upload-page.php';
 }
+
+
+
+function fbu_handle_form_submission() {
+    if (isset($_POST['fbu-submit'])) {
+        $title = sanitize_text_field($_POST['fbu-title']);
+        $category = intval($_POST['fbu-category']);
+        $station = intval($_POST['fbu-station']);
+        $mood = intval($_POST['fbu-mood']);
+
+        $post_id = wp_insert_post(array(
+            'post_title' => $title,
+            'post_type' => 'free_beat',
+            'post_status' => 'publish',
+            'tax_input' => array(
+                'category' => array($category),
+                'station' => array($station),
+                'mood' => array($mood)
+            )
+        ));
+
+        if ($post_id) {
+            if (!function_exists('wp_handle_upload')) {
+                require_once(ABSPATH . 'wp-admin/includes/file.php');
+            }
+
+            // Handle picture upload
+            $picture = $_FILES['fbu-picture'];
+            $uploaded_picture = wp_handle_upload($picture, array('test_form' => false));
+            if (isset($uploaded_picture['file'])) {
+                $wp_filetype = wp_check_filetype($uploaded_picture['file'], null);
+                $attachment = array(
+                    'post_mime_type' => $wp_filetype['type'],
+                    'post_title' => sanitize_file_name($uploaded_picture['file']),
+                    'post_content' => '',
+                    'post_status' => 'inherit'
+                );
+                $attach_id = wp_insert_attachment($attachment, $uploaded_picture['file'], $post_id);
+                require_once(ABSPATH . 'wp-admin/includes/image.php');
+                $attach_data = wp_generate_attachment_metadata($attach_id, $uploaded_picture['file']);
+                wp_update_attachment_metadata($attach_id, $attach_data);
+                set_post_thumbnail($post_id, $attach_id);
+            }
+
+            // Handle audio file upload
+            $audio_file = $_FILES['fbu-audio-file'];
+            $uploaded_audio = wp_handle_upload($audio_file, array('test_form' => false));
+            if (isset($uploaded_audio['file'])) {
+                $wp_filetype = wp_check_filetype($uploaded_audio['file'], null);
+                $attachment = array(
+                    'post_mime_type' => $wp_filetype['type'],
+                    'post_title' => sanitize_file_name($uploaded_audio['file']),
+                    'post_content' => '',
+                    'post_status' => 'inherit'
+                );
+                $attach_id = wp_insert_attachment($attachment, $uploaded_audio['file'], $post_id);
+                require_once(ABSPATH . 'wp-admin/includes/media.php');
+                $attach_data = wp_generate_attachment_metadata($attach_id, $uploaded_audio['file']);
+                wp_update_attachment_metadata($attach_id, $attach_data);
+                update_post_meta($post_id, 'fbu_audio_file', $attach_id);
+            }
+        }
+    }
+}
+
+add_action('init', 'fbu_handle_form_submission');
+
+
+function fbu_enqueue_media_library() {
+    if (is_admin()) {
+        return;
+    }
+    wp_enqueue_media();
+}
+
+add_action('wp_enqueue_scripts', 'fbu_enqueue_media_library');
