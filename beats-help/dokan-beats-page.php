@@ -111,6 +111,8 @@ function fbu_handle_form_submission()
             $tags = sanitize_text_field($_POST['beat_station']);
             $tags = sanitize_text_field($_POST['beat_tags']);
             
+            print_r(media_handle_upload('beat_picture', 0));
+            print_r(media_handle_upload('beat_mp3', 0));
             // Handle file uploads
             $picture_id = media_handle_upload('beat_picture', 0);
             $mp3_id = media_handle_upload('beat_mp3', 0);
