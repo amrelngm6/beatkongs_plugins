@@ -15,12 +15,16 @@
         $('#open-category-modal').on('click', function(e) {
             
             modal = $($(e.target).data('modal'));
+            categoryInput = $($(this).data('input'));
+            categoryText = $($(this).data('text'));
             modal.show();
         });
 
         $('#open-station-modal').on('click', function(e) {
             
             modal = $($(e.target).data('modal'));
+            categoryInput = $($(this).data('input'));
+            categoryText = $($(this).data('text'));
             modal.show();
         });
 
