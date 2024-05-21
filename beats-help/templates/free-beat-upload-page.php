@@ -359,7 +359,7 @@ if ( $new_product ) {
                 
                 foreach ($list as $key => $value) {
                 ?>
-                    <li>  <?php echo $value; ?> </li>
+                    <li>  <?php echo json_encode($value); ?> </li>
                 <?php 
                 }
                 ?>
