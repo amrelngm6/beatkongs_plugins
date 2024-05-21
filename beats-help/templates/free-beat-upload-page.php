@@ -113,22 +113,16 @@ if ( $new_product ) {
                             <input type="hidden" value="<?php echo esc_attr( $post->post_name ); ?>" name="beat_title" class="dokan-hide" id="edited-post-name-dokan">
                         </div>
 
-                        <?php $product_types = apply_filters( 'dokan_product_types', [ 'simple' => __( 'Simple', 'dokan-lite' ) ] ); ?>
+                        <?php $beat_types = ['free_beat'=>'Free beat', 'sell_beat'=>'Sell beat']; ?>
 
-                        <?php if ( is_array( $product_types ) ) : ?>
-                            <?php if ( count( $product_types ) === 1 && array_key_exists( 'simple', $product_types ) ) : ?>
-                                <input type="hidden" id="product_type" name="product_type" value="simple">
-                            <?php else : ?>
-                                <div class="dokan-form-group">
-                                    <label for="product_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
-                                    <select name="product_type" class="dokan-form-control" id="product_type">
-                                        <?php foreach ( $product_types as $key => $value ) : ?>
-                                            <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $product_type, $key ); ?>><?php echo esc_html( $value ); ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                            <?php endif; ?>
-                        <?php endif; ?>
+                        <div class="dokan-form-group">
+                            <label for="product_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
+                            <select name="product_type" class="dokan-form-control" id="product_type">
+                                <?php foreach ( $product_types as $key => $value ) : ?>
+                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $product_type, $key ); ?>><?php echo esc_html( $value ); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                         <div class="flex  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
                             <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-g">
                                 <label for="fbu-category" class="font-semibold form-label">Category:</label>
