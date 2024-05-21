@@ -94,65 +94,45 @@ function dokan_station_popup_template(  ) {
 
 
 
-function fbu_handle_form_submission() {
+function fbu_handle_form_submission() 
+{
     if (isset($_POST['upload_beat'])) {
-        $title = sanitize_text_field($_POST['fbu-title']);
-        $category = intval($_POST['fbu-category']);
-        $station = intval($_POST['fbu-station']);
-        $mood = intval($_POST['fbu-mood']);
-        
-        error_log(json_encode($_POST));
-
-        $post_id = wp_insert_post(array(
-            'post_title' => $title,
-            'post_type' => 'free_beat',
-            'post_status' => 'publish',
-            'tax_input' => array(
-                'category' => array($category),
-                'station' => array($station),
-                'mood' => array($mood)
-            )
-        ));
-
-        if ($post_id) {
-            if (!function_exists('wp_handle_upload')) {
-                require_once(ABSPATH . 'wp-admin/includes/file.php');
+        if (isset($_POST['beat_title'])) {
+            $title = sanitize_text_field($_POST['beat_title']);
+            $type = sanitize_text_field($_POST['beat_type']);
+            $categories = sanitize_text_field($_POST['beat_categories']);
+            $tags = sanitize_text_field($_POST['beat_tags']);
+            
+            // Handle file uploads
+            $picture_id = media_handle_upload('beat_picture', 0);
+            $mp3_id = media_handle_upload('beat_mp3', 0);
+    
+            if (is_wp_error($picture_id) || is_wp_error($mp3_id)) {
+                echo 'Error uploading files.';
+                return;
             }
-
-            // Handle picture upload
-            $picture = $_FILES['fbu-picture'];
-            $uploaded_picture = wp_handle_upload($picture, array('test_form' => false));
-            if (isset($uploaded_picture['file'])) {
-                $wp_filetype = wp_check_filetype($uploaded_picture['file'], null);
-                $attachment = array(
-                    'post_mime_type' => $wp_filetype['type'],
-                    'post_title' => sanitize_file_name($uploaded_picture['file']),
-                    'post_content' => '',
-                    'post_status' => 'inherit'
-                );
-                $attach_id = wp_insert_attachment($attachment, $uploaded_picture['file'], $post_id);
-                require_once(ABSPATH . 'wp-admin/includes/image.php');
-                $attach_data = wp_generate_attachment_metadata($attach_id, $uploaded_picture['file']);
-                wp_update_attachment_metadata($attach_id, $attach_data);
-                set_post_thumbnail($post_id, $attach_id);
-            }
-
-            // Handle audio file upload
-            $audio_file = $_FILES['fbu-audio-file'];
-            $uploaded_audio = wp_handle_upload($audio_file, array('test_form' => false));
-            if (isset($uploaded_audio['file'])) {
-                $wp_filetype = wp_check_filetype($uploaded_audio['file'], null);
-                $attachment = array(
-                    'post_mime_type' => $wp_filetype['type'],
-                    'post_title' => sanitize_file_name($uploaded_audio['file']),
-                    'post_content' => '',
-                    'post_status' => 'inherit'
-                );
-                $attach_id = wp_insert_attachment($attachment, $uploaded_audio['file'], $post_id);
-                require_once(ABSPATH . 'wp-admin/includes/media.php');
-                $attach_data = wp_generate_attachment_metadata($attach_id, $uploaded_audio['file']);
-                wp_update_attachment_metadata($attach_id, $attach_data);
-                update_post_meta($post_id, 'fbu_audio_file', $attach_id);
+            
+            // Create a new post of custom post type 'beat'
+            $beat_post = array(
+                'post_title'    => $title,
+                'post_content'  => '',
+                'post_status'   => 'publish',
+                'post_type'     => 'beat',
+                'meta_input'    => array(
+                    'beat_type' => $type,
+                    'beat_categories' => $categories,
+                    'beat_tags' => $tags,
+                    'beat_picture' => $picture_id,
+                    'beat_mp3' => $mp3_id,
+                ),
+            );
+            
+            $post_id = wp_insert_post($beat_post);
+            
+            if ($post_id) {
+                echo 'Beat uploaded successfully.';
+            } else {
+                echo 'Error uploading beat.';
             }
         }
     }

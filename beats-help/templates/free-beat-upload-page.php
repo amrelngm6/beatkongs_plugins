@@ -93,14 +93,14 @@ if ( $new_product ) {
                         <div id="dokan-product-title-area" class="dokan-form-group">
                             <input type="hidden" name="dokan_product_id" id="dokan-edit-product-id" value="<?php echo esc_attr( $post_id ); ?>"/>
 
-                            <label for="post_title" class="form-label"><?php esc_html_e( 'Title', 'dokan-lite' ); ?></label>
+                            <label for="beat_title" class="form-label"><?php esc_html_e( 'Title', 'dokan-lite' ); ?></label>
                             <?php
                             dokan_post_input_box(
                                 $post_id,
-                                'post_title',
+                                'beat_title',
                                 [
                                     'placeholder' => __( 'Beat name..', 'dokan-lite' ),
-                                    'value'       => $post_title,
+                                    'value'       => $beat_title ?? '',
                                 ]
                             );
                             ?>
@@ -110,8 +110,7 @@ if ( $new_product ) {
 
                             <div id="edit-slug-box" class="hide-if-no-js"></div>
                             <?php wp_nonce_field( 'samplepermalink', 'samplepermalinknonce', false ); ?>
-                            <input type="hidden" name="editable-post-name" class="dokan-hide" id="editable-post-name-full-dokan">
-                            <input type="hidden" value="<?php echo esc_attr( $post->post_name ); ?>" name="edited-post-name" class="dokan-hide" id="edited-post-name-dokan">
+                            <input type="hidden" value="<?php echo esc_attr( $post->post_name ); ?>" name="beat_title" class="dokan-hide" id="edited-post-name-dokan">
                         </div>
 
                         <?php $product_types = apply_filters( 'dokan_product_types', [ 'simple' => __( 'Simple', 'dokan-lite' ) ] ); ?>
