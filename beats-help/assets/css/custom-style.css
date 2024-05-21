@@ -1,4 +1,4 @@
-body .dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li 
+body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li 
 {
-  display: block !important;
+  display: block;
 }
