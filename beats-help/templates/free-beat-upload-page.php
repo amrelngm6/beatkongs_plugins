@@ -141,7 +141,6 @@ if ( $new_product ) {
                             <input type="hidden" id="fbu-category" name="fbu-category" readonly required>
                         </div>
 
-                        <input name='tags' placeholder='Add tags...'>
 
                         
                         <div class="flex  open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
@@ -167,6 +166,8 @@ if ( $new_product ) {
                                 'hide_empty' => 0,
                             );
                             ?>
+                        <input name='tags' placeholder='Add tags...'>
+
                             <select multiple="multiple" id="product_tag_edit" name="product_tag[]" class="product_tag_search dokan-form-control" data-placeholder="<?php echo esc_attr( $tags_placeholder ); ?>">
                                 <?php if ( ! empty( $terms ) ) : ?>
                                     <?php foreach ( $terms as $tax_term ) : ?>
