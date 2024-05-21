@@ -8,8 +8,14 @@
                 console.log(e)
             })   
         }
-       
+        
+        var modal, span,categoryInput,categoryText;
+        
         $('#open-category-modal').on('click', function() {
+            modal = $(btn.data('modal'));
+            span = $('.fbu-close');
+            categoryInput = $(btn.data('input'));
+            categoryText = $(btn.data('text'));
             t ($(this));
         });
 
@@ -17,13 +23,8 @@
             t ($(this));
         });
 
-        function t (btn)
+        function t ()
         {
-            var modal = $(btn.data('modal'));
-            var span = $('.fbu-close');
-            var categoryInput = $(btn.data('input'));
-            var categoryText = $(btn.data('text'));
-            
             modal.show();
         
             // Close the modal
