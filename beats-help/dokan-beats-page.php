@@ -83,7 +83,7 @@ add_shortcode('free_beat_upload_page', 'dokan_free_beat_upload_page_template');
 function dokan_free_beat_upload_page_template() {
     include plugin_dir_path(__FILE__) . 'templates/free-beat-upload-page.php';
 }
-add_shortcode('free_beat_upload_page', 'dokan_beats_category_popup');
+add_action('free_beat_upload_page', 'dokan_beats_category_popup');
 function dokan_beats_category_popup() {
     include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
 }
