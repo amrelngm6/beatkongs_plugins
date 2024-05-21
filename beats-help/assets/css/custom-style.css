@@ -99,6 +99,11 @@ input.input-pad
   padding: 4px 6px ;
 }
 
+ul.dokan-single-categories
+{
+  padding-left: 0;
+}
+
 #fbu-category-list li {
   padding: 10px;
   cursor: pointer;
