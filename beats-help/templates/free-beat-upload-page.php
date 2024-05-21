@@ -314,7 +314,8 @@ $moods = get_terms(array(
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 <script>
     // Define the available tags
-    var availableTags = <?php echo json_encode(array_column($tags, 'name')); ?>
+    var availableTags = <?php echo json_encode(array_column($tags, 'name')); ?>;
+
     var input = document.querySelector('input[name=tags]');
     new Tagify(input, {
         maxTags: 3,
@@ -326,7 +327,8 @@ $moods = get_terms(array(
     });
 
 
-    var availableMoods = <?php echo json_encode(array_column($moods, 'name')); ?>
+    var availableMoods = <?php echo json_encode(array_column($moods, 'name')); ?>;
+
     var input = document.querySelector('input[name=moods]');
     new Tagify(input, {
         maxTags: 3,
