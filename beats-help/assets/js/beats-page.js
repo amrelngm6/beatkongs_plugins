@@ -39,7 +39,7 @@
             console.log(this)
             var selectedCategory = $(this).text();
             categoryInput.val(selectedCategory);
-            categoryText.text(selectedCategory);
+            categoryText.html(selectedCategory);
             modal.hide();
         });
     });
