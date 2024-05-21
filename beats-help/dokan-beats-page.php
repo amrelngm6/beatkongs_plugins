@@ -192,3 +192,29 @@ function fbu_register_taxonomies() {
     ));
 }
 add_action('init', 'fbu_register_taxonomies');
+
+
+
+
+
+/**
+ * Set default product types
+ *
+ * @since 2.6
+ *
+ * @param array $beat_types
+ *
+ * @return $beat_types
+ */
+function set_default_beat_types( $beat_types ) {
+    $beat_types = array(
+        'free'   => __( 'Free beat', 'dokan' ),
+        'sell' => __( 'Sell beat', 'dokan' ),
+    );
+
+    if ( version_compare( WC_VERSION, '2.7', '>' ) ) {
+        // $beat_types['grouped'] = __( 'Group Product', 'dokan' );
+    }
+
+    return $beat_types;
+}
