@@ -312,7 +312,7 @@ if ( $new_product ) {
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
 <?php
 $tags = get_terms(array(
-    'taxonomy' => 'tag',
+    'taxonomy' => 'tags',
     'hide_empty' => false,
 ));
 ?>
