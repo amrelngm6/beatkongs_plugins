@@ -1,4 +1,11 @@
 <?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+get_header();
+?>
+<div id="dokan-help-page-root"></div>
+<?php
 
 use WeDevs\Dokan\ProductCategory\Helper;
 
@@ -365,3 +372,6 @@ do_action( 'dokan_dashboard_wrap_end' );
  */
 do_action( 'dokan_new_product_wrap_after' );
 ?>
+
+<?php
+get_footer();
