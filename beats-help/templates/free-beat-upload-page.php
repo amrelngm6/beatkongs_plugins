@@ -354,7 +354,7 @@ if ( $new_product ) {
                 <?php
                 $list = array(
                     'taxonomy' => 'category',
-                    'hide_empty' => false,
+                    'hide_empty' => true,
                     'name' => 'fbu-category-list',
                     'id' => 'fbu-category-list'
                 );
