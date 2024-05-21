@@ -282,7 +282,7 @@ if ( $new_product ) {
             </div>
         <?php endif; ?>
 
-        <?php  do_shortcode( 'dokan_beats_category' ); ?>
+        <?php  do_action( 'dokan_beats_category' ); ?>
 
     <?php else : ?>
 
