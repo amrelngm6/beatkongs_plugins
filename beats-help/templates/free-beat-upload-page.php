@@ -248,48 +248,7 @@ if ( $new_product ) {
                     </div><!-- .content-half-part -->
                 </div><!-- .dokan-form-top-area -->
 
-                <div class="dokan-product-short-description">
-                    <label for="post_excerpt" class="form-label"><?php esc_html_e( 'Short Description', 'dokan-lite' ); ?></label>
-                    <?php
-                    wp_editor(
-                        $post_excerpt,
-                        'post_excerpt',
-                        apply_filters(
-                            'dokan_product_short_description',
-                            [
-                                'editor_height' => 50,
-                                'quicktags'     => true,
-                                'media_buttons' => false,
-                                'teeny'         => false,
-                                'editor_class'  => 'post_excerpt',
-                            ]
-                        )
-                    );
-                    ?>
-                </div>
-
-                <div class="dokan-product-description">
-                    <label for="post_content" class="form-label"><?php esc_html_e( 'Description', 'dokan-lite' ); ?></label>
-                    <?php
-                    wp_editor(
-                        $post_content,
-                        'post_content',
-                        apply_filters(
-                            'dokan_product_description',
-                            [
-                                'editor_height' => 50,
-                                'quicktags'     => true,
-                                'media_buttons' => false,
-                                'teeny'         => false,
-                                'editor_class'  => 'post_content',
-                            ]
-                        )
-                    );
-                    ?>
-                </div>
-
                 <?php do_action( 'dokan_new_product_form', $post, $post_id ); ?>
-                <?php do_action( 'dokan_product_edit_after_main', $post, $post_id ); ?>
 
                 <input type="hidden" name="dokan_product_id" id="dokan_product_id" value="<?php echo esc_attr( $post_id ); ?>" />
                 <!--hidden input for Firefox issue-->
