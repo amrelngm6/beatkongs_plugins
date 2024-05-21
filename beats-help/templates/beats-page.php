@@ -3,6 +3,11 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
+get_header();
+
+do_action( 'dokan_dashboard_wrap_before', $post, $post_id );
+
+
 // Load Dokan's vendor dashboard header
 do_action('dokan_dashboard_wrap_start');
 
@@ -21,9 +26,11 @@ do_action('dokan_dashboard_wrap_start');
  */
 do_action( 'dokan_dashboard_content_before' );
 
-echo do_shortcode('[dokan_beats_page]');
+echo do_shortcode('[beats_page]');
 
 // Load Dokan's vendor dashboard footer
 do_action('dokan_dashboard_wrap_end');
+get_footer();
+
 ?>
 
