@@ -133,75 +133,7 @@ if ( $new_product ) {
                         <?php endif; ?>
 
 
-                        <div class="show_if_simple dokan-clearfix show_if_external">
-
-                            <div class="dokan-form-group dokan-clearfix dokan-price-container">
-
-                                <div class="content-half-part regular-price">
-                                    <label for="_regular_price" class="form-label"><?php esc_html_e( 'Price', 'dokan-lite' ); ?></label>
-                                    <div class="dokan-input-group">
-                                        <span class="dokan-input-group-addon"><?php echo esc_html( get_woocommerce_currency_symbol() ); ?></span>
-                                        <?php
-                                        dokan_post_input_box(
-                                            $post_id,
-                                            '_regular_price',
-                                            [
-                                                'class'       => 'dokan-product-regular-price',
-                                                'placeholder' => __( '0.00', 'dokan-lite' ),
-                                            ],
-                                            'price'
-                                        );
-                                        ?>
-                                    </div>
-                                </div>
-
-                                <div class="content-half-part sale-price">
-                                    <label for="_sale_price" class="form-label">
-                                        <?php esc_html_e( 'Discounted Price', 'dokan-lite' ); ?>
-                                        <a href="#" class="sale_schedule <?php echo $show_schedule ? 'dokan-hide' : ''; ?>"><?php esc_html_e( 'Schedule', 'dokan-lite' ); ?></a>
-                                        <a href="#" class="cancel_sale_schedule <?php echo ( ! $show_schedule ) ? 'dokan-hide' : ''; ?>"><?php esc_html_e( 'Cancel', 'dokan-lite' ); ?></a>
-                                    </label>
-
-                                    <div class="dokan-input-group">
-                                        <span class="dokan-input-group-addon"><?php echo esc_html( get_woocommerce_currency_symbol() ); ?></span>
-                                        <?php
-                                        dokan_post_input_box(
-                                            $post_id,
-                                            '_sale_price',
-                                            [
-                                                'class'       => 'dokan-product-sales-price',
-                                                'placeholder' => __( '0.00', 'dokan-lite' ),
-                                            ],
-                                            'price'
-                                        );
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="dokan-form-group dokan-clearfix dokan-price-container">
-                                <div class="dokan-product-less-price-alert dokan-hide">
-                                    <?php esc_html_e( 'Beat price can\'t be less than the vendor fee!', 'dokan-lite' ); ?>
-                                </div>
-                            </div>
-
-                            <div class="sale_price_dates_fields dokan-clearfix dokan-form-group <?php echo ( ! $show_schedule ) ? 'dokan-hide' : ''; ?>">
-                                <div class="content-half-part from">
-                                    <div class="dokan-input-group">
-                                        <span class="dokan-input-group-addon"><?php esc_html_e( 'From', 'dokan-lite' ); ?></span>
-                                        <input type="text" name="_sale_price_dates_from" class="dokan-form-control dokan-start-date" value="<?php echo esc_attr( $_sale_price_dates_from ); ?>" maxlength="10" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" placeholder="<?php esc_html_e( 'YYYY-MM-DD', 'dokan-lite' ); ?>">
-                                    </div>
-                                </div>
-
-                                <div class="content-half-part to">
-                                    <div class="dokan-input-group">
-                                        <span class="dokan-input-group-addon"><?php esc_html_e( 'To', 'dokan-lite' ); ?></span>
-                                        <input type="text" name="_sale_price_dates_to" class="dokan-form-control dokan-end-date" value="<?php echo esc_attr( $_sale_price_dates_to ); ?>" maxlength="10" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" placeholder="<?php esc_html_e( 'YYYY-MM-DD', 'dokan-lite' ); ?>">
-                                    </div>
-                                </div>
-                            </div><!-- .sale-schedule-container -->
-                        </div>
-
+                        
                         <div class="dokan-form-group">
                         <?php
                             do_action( 'dokan_product_edit_after_pricing', $post, $post_id );
