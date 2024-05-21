@@ -107,7 +107,8 @@ function fbu_handle_form_submission()
         if (isset($_POST['beat_title'])) {
             $title = sanitize_text_field($_POST['beat_title']);
             $type = sanitize_text_field($_POST['beat_type']);
-            $categories = sanitize_text_field($_POST['beat_categories']);
+            $categories = sanitize_text_field($_POST['beat_category']);
+            $tags = sanitize_text_field($_POST['beat_station']);
             $tags = sanitize_text_field($_POST['beat_tags']);
             
             // Handle file uploads

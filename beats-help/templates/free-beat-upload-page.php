@@ -131,7 +131,7 @@ if ( $new_product ) {
                             <div  class="w-full " >
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
-                            <input type="hidden" id="fbu-category" name="fbu-category" readonly required>
+                            <input type="hidden" id="fbu-category" name="beat_category" readonly required>
                         </div>
                         
                         <div class="flex  open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
@@ -142,17 +142,17 @@ if ( $new_product ) {
                             <div  class="w-full">
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
-                            <input type="hidden" id="fbu-station" name="fbu-stations" readonly required>
+                            <input type="hidden" id="fbu-station" name="beat_station" readonly required>
                         </div>
                         
                         <div class="dokan-form-group">
                             <label for="product_moods_edit" class="form-label"><?php esc_html_e( 'Moods', 'dokan-lite' ); ?></label>
-                            <input name='moods' placeholder='Choose moods...'>
+                            <input name='beat_moods' placeholder='Choose moods...'>
                         </div>
 
                         <div class="dokan-form-group">
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
-                            <input name='tags' placeholder='Choose tags...'>
+                            <input name='beat_tags' placeholder='Choose tags...'>
                         </div>
 
                         <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
@@ -328,7 +328,7 @@ $moods = get_terms(array(
     // Define the available tags
     var availableTags = <?php echo json_encode(array_column($tags, 'name')); ?>;
 
-    var input = document.querySelector('input[name=tags]');
+    var input = document.querySelector('input[name=beat_tags]');
     new Tagify(input, {
         maxTags: 3,
         whitelist: availableTags,
@@ -341,7 +341,7 @@ $moods = get_terms(array(
 
     var availableMoods = <?php echo json_encode(array_column($moods, 'name')); ?>;
 
-    var input = document.querySelector('input[name=moods]');
+    var input = document.querySelector('input[name=beat_moods]');
     new Tagify(input, {
         maxTags: 3,
         whitelist: availableMoods,
