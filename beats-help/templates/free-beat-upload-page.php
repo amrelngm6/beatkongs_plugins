@@ -180,16 +180,8 @@ if ( $new_product ) {
                             }
                             ?>
 
-                            <div class="instruction-inside<?php echo esc_attr( $instruction_class ); ?>">
+                            <div id="myprefix_media_manager" class="instruction-inside<?php echo esc_attr( $instruction_class ); ?>">
                                 <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
-
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
-                            </div>
-
-                            <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
-                                <a class="close dokan-remove-feat-image">&times;</a>
-                                
                                 <?php
                                 $image_id = get_option( 'myprefix_image_id' );
                                     echo  ( intval( $image_id ) > 0 ) 
@@ -197,8 +189,14 @@ if ( $new_product ) {
                                     : '<img id="myprefix-preview-image" src="https://some.default.image.jpg" />';
                                 ?>
                                 <input type="hidden" name="myprefix_image_id" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
-                                <input type='button' class="button-primary" value="<?php esc_attr_e( 'Select a image', 'mytextdomain' ); ?>" id="myprefix_media_manager"/>
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
+                            </div>
 
+                            <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
+                                <a class="close dokan-remove-feat-image">&times;</a>
+                                
+                                
                                 <?php if ( $feat_image_id ) : ?>
                                     <?php
                                     echo get_the_post_thumbnail(
