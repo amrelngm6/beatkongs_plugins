@@ -7,6 +7,6 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
     position: fixed;
     top: 80px;
     left: 0;
-    
+    height: 100vh;
   }
 }
