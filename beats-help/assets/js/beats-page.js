@@ -13,16 +13,16 @@
         var span = $('.fbu-close');
         
         $('#open-category-modal').on('click', function() {
-            modal = $(this).data('modal');
+            modal = $($(this).data('modal'));
             console.log(modal)
             categoryInput = $(this).data('input');
             categoryText = $(this).data('text');
             modal.show();
         });
 
-        $('#open-station-modal').on('click', function() {
+        $('#open-station-modal').on('click', function(e) {
             
-            modal = $(this).data('modal');
+            modal = $($(e.target).data('modal'));
             console.log(modal)
             categoryInput = $(this).data('input');
             categoryText = $(this).data('text');
