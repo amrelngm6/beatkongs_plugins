@@ -39,7 +39,6 @@
             });
         
             // Handle category selection
-            // Handle category selection
             jQuery(document).on('click', 'li.choose-genre', function() {
                 console.log(this)
                 var selectedCategory = $(this).text();
