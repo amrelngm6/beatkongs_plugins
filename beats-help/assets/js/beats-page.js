@@ -53,7 +53,7 @@
 
 
         
-      jQuery('input#myprefix_media_manager').click(function(e) {
+      jQuery('#myprefix_media_manager').click(function(e) {
 
         e.preventDefault();
         var image_frame;
