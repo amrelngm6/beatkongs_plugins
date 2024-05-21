@@ -3,6 +3,7 @@
         if ($('.vendor-toggle-menu'))
         {
             jQuery(document).on('click', '.vendor-toggle-menu', function (e) {
+                jQuery(this).toggleClass('hidden')
                 console.log(e)
             })   
         }
