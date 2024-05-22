@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 use WeDevs\Dokan\ProductCategory\Helper;
-global $beatsErrors;
+global $beatsErrors, $beatsSucess;
 
 $beatId =  $_GET['beat_id'] ?? 0;
 
