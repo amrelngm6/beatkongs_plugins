@@ -132,7 +132,7 @@ function fbu_handle_form_submission()
 
             if (!$title)
             {
-                array_push($beatsErrors, 'Title is empty');
+                array_push($beatsErrors, 'Beat Title is required');
             }
             
             if (is_wp_error($picture_id)) {
