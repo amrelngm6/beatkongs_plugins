@@ -152,7 +152,7 @@ function fbu_handle_form_submission()
             // Create a new post of custom post type 'beat'
             $beat_post = array(
                 'post_title'    => $title,
-                'post_content'  => $title,
+                'post_content'  => '',
                 'post_status'   => 'publish',
                 'post_type'     => 'free_beat',
                 'meta_input'    => array(
@@ -165,6 +165,11 @@ function fbu_handle_form_submission()
                     'beat_mp3' => $beat_mp3,
                 ),
             );
+            
+            if (isset($_POST['beat_id']))
+            {
+                $beat_post['ID'] = sanitize_text_field($_POST['beat_id']);
+            }
             
             $post_id = wp_insert_post($beat_post);
             
