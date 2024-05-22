@@ -8,7 +8,7 @@ global $beatsErrors;
 $beatId =  $_GET['beat_id'] ?? 0;
 
 $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
-$postMeta = get_metadata( 'free_beat', $beatId);
+$postMeta = get_metadata( 'post', $beatId);
 print_r($post);
 print_r($postMeta);
 ?>
