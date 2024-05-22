@@ -157,7 +157,7 @@ function fbu_handle_form_submission()
                 ),
             );
             
-            if (isset($_POST['beat_id']))
+            if (!empty($_POST['beat_id']))
             {
                 $beat_post['ID'] = sanitize_text_field($_POST['beat_id']);
             }
