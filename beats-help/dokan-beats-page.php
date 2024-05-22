@@ -164,6 +164,34 @@ function fbu_handle_form_submission()
             
             $post_id = wp_insert_post($beat_post);
             
+            
+            // Save Category
+            $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
+            if ($category_id) {
+                wp_set_post_terms($post_id, array($category_id), 'category');
+            }
+
+            // Save Tags
+            $tags = isset($_POST['beat_tags']) ? sanitize_text_field($_POST['beat_tags']) : '';
+            if ($tags) {
+                $tags_array = json_decode($tags);
+                wp_set_post_terms($post_id, $tags_array, 'tag');
+            }
+            
+
+            // Save Moods
+            $mood = isset($_POST['beat_moods']) ? sanitize_text_field($_POST['beat_moods']) : '';
+            if ($mood) {
+                $tags_array = json_decode($mood);
+                wp_set_post_terms($post_id, $tags_array, 'mood');
+            }
+
+            // Save Station
+            $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
+            if ($station) {
+                wp_set_post_terms($post_id, array($_POST['beat_station']), 'station');
+            }
+            
             if ($post_id) {
                 set_post_thumbnail($post_id, $beat_picture);
                 wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
