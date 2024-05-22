@@ -58,11 +58,11 @@ if ( $new_product ) {
 </header><!-- .entry-header -->
 
 <div class="product-edit-new-container Beat-edit-container">
-    <?php if ( dokan()->dashboard->templates->products->has_errors() ) : ?>
+    <?php if ( beats_has_errors() ) : ?>
         <div class="dokan-alert dokan-alert-danger">
             <a class="dokan-close" data-dismiss="alert">&times;</a>
 
-            <?php foreach ( dokan()->dashboard->templates->products->get_errors() as $error ) : ?>
+            <?php foreach ( beats_has_errors() as $error ) : ?>
                 <strong><?php esc_html_e( 'Error!', 'dokan-lite' ); ?></strong> <?php echo esc_html( $error ); ?>.<br>
             <?php endforeach; ?>
         </div>

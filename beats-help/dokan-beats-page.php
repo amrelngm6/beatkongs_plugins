@@ -10,6 +10,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
+$beatsErrors = [];
 
 // Add custom menu item to Dokan Vendor Dashboard
 add_filter('dokan_get_dashboard_nav', 'add_custom_beats_upload_menu');
@@ -96,6 +97,8 @@ function dokan_station_popup_template(  ) {
 
 function fbu_handle_form_submission() 
 {
+    global $beatsErrors;
+
     if (isset($_POST['upload_beat'])) {
         
         if ( ! function_exists('media_handle_upload') ) {
@@ -113,6 +116,12 @@ function fbu_handle_form_submission()
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
             
+            if (!$title)
+            {
+                echo 'Title is empty';
+                $beatsErrors[] = 'Title is empty';
+                return;
+            }
             
             // Create a new post of custom post type 'beat'
             $beat_post = array(
