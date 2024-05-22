@@ -11,6 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 $beatsErrors = [];
+$beatsSucess = [];
 
 // Add custom menu item to Dokan Vendor Dashboard
 add_filter('dokan_get_dashboard_nav', 'add_custom_beats_upload_menu');
@@ -94,19 +95,9 @@ function dokan_station_popup_template(  ) {
 
 
 
-add_action( 'beats_has_errors', 'beats_has_errors' );
-function beats_has_errors() 
-{
-    global $beatsErrors;
-
-    return $beatsErrors;
-}
-
-
-
 function fbu_handle_form_submission() 
 {
-    global $beatsErrors;
+    global $beatsErrors, $beatsSucess;
 
     if (isset($_POST['upload_beat'])) {
         
@@ -175,13 +166,14 @@ function fbu_handle_form_submission()
             
             if ($post_id) {
                 set_post_thumbnail($post_id, $beat_picture);
-                $response = 'Beat uploaded successfully.';
+                $beatsSucess = ['Beat uploaded successfully.'];
             } else {
-                $response = 'Error uploading beat.';
+                $beatsErrors = ['Error uploading beat.'];
             }
         }
     }
 
+    return;
 }
 add_action('init', 'fbu_handle_form_submission');
 
