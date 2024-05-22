@@ -108,6 +108,8 @@ function fbu_handle_form_submission()
 {
     global $beatsErrors;
 
+    array_push($beatsErrors, 'Error 1');
+    return;
     if (isset($_POST['upload_beat'])) {
         
         if ( ! function_exists('media_handle_upload') ) {

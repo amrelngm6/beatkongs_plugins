@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 use WeDevs\Dokan\ProductCategory\Helper;
+global $beatsErrors;
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
@@ -58,11 +59,11 @@ if ( $new_product ) {
 </header><!-- .entry-header -->
 
 <div class="product-edit-new-container Beat-edit-container">
-    <?php if ( do_action('beats_has_errors') ) : ?>
+    <?php if ( $beatsErrors ) : ?>
         <div class="dokan-alert dokan-alert-danger">
             <a class="dokan-close" data-dismiss="alert">&times;</a>
 
-            <?php foreach ( beats_has_errors() as $error ) : ?>
+            <?php foreach ( $beatsErrors as $error ) : ?>
                 <strong><?php esc_html_e( 'Error!', 'dokan-lite' ); ?></strong> <?php echo esc_html( $error ); ?>.<br>
             <?php endforeach; ?>
         </div>
