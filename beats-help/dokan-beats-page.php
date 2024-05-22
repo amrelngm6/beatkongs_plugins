@@ -150,9 +150,10 @@ function fbu_handle_form_submission()
             $post_id = wp_insert_post($beat_post);
             
             if ($post_id) {
-                echo 'Beat uploaded successfully.';
+                set_post_thumbnail($post_id, $beat_picture);
+                $response = 'Beat uploaded successfully.';
             } else {
-                echo 'Error uploading beat.';
+                $response = 'Error uploading beat.';
             }
         }
     }
