@@ -173,7 +173,8 @@ function fbu_handle_form_submission()
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
-                wp_set_post_terms($post_id, array($station), 'station');
+                $saveStation = wp_set_post_terms($post_id, array($station), 'station');
+                array_push($beatsErrors, ' station is set');
             } else {
                 array_push($beatsErrors, 'station is required');
             }
