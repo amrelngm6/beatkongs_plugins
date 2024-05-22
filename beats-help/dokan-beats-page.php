@@ -112,7 +112,7 @@ function fbu_handle_form_submission()
             $type = sanitize_text_field($_POST['beat_type']);
             $category = sanitize_text_field($_POST['beat_category']);
             $tags = sanitize_text_field($_POST['beat_tags']);
-            $stations = sanitize_text_field($_POST['beat_stations']);
+            $station = sanitize_text_field($_POST['beat_station']);
             $moods = sanitize_text_field($_POST['beat_moods']);
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
@@ -149,7 +149,7 @@ function fbu_handle_form_submission()
                 'meta_input'    => array(
                     'beat_type' => $type,
                     'beat_category' => $category,
-                    'beat_station' => $stations,
+                    'beat_station' => $station,
                     'beat_tag' => $tags,
                     'beat_mood' => $moods,
                     'beat_picture' => $beat_picture,
@@ -172,24 +172,22 @@ function fbu_handle_form_submission()
             }
 
             // Save Tags
-            $tags = isset($_POST['beat_tags']) ? sanitize_text_field($_POST['beat_tags']) : '';
+            $tags = isset($_POST['beat_tags']) ? json_decode($_POST['beat_tags']) : '';
             if ($tags) {
-                $tags_array = json_decode($tags);
-                wp_set_post_terms($post_id, $tags_array, 'tag');
+                wp_set_post_terms($post_id, $tags, 'mood');
             }
             
 
             // Save Moods
-            $mood = isset($_POST['beat_moods']) ? sanitize_text_field($_POST['beat_moods']) : '';
+            $mood = isset($_POST['beat_moods']) ? json_decode($_POST['beat_moods']) : '';
             if ($mood) {
-                $tags_array = json_decode($mood);
-                wp_set_post_terms($post_id, $tags_array, 'mood');
+                wp_set_post_terms($post_id, $mood, 'mood');
             }
 
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
-                wp_set_post_terms($post_id, array($_POST['beat_station']), 'station');
+                wp_set_post_terms($post_id, array($station), 'station');
             }
             
             if ($post_id) {
