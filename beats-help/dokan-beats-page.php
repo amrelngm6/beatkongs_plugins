@@ -128,7 +128,7 @@ function fbu_handle_form_submission()
             if (!$title)
             {
                 echo 'Title is empty';
-                $beatsErrors[] = 'Title is empty';
+                $beatsErrors = 'Title is empty';
                 return;
             }
             
