@@ -58,7 +58,7 @@ if ( $new_product ) {
 </header><!-- .entry-header -->
 
 <div class="product-edit-new-container Beat-edit-container">
-    <?php if ( beats_has_errors() ) : ?>
+    <?php if ( do_action('beats_has_errors') ) : ?>
         <div class="dokan-alert dokan-alert-danger">
             <a class="dokan-close" data-dismiss="alert">&times;</a>
 

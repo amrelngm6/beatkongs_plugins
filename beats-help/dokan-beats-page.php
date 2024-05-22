@@ -35,7 +35,6 @@ function add_custom_beats_upload_menu($urls) {
 
 // Add query vars
 add_filter('query_vars', 'dokan_beats_page_query_vars');
-
 function dokan_beats_page_query_vars($vars) {
     $vars[] = 'dokan_beats_page';
     return $vars;
@@ -91,6 +90,16 @@ function dokan_custom_product_view_load_template(  ) {
 add_action( 'dokan_load_station', 'dokan_station_popup_template' );
 function dokan_station_popup_template(  ) {
      include plugin_dir_path(__FILE__) . 'templates/station-popup.php';
+}
+
+
+
+add_action( 'beats_has_errors', 'beats_has_errors' );
+function beats_has_errors() 
+{
+    global $beatsErrors;
+
+    return $beatsErrors;
 }
 
 
