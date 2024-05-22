@@ -170,24 +170,24 @@ function fbu_handle_form_submission()
                 wp_set_post_terms($post_id, array($category_id), 'category');
             }
 
+            // Save Station
+            $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
+            if ($station) {
+                wp_set_post_terms($post_id, array($station), 'station');
+            }
+
             // Save Tags
             $tags = isset($_POST['beat_tags']) ? json_decode($_POST['beat_tags']) : '';
             if ($tags) {
                 wp_set_post_terms($post_id, $tags, 'tag');
             }
             
-
             // Save Moods
             $mood = isset($_POST['beat_moods']) ? json_decode($_POST['beat_moods']) : '';
             if ($mood) {
                 wp_set_post_terms($post_id, $mood, 'mood');
             }
 
-            // Save Station
-            $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
-            if ($station) {
-                wp_set_post_terms($post_id, array($station), 'station');
-            }
             
             if ($post_id) {
                 set_post_thumbnail($post_id, $beat_picture);
