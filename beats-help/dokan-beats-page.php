@@ -120,8 +120,9 @@ function fbu_handle_form_submission()
             $title = sanitize_text_field($_POST['beat_title']);
             $type = sanitize_text_field($_POST['beat_type']);
             $category = sanitize_text_field($_POST['beat_category']);
-            $tags = sanitize_text_field($_POST['beat_station']);
             $tags = sanitize_text_field($_POST['beat_tags']);
+            $stations = sanitize_text_field($_POST['beat_stations']);
+            $moods = sanitize_text_field($_POST['beat_moods']);
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
             
@@ -156,8 +157,10 @@ function fbu_handle_form_submission()
                 'post_type'     => 'free_beat',
                 'meta_input'    => array(
                     'beat_type' => $type,
-                    'beat_categories' => $categories,
-                    'beat_tags' => $tags,
+                    'beat_category' => $category,
+                    'beat_station' => $stations,
+                    'beat_tag' => $tags,
+                    'beat_mood' => $moods,
                     'beat_picture' => $beat_picture,
                     'beat_mp3' => $beat_mp3,
                 ),
