@@ -117,7 +117,7 @@ function fbu_handle_form_submission()
             // Create a new post of custom post type 'beat'
             $beat_post = array(
                 'post_title'    => $title,
-                'post_content'  => '',
+                'post_content'  => '$title',
                 'post_status'   => 'publish',
                 'post_type'     => 'beat',
                 'meta_input'    => array(
