@@ -164,7 +164,6 @@ function fbu_handle_form_submission()
             
             $post_id = wp_insert_post($beat_post);
             
-            
             // Save Category
             $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
             if ($category_id) {
@@ -174,7 +173,7 @@ function fbu_handle_form_submission()
             // Save Tags
             $tags = isset($_POST['beat_tags']) ? json_decode($_POST['beat_tags']) : '';
             if ($tags) {
-                wp_set_post_terms($post_id, $tags, 'mood');
+                wp_set_post_terms($post_id, $tags, 'tag');
             }
             
 
