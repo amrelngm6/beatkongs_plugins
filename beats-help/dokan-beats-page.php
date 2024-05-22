@@ -135,7 +135,7 @@ function fbu_handle_form_submission()
                 array_push($beatsErrors, 'MP3 file is required');
             }
             
-            if (empty($beatsErrors))
+            if (!empty($beatsErrors))
             {
                 return;
             }
