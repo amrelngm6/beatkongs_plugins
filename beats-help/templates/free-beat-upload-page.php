@@ -110,7 +110,6 @@ if ( $new_product ) {
 
                             <div id="edit-slug-box" class="hide-if-no-js"></div>
                             <?php wp_nonce_field( 'samplepermalink', 'samplepermalinknonce', false ); ?>
-                            <input type="hidden" value="<?php echo esc_attr( $post->post_name ); ?>" name="beat_title" class="dokan-hide" id="edited-post-name-dokan">
                         </div>
 
                         <?php $beat_types = apply_filters('default_beat_types', 'free'); ?>
