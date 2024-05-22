@@ -4,6 +4,10 @@ if (!defined('ABSPATH')) {
 }
 use WeDevs\Dokan\ProductCategory\Helper;
 global $beatsErrors;
+
+$post = isset($_GET['beat_id']) ? get_post( $_GET['beat_id'], ARRAY_A ) : null; 
+
+print_r($post);
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
