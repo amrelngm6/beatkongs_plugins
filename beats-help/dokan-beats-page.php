@@ -146,10 +146,6 @@ function fbu_handle_form_submission()
             if (is_wp_error($mp3_id)) {
                 array_push($beatsErrors, 'MP3 file is required');
             }
-
-            if (is_wp_error($mp3_id)) {
-                array_push($beatsErrors, 'MP3 file is required');
-            }
             
             if (empty($beatsErrors))
             {
