@@ -119,12 +119,11 @@ function fbu_handle_form_submission()
         if (isset($_POST['beat_title'])) {
             $title = sanitize_text_field($_POST['beat_title']);
             $type = sanitize_text_field($_POST['beat_type']);
-            $categories = sanitize_text_field($_POST['beat_category']);
+            $category = sanitize_text_field($_POST['beat_category']);
             $tags = sanitize_text_field($_POST['beat_station']);
             $tags = sanitize_text_field($_POST['beat_tags']);
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
-            
             
             // Handle file uploads
             $picture_id = media_handle_upload('beat_picture', 0);
@@ -135,8 +134,17 @@ function fbu_handle_form_submission()
                 array_push($beatsErrors, 'Beat Title is required');
             }
             
+            if (!$category)
+            {
+                array_push($beatsErrors, 'Category is required');
+            }
+            
             if (is_wp_error($picture_id)) {
                 array_push($beatsErrors, 'Picture is required');
+            }
+
+            if (is_wp_error($mp3_id)) {
+                array_push($beatsErrors, 'MP3 file is required');
             }
 
             if (is_wp_error($mp3_id)) {
