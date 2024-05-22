@@ -125,6 +125,21 @@ function fbu_handle_form_submission()
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
             
+            
+            // Handle file uploads
+            $picture_id = media_handle_upload('beat_picture', 0);
+            $mp3_id = media_handle_upload('beat_mp3', 0);
+
+            if (is_wp_error($picture_id)) {
+                array_push($beatsErrors, 'Picture is required');
+                return;
+            }
+
+            if (is_wp_error($mp3_id)) {
+                array_push($beatsErrors, 'MP3 file is required');
+                return;
+            }
+            
             if (!$title)
             {
                 array_push($beatsErrors, 'Title is empty');
