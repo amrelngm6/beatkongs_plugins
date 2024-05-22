@@ -161,7 +161,7 @@ function fbu_handle_form_submission()
                 'post_title'    => $title,
                 'post_content'  => $title,
                 'post_status'   => 'publish',
-                'post_type'     => 'beat',
+                'post_type'     => 'free_beat',
                 'meta_input'    => array(
                     'beat_type' => $type,
                     'beat_categories' => $categories,
@@ -272,20 +272,20 @@ add_action('init', 'register_beat_post_type');
 
 function register_beat_post_type() {
     $labels = array(
-        'name' => 'Beats',
-        'singular_name' => 'Beat',
-        'menu_name' => 'Beats',
-        'name_admin_bar' => 'Beat',
+        'name' => 'Free Beats',
+        'singular_name' => 'Free Beat',
+        'menu_name' => 'Free Beats',
+        'name_admin_bar' => 'Free Beat',
         'add_new' => 'Add New',
-        'add_new_item' => 'Add New Beat',
+        'add_new_item' => 'Add New Free Beat',
         'new_item' => 'New Beat',
         'edit_item' => 'Edit Beat',
         'view_item' => 'View Beat',
-        'all_items' => 'All Beats',
-        'search_items' => 'Search Beats',
-        'parent_item_colon' => 'Parent Beats:',
-        'not_found' => 'No beats found.',
-        'not_found_in_trash' => 'No beats found in Trash.'
+        'all_items' => 'All Free Beats',
+        'search_items' => 'Search Free Beats',
+        'parent_item_colon' => 'Parent Free Beats:',
+        'not_found' => 'No Free beats found.',
+        'not_found_in_trash' => 'No Free beats found in Trash.'
     );
 
     $args = array(
@@ -297,5 +297,5 @@ function register_beat_post_type() {
         'menu_icon' => 'dashicons-format-audio',
     );
 
-    register_post_type('beat', $args);
+    register_post_type('free_beat', $args);
 }
