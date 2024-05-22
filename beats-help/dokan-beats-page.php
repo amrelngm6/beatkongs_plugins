@@ -166,10 +166,8 @@ function fbu_handle_form_submission()
             
             if ($post_id) {
                 set_post_thumbnail($post_id, $beat_picture);
-                wp_redirect('/upload-free-beat?message=success');
+                wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
                 exit;
-            } else {
-                $response = 'Error uploading beat.';
             }
         }
     }
