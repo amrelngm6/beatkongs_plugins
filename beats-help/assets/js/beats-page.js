@@ -141,8 +141,6 @@
                 if(ids.length === 0) return true;//if closed withput selecting an image
                 jQuery(btnElement).html(' ');
                 jQuery(inputElement).val(ids);
-                console.log(selected);
-                console.log(previewElement);
                 jQuery(previewElement).html(' ').html( $('audio').attr('src', selected ).attr('controls', 1));
             });
 
@@ -156,6 +154,7 @@
                     var attachment = wp.media.attachment(id);
                     attachment.fetch();
                     console.log(attachment)
+                    console.log(selection)
                     selection.add( attachment ? [ attachment ] : [] );
                 });
             });
