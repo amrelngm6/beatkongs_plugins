@@ -14,9 +14,10 @@ $selectedStation = wp_get_post_terms( $beatId, 'station');
 $selectedMoods = wp_get_post_terms( $beatId, 'mood');
 $selectedTags = wp_get_post_terms( $beatId, 'tag');
 // print_r($post);
-$beatMP3 = $postMeta['beat_mp3'][0] ?? 0;
+$beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+$beatMP3 = wp_get_attachment_url($beatMP3Id);
 
-print_r(wp_get_attachment_url($beatMP3));
+print_r();
 
 
 ?>
@@ -172,9 +173,11 @@ if ( $new_product ) {
                         <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
-                            <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3 ); ?>" class="regular-text" />
+                            <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3Id ); ?>" class="regular-text" />
                             <div id="upload-mp3-demo">
-
+                                <?php if ($beatMP3Id) : ?>
+                                    <audio src="<?php echo $beatMP3; ?>" />
+                                <?php endif; ?>
                             </div>
                             <div id="upload-mp3-button">
                                 <i class="fas fa-cloud-upload-alt"></i>
