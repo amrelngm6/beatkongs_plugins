@@ -129,18 +129,16 @@
                 // On close, get selections and save to the hidden input
                 // plus other AJAX stuff to refresh the image preview
                 var selection =  mp3_frame.state().get('selection');
-                var gallery_ids = new Array();
-                var selected = new Array();
-                var i = 0;
+                var ids = '';
+                var selected = '';
                 selection.each(function(attachment) {
-                    selected[i] = attachment.attributes.url;
-                    gallery_ids[i] = attachment['id'];
-                    i++;
+                    selected = attachment.attributes.url;
+                    ids = attachment['id'];
                 });
-                var ids = gallery_ids.join(",");
-                if(ids.length === 0) return true;//if closed withput selecting an image
+                if(ids == '') return true;//if closed withput selecting an image
                 console.log(selection)
                 console.log(selected)
+                console.log(ids)
                 jQuery(btnElement).html(' ');
                 jQuery(inputElement).val(ids);
                 jQuery(previewElement).html(' ').html( $('audio').attr('src', selected ).attr('controls', 1));
