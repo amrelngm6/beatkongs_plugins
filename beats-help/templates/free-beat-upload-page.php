@@ -198,7 +198,7 @@ if ( $new_product ) {
                             }
                             ?>
 
-                            <div id="myprefix_media_manager" class="instruction-inside<?php echo esc_attr( $instruction_class ); ?>">
+                            <div id="picture_media_manager" class="instruction-inside<?php echo esc_attr( $instruction_class ); ?>">
                                 <input type="hidden" name="beat_picture" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
                                 <div id="upload-cover-button">
                                     <i class="fas fa-cloud-upload-alt"></i>
