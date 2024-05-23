@@ -115,7 +115,7 @@ if ( $new_product ) {
                                 'beat_title',
                                 [
                                     'placeholder' => __( 'Beat name..', 'dokan-lite' ),
-                                    'value'       => $post->post_title ?? '',
+                                    'value'       => $post['post_title'] ?? '',
                                 ]
                             );
                             ?>
