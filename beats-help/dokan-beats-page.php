@@ -92,7 +92,6 @@ function dokan_station_popup_template(  ) {
 
 
 function fbu_register_taxonomies() {
-    echo 'registering';
     // Register Category Taxonomy
     register_taxonomy('category', 'free_beat', array(
         'label' => __('Category'),
@@ -100,7 +99,6 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
-    echo taxonomy_exists('category');
 
     // Register Station Taxonomy
     register_taxonomy('station', 'free_beat', array(
@@ -109,7 +107,6 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
-    echo taxonomy_exists('station');
 
     // Register Mood Taxonomy
     register_taxonomy('mood', 'free_beat', array(
@@ -118,7 +115,6 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
-    echo taxonomy_exists('mood');
     // Register Mood Taxonomy
     register_taxonomy('tag', 'free_beat', array(
         'label' => __('Tag'),
@@ -126,7 +122,6 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
-    echo taxonomy_exists('tag');
 }
 add_action('init', 'fbu_register_taxonomies');
 
@@ -200,12 +195,9 @@ function fbu_handle_form_submission()
             if ($category_id) {
                 wp_set_post_terms($post_id, array($category_id), 'category');
             }
-            global $wp_taxonomies;
-            print_r($wp_taxonomies);
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
-                $c = taxonomy_exists();
                 wp_set_object_terms($post_id, array($station), 'station');
             } else {
                 array_push($beatsErrors, 'station is required');
