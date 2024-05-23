@@ -12,8 +12,8 @@
                             <span class="dokan-single-title"><?php esc_html_e( 'Add new Genre', 'dokan-lite' ); ?></span>
                             <span class="dokan-single-des"><?php esc_html_e( 'Please choose the right Genre for this beat', 'dokan-lite' ); ?></span>
                         </div>
-                        <div class="dokan-product-category-close">
-                            <span class="close" id="dokan-category-close-modal">&times;</span>
+                        <div class="fbu-close dokan-product-category-close">
+                            <span class="close " id="dokan-category-close-modal">&times;</span>
                         </div>
                     </div>
                     <div class="dokan-product-category-modal-body">
