@@ -46,7 +46,6 @@ if (!defined('ABSPATH')) {
                     ];
                     // $product_query           = dokan()->product->all( $product_listing_args );
                     $beats_query = get_posts($args);
-                    print_r($beats_query);
                     if ( $beats_query ) {
                         ?>
 
@@ -118,7 +117,7 @@ if (!defined('ABSPATH')) {
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            foreach ($beats_query as $key => $value) :
+                                            foreach ($beats_query as $key => $beat) :
                                                 setup_postdata($beat);
                                                 print_r($beat);
                                                 ?>
@@ -128,8 +127,8 @@ if (!defined('ABSPATH')) {
                                                 <label for="cb-select-all"></label>
                                                 <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
                                             </td>
-                                            <td><img src="<?php the_title(); ?>" /></td>
-                                            <td><?php the_post_type(); ?></td>
+                                            <td><img src="<?php echo get_the_post_thumbnail_url( $beatId ); ?>" /></td>
+                                            <td><?php echo $beat->post_type; ?></td>
                                             <td><?php the_title(); ?></td>
 
                                             <td><?php the_title(); ?></td>
