@@ -136,9 +136,6 @@
                     ids = attachment['id'];
                 });
                 if(ids == '') return true;//if closed withput selecting an image
-                console.log(selection)
-                console.log(selected)
-                console.log(ids)
                 jQuery(btnElement).html(' ');
                 jQuery(inputElement).val(ids);
                 jQuery(previewElement).html( $('<audio src="'+selected+'"  controls />'));
@@ -150,10 +147,8 @@
                 // and select the appropiate images in the media manager
                 var selection =  mp3_frame.state().get('selection');
                 var id = jQuery(inputElement).val();
-                console.log(id)
                 var attachment = wp.media.attachment(id);
                 attachment.fetch();
-                console.log(attachment)
                 selection.add( attachment ? [ attachment ] : [] );
             });
 
