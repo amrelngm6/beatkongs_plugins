@@ -195,7 +195,7 @@ if ( $new_product ) {
                                 $wrap_class        = '';
                                 $instruction_class = ' dokan-hide';
                                 $image_id     = get_post_thumbnail_id( $beatId );
-                                $image     = get_post_thumbnail( $beatId );
+                                $image     = get_the_post_thumbnail_url( $beatId );
                             }
                             print_r($image);
                             ?>
