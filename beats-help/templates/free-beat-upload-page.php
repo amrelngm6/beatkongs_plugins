@@ -15,14 +15,13 @@ $post_type = get_post_type($beatId);
 print_r($post_type);
 $taxonomies = get_object_taxonomies($post_type);   
 print_r($taxonomies);
-$taxonomy_names = wp_get_object_terms($beatId, $taxonomies); 
-print_r($taxonomy_names);
+$station = wp_get_object_terms($beatId, 'station'); 
+print_r($station);
+$mood = wp_get_object_terms($beatId, 'mood'); 
+print_r($mood);
 
 
 
-print_r($post);
-print_r($postMeta);
-print_r($taxonomy);
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
