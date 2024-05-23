@@ -161,7 +161,7 @@ if ( $new_product ) {
                         
                         <div class="dokan-form-group">
                             <label for="product_moods_edit" class="form-label"><?php esc_html_e( 'Moods', 'dokan-lite' ); ?></label>
-                            <input name='beat_moods' value="<?php echo json_encode($selectedMoods) ; ?>" placeholder='Choose moods...'>
+                            <input name='beat_moods' value="<?php echo implode(',', array_column($selectedMoods, 'name')) ; ?>" placeholder='Choose moods...'>
                         </div>
 
                         <div class="dokan-form-group">
