@@ -208,10 +208,6 @@ if ( $new_product ) {
                             
                             <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
 
-                                <div id="picture_media_manager2">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
-                                </div>
                                 <?php if ( $image_id ) : ?>
                                     <?php
                                     echo get_the_post_thumbnail(
@@ -226,6 +222,10 @@ if ( $new_product ) {
                                 <?php else : ?>
                                     <img height="" width="" src="" alt="">
                                 <?php endif; ?>
+                                <div id="picture_media_manager2">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
+                                </div>
                             </div>
                         </div><!-- .dokan-feat-image-upload -->
 
