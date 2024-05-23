@@ -10,6 +10,9 @@ $beatId =  $_GET['beat_id'] ?? 0;
 $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
 $postMeta = get_metadata( 'post', $beatId);
 $taxonomy = get_post_taxonomies( $post );
+print_r($post);
+print_r($postMeta);
+print_r($taxonomy);
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
