@@ -151,12 +151,12 @@ if ( $new_product ) {
                         <div class="flex  open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
                             <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-stations-g">
                                 <label for="fbu-station" class="form-label"><?php esc_html_e( 'Station', 'dokan-lite' ); ?></label>
-                                <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected text-sm font-semibold" id="fbu-station-text"><span>Select station</span></span></div>
+                                <div id="dokan_product_cat_res" class="dokan-select-product-category-title dokan-ssct-level-0"><span class="dokan-selected-category-product dokan-cat-selected text-sm font-semibold" id="fbu-station-text"><span><?php echo $station[0]->term_id ?? 'Select station'; ?></span></span></div>
                             </div>
                             <div  class="w-full">
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
-                            <input type="hidden" id="fbu-station" name="beat_station" readonly required>
+                            <input type="hidden" id="fbu-station" name="beat_station" value="<?php echo $station[0]->term_id ?? 0; ?>" readonly required>
                         </div>
                         
                         <div class="dokan-form-group">
