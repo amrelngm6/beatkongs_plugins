@@ -148,14 +148,15 @@
                 // On open, get the id from the hidden input
                 // and select the appropiate images in the media manager
                 var selection =  mp3_frame.state().get('selection');
-                var ids = jQuery(inputElement).val().split(',');
-                ids.forEach(function(id) {
-                    console.log(id)
-                    var attachment = wp.media.attachment(id);
-                    attachment.fetch();
-                    console.log(attachment)
-                    selection.add( attachment ? [ attachment ] : [] );
-                });
+                var ids = jQuery(inputElement).val();
+                console.log(ids)
+                // ids.forEach(function(id) {
+                //     console.log(id)
+                //     var attachment = wp.media.attachment(id);
+                //     attachment.fetch();
+                //     console.log(attachment)
+                //     selection.add( attachment ? [ attachment ] : [] );
+                // });
             });
 
             mp3_frame.open();
