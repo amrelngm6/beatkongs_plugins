@@ -9,10 +9,10 @@ $beatId =  $_GET['beat_id'] ?? 0;
 
 $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
 $postMeta = get_metadata( 'post', $beatId);
-$category = wp_get_post_terms( $beatId, 'category');
-$station = wp_get_post_terms( $beatId, 'station');
-$moods = wp_get_post_terms( $beatId, 'mood');
-$tags = wp_get_post_terms( $beatId, 'tag');
+$selectedCategory = wp_get_post_terms( $beatId, 'category');
+$selectedStation = wp_get_post_terms( $beatId, 'station');
+$selectedMoods = wp_get_post_terms( $beatId, 'mood');
+$selectedTags = wp_get_post_terms( $beatId, 'tag');
 // print_r($post);
 // print_r($category);
 
@@ -161,12 +161,12 @@ if ( $new_product ) {
                         
                         <div class="dokan-form-group">
                             <label for="product_moods_edit" class="form-label"><?php esc_html_e( 'Moods', 'dokan-lite' ); ?></label>
-                            <input name='beat_moods' placeholder='Choose moods...'>
+                            <input name='beat_moods' value="<?php echo json_encode($selectedMoods) ; ?>" placeholder='Choose moods...'>
                         </div>
 
                         <div class="dokan-form-group">
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
-                            <input name='beat_tags' placeholder='Choose tags...'>
+                            <input name='beat_tags' value="<?php echo json_encode($selectedTags) ; ?>" placeholder='Choose tags...'>
                         </div>
 
                         <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
