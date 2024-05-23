@@ -118,7 +118,31 @@ if (!defined('ABSPATH')) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                        <?php 
+                                            while ($beats_query->have_posts()) : $beats_query->the_post();
+                                                ?>
+                                        <tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+                                            <td id="cb" class="manage-column column-cb check-column">
+                                                <label for="cb-select-all"></label>
+                                                <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
+                                            </td>
+                                            <td><?php the_title(); ?></td>
+                                            <td><?php the_title(); ?></td>
+                                            <td><?php the_title(); ?></td>
+
+                                            <?php do_action( 'dokan_product_list_table_after_status_table_header' ); ?>
+
+                                            <td><?php the_title(); ?></td>
+                                            <td><?php the_title(); ?></td>
+                                            <td><?php the_title(); ?></td>
+                                            <td><?php the_title(); ?></td>
+                                        <?php
+                                            endwhile;
+                                            wp_reset_postdata();
+
+                                        ?>
+                                        </tr>
                                     </tbody>
 
                                 </table>
