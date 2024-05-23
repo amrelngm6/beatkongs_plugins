@@ -202,6 +202,7 @@ function fbu_handle_form_submission()
                 print_r($saveMood);
 
             } else {
+                print_r('No mmods');
                 array_push($beatsErrors, 'Mood is required');
             }
 
