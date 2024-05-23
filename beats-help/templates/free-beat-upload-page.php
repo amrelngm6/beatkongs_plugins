@@ -216,7 +216,7 @@ if ( $new_product ) {
                                     );
                                     ?>
                                 <?php else : ?>
-                                    <img height="" width="" src="<?php echo $image; ?>" alt="">
+                                    <img id="beat-preview-image" height="" width="" src="<?php echo $image; ?>" alt="">
                                 <?php endif; ?>
                             </div>
                             <div id="picture_media_manager2">
