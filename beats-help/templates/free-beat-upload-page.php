@@ -197,6 +197,7 @@ if ( $new_product ) {
                                 $image_id     = get_post_thumbnail_id( $beatId );
                                 $image     = get_post_thumbnail( $beatId );
                             }
+                            print_r($image);
                             ?>
 
                             <input type="hidden" name="beat_picture" id="beat_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
