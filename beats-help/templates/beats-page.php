@@ -46,7 +46,6 @@ if (!defined('ABSPATH')) {
                     ];
                     // $product_query           = dokan()->product->all( $product_listing_args );
                     $beats_query = new WP_Query($args);
-                    print_r($beats_query);
                     if ( $beats_query->have_posts() ) {
                         ?>
 
