@@ -15,6 +15,7 @@ $selectedMoods = wp_get_post_terms( $beatId, 'mood');
 $selectedTags = wp_get_post_terms( $beatId, 'tag');
 // print_r($post);
 $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+$beatMP3Url = $postMeta['beat_mp3_url'][0] ?? 0;
 $beatMP3 = wp_get_attachment_url($beatMP3Id);
 
 
@@ -183,6 +184,18 @@ if ( $new_product ) {
                                 <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
                             </div>
                         </div>
+
+                        <label for="beat_mp3_url" class="form-label"><?php esc_html_e( 'Beat URL', 'dokan-lite' ); ?></label>
+                        <?php
+                        dokan_post_input_box(
+                            $beatId,
+                            'beat_mp3_url',
+                            [
+                                'placeholder' => __( 'Beat external link..', 'dokan-lite' ),
+                                'value'       => $beatMP3Url ?? '',
+                            ]
+                        );
+                        ?>
 
                         <?php do_action( 'dokan_product_edit_after_product_tags', $post, $beatId ); ?>
                     </div><!-- .content-half-part -->

@@ -145,6 +145,7 @@ function fbu_handle_form_submission()
             $moods = sanitize_text_field($_POST['beat_moods']);
             $tags = sanitize_text_field($_POST['beat_tags']);
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
+            $beat_mp3_url = sanitize_text_field($_POST['beat_mp3_url']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
             
             if (!$title)
@@ -161,9 +162,6 @@ function fbu_handle_form_submission()
                 array_push($beatsErrors, 'Picture is required');
             }
 
-            if (!$beat_mp3) {
-                array_push($beatsErrors, 'MP3 file is required');
-            }
             
             if (!empty($beatsErrors))
             {
@@ -180,6 +178,7 @@ function fbu_handle_form_submission()
                     'beat_type' => $type,
                     'beat_picture' => $beat_picture,
                     'beat_mp3' => $beat_mp3,
+                    'beat_mp3_url' => $beat_mp3_url,
                 ),
             );
             
