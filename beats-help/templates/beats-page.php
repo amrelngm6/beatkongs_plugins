@@ -49,8 +49,7 @@ if (!defined('ABSPATH')) {
                         ?>
 
                         <div class="product-listing-top dokan-clearfix flex">
-                            <h4>Free beats</h4>
-
+                            <h4 class="w-full">Free beats</h4>
                             <?php if ( dokan_is_seller_enabled( dokan_get_current_user_id() ) ) : ?>
                                 <span class="dokan-add-product-link">
                                     <?php if ( current_user_can( 'dokan_add_product' ) ) : ?>
