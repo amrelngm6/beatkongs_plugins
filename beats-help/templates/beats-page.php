@@ -117,15 +117,15 @@ if (!defined('ABSPATH')) {
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            while ($beats_query->have_posts()) : $beats_query->the_post();
+                                            foreach ($beats_query->have_posts() as $key => $value) :
                                                 ?>
-                                        <tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                        <tr id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
                                             <td id="cb" class="manage-column column-cb check-column">
                                                 <label for="cb-select-all"></label>
                                                 <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
                                             </td>
-                                            <td><img src="<?php the_title(); ?></td>
+                                            <td><img src="<?php the_title(); ?>" /></td>
                                             <td><?php the_post_type(); ?></td>
                                             <td><?php the_title(); ?></td>
 
@@ -134,11 +134,7 @@ if (!defined('ABSPATH')) {
                                             <td><?php the_title(); ?></td>
                                             <td><?php the_title(); ?></td>
                                         </tr>
-                                        <?php
-                                            endwhile;
-                                            wp_reset_postdata();
-
-                                        ?>
+                                        <?php endforeach ; ?>
                                     </tbody>
 
                                 </table>
