@@ -202,22 +202,7 @@ if ( $new_product ) {
                             <input type="hidden" name="beat_picture" id="beat_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
                             
                             <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
-
-                                <?php if ( $image_id ) : ?>
-                                    <?php
-                                    echo get_the_post_thumbnail(
-                                        $beatId,
-                                        apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ),
-                                        [
-                                            'height' => '',
-                                            'width'  => '',
-                                            'id' => 'beat-preview-image'
-                                        ]
-                                    );
-                                    ?>
-                                <?php else : ?>
-                                    <img id="beat-preview-image" height="" width="" src="<?php echo $image; ?>" alt="">
-                                <?php endif; ?>
+                                <img id="beat-preview-image" height="" width="" src="<?php echo $image ?? ''; ?>" alt="">
                             </div>
                             <div id="picture_media_manager2">
                                 <i class="fas fa-cloud-upload-alt"></i>
