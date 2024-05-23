@@ -161,7 +161,6 @@ function fbu_handle_form_submission()
             $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
             if ($category_id) {
                 print_r($category_id);
-                exit;
                 wp_set_post_terms($post_id, array($category_id), 'category');
             }
 
