@@ -179,12 +179,16 @@ if ( $new_product ) {
                                     <audio controls src="<?php echo $beatMP3; ?>" />
                                 <?php endif; ?>
                             </div>
-                            <div id="upload-mp3-button">
+                        </div>
+                        <div class="flex w-full">
+                            
+                            <div class="w-full" id="upload-mp3-button">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
                             </div>
                         </div>
                         <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'OR', 'dokan-lite' ); ?></label>
+                        <div class="w-full">
                         
                         <label for="beat_mp3_url" class="form-label"><?php esc_html_e( 'Beat URL', 'dokan-lite' ); ?></label>
                         <?php
@@ -197,6 +201,7 @@ if ( $new_product ) {
                             ]
                         );
                         ?>
+                        </div>
 
                         <?php do_action( 'dokan_product_edit_after_product_tags', $post, $beatId ); ?>
                     </div><!-- .content-half-part -->
