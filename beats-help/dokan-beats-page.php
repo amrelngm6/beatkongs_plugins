@@ -178,7 +178,7 @@ function fbu_handle_form_submission()
             if ($tags) {
                 $ids = [];
                 foreach ($tags as $key => $value) {
-                    $term = term_exists($value['value'], 'tag');
+                    $term = term_exists($value['value']);
                     $ids[$key] = $term['term_id'] ?? 0; 
                     print_r($term);
                     print_r($value['value']);
