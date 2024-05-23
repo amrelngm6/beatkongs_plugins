@@ -202,6 +202,7 @@ function fbu_handle_form_submission()
     return $response;
 }
 add_action('init', 'fbu_handle_form_submission');
+add_action('admin_post_nopriv_save_beat', 'fbu_handle_form_submission');
 
 
 
