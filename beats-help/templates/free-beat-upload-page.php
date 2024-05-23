@@ -14,8 +14,9 @@ $selectedStation = wp_get_post_terms( $beatId, 'station');
 $selectedMoods = wp_get_post_terms( $beatId, 'mood');
 $selectedTags = wp_get_post_terms( $beatId, 'tag');
 // print_r($post);
-print_r($postMeta);
+$beatMP3 = $postMeta['beat_mp3'][0] ?? 0;
 
+print_r(get_attached_media('audio', $beatId));
 
 
 ?>
