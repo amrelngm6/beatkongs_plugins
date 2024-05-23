@@ -141,7 +141,7 @@
                 console.log(ids)
                 jQuery(btnElement).html(' ');
                 jQuery(inputElement).val(ids);
-                jQuery(previewElement).html( $('audio').attr('src', selected ).attr('controls', 1));
+                jQuery(previewElement).html( $('<audio src="'+selected+'"  controls />'));
             });
 
             mp3_frame.on('open',function() {
