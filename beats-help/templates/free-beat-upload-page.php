@@ -184,7 +184,8 @@ if ( $new_product ) {
                                 <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
                             </div>
                         </div>
-
+                        <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'OR', 'dokan-lite' ); ?></label>
+                        
                         <label for="beat_mp3_url" class="form-label"><?php esc_html_e( 'Beat URL', 'dokan-lite' ); ?></label>
                         <?php
                         dokan_post_input_box(
