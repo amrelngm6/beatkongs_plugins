@@ -9,8 +9,7 @@ $beatId =  $_GET['beat_id'] ?? 0;
 
 $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
 $postMeta = get_metadata( 'post', $beatId);
-print_r($post);
-print_r($postMeta);
+$taxonomy = get_post_taxonomies( 'post', $beatId);
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
@@ -108,7 +107,7 @@ if ( $new_product ) {
                                 'beat_title',
                                 [
                                     'placeholder' => __( 'Beat name..', 'dokan-lite' ),
-                                    'value'       => $beat_title ?? '',
+                                    'value'       => $post->title ?? '',
                                 ]
                             );
                             ?>
@@ -126,7 +125,7 @@ if ( $new_product ) {
                             <label for="beat_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
                             <select name="beat_type" class="dokan-form-control" id="beat_type">
                                 <?php foreach ( $beat_types as $key => $value ) : ?>
-                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $beat_type ?? 'free', $key ); ?>><?php echo esc_html( $value ); ?></option>
+                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $post->beat_category[0] ?? 'free', $key ); ?>><?php echo esc_html( $value ); ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>

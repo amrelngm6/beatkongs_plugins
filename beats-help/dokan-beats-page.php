@@ -43,7 +43,6 @@ function dokan_beats_page_query_vars($vars) {
 
 // Template redirect
 add_action('template_redirect', 'dokan_beats_page_template_redirect');
-
 function dokan_beats_page_template_redirect() {
     if (get_query_var('dokan_beats_page')) {
         include plugin_dir_path(__FILE__) . 'templates/beats-page.php';
@@ -53,7 +52,6 @@ function dokan_beats_page_template_redirect() {
 
 // Add a new menu item to the Dokan vendor dashboard
 add_action('dokan_vendor_dashboard_menu', 'add_dokan_beats_page_menu', 10);
-
 function add_dokan_beats_page_menu($urls) {
     $urls['beats'] = array(
         'title' => __('Beats', 'dokan'),
@@ -66,7 +64,6 @@ function add_dokan_beats_page_menu($urls) {
 
 // Enqueue scripts for the React component
 add_action('wp_enqueue_scripts', 'enqueue_dokan_beats_page_scripts');
-
 function enqueue_dokan_beats_page_scripts() {
      // Enqueue CSS
      wp_enqueue_style('dokan-beats-page-css2', plugin_dir_url(__FILE__) . 'assets/css/beats-page.css', array('wp-element'), '1.0', true);
