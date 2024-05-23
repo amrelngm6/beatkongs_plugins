@@ -106,7 +106,7 @@ if ( $new_product ) {
                     <div class="content-half-part dokan-product-meta">
 
                         <div id="dokan-product-title-area" class="dokan-form-group">
-                            <input type="hidden" name="dokan_product_id" id="dokan-edit-product-id" value="<?php echo esc_attr( $post_id ); ?>"/>
+                            <input type="hidden" name="beat_id" id="dokan-beat-id" value="<?php echo esc_attr( $beatId ); ?>"/>
 
                             <label for="beat_title" class="form-label"><?php esc_html_e( 'Title', 'dokan-lite' ); ?></label>
                             <?php
