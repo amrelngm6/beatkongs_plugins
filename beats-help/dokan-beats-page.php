@@ -181,8 +181,8 @@ function fbu_handle_form_submission()
                     $term = term_exists($station_name, 'tag');
                     $ids[$key] = $term['term_id'] ?? 0; 
                 }
-                print_r(array_filter($tags));
-                $saveTag = wp_set_object_terms($post_id, array_filter($tags), 'tag');
+                print_r(array_filter($ids));
+                $saveTag = wp_set_object_terms($post_id, array_filter($ids), 'tag');
                 print_r($saveTag);
             } else {
                 array_push($beatsErrors, 'Tag is required');
@@ -197,7 +197,7 @@ function fbu_handle_form_submission()
                     $term = term_exists($station_name, 'tag');
                     $ids[$key] = $term['term_id'] ?? 0; 
                 }
-                $saveMood = wp_set_object_terms($post_id, array_filter($moods), 'mood');
+                $saveMood = wp_set_object_terms($post_id, array_filter($ids), 'mood');
                 print_r($saveMood);
 
             } else {
