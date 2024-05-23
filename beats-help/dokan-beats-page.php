@@ -234,6 +234,7 @@ add_action('wp_enqueue_scripts', 'load_wp_media_files');
 
 
 function fbu_register_taxonomies() {
+    echo 'registering';
     // Register Category Taxonomy
     register_taxonomy('category', 'free_beat', array(
         'label' => __('Category'),
@@ -241,6 +242,7 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
+    echo taxonomy_exists('category');
 
     // Register Station Taxonomy
     register_taxonomy('station', 'free_beat', array(
@@ -249,6 +251,7 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
+    echo taxonomy_exists('station');
 
     // Register Mood Taxonomy
     register_taxonomy('mood', 'free_beat', array(
@@ -257,6 +260,7 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
+    echo taxonomy_exists('mood');
     // Register Mood Taxonomy
     register_taxonomy('tag', 'free_beat', array(
         'label' => __('Tag'),
@@ -264,6 +268,7 @@ function fbu_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
+    echo taxonomy_exists('tag');
 }
 add_action('init', 'fbu_register_taxonomies');
 
