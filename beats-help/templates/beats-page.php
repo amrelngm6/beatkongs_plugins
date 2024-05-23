@@ -139,7 +139,6 @@ if (!defined('ABSPATH')) {
                                             wp_reset_postdata();
 
                                         ?>
-                                        </tr>
                                     </tbody>
 
                                 </table>
