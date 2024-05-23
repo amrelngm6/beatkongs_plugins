@@ -84,8 +84,8 @@
                 });
                 var ids = gallery_ids.join(",");
                 if(ids.length === 0) return true;//if closed withput selecting an image
-                jQuery('#myprefix-preview-image').attr('src', selected );
-                jQuery('input#myprefix_image_id').val(ids);
+                jQuery('#beat-preview-image').attr('src', selected );
+                jQuery('input#beat_image_id').val(ids);
                 jQuery('#upload-cover-button').html(' ');
             });
 
@@ -93,7 +93,7 @@
             // On open, get the id from the hidden input
             // and select the appropiate images in the media manager
             var selection =  image_frame.state().get('selection');
-            var ids = jQuery('input#myprefix_image_id').val().split(',');
+            var ids = jQuery('input#beat_image_id').val().split(',');
             ids.forEach(function(id) {
                 var attachment = wp.media.attachment(id);
                 attachment.fetch();
