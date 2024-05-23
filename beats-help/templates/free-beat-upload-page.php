@@ -15,10 +15,14 @@ $post_type = get_post_type($beatId);
 print_r($post_type);
 $taxonomies = get_object_taxonomies($post_type);   
 print_r($taxonomies);
+$category = wp_get_object_terms($beatId, 'category'); 
+print_r($category);
 $station = wp_get_object_terms($beatId, 'station'); 
 print_r($station);
 $mood = wp_get_object_terms($beatId, 'mood'); 
 print_r($mood);
+$tag = wp_get_object_terms($beatId, 'tag'); 
+print_r($tag);
 
 
 
