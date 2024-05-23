@@ -10,8 +10,16 @@ $beatId =  $_GET['beat_id'] ?? 0;
 $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
 $postMeta = get_metadata( 'post', $beatId);
 $taxonomy = get_post_taxonomies( $post->ID );
-print_r(get_the_terms( $post->ID, 'station' ));
-print_r(get_the_terms( $post->ID, 'category' ));
+
+$post_type = get_post_type($beatId);   
+print_r($post_type);
+$taxonomies = get_object_taxonomies($post_type);   
+print_r($taxonomies);
+$taxonomy_names = wp_get_object_terms($beatId, $taxonomies,  array("fields" => "names")); 
+print_r($taxonomy_names);
+
+
+
 print_r($post);
 print_r($postMeta);
 print_r($taxonomy);
