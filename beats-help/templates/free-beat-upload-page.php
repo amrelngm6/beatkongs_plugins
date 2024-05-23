@@ -11,6 +11,7 @@ $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null;
 $postMeta = get_metadata( 'post', $beatId);
 $taxonomy = get_post_taxonomies( $post->ID );
 
+print_r(wp_get_post_terms($beatId, 'mood'));
 $post_type = get_post_type($beatId);   
 print_r($post_type);
 $taxonomies = get_object_taxonomies($post_type);   
