@@ -175,9 +175,6 @@ if ( $new_product ) {
 
                             <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3Id ); ?>" class="regular-text" />
                             <div id="upload-mp3-demo">
-                                <?php if ($beatMP3Id) : ?>
-                                    <audio src="<?php echo $beatMP3; ?>" />
-                                <?php endif; ?>
                             </div>
                             <div id="upload-mp3-button">
                                 <i class="fas fa-cloud-upload-alt"></i>
