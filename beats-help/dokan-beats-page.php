@@ -108,9 +108,9 @@ function fbu_handle_form_submission()
             $title = sanitize_text_field($_POST['beat_title']);
             $type = sanitize_text_field($_POST['beat_type']);
             $category = sanitize_text_field($_POST['beat_category']);
-            $tags = sanitize_text_field($_POST['beat_tags']);
             $station = sanitize_text_field($_POST['beat_station']);
             $moods = sanitize_text_field($_POST['beat_moods']);
+            $tags = sanitize_text_field($_POST['beat_tags']);
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
             
@@ -145,10 +145,6 @@ function fbu_handle_form_submission()
                 'post_type'     => 'free_beat',
                 'meta_input'    => array(
                     'beat_type' => $type,
-                    'beat_category' => $category,
-                    'beat_station' => $station,
-                    'beat_tag' => $tags,
-                    'beat_mood' => $moods,
                     'beat_picture' => $beat_picture,
                     'beat_mp3' => $beat_mp3,
                 ),
@@ -161,6 +157,8 @@ function fbu_handle_form_submission()
             
             $post_id = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
             
+            print_r($post_id);
+            exit;
             // Save Category
             $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
             if ($category_id) {
@@ -170,8 +168,7 @@ function fbu_handle_form_submission()
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
-                $saveStation = wp_set_object_terms($post_id, array($station), 'station');
-                array_push($beatsErrors, ' station is set');
+                wp_set_object_terms($post_id, array($station), 'station');
             } else {
                 array_push($beatsErrors, 'station is required');
             }
