@@ -181,7 +181,7 @@ function fbu_handle_form_submission()
                     $term = term_exists($value['value'], 'tag');
                     $ids[$key] = $term['term_id'] ?? 0; 
                     print_r($term);
-                    print_r($value);
+                    print_r($value['value']);
                 }
                 print_r(array_filter($ids));
                 $saveTag = wp_set_object_terms($post_id, array_filter($ids), 'tag');
