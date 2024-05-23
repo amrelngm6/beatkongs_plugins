@@ -131,7 +131,7 @@ if (!defined('ABSPATH')) {
                                             <td><?php echo $beat->post_status; ?></td>
                                             
                                             <td><?php echo $beat->post_type; ?></td>
-                                            <td><?php echo $beat->post_title; ?></td>
+                                            <td><a href="/upload-free-beat/?beat_id=<?php echo $beat->ID; ?>">Edit</a></td>
                                             <td><?php echo date('Y-m-d', strtotime($beat->post_date)); ?></td>
                                         </tr>
                                         <?php endforeach ; ?>
