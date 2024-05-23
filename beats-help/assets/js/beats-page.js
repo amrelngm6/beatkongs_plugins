@@ -54,7 +54,7 @@
 
 
         
-        jQuery('#picture_media_manager').click(function(e) {
+        jQuery('#picture_media_manager,#picture_media_manager2').click(function(e) {
 
             e.preventDefault();
             var image_frame;
