@@ -212,7 +212,6 @@ function fbu_handle_form_submission()
                     $ids[$key] = $value['value']; 
                 }
                 $saveTag = wp_set_object_terms($beatId, array_filter($ids), 'tag');
-                print_r($saveTag);
             } else {
                 array_push($beatsErrors, 'Tag is required');
             }
@@ -226,7 +225,6 @@ function fbu_handle_form_submission()
                     $ids[$key] = $value['value']; 
                 }
                 $saveMood = wp_set_object_terms($beatId, array_filter($ids), 'mood');
-                print_r($saveMood);
 
             } else {
                 array_push($beatsErrors, 'Mood is required');
