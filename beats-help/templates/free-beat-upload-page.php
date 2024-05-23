@@ -54,7 +54,7 @@ if ( $new_product ) {
 ?>
 
 <header class="dokan-dashboard-header dokan-clearfix">
-    <h1 class="entry-title">
+    <h2 class="entry-title">
         <?php
             esc_html_e( 'Free Beat', 'dokan-lite' );
         ?>
@@ -71,7 +71,7 @@ if ( $new_product ) {
         <?php if ( $_visibility === 'hidden' ) : ?>
             <span class="dokan-right dokan-label dokan-label-default dokan-product-hidden-label"><i class="far fa-eye-slash"></i> <?php esc_html_e( 'Hidden', 'dokan-lite' ); ?></span>
         <?php endif; ?>
-    </h1>
+    </h2>
 </header><!-- .entry-header -->
 
 <div class="product-edit-new-container Beat-edit-container">
