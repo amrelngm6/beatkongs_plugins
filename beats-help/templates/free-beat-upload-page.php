@@ -101,6 +101,7 @@ if ( $new_product ) {
                 <input type="hidden" value="upload_beat" name="upload_beat" />
                 <?php do_action( 'dokan_product_data_panel_tabs' ); ?>
                 <?php do_action( 'dokan_product_edit_before_main' ); ?>
+                <?php wp_nonce_field(basename(__FILE__), 'beat_nonce'); ?>
 
                 <div class="dokan-form-top-area">
 
