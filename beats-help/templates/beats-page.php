@@ -109,8 +109,6 @@ if (!defined('ABSPATH')) {
                                             <th><?php esc_html_e( 'Name', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Status', 'dokan-lite' ); ?></th>
 
-                                            <?php do_action( 'dokan_product_list_table_after_status_table_header' ); ?>
-
                                             <th><?php esc_html_e( 'Price', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Type', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Views', 'dokan-lite' ); ?></th>
@@ -130,8 +128,6 @@ if (!defined('ABSPATH')) {
                                             <td><?php the_title(); ?></td>
                                             <td><?php the_title(); ?></td>
                                             <td><?php the_title(); ?></td>
-
-                                            <?php do_action( 'dokan_product_list_table_after_status_table_header' ); ?>
 
                                             <td><?php the_title(); ?></td>
                                             <td><?php the_title(); ?></td>
