@@ -133,6 +133,7 @@ if (!defined('ABSPATH')) {
                                             <td><?php the_title(); ?></td>
                                             <td><?php the_title(); ?></td>
                                             <td><?php the_title(); ?></td>
+                                        </tr>
                                         <?php
                                             endwhile;
                                             wp_reset_postdata();
