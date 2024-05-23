@@ -44,13 +44,12 @@ if (!defined('ABSPATH')) {
                         'post_author'         => dokan_get_current_user_id(),
                         'post_type'         => 'free_beat',
                     ];
-                    // $product_query           = dokan()->product->all( $product_listing_args );
                     $beats_query = get_posts($args);
                     if ( $beats_query ) {
                         ?>
 
                         <div class="product-listing-top dokan-clearfix">
-                            <?php dokan_product_listing_status_filter(); ?>
+                            <h4>Free beats</h4>
 
                             <?php if ( dokan_is_seller_enabled( dokan_get_current_user_id() ) ) : ?>
                                 <span class="dokan-add-product-link">
