@@ -167,7 +167,6 @@ function fbu_handle_form_submission()
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
-                print_r($station);
                 wp_set_object_terms($post_id, array($station), 'station');
             } else {
                 array_push($beatsErrors, 'station is required');
@@ -181,32 +180,26 @@ function fbu_handle_form_submission()
                     $term = term_exists($value['value']);
                     $ids[$key] = $term; 
                 }
-                print_r($ids);
-                $saveTag = wp_set_object_terms($post_id, array_filter($ids));
+                $saveTag = wp_set_object_terms($post_id, array_filter($ids), 'tag');
                 print_r($saveTag);
             } else {
                 array_push($beatsErrors, 'Tag is required');
             }
-            print_r('Tags saved');
             // Save Moods
             $moods = isset($_POST['beat_moods']) ? json_decode(stripslashes($_POST['beat_moods']), true) : '';
             if ($moods) {
-            print_r('Moods found');
                 
                 $ids = [];
                 foreach ($moods as $key => $value) {
                     $term = term_exists($value['value']);
                     $ids[$key] = $term; 
                 }
-                print_r($ids);
-                $saveMood = wp_set_object_terms($post_id, array_filter($ids), 'station');
+                $saveMood = wp_set_object_terms($post_id, array_filter($ids), 'mood');
                 print_r($saveMood);
 
             } else {
-                print_r('No mmods');
                 array_push($beatsErrors, 'Mood is required');
             }
-            print_r('Moods saved');
 
             if ($post_id) {
                 set_post_thumbnail($post_id, $beat_picture);
