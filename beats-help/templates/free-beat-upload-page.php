@@ -15,7 +15,7 @@ $selectedMoods = wp_get_post_terms( $beatId, 'mood');
 $selectedTags = wp_get_post_terms( $beatId, 'tag');
 // print_r($post);
 $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
-$beatMP3Url = $postMeta['beat_mp3_url'][0] ?? 0;
+$beatMP3Url = $postMeta['beat_mp3_url'][0] ?? '';
 $beatMP3 = wp_get_attachment_url($beatMP3Id);
 
 
