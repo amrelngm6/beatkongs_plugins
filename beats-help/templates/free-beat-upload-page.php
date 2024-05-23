@@ -212,7 +212,7 @@ if ( $new_product ) {
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
                                 </div>
-                                <?php if ( $feat_image_id ) : ?>
+                                <?php if ( $image_id ) : ?>
                                     <?php
                                     echo get_the_post_thumbnail(
                                         $beatId,
