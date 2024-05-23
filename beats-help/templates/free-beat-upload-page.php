@@ -14,7 +14,7 @@ $selectedStation = wp_get_post_terms( $beatId, 'station');
 $selectedMoods = wp_get_post_terms( $beatId, 'mood');
 $selectedTags = wp_get_post_terms( $beatId, 'tag');
 // print_r($post);
-// print_r($category);
+print_r($postMeta);
 
 
 
