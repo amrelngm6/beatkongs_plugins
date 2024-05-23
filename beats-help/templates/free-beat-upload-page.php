@@ -9,8 +9,10 @@ $beatId =  $_GET['beat_id'] ?? 0;
 
 $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
 $postMeta = get_metadata( 'post', $beatId);
-$post_taxonomy = wp_get_post_terms( $beatId, 'mood');
-print_r($post_taxonomy);
+$category = wp_get_post_terms( $beatId, 'category');
+$station = wp_get_post_terms( $beatId, 'station');
+$moods = wp_get_post_terms( $beatId, 'mood');
+$tags = wp_get_post_terms( $beatId, 'tag');
 
 
 
