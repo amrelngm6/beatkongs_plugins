@@ -186,24 +186,24 @@ if ( $new_product ) {
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
                             </div>
-                        </div>
-                        <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'OR', 'dokan-lite' ); ?></label>
-                        <div class="w-full">
-                        
-                        <label for="beat_mp3_url" class="form-label"><?php esc_html_e( 'Beat URL', 'dokan-lite' ); ?></label>
-                        <?php
-                        dokan_post_input_box(
-                            $beatId,
-                            'beat_mp3_url',
-                            [
-                                'placeholder' => __( 'Beat external link..', 'dokan-lite' ),
-                                'value'       => $beatMP3Url ?? '',
-                            ]
-                        );
-                        ?>
+                            <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'OR', 'dokan-lite' ); ?></label>
+        
+                            <div class="w-full">
+                            
+                            <label for="beat_mp3_url" class="form-label"><?php esc_html_e( 'Beat URL', 'dokan-lite' ); ?></label>
+                            <?php
+                            dokan_post_input_box(
+                                $beatId,
+                                'beat_mp3_url',
+                                [
+                                    'placeholder' => __( 'Beat external link..', 'dokan-lite' ),
+                                    'value'       => $beatMP3Url ?? '',
+                                ]
+                            );
+                            ?>
+                            </div>
                         </div>
 
-                        <?php do_action( 'dokan_product_edit_after_product_tags', $post, $beatId ); ?>
                     </div><!-- .content-half-part -->
 
                     <div class="content-half-part featured-image">
