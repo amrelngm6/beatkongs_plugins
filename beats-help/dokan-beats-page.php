@@ -170,7 +170,7 @@ function fbu_handle_form_submission()
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
-                $saveStation = wp_set_post_terms($post_id, array($station), 'station');
+                $saveStation = wp_set_object_terms($post_id, array($station), 'station');
                 array_push($beatsErrors, ' station is set');
             } else {
                 array_push($beatsErrors, 'station is required');
@@ -179,7 +179,7 @@ function fbu_handle_form_submission()
             // Save Tags
             $tags = isset($_POST['beat_tags']) ? json_decode($_POST['beat_tags']) : '';
             if ($tags) {
-                wp_set_post_terms($post_id, $tags, 'tag');
+                wp_set_object_terms($post_id, $tags, 'tag');
             } else {
                 array_push($beatsErrors, 'Tag is required');
             }
@@ -187,7 +187,7 @@ function fbu_handle_form_submission()
             // Save Moods
             $mood = isset($_POST['beat_moods']) ? json_decode($_POST['beat_moods']) : '';
             if ($mood) {
-                wp_set_post_terms($post_id, $mood, 'mood');
+                wp_set_object_terms($post_id, $mood, 'mood');
             } else {
                 array_push($beatsErrors, 'Mood is required');
             }
