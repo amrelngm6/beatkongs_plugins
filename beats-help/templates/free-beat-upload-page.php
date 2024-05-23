@@ -9,7 +9,7 @@ $beatId =  $_GET['beat_id'] ?? 0;
 
 $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
 $postMeta = get_metadata( 'post', $beatId);
-$taxonomy = get_post_taxonomies( $post );
+$taxonomy = get_post_taxonomies( $post->ID );
 print_r(get_the_terms( $post->ID, 'station' ));
 print_r(get_the_terms( $post->ID, 'category' ));
 print_r($post);
