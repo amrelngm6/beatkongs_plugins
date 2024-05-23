@@ -141,7 +141,7 @@
                 if(ids.length === 0) return true;//if closed withput selecting an image
                 jQuery(btnElement).html(' ');
                 jQuery(inputElement).val(ids);
-                jQuery(previewElement).html( $('audio').attr('src', selected ).attr('controls', 1));
+                jQuery(previewElement).html(' ').html( $('audio').attr('src', selected ).attr('controls', 1));
             });
 
             mp3_frame.on('open',function() {
