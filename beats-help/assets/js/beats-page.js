@@ -145,6 +145,7 @@
             });
 
             mp3_frame.on('open',function() {
+                jQuery(previewElement).html(' ');
                 // On open, get the id from the hidden input
                 // and select the appropiate images in the media manager
                 var selection =  mp3_frame.state().get('selection');
