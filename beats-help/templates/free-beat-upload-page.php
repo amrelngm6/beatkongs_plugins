@@ -166,7 +166,7 @@ if ( $new_product ) {
 
                         <div class="dokan-form-group">
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
-                            <input name='beat_tags' value="<?php echo json_encode($selectedTags) ; ?>" placeholder='Choose tags...'>
+                            <input name='beat_tags' value="<?php echo implode(',', array_column($selectedTags, 'name')) ; ?>" placeholder='Choose tags...'>
                         </div>
 
                         <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
