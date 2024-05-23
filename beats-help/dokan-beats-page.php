@@ -160,13 +160,14 @@ function fbu_handle_form_submission()
             // Save Category
             $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
             if ($category_id) {
-                print_r($category_id);
                 wp_set_post_terms($post_id, array($category_id), 'category');
             }
-
+            global $wp_taxonomies;
+            print_r($wp_taxonomies);
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
+                $c = taxonomy_exists();
                 wp_set_object_terms($post_id, array($station), 'station');
             } else {
                 array_push($beatsErrors, 'station is required');
