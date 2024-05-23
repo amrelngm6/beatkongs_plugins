@@ -110,8 +110,8 @@ if (!defined('ABSPATH')) {
                                             <th><?php esc_html_e( 'Status', 'dokan-lite' ); ?></th>
 
                                             <th><?php esc_html_e( 'Type', 'dokan-lite' ); ?></th>
-                                            <th><?php esc_html_e( 'Views', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Date', 'dokan-lite' ); ?></th>
+                                            <th><?php esc_html_e( 'Edit', 'dokan-lite' ); ?></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -131,8 +131,8 @@ if (!defined('ABSPATH')) {
                                             <td><?php echo $beat->post_status; ?></td>
                                             
                                             <td><?php echo $beat->post_type; ?></td>
-                                            <td><a href="/upload-free-beat/?beat_id=<?php echo $beat->ID; ?>">Edit</a></td>
                                             <td><?php echo date('Y-m-d', strtotime($beat->post_date)); ?></td>
+                                            <td><a href="/upload-free-beat/?beat_id=<?php echo $beat->ID; ?>">Edit</a></td>
                                         </tr>
                                         <?php endforeach ; ?>
                                     </tbody>
