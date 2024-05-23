@@ -172,7 +172,7 @@ if ( $new_product ) {
                         <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
-                            <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
+                            <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3 ); ?>" class="regular-text" />
                             <div id="upload-mp3-demo">
 
                             </div>
