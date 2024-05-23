@@ -188,17 +188,17 @@ function fbu_handle_form_submission()
                 $beat_post['ID'] = sanitize_text_field($_POST['beat_id']);
             }
             
-            $post_id = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
+            $beatId = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
             
             // Save Category
             $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
             if ($category_id) {
-                wp_set_post_terms($post_id, array($category_id), 'category');
+                wp_set_post_terms($beatId, array($category_id), 'category');
             }
             // Save Station
             $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
             if ($station) {
-                wp_set_object_terms($post_id, array($station), 'station');
+                wp_set_object_terms($beatId, array($station), 'station');
             } else {
                 array_push($beatsErrors, 'station is required');
             }
@@ -211,7 +211,7 @@ function fbu_handle_form_submission()
                     $term = term_exists($value['value']);
                     $ids[$key] = $value['value']; 
                 }
-                $saveTag = wp_set_object_terms($post_id, array_filter($ids), 'tag');
+                $saveTag = wp_set_object_terms($beatId, array_filter($ids), 'tag');
                 print_r($saveTag);
             } else {
                 array_push($beatsErrors, 'Tag is required');
@@ -225,15 +225,15 @@ function fbu_handle_form_submission()
                     $term = term_exists($value['value']);
                     $ids[$key] = $value['value']; 
                 }
-                $saveMood = wp_set_object_terms($post_id, array_filter($ids), 'mood');
+                $saveMood = wp_set_object_terms($beatId, array_filter($ids), 'mood');
                 print_r($saveMood);
 
             } else {
                 array_push($beatsErrors, 'Mood is required');
             }
 
-            if ($post_id) {
-                set_post_thumbnail($post_id, $beat_picture);
+            if ($beatId) {
+                set_post_thumbnail($beatId, $beat_picture);
                 wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
                 exit;
             }
