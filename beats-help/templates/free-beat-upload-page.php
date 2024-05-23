@@ -216,6 +216,8 @@ if ( $new_product ) {
                                         [
                                             'height' => '',
                                             'width'  => '',
+                                            'id' => 'dokat-beat-image'
+
                                         ],
                                         [
                                             'id' => 'dokat-beat-image'
