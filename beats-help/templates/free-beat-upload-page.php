@@ -14,6 +14,7 @@ $station = wp_get_post_terms( $beatId, 'station');
 $moods = wp_get_post_terms( $beatId, 'mood');
 $tags = wp_get_post_terms( $beatId, 'tag');
 print_r($post);
+print_r($category);
 
 
 
@@ -114,7 +115,7 @@ if ( $new_product ) {
                                 'beat_title',
                                 [
                                     'placeholder' => __( 'Beat name..', 'dokan-lite' ),
-                                    'value'       => $post->title ?? '',
+                                    'value'       => $post->post_title ?? '',
                                 ]
                             );
                             ?>
@@ -132,7 +133,7 @@ if ( $new_product ) {
                             <label for="beat_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
                             <select name="beat_type" class="dokan-form-control" id="beat_type">
                                 <?php foreach ( $beat_types as $key => $value ) : ?>
-                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $post->beat_category[0] ?? 'free', $key ); ?>><?php echo esc_html( $value ); ?></option>
+                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $post->post_type ?? 'free', $key ); ?>><?php echo esc_html( $value ); ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -144,7 +145,7 @@ if ( $new_product ) {
                             <div  class="w-full " >
                                 <span class="dokan-select-product-category-icon"><i class="fas fa-edit"></i></span>
                             </div>
-                            <input type="hidden" id="fbu-category" name="beat_category" readonly required>
+                            <input type="hidden" id="fbu-category" value="<?php echo  $category[0]['term_id']; ?>" name="beat_category" readonly required>
                         </div>
                         
                         <div class="flex  open-modal cursor-pointer" data-dokansclevel="0"  id="open-station-modal" data-modal="#fbu-station-modal" data-text="#fbu-station-text" data-input="#fbu-station">
