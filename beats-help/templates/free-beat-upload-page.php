@@ -195,16 +195,11 @@ if ( $new_product ) {
                                 $wrap_class        = '';
                                 $instruction_class = ' dokan-hide';
                                 $image_id     = get_post_thumbnail_id( $beatId );
+                                $image     = get_post_thumbnail( $beatId );
                             }
                             ?>
 
-                            <div id="picture_media_manager" class="instruction-inside<?php echo esc_attr( $instruction_class ); ?>">
-                                <input type="hidden" name="beat_picture" id="beat_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
-                                <div id="upload-cover-button">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
-                                </div>
-                            </div>
+                            <input type="hidden" name="beat_picture" id="beat_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
                             
                             <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
 
