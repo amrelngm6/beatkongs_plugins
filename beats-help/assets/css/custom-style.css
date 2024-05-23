@@ -137,3 +137,13 @@ ul.dokan-single-categories
 {
   font-weight: 600;
 }
+#picture_media_manager
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 60%;
+  padding-top: 40%;
+}

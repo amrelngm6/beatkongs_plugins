@@ -204,7 +204,7 @@ if ( $new_product ) {
                             <div class="image-wrap<?php echo esc_attr( $wrap_class ); ?>">
                                 <img id="beat-preview-image" height="" width="" src="<?php echo $image ?? ''; ?>" alt="">
                             </div>
-                            <div id="picture_media_manager2">
+                            <div id="picture_media_manager">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
                             </div>
