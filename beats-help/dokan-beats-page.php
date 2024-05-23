@@ -179,7 +179,7 @@ function fbu_handle_form_submission()
                 $ids = [];
                 foreach ($tags as $key => $value) {
                     $term = term_exists($value['value']);
-                    $ids[$key] = $term['term_id'] ?? 0; 
+                    $ids[$key] = $term; 
                 }
                 print_r($ids);
                 $saveTag = wp_set_object_terms($post_id, array_filter($ids));
@@ -195,7 +195,7 @@ function fbu_handle_form_submission()
                 $ids = [];
                 foreach ($moods as $key => $value) {
                     $term = term_exists($value['value']);
-                    $ids[$key] = $term['term_id'] ?? 0; 
+                    $ids[$key] = $term; 
                 }
                 print_r($ids);
                 $saveMood = wp_set_object_terms($post_id, array_filter($ids));
