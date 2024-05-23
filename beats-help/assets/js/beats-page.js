@@ -139,6 +139,8 @@
                 });
                 var ids = gallery_ids.join(",");
                 if(ids.length === 0) return true;//if closed withput selecting an image
+                console.log(selection)
+                console.log(selected)
                 jQuery(btnElement).html(' ');
                 jQuery(inputElement).val(ids);
                 jQuery(previewElement).html(' ').html( $('audio').attr('src', selected ).attr('controls', 1));
@@ -154,7 +156,6 @@
                     var attachment = wp.media.attachment(id);
                     attachment.fetch();
                     console.log(attachment)
-                    console.log(selection)
                     selection.add( attachment ? [ attachment ] : [] );
                 });
             });
