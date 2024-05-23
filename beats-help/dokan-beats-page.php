@@ -159,7 +159,7 @@ function fbu_handle_form_submission()
                 $beat_post['ID'] = sanitize_text_field($_POST['beat_id']);
             }
             
-            $post_id = wp_insert_post($beat_post);
+            $post_id = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
             
             // Save Category
             $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
