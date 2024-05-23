@@ -182,7 +182,7 @@ function fbu_handle_form_submission()
                     $ids[$key] = $term['term_id'] ?? 0; 
                 }
                 print_r(array_filter($ids));
-                $saveTag = wp_set_object_terms($post_id, array_filter($ids), 'tag');
+                $saveTag = wp_set_object_terms($post_id, array_filter($ids));
                 print_r($saveTag);
             } else {
                 array_push($beatsErrors, 'Tag is required');
@@ -198,7 +198,7 @@ function fbu_handle_form_submission()
                     $ids[$key] = $term['term_id'] ?? 0; 
                     print_r($term);
                 }
-                $saveMood = wp_set_object_terms($post_id, array_filter($ids), 'mood');
+                $saveMood = wp_set_object_terms($post_id, array_filter($ids));
                 print_r($saveMood);
 
             } else {
