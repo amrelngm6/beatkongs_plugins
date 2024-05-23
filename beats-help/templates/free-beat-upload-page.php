@@ -89,7 +89,7 @@ if ( $new_product ) {
             <strong><?php esc_html_e( 'Success!', 'dokan-lite' ); ?></strong> <?php esc_html_e( 'The Beat has been saved successfully.', 'dokan-lite' ); ?>
 
             <?php if ( $post->post_status === 'publish' ) : ?>
-                <a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>" target="_blank"><?php esc_html_e( 'View Beat &rarr;', 'dokan-lite' ); ?></a>
+                <a href="<?php echo esc_url( get_permalink( $beatId ) ); ?>" target="_blank"><?php esc_html_e( 'View Beat &rarr;', 'dokan-lite' ); ?></a>
             <?php endif; ?>
         </div>
     <?php endif; ?>
@@ -111,7 +111,7 @@ if ( $new_product ) {
                             <label for="beat_title" class="form-label"><?php esc_html_e( 'Title', 'dokan-lite' ); ?></label>
                             <?php
                             dokan_post_input_box(
-                                $post_id,
+                                $beatId,
                                 'beat_title',
                                 [
                                     'placeholder' => __( 'Beat name..', 'dokan-lite' ),
@@ -180,7 +180,7 @@ if ( $new_product ) {
                             </div>
                         </div>
 
-                        <?php do_action( 'dokan_product_edit_after_product_tags', $post, $post_id ); ?>
+                        <?php do_action( 'dokan_product_edit_after_product_tags', $post, $beatId ); ?>
                     </div><!-- .content-half-part -->
 
                     <div class="content-half-part featured-image">
@@ -191,10 +191,10 @@ if ( $new_product ) {
                             $instruction_class = '';
                             $feat_image_id     = 0;
 
-                            if ( has_post_thumbnail( $post_id ) ) {
+                            if ( has_post_thumbnail( $beatId ) ) {
                                 $wrap_class        = '';
                                 $instruction_class = ' dokan-hide';
-                                $feat_image_id     = get_post_thumbnail_id( $post_id );
+                                $feat_image_id     = get_post_thumbnail_id( $beatId );
                             }
                             ?>
 
@@ -219,7 +219,7 @@ if ( $new_product ) {
                                 <?php if ( $feat_image_id ) : ?>
                                     <?php
                                     echo get_the_post_thumbnail(
-                                        $post_id,
+                                        $beatId,
                                         apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ),
                                         [
                                             'height' => '',
@@ -238,7 +238,7 @@ if ( $new_product ) {
                                     <div id="product_images_container">
                                         <ul class="product_images dokan-clearfix">
                                             <?php
-                                            $product_images = get_post_meta( $post_id, '_product_image_gallery', true );
+                                            $product_images = get_post_meta( $beatId, '_product_image_gallery', true );
                                             $gallery = explode( ',', $product_images );
 
                                             if ( $gallery ) :
@@ -272,9 +272,9 @@ if ( $new_product ) {
                     </div><!-- .content-half-part -->
                 </div><!-- .dokan-form-top-area -->
 
-                <?php do_action( 'dokan_new_product_form', $post, $post_id ); ?>
+                <?php do_action( 'dokan_new_product_form', $post, $beatId ); ?>
 
-                <input type="hidden" name="dokan_product_id" id="dokan_product_id" value="<?php echo esc_attr( $post_id ); ?>" />
+                <input type="hidden" name="dokan_product_id" id="dokan_product_id" value="<?php echo esc_attr( $beatId ); ?>" />
                 <!--hidden input for Firefox issue-->
                 <input type="hidden" name="dokan_update_product" value="<?php esc_attr_e( 'Save Beat', 'dokan-lite' ); ?>"/>
                 <input type="submit" name="dokan_update_product" id="publish" class="dokan-btn dokan-btn-theme dokan-btn-lg dokan-right" value="<?php esc_attr_e( 'Save Beat', 'dokan-lite' ); ?>"/>
