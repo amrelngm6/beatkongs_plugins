@@ -61,7 +61,7 @@ if (!defined('ABSPATH')) {
                                     <?php endif; ?>
 
                                     <?php
-                                        do_action( 'dokan_after_add_product_btn' );
+                                        // do_action( 'dokan_after_add_product_btn' );
                                     ?>
                                 </span>
                             <?php endif; ?>
