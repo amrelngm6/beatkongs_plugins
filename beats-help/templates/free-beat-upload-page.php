@@ -173,7 +173,9 @@ if ( $new_product ) {
                             <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
                             <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
-                            <div id="upload-mp3-demo"></div>
+                            <div id="upload-mp3-demo">
+
+                            </div>
                             <div id="upload-mp3-button">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
