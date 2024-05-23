@@ -41,8 +41,7 @@ if (!defined('ABSPATH')) {
                     $disable_product_popup   = $one_step_product_create || 'on' === dokan_get_option( 'disable_product_popup', 'dokan_selling', 'off' );
                     $new_product_url         = '/upload-free-beat';
                     $product_listing_args    = [
-                        'author'         => dokan_get_current_user_id(),
-                        'posts_per_page' => 10,
+                        'post_author'         => dokan_get_current_user_id(),
                     ];
                     // $product_query           = dokan()->product->all( $product_listing_args );
                     $beats_query = new WP_Query($args);
