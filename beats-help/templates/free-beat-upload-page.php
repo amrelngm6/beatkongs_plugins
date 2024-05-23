@@ -197,7 +197,6 @@ if ( $new_product ) {
                                 $image_id     = get_post_thumbnail_id( $beatId );
                                 $image     = get_the_post_thumbnail_url( $beatId );
                             }
-                            print_r($image);
                             ?>
 
                             <input type="hidden" name="beat_picture" id="beat_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
@@ -213,15 +212,11 @@ if ( $new_product ) {
                                             'height' => '',
                                             'width'  => '',
                                             'id' => 'dokat-beat-image'
-
-                                        ],
-                                        [
-                                            'id' => 'dokat-beat-image'
                                         ]
                                     );
                                     ?>
                                 <?php else : ?>
-                                    <img height="" width="" src="" alt="">
+                                    <img height="" width="" src="<?php echo $image; ?>" alt="">
                                 <?php endif; ?>
                             </div>
                             <div id="picture_media_manager2">
