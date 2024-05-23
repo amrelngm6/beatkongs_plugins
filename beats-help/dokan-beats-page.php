@@ -199,7 +199,7 @@ function fbu_handle_form_submission()
                     $ids[$key] = $term; 
                 }
                 print_r($ids);
-                $saveMood = wp_set_object_terms($post_id, array_filter($ids));
+                $saveMood = wp_set_object_terms($post_id, array_filter($ids), 'station');
                 print_r($saveMood);
 
             } else {
