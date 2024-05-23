@@ -109,7 +109,6 @@ if (!defined('ABSPATH')) {
                                             <th><?php esc_html_e( 'Name', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Status', 'dokan-lite' ); ?></th>
 
-                                            <th><?php esc_html_e( 'Price', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Type', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Views', 'dokan-lite' ); ?></th>
                                             <th><?php esc_html_e( 'Date', 'dokan-lite' ); ?></th>
@@ -129,12 +128,11 @@ if (!defined('ABSPATH')) {
                                             </td>
                                             <td><img src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></td>
                                             <td><?php echo $beat->post_title; ?></td>
+                                            <td><?php echo $beat->post_status; ?></td>
+                                            
                                             <td><?php echo $beat->post_type; ?></td>
-
-                                            <td><?php the_title(); ?></td>
-                                            <td><?php the_title(); ?></td>
-                                            <td><?php the_title(); ?></td>
-                                            <td><?php the_title(); ?></td>
+                                            <td><?php echo $beat->post_title; ?></td>
+                                            <td><?php echo date('Y-m-d', strtotime($beat->post_date)); ?></td>
                                         </tr>
                                         <?php endforeach ; ?>
                                     </tbody>
