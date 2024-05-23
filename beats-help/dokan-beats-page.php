@@ -172,7 +172,7 @@ function fbu_handle_form_submission()
             } else {
                 array_push($beatsErrors, 'station is required');
             }
-            print_r(json_decode($_POST['beat_tags']));
+            print_r(json_decode($_POST['beat_tags'], true));
 
             // Save Tags
             $tags = isset($_POST['beat_tags']) ? json_decode($_POST['beat_tags']) : '';
