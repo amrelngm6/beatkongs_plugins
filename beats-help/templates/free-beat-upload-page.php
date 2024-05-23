@@ -13,6 +13,7 @@ $category = wp_get_post_terms( $beatId, 'category');
 $station = wp_get_post_terms( $beatId, 'station');
 $moods = wp_get_post_terms( $beatId, 'mood');
 $tags = wp_get_post_terms( $beatId, 'tag');
+print_r($post);
 
 
 
