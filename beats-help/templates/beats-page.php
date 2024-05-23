@@ -37,7 +37,6 @@ if (!defined('ABSPATH')) {
 
                 <article class="dokan-product-listing-area">
                     <?php
-                    echo dokan_get_current_user_id();
                     $one_step_product_create = 'on' === dokan_get_option( 'one_step_product_create', 'dokan_selling', 'on' );
                     $disable_product_popup   = $one_step_product_create || 'on' === dokan_get_option( 'disable_product_popup', 'dokan_selling', 'off' );
                     $new_product_url         = '/upload-free-beat';
@@ -53,9 +52,10 @@ if (!defined('ABSPATH')) {
                             ]
                         ),
                     ];
-                    $product_query           = dokan()->product->all( $product_listing_args );
+                    // $product_query           = dokan()->product->all( $product_listing_args );
+                    $beats_query = new WP_Query($args);
 
-                    if ( $product_query->have_posts() ) {
+                    if ( $beats_query->have_posts() ) {
                         ?>
 
                         <div class="product-listing-top dokan-clearfix">
