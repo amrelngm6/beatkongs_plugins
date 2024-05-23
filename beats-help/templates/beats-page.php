@@ -118,7 +118,6 @@ if (!defined('ABSPATH')) {
                                         <?php 
                                             foreach ($beats_query as $key => $beat) :
                                                 setup_postdata($beat);
-                                                print_r($beat);
                                                 ?>
                                         <tr id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
