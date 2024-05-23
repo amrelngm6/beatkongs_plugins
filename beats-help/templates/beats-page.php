@@ -127,7 +127,7 @@ if (!defined('ABSPATH')) {
                                                 <label for="cb-select-all"></label>
                                                 <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
                                             </td>
-                                            <td><img src="<?php echo get_the_post_thumbnail_url( $beatId ); ?>" /></td>
+                                            <td><img src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></td>
                                             <td><?php echo $beat->post_title; ?></td>
                                             <td><?php echo $beat->post_type; ?></td>
 
