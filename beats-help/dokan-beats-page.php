@@ -172,7 +172,7 @@ function fbu_handle_form_submission()
             } else {
                 array_push($beatsErrors, 'station is required');
             }
-            print_r($_POST['beat_tags']);
+            print_r(json_decode($_POST['beat_tags']));
 
             // Save Tags
             $tags = isset($_POST['beat_tags']) ? json_decode($_POST['beat_tags']) : '';
@@ -182,7 +182,7 @@ function fbu_handle_form_submission()
             } else {
                 array_push($beatsErrors, 'Tag is required');
             }
-            print_r($_POST['beat_moods']);
+            print_r(json_decode($_POST['beat_moods']));
             
             // Save Moods
             $moods = isset($_POST['beat_moods']) ? json_decode($_POST['beat_moods']) : '';
