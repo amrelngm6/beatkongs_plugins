@@ -194,18 +194,11 @@ if ( $new_product ) {
                             if ( has_post_thumbnail( $beatId ) ) {
                                 $wrap_class        = '';
                                 $instruction_class = ' dokan-hide';
-                                $feat_image_id     = get_post_thumbnail_id( $beatId );
+                                $image_id     = get_post_thumbnail_id( $beatId );
                             }
                             ?>
 
                             <div id="myprefix_media_manager" class="instruction-inside<?php echo esc_attr( $instruction_class ); ?>">
-                                <input type="hidden" name="feat_image_id" class="dokan-feat-image-id" value="<?php echo esc_attr( $feat_image_id ); ?>">
-                                <?php
-                                $image_id = get_option( 'myprefix_image_id' );
-                                    echo  ( intval( $image_id ) > 0 ) 
-                                    ? wp_get_attachment_image( $image_id, 'medium', false, array( 'id' => 'myprefix-preview-image' ) )
-                                    : '<img id="myprefix-preview-image" src="https://some.default.image.jpg" />';
-                                ?>
                                 <input type="hidden" name="beat_picture" id="myprefix_image_id" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
                                 <div id="upload-cover-button">
                                     <i class="fas fa-cloud-upload-alt"></i>
@@ -230,6 +223,10 @@ if ( $new_product ) {
                                 <?php else : ?>
                                     <img height="" width="" src="" alt="">
                                 <?php endif; ?>
+                                <div id="upload-cover-button">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload a Beat cover image', 'dokan-lite' ); ?></a>
+                                </div>
                             </div>
                         </div><!-- .dokan-feat-image-upload -->
 
