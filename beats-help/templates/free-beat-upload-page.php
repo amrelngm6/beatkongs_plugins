@@ -16,7 +16,7 @@ $selectedTags = wp_get_post_terms( $beatId, 'tag');
 // print_r($post);
 $beatMP3 = $postMeta['beat_mp3'][0] ?? 0;
 
-print_r(get_attached_media('audio', $beatId));
+print_r(wp_get_attachment_url($beatMP3));
 
 
 ?>
@@ -99,8 +99,6 @@ if ( $new_product ) {
         <?php if ( dokan_is_seller_enabled( get_current_user_id() ) ) : ?>
             <form class="dokan-product-edit-form" role="form" method="post" id="post">
                 <input type="hidden" value="upload_beat" name="upload_beat" />
-                <?php do_action( 'dokan_product_data_panel_tabs' ); ?>
-                <?php do_action( 'dokan_product_edit_before_main' ); ?>
                 <?php wp_nonce_field(basename(__FILE__), 'beat_nonce'); ?>
 
                 <div class="dokan-form-top-area">

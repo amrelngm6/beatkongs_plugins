@@ -192,7 +192,6 @@ function fbu_handle_form_submission()
                 array_push($beatsErrors, 'Mood is required');
             }
 
-            
             if ($post_id) {
                 set_post_thumbnail($post_id, $beat_picture);
                 wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
@@ -259,6 +258,10 @@ function fbu_register_taxonomies() {
 add_action('init', 'fbu_register_taxonomies');
 
 
+function add_custom_meta_boxes() {
+    add_meta_box('beat_meta_box', 'Beat Details', 'beat_meta_box_callback', 'beat', 'normal', 'high');
+}
+add_action('add_meta_boxes', 'add_custom_meta_boxes');
 
 
 
