@@ -80,6 +80,7 @@ input.input-pad
   float: right;
   font-size: 28px;
   font-weight: bold;
+  line-height: 26px;
 }
 
 .fbu-close:hover,
