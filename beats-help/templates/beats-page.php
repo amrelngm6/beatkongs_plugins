@@ -4,12 +4,12 @@ if (!defined('ABSPATH')) {
 }
 
 
-$tags = get_terms(array(
+$categories = get_terms(array(
     'taxonomy' => 'category',
     'hide_empty' => true,
 ));
 
-$tags = get_terms(array(
+$stations = get_terms(array(
     'taxonomy' => 'station',
     'hide_empty' => true,
 ));
@@ -96,8 +96,10 @@ $moods = get_terms(array(
                 <form class="dokan-form-inline dokan-w8 dokan-product-date-filter" method="get">
                     <div class="dokan-form-group">
                         <select name="date" id="filter-by-date" class="dokan-form-control">
-                            <option selected="selected" value="0">All dates</option>
-                            <option value="202405">May 2024</option>
+                            <option selected="selected" value="0">- Select station -</option>
+                            <?php foreach ($categories as $category) : ?>
+                                <option value="<?php echo $category['term_id']; ?>"><?php echo $category['name']; ?></option>
+                            <?php endforeach ; ?>
                         </select>
                     </div>
 
