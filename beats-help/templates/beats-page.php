@@ -48,7 +48,7 @@ if (!defined('ABSPATH')) {
                     if ( $beats_query ) {
                         ?>
 
-                        <div class="product-listing-top dokan-clearfix">
+                        <div class="product-listing-top dokan-clearfix flex">
                             <h4>Free beats</h4>
 
                             <?php if ( dokan_is_seller_enabled( dokan_get_current_user_id() ) ) : ?>
