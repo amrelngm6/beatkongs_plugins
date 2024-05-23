@@ -182,7 +182,7 @@ function fbu_handle_form_submission()
             } else {
                 array_push($beatsErrors, 'Tag is required');
             }
-            print_r(json_decode(json_decode(json_encode($_POST['beat_moods']))));
+            print_r($_POST['beat_moods']);
             
             // Save Moods
             $moods = isset($_POST['beat_moods']) ? json_decode($_POST['beat_moods']) : '';
