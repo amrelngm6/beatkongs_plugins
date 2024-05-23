@@ -42,19 +42,11 @@ if (!defined('ABSPATH')) {
                     $new_product_url         = '/upload-free-beat';
                     $product_listing_args    = [
                         'author'         => dokan_get_current_user_id(),
-                        'posts_per_page' => 1,
-                        'post_status'    => apply_filters(
-                            'dokan_product_listing_post_statuses', [
-                                'publish',
-                                'draft',
-                                'pending',
-                                'future',
-                            ]
-                        ),
+                        'posts_per_page' => 10,
                     ];
                     // $product_query           = dokan()->product->all( $product_listing_args );
                     $beats_query = new WP_Query($args);
-
+                    print_r($beats_query);
                     if ( $beats_query->have_posts() ) {
                         ?>
 
