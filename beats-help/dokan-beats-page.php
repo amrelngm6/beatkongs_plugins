@@ -91,6 +91,44 @@ function dokan_station_popup_template(  ) {
 }
 
 
+function fbu_register_taxonomies() {
+    echo 'registering';
+    // Register Category Taxonomy
+    register_taxonomy('category', 'free_beat', array(
+        'label' => __('Category'),
+        'rewrite' => array('slug' => 'category'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
+    echo taxonomy_exists('category');
+
+    // Register Station Taxonomy
+    register_taxonomy('station', 'free_beat', array(
+        'label' => __('Station'),
+        'rewrite' => array('slug' => 'station'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
+    echo taxonomy_exists('station');
+
+    // Register Mood Taxonomy
+    register_taxonomy('mood', 'free_beat', array(
+        'label' => __('Mood'),
+        'rewrite' => array('slug' => 'mood'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
+    echo taxonomy_exists('mood');
+    // Register Mood Taxonomy
+    register_taxonomy('tag', 'free_beat', array(
+        'label' => __('Tag'),
+        'rewrite' => array('slug' => 'tag'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+    ));
+    echo taxonomy_exists('tag');
+}
+add_action('init', 'fbu_register_taxonomies');
 
 function fbu_handle_form_submission() 
 {
@@ -233,44 +271,6 @@ add_action('wp_enqueue_scripts', 'load_wp_media_files');
 
 
 
-function fbu_register_taxonomies() {
-    echo 'registering';
-    // Register Category Taxonomy
-    register_taxonomy('category', 'free_beat', array(
-        'label' => __('Category'),
-        'rewrite' => array('slug' => 'category'),
-        'hierarchical' => true,
-        'show_in_rest' => true,
-    ));
-    echo taxonomy_exists('category');
-
-    // Register Station Taxonomy
-    register_taxonomy('station', 'free_beat', array(
-        'label' => __('Station'),
-        'rewrite' => array('slug' => 'station'),
-        'hierarchical' => true,
-        'show_in_rest' => true,
-    ));
-    echo taxonomy_exists('station');
-
-    // Register Mood Taxonomy
-    register_taxonomy('mood', 'free_beat', array(
-        'label' => __('Mood'),
-        'rewrite' => array('slug' => 'mood'),
-        'hierarchical' => true,
-        'show_in_rest' => true,
-    ));
-    echo taxonomy_exists('mood');
-    // Register Mood Taxonomy
-    register_taxonomy('tag', 'free_beat', array(
-        'label' => __('Tag'),
-        'rewrite' => array('slug' => 'tag'),
-        'hierarchical' => true,
-        'show_in_rest' => true,
-    ));
-    echo taxonomy_exists('tag');
-}
-add_action('init', 'fbu_register_taxonomies');
 
 
 function add_custom_meta_boxes() {
