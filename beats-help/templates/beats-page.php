@@ -128,8 +128,8 @@ if (!defined('ABSPATH')) {
                                                 <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
                                             </td>
                                             <td><img src="<?php echo get_the_post_thumbnail_url( $beatId ); ?>" /></td>
+                                            <td><?php echo $beat->post_title; ?></td>
                                             <td><?php echo $beat->post_type; ?></td>
-                                            <td><?php the_title(); ?></td>
 
                                             <td><?php the_title(); ?></td>
                                             <td><?php the_title(); ?></td>
