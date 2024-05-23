@@ -45,8 +45,8 @@ if (!defined('ABSPATH')) {
                         'post_type'         => 'free_beat',
                     ];
                     // $product_query           = dokan()->product->all( $product_listing_args );
-                    $beats_query = new WP_Query($args);
-                    if ( $beats_query->have_posts() ) {
+                    $beats_query = get_posts($args);
+                    if ( $beats_query ) {
                         ?>
 
                         <div class="product-listing-top dokan-clearfix">
@@ -117,7 +117,9 @@ if (!defined('ABSPATH')) {
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            foreach ($beats_query->have_posts() as $key => $value) :
+                                            foreach ($beats_query as $key => $value) :
+                                                setup_postdata($beat);
+                                                print_r($beat);
                                                 ?>
                                         <tr id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
