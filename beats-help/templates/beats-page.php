@@ -63,16 +63,16 @@ $bulk_statuses = [
 
         <article class="dokan-product-listing-area">
             <?php
-                    $one_step_product_create = 'on' === dokan_get_option( 'one_step_product_create', 'dokan_selling', 'on' );
-                    $disable_product_popup   = $one_step_product_create || 'on' === dokan_get_option( 'disable_product_popup', 'dokan_selling', 'off' );
-                    $new_product_url         = '/upload-free-beat';
-                    $args    = [
-                        'post_author'         => dokan_get_current_user_id(),
-                        'post_type'         => 'free_beat',
-                    ];
-                    $beats_query = get_posts($args);
-                    if ( $beats_query ) {
-                        ?>
+            $one_step_product_create = 'on' === dokan_get_option( 'one_step_product_create', 'dokan_selling', 'on' );
+            $disable_product_popup   = $one_step_product_create || 'on' === dokan_get_option( 'disable_product_popup', 'dokan_selling', 'off' );
+            $new_product_url         = '/upload-free-beat';
+            $args    = [
+                'post_author'         => dokan_get_current_user_id(),
+                'post_type'         => 'free_beat',
+            ];
+            $beats_query = get_posts($args);
+            if ( $beats_query ) {
+            ?>
 
             <div class="product-listing-top dokan-clearfix flex">
                 <h4 class="w-full">Free beats</h4>
@@ -162,8 +162,6 @@ $bulk_statuses = [
 
                     <input type="hidden" name="product_cat" value="-1">
 
-
-
                     <input type="hidden" name="post_status" value="all">
                 </form>
 
@@ -176,7 +174,7 @@ $bulk_statuses = [
                         <label for="bulk-product-action-selector"
                             class="screen-reader-text"><?php esc_html_e( 'Select bulk action', 'dokan-lite' ); ?></label>
 
-                        <select name="status" required id="bulk-product-action-selector" class="dokan-form-control chosen">
+                        <select name="bulk_status" required id="bulk-product-action-selector" class="dokan-form-control chosen">
                             <?php foreach ( $bulk_statuses as $key => $bulk_status ) : ?>
                             <option class="bulk-product-status" value="<?php echo esc_attr( $key ); ?>">
                                 <?php echo esc_attr( $bulk_status ); ?></option>
@@ -209,9 +207,9 @@ $bulk_statuses = [
                         </thead>
                         <tbody>
                             <?php 
-                                            foreach ($beats_query as $key => $beat) :
-                                                setup_postdata($beat);
-                                                ?>
+                            foreach ($beats_query as $key => $beat) :
+                                setup_postdata($beat);
+                            ?>
                             <tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                                 <td id="cb" class="manage-column column-cb check-column">
@@ -234,8 +232,8 @@ $bulk_statuses = [
             </div>
 
             <?php
-                    } else {
-                        ?>
+                } else {
+            ?>
             <div class="dokan-dashboard-product-listing-wrapper dokan-dashboard-not-product-found">
                 <img src="<?php echo esc_url( plugins_url( 'assets/images/no-product-found.svg', DOKAN_FILE ) ); ?>"
                     alt="dokan setup" class="no-product-found-icon">
@@ -258,8 +256,8 @@ $bulk_statuses = [
                     <?php endif ?>
 
                     <?php
-                                        do_action( 'dokan_after_add_product_btn' );
-                                    ?>
+                        do_action( 'dokan_after_add_product_btn' );
+                    ?>
                 </span>
                 <?php endif; ?>
             </div>
