@@ -161,6 +161,11 @@
             jQuery('#vendor-main-sidebar').addClass('hidden')
         }
 
+        jQuery(document).on('click', '.dokan-section-toggle', function(e){
+            let targetId = jQuery(this).attr('data-target');
+            jQuery(targetId).toggleClass('hidden')
+        })
+
     });
 })(jQuery);
 
