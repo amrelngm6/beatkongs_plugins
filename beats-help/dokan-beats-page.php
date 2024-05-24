@@ -64,6 +64,10 @@ add_action( 'dokan_load_station', 'dokan_station_popup_template' );
 function dokan_station_popup_template(  ) {
      include plugin_dir_path(__FILE__) . 'templates/station-popup.php';
 }
+add_action( 'dokan_load_others_fields', 'dokan_others_fields_template' );
+function dokan_others_fields_template(  ) {
+     include plugin_dir_path(__FILE__) . 'templates/others.php';
+}
 
 
 add_action('init', 'beats_register_taxonomies');
