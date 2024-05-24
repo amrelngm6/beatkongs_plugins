@@ -12,9 +12,9 @@ if (!defined('ABSPATH')) {
 
 $beatsErrors = [];
 $beatsSucess = [];
+include plugin_dir_path(__FILE__) . 'includes/shortcodes.php';
 include plugin_dir_path(__FILE__) . 'includes/filters.php';
 include plugin_dir_path(__FILE__) . 'includes/inits.php';
-include plugin_dir_path(__FILE__) . 'includes/shortcodes.php';
 
 
 // Add custom menu item to Dokan Vendor Dashboard
