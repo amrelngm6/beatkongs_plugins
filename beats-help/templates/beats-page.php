@@ -93,7 +93,6 @@ $bulk_statuses = [
             }
 
             $beats_query = get_posts($args);
-            if ( $beats_query ) {
             ?>
 
             <div class="product-listing-top dokan-clearfix flex">
@@ -175,6 +174,8 @@ $bulk_statuses = [
                 </form>
 
             </div>
+
+            <?php if ( $beats_query ) { ?>
 
             <div class="dokan-dashboard-product-listing-wrapper">
 
