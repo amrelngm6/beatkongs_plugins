@@ -98,7 +98,7 @@ $moods = get_terms(array(
                         <select name="date" id="filter-by-date" class="dokan-form-control">
                             <option selected="selected" value="0">- Select station -</option>
                             <?php foreach ($categories as $category) : ?>
-                                <option value="<?php echo $category['term_id']; ?>"><?php echo $category['name']; ?></option>
+                                <option value="<?php echo $category->term_id; ?>"><?php echo $category->name; ?></option>
                             <?php endforeach ; ?>
                         </select>
                     </div>
