@@ -59,10 +59,11 @@ input.input-pad
 
   html body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu
   {
-    height: calc(100vh - 100px);
     overflow: auto;
     position: relative;
     top: -68px;
+    max-height: calc(100vh - 30px);
+    overflow: auto;
   }
   body.dokan-dashboard .dokan-dash-sidebar #dokan-navigation label#mobile-menu-icon
   {
