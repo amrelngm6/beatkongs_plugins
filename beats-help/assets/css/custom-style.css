@@ -37,7 +37,7 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 .dokan-dashboard-wrap
 {
   color: #514843;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 input.input-pad 
 {
