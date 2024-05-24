@@ -28,7 +28,7 @@ $post_statuses = ['publish', 'pending'];
             <label for="beat_visibility" class="form-label"><?php esc_html_e( 'Visibility', 'dokan-lite' ); ?></label>
             <select name="beat_visibility" id="beat_visibility" class="dokan-form-control">
                 <?php foreach ( ['visible', 'hidden'] as $name ) : ?>
-                    <option value="<?php echo esc_attr( $name ); ?>" <?php (isset($postMeta->beat_visibility[0]->name) && $postMeta->beat_visibility[0]->name == $name) ? 'selected' : ''; ?>>
+                    <option value="<?php echo esc_attr( $name ); ?>" <?php (isset($postMeta['beat_visibility'][0]) && $postMeta['beat_visibility'][0] == $name) ? 'selected' : ''; ?>>
                         <?php echo esc_html( ucfirst($name) ); ?>
                     </option>
                 <?php endforeach; ?>
@@ -39,7 +39,7 @@ $post_statuses = ['publish', 'pending'];
 
         <div class="dokan-form-group">
             <label for="beat_agreement" class="form-label"><?php esc_html_e( 'FREE BEAT AGREEMENT', 'dokan-lite' ); ?></label>
-            <textarea name="beat_agreement" id="beat_agreement" rows="4" class="dokan-form-control" placeholder="AGREEMENT OF FREE BEAT "><?php echo $postMeta->beat_agreement[0]->name ?? ''; ?></textarea>
+            <textarea name="beat_agreement" id="beat_agreement" rows="4" class="dokan-form-control" placeholder="AGREEMENT OF FREE BEAT "><?php echo $postMeta['beat_agreement'][0] ?? ''; ?></textarea>
         </div>
 
         <div class="dokan-form-group">
