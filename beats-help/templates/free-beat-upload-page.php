@@ -171,7 +171,7 @@ if ( $new_product ) {
                         </div>
 
                         <div >
-                            <div  id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
+                            <div  >
                                 <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
                                 <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3Id ); ?>" class="regular-text" />
@@ -183,7 +183,7 @@ if ( $new_product ) {
                             </div>
                             <div class="flex w-full">
                                 
-                                <div class="w-full" id="upload-mp3-button">
+                                <div class="w-full" id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
                                 </div>
