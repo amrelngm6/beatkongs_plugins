@@ -170,8 +170,8 @@ if ( $new_product ) {
                             <input name='beat_tags' value="<?php echo implode(',', array_column($selectedTags, 'name')) ; ?>" placeholder='Choose tags...'>
                         </div>
 
-                        <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
-                            <div >
+                        <div >
+                            <div  id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
                                 <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
                                 <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3Id ); ?>" class="regular-text" />
