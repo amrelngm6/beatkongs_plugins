@@ -67,6 +67,8 @@ input.input-pad
   body.dokan-dashboard .dokan-dash-sidebar #dokan-navigation label#mobile-menu-icon
   {
     display: none !important;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
