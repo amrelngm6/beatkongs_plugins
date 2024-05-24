@@ -155,6 +155,7 @@
             mp3_frame.open();
         });
 
+        jQuery('#toggle-mobile-menu').attr('checked','checked')
 
     });
 })(jQuery);
