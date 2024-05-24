@@ -190,11 +190,13 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
 {
   margin: 40px 0
 }
+.elementor-kit-3 input.ed_button.button.button-small,
 .elementor-kit-3 .wp-switch-editor,
 .elementor-kit-3 .mce-widget button {
   background: transparent;
 }
 
+.elementor-kit-3 input.ed_button.button.button-small,
 .elementor-kit-3 .wp-switch-editor
 {
   color: #666;
