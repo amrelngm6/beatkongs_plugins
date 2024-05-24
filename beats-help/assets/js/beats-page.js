@@ -158,7 +158,7 @@
         jQuery('#toggle-mobile-menu').attr('checked','checked');
         if (window.screen.availWidth < 800)
         {
-            jQuery('#dokan-dash-sidebar').addClass('hidden')
+            jQuery('#vendor-main-sidebar').addClass('hidden')
         }
 
     });
