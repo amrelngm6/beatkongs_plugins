@@ -5,7 +5,7 @@ $post_statuses = ['publish', 'pending'];
 <div class="dokan-other-options dokan-edit-row dokan-clearfix <?php echo esc_attr( $class ); ?>">
     <div class="dokan-section-heading" data-togglehandler="dokan_other_options">
         <h2><i class="fas fa-cog" aria-hidden="true"></i> <?php esc_html_e( 'Other Options', 'dokan-lite' ); ?></h2>
-        <p><?php esc_html_e( 'Set your extra product options', 'dokan-lite' ); ?></p>
+        <p><?php esc_html_e( 'Set your extra beat options', 'dokan-lite' ); ?></p>
         <a href="#" class="dokan-section-toggle">
             <i class="fas fa-sort-down fa-flip-vertical" aria-hidden="true"></i>
         </a>
@@ -49,7 +49,7 @@ $post_statuses = ['publish', 'pending'];
                 '_enable_reviews',
                 [
                     'value' => 'open' === $post->comment_status ? 'yes' : 'no',
-                    'label' => __( 'Enable product reviews', 'dokan-lite' ),
+                    'label' => __( 'Enable beat reviews', 'dokan-lite' ),
                 ],
                 'checkbox'
             );
