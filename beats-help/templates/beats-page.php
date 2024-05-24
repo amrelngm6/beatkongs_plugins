@@ -170,7 +170,7 @@ $bulk_statuses = [
 
                     <div class="dokan-form-group">
                         <input type="text" class="dokan-form-control" name="beat_seatch_title"
-                            placeholder="Search Products" value="">
+                            placeholder="Search Products" value="<?php echo sanitize_text_field($_GET['beat_seatch_title']) ?? '' ; ?>">
                     </div>
                 </form>
 
