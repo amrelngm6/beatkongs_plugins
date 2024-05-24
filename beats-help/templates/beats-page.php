@@ -80,7 +80,7 @@ $bulk_statuses = [
                     // Category taxonomy query
                     array(
                         'taxonomy' => 'category',
-                        'field'    => 'slug', // Can be 'term_id', 'name', or 'slug'
+                        'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
                         'terms'    => array(sanitize_text_field($_GET['beat_cat'])), // Replace with your categories
                     ),
     
