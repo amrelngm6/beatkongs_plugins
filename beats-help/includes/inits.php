@@ -3,7 +3,6 @@
 
 // Add Free Beats nmenu at the Dashboard sidebar
 // Also set its related taxonomies 
-add_action('init', 'register_beat_post_type');
 function register_beat_post_type() {
     $labels = array(
         'name' => 'Free Beats',
@@ -38,7 +37,6 @@ function register_beat_post_type() {
 
 
 // Register custom taxonomies [ Category, Station , Tag , Mood ]
-add_action('init', 'beats_register_taxonomies');
 function beats_register_taxonomies() {
     // Register Category Taxonomy
     register_taxonomy('category', 'free_beat', array(
@@ -78,7 +76,6 @@ function beats_register_taxonomies() {
 
 
 
-add_action('init', 'beats_handle_form_submission');
 function beats_handle_form_submission() 
 {
     global $beatsErrors, $beatsSucess;
@@ -191,6 +188,5 @@ function beats_handle_form_submission()
         }
     }
 
-    return $response;
 }
 
