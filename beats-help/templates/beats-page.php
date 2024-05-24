@@ -11,7 +11,7 @@ $categories = get_terms(array(
 
 $stations = get_terms(array(
     'taxonomy' => 'station',
-    'hide_empty' => true,
+    'hide_empty' => false,
 ));
 
 $tags = get_terms(array(
