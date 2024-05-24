@@ -305,7 +305,7 @@ $bulk_statuses = [
 
 </div><!-- .dokan-dashboard-wrap -->
 <script>
-    $(document).ready(function () {
+    window.addEventListener("load", (event) => {
         jQuery('.active.dashboard').removeClass('activve')
         jQuery('.dokan-beats').addClass('activve')
     });
