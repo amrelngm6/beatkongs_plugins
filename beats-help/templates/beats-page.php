@@ -131,7 +131,7 @@ $bulk_statuses = [
                         value="26d3090b3f">
                     <div class="dokan-form-group">
                         <button type="submit" class="dokan-btn">Filter</button>
-                        <a class="dokan-btn" href="https://beatkongs.medianssolutions.com/import/products/">Reset</a>
+                        <a class="dokan-btn" href="./">Reset</a>
                     </div>
                 </form>
 
