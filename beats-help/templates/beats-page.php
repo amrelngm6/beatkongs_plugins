@@ -125,7 +125,6 @@ $bulk_statuses = [
                         </select>
                     </div>
 
-
                     <input type="hidden" name="post_status" value="all">
 
                     <input type="hidden" id="_product_listing_filter_nonce" name="_product_listing_filter_nonce"
