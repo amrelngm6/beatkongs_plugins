@@ -1,5 +1,5 @@
 <?php
-$post_statuses = dokan_get_available_post_status( $post->ID );
+$post_statuses = ['publish', 'pending'];
 ?>
 
 <div class="dokan-other-options dokan-edit-row dokan-clearfix <?php echo esc_attr( $class ); ?>">
@@ -14,7 +14,7 @@ $post_statuses = dokan_get_available_post_status( $post->ID );
 
     <div class="dokan-section-content">
         <div class="dokan-form-group content-half-part">
-            <label for="post_status" class="form-label"><?php esc_html_e( 'Product Status', 'dokan-lite' ); ?></label>
+            <label for="post_status" class="form-label"><?php esc_html_e( 'Beat Status', 'dokan-lite' ); ?></label>
             <select id="post_status" class="dokan-form-control" name="post_status">
                 <?php foreach ( $post_statuses as $status => $label ) : // phpcs:ignore ?>
                     <option value="<?php echo esc_attr( $status ); ?>" <?php selected( $status, $post_status ); ?>>
@@ -27,9 +27,9 @@ $post_statuses = dokan_get_available_post_status( $post->ID );
         <div class="dokan-form-group content-half-part">
             <label for="_visibility" class="form-label"><?php esc_html_e( 'Visibility', 'dokan-lite' ); ?></label>
             <select name="_visibility" id="_visibility" class="dokan-form-control">
-                <?php foreach ( $visibility_options as $name => $label ) : ?>
-                    <option value="<?php echo esc_attr( $name ); ?>" <?php selected( $_visibility, $name ); ?>>
-                        <?php echo esc_html( $label ); ?>
+                <?php foreach ( ['visible', 'hidden'] as $name ) : ?>
+                    <option value="<?php echo esc_attr( $name ); ?>" <?php (isset($postMeta->visibility[0]->name) && $postMeta->visibility[0]->name == $name) ? 'selected' : ''; ?>>
+                        <?php echo esc_html( ucfirst($name) ); ?>
                     </option>
                 <?php endforeach; ?>
             </select>
