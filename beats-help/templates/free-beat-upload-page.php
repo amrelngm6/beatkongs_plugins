@@ -212,7 +212,7 @@ if ( $new_product ) {
                             <label for="post_excerpt" class="form-label"><?php esc_html_e( 'Short Description', 'dokan-lite' ); ?></label>
                             <?php
                             wp_editor(
-                                $post_excerpt,
+                                $post['post_excerpt'] ?? '',
                                 'post_excerpt',
                                 apply_filters(
                                     'dokan_product_short_description',
@@ -232,7 +232,7 @@ if ( $new_product ) {
                             <label for="post_content" class="form-label"><?php esc_html_e( 'Description', 'dokan-lite' ); ?></label>
                             <?php
                             wp_editor(
-                                $post_content,
+                                $post['post_content'] ?? '',
                                 'post_content',
                                 apply_filters(
                                     'dokan_product_description',
