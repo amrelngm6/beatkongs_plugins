@@ -92,9 +92,7 @@ $bulk_statuses = [
                 );
             }
 
-            print_r($args);
             $beats_query = get_posts($args);
-            print_r($beats_query);
             ?>
 
             <div class="product-listing-top dokan-clearfix flex">
