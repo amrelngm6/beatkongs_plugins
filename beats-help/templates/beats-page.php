@@ -69,6 +69,7 @@ $bulk_statuses = [
             $args    = [
                 'post_author'         => dokan_get_current_user_id(),
                 'post_type'         => 'free_beat',
+                's' => '',
                 'post_status'         => (sanitize_text_field($_GET['post_status']) && sanitize_text_field($_GET['post_status']) != '-1') ? sanitize_text_field($_GET['post_status']) : ['publish','pending'],
             ];
 
