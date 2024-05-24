@@ -171,37 +171,39 @@ if ( $new_product ) {
                         </div>
 
                         <div id="mp3_media_manager" data-btn="" data-input="#mp3_upload_input" data-preview="#upload-mp3-demo" >
-                            <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
+                            <div >
+                                <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
 
-                            <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3Id ); ?>" class="regular-text" />
-                            <div id="upload-mp3-demo">
-                                <?php if ($beatMP3Id) : ?>
-                                    <audio controls src="<?php echo $beatMP3; ?>" />
-                                <?php endif; ?>
+                                <input type="hidden" name="beat_mp3" id="mp3_upload_input" value="<?php echo esc_attr( $beatMP3Id ); ?>" class="regular-text" />
+                                <div id="upload-mp3-demo">
+                                    <?php if ($beatMP3Id) : ?>
+                                        <audio controls src="<?php echo $beatMP3; ?>" />
+                                    <?php endif; ?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex w-full">
-                            
-                            <div class="w-full" id="upload-mp3-button">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
-                            </div>
-
-                            <label style="padding:10px" for="product_tag_edit" class="form-label"><?php esc_html_e( 'OR', 'dokan-lite' ); ?></label>
-        
                             <div class="flex w-full">
-                            
-                                <label for="beat_mp3_url" style=" width: 100px; padding: 10px; " class="form-label"><?php esc_html_e( 'Beat URL', 'dokan-lite' ); ?></label>
-                                <?php
-                                dokan_post_input_box(
-                                    $beatId,
-                                    'beat_mp3_url',
-                                    [
-                                        'placeholder' => __( 'Beat external link..', 'dokan-lite' ),
-                                        'value'       => $beatMP3Url ?? '',
-                                    ]
-                                );
-                                ?>
+                                
+                                <div class="w-full" id="upload-mp3-button">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <a href="#" class="dokan-feat-image-btn btn btn-sm"><?php esc_html_e( 'Upload MP3 with BeatTags', 'dokan-lite' ); ?></a>
+                                </div>
+
+                                <label style="padding:10px" for="product_tag_edit" class="form-label"><?php esc_html_e( 'OR', 'dokan-lite' ); ?></label>
+            
+                                <div class="flex w-full">
+                                
+                                    <label for="beat_mp3_url" style=" width: 100px; padding: 10px; " class="form-label"><?php esc_html_e( 'Beat URL', 'dokan-lite' ); ?></label>
+                                    <?php
+                                    dokan_post_input_box(
+                                        $beatId,
+                                        'beat_mp3_url',
+                                        [
+                                            'placeholder' => __( 'Beat external link..', 'dokan-lite' ),
+                                            'value'       => $beatMP3Url ?? '',
+                                        ]
+                                    );
+                                    ?>
+                                </div>
                             </div>
                         </div>
 
