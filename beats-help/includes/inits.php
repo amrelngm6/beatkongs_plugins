@@ -100,6 +100,7 @@ function beats_handle_form_submission()
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
             $beat_agreement = sanitize_text_field($_POST['beat_agreement']);
             $beat_visibility = sanitize_text_field($_POST['beat_visibility']);
+            $beat_enable_reviews = sanitize_text_field($_POST['beat_enable_reviews']);
             
             if (!$title)
             {
@@ -134,6 +135,7 @@ function beats_handle_form_submission()
                     'beat_mp3_url' => $beat_mp3_url,
                     'beat_agreement' => $beat_agreement,
                     'beat_visibility' => $beat_visibility,
+                    'beat_enable_reviews' => $beat_enable_reviews,
                 ),
             );
             

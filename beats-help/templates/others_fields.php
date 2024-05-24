@@ -46,7 +46,7 @@ $post_statuses = ['publish', 'pending'];
             <?php
             dokan_post_input_box(
                 $post_id,
-                '_enable_reviews',
+                'beat_enable_reviews',
                 [
                     'value' => 'open' === $post->comment_status ? 'yes' : 'no',
                     'label' => __( 'Enable beat reviews', 'dokan-lite' ),
