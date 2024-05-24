@@ -24,6 +24,10 @@ $moods = get_terms(array(
     'hide_empty' => true,
 ));
 
+$bulk_statuses = [
+    '0'     => __( 'Bulk Actions', 'dokan-lite' ),
+    'delete' => __( 'Delete Permanently', 'dokan-lite' ),
+];
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
@@ -167,12 +171,12 @@ $moods = get_terms(array(
 
             <div class="dokan-dashboard-product-listing-wrapper">
 
-                <form id="product-filter" method="POST" class="dokan-form-inline">
+                <form id="beat-filter" method="POST" class="dokan-form-inline">
                     <div id="dokan-bulk-action-selector" class="dokan-form-group">
                         <label for="bulk-product-action-selector"
                             class="screen-reader-text"><?php esc_html_e( 'Select bulk action', 'dokan-lite' ); ?></label>
 
-                        <select name="status" id="bulk-product-action-selector" class="dokan-form-control chosen">
+                        <select name="status" required id="bulk-product-action-selector" class="dokan-form-control chosen">
                             <?php foreach ( $bulk_statuses as $key => $bulk_status ) : ?>
                             <option class="bulk-product-status" value="<?php echo esc_attr( $key ); ?>">
                                 <?php echo esc_attr( $bulk_status ); ?></option>
@@ -212,7 +216,7 @@ $moods = get_terms(array(
 
                                 <td id="cb" class="manage-column column-cb check-column">
                                     <label for="cb-select-all"></label>
-                                    <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
+                                    <input id="cb-select-all" class="dokan-checkbox" name="post_id[]" value="<?php echo $beat->ID; ?>" type="checkbox">
                                 </td>
                                 <td><img width="50" src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></td>
                                 <td><?php echo $beat->post_title; ?></td>
