@@ -22,7 +22,7 @@ $postMeta = get_metadata( 'post', $beatId);
             <label for="beat_status" class="form-label"><?php esc_html_e( 'Beat Status', 'dokan-lite' ); ?></label>
             <select id="beat_status" class="dokan-form-control" name="beat_status">
                 <?php foreach ( $post_statuses as $name ) : // phpcs:ignore ?>
-                    <option value="<?php echo esc_attr( $name ); ?>" <?php ($post->post_status == $name) ? 'selected' : ''; ?>>
+                    <option value="<?php echo esc_attr( $name ); ?>" <?php echo ($post->post_status == $name) ? 'selected' : ''; ?>>
                         <?php echo esc_html( ucfirst($name )); ?>
                     </option>
                 <?php endforeach; ?>
@@ -33,7 +33,7 @@ $postMeta = get_metadata( 'post', $beatId);
             <label for="beat_visibility" class="form-label"><?php esc_html_e( 'Visibility', 'dokan-lite' ); ?></label>
             <select name="beat_visibility" id="beat_visibility" class="dokan-form-control">
                 <?php foreach ( ['visible', 'hidden'] as $name ) : ?>
-                    <option value="<?php echo esc_attr( $name ); ?>" <?php (isset($postMeta['beat_visibility'][0]) && $postMeta['beat_visibility'][0] == $name) ? 'selected' : ''; ?>>
+                    <option value="<?php echo esc_attr( $name ); ?>" <?php echo (isset($postMeta['beat_visibility'][0]) && $postMeta['beat_visibility'][0] == $name) ? 'selected' : ''; ?>>
                         <?php echo esc_html( ucfirst($name) ); ?>
                     </option>
                 <?php endforeach; ?>
