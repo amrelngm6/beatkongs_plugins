@@ -69,6 +69,7 @@ $bulk_statuses = [
             $args    = [
                 'post_author'         => dokan_get_current_user_id(),
                 'post_type'         => 'free_beat',
+                'post_status'         => $_GET['status'] ?? 'publish',
             ];
             $beats_query = get_posts($args);
             if ( $beats_query ) {
@@ -125,7 +126,6 @@ $bulk_statuses = [
                         </select>
                     </div>
 
-                    <input type="hidden" name="post_status" value="all">
 
                     <input type="hidden" id="_product_listing_filter_nonce" name="_product_listing_filter_nonce"
                         value="26d3090b3f">
