@@ -72,7 +72,7 @@ $bulk_statuses = [
                 'post_status'         => (sanitize_text_field($_GET['post_status']) && sanitize_text_field($_GET['post_status']) != '-1') ? sanitize_text_field($_GET['post_status']) : ['publish','pending'],
             ];
 
-            if (isset($_GET['beat_cat']))
+            if (!empty($_GET['beat_cat']))
             {
                 $args['tax_query'] = array(
                     'relation' => 'AND', // Use 'AND' if you want to match both taxonomies
