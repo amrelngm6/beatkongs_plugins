@@ -39,7 +39,7 @@ $post_statuses = ['publish', 'pending'];
 
         <div class="dokan-form-group">
             <label for="beat_agreement" class="form-label"><?php esc_html_e( 'FREE BEAT AGREEMENT', 'dokan-lite' ); ?></label>
-            <textarea name="beat_agreement" id="beat_agreement" rows="4" class="dokan-form-control" placeholder="AGREEMENT OF FREE BEAT "><?php echo $postMeta['beat_agreement'][0] ?? ''; ?></textarea>
+            <textarea name="beat_agreement" id="beat_agreement" rows="4" class="dokan-form-control" placeholder="AGREEMENT OF FREE BEAT "><?php print_r($postMeta); echo $postMeta['beat_agreement'][0] ?? ''; ?></textarea>
         </div>
 
         <div class="dokan-form-group">
