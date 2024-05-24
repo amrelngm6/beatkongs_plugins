@@ -1,6 +1,10 @@
 <?php
 $post_statuses = ['publish', 'pending'];
-global $postMeta;
+
+$beatId =  $_GET['beat_id'] ?? 0;
+
+$post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null; 
+$postMeta = get_metadata( 'post', $beatId);
 ?>
 
 <div class="dokan-other-options dokan-edit-row dokan-clearfix <?php echo esc_attr( $class ); ?>">
