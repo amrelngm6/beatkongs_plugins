@@ -102,9 +102,9 @@ $bulk_statuses = [
                     <div class="dokan-form-group">
                     <?php echo $_GET['beat_cat']; ?>
                         <select name="beat_cat" id="filter-by-date" class="dokan-form-control">
-                            <option selected="selected" value="0">- Select category -</option>
+                            <option value="0">- Select category -</option>
                             <?php foreach ($categories as $category) : ?>
-                                <option <?php (isset($_GET['beat_cat']) && sanitize_text_field($_GET['beat_cat']) == $category->term_id) ? 'selected' : '' ?>  value="<?php echo $category->term_id; ?>"><?php echo $category->name; ?></option>
+                                <option <?php (isset($_GET['beat_cat']) && sanitize_text_field($_GET['beat_cat']) == $category->term_id) ? 'selected="selected" ' : '' ?>  value="<?php echo $category->term_id; ?>"><?php echo $category->name; ?></option>
                             <?php endforeach ; ?>
                         </select>
                     </div>
