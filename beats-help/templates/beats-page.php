@@ -96,7 +96,7 @@ $moods = get_terms(array(
                 <form class="dokan-form-inline dokan-w8 dokan-product-date-filter" method="get">
                     <div class="dokan-form-group">
                         <select name="date" id="filter-by-date" class="dokan-form-control">
-                            <option selected="selected" value="0">- Select station -</option>
+                            <option selected="selected" value="0">- Select category -</option>
                             <?php foreach ($categories as $category) : ?>
                                 <option value="<?php echo $category->term_id; ?>"><?php echo $category->name; ?></option>
                             <?php endforeach ; ?>
@@ -105,16 +105,17 @@ $moods = get_terms(array(
 
                     <div class="dokan-form-group">
                         <select name="product_cat" id="product_cat" class="product_cat dokan-form-control chosen">
-                            <option value="-1" selected="selected">– Select a category –</option>
-
-                            <option class="level-0" value="15">Hip Hop</option>
+                            <option value="-1" selected="selected">– Select a station –</option>
+                            <?php foreach ($stations as $station) : ?>
+                                <option value="<?php echo $station->term_id; ?>"><?php echo $station->name; ?></option>
+                            <?php endforeach ; ?>
                         </select>
                     </div>
 
                     <div class="dokan-form-group">
                         <select name="product_type" id="filter-by-type" class="dokan-form-control"
                             style="max-width:140px;">
-                            <option value="">Product type</option>
+                            <option value="">Beat type</option>
                             <option value="free">
                                 Free beat </option>
                             <option value="sell">
@@ -123,14 +124,11 @@ $moods = get_terms(array(
                     </div>
 
                     <div class="dokan-form-group">
-                        <select name="filter_by_other" class="dokan-form-control">
-                            <option selected="selected" value="-1">- Select Filter -</option>
-                            <option value="featured">
-                                Featured </option>
-                            <option value="top_rated">
-                                Top Rated </option>
-                            <option value="best_selling">
-                                Best Selling </option>
+                        <select name="post_status" class="dokan-form-control">
+                            <option selected="selected" value="-1">- Select Status -</option>
+                            <option value="pending">Pending </option>
+                            <option value="draft">Draft </option>
+                            <option value="publish"> Publish </option>
                         </select>
                     </div>
 
