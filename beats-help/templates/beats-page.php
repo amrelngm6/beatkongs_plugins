@@ -117,17 +117,6 @@ $bulk_statuses = [
                     </div>
 
                     <div class="dokan-form-group">
-                        <select name="product_type" id="filter-by-type" class="dokan-form-control"
-                            style="max-width:140px;">
-                            <option value="">Beat type</option>
-                            <option value="free">
-                                Free beat </option>
-                            <option value="sell">
-                                Sell beat </option>
-                        </select>
-                    </div>
-
-                    <div class="dokan-form-group">
                         <select name="post_status" class="dokan-form-control">
                             <option selected="selected" value="-1">- Select Status -</option>
                             <option value="pending">Pending </option>
