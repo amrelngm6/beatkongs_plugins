@@ -69,7 +69,7 @@ $bulk_statuses = [
             $args    = [
                 'post_author'         => dokan_get_current_user_id(),
                 'post_type'         => 'free_beat',
-                'post_status'         => $_GET['post_status'] ?? ['publish','pending'],
+                'post_status'         => sanitize_text_field($_GET['post_status']) ?? ['publish','pending'],
             ];
             $beats_query = get_posts($args);
             if ( $beats_query ) {
