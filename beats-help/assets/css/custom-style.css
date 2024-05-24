@@ -57,10 +57,12 @@ input.input-pad
     top: 5px;
   }
 
-  ul.dokan-dashboard-menu
+  html body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu
   {
     height: calc(100vh - 100px);
     overflow: auto;
+    position: relative;
+    top: -68px;
   }
 }
 
