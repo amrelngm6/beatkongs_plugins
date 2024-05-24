@@ -31,7 +31,7 @@ function register_beat_post_type() {
         'menu_icon' => 'dashicons-format-audio',
     );
 
-    register_post_type('free_beat', $args);
+    register_post_type('beat', $args);
 }
 
 
@@ -39,7 +39,7 @@ function register_beat_post_type() {
 // Register custom taxonomies [ Category, Station , Tag , Mood ]
 function beats_register_taxonomies() {
     // Register Category Taxonomy
-    register_taxonomy('category', 'free_beat', array(
+    register_taxonomy('category', 'beat', array(
         'label' => __('Category'),
         'rewrite' => array('slug' => 'category'),
         'hierarchical' => true,
@@ -47,7 +47,7 @@ function beats_register_taxonomies() {
     ));
 
     // Register Station Taxonomy
-    register_taxonomy('station', 'free_beat', array(
+    register_taxonomy('station', 'beat', array(
         'label' => __('Station'),
         'rewrite' => array('slug' => 'station'),
         'hierarchical' => true,
@@ -55,14 +55,14 @@ function beats_register_taxonomies() {
     ));
 
     // Register Mood Taxonomy
-    register_taxonomy('mood', 'free_beat', array(
+    register_taxonomy('mood', 'beat', array(
         'label' => __('Mood'),
         'rewrite' => array('slug' => 'mood'),
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
     // Register Mood Taxonomy
-    register_taxonomy('tag', 'free_beat', array(
+    register_taxonomy('tag', 'beat', array(
         'label' => __('Tag'),
         'rewrite' => array('slug' => 'tag'),
         'hierarchical' => true,
@@ -131,7 +131,7 @@ function beats_handle_form_submission()
                 'post_content'  => $post_content ?? '',
                 'post_excerpt'  => $post_excerpt ?? '',
                 'post_status'   => $beat_status ?? 'publish',
-                'post_type'     => 'free_beat',
+                'post_type'     => 'beat',
                 'meta_input'    => array(
                     'beat_type' => $type,
                     'beat_picture' => $beat_picture,
