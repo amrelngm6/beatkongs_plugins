@@ -2,7 +2,8 @@ body.elementor-kit-3
 {
   --e-global-color-07ebab1: #f9901d;
 }
-body a.dokan-btn-theme:focus, body .dokan-btn-theme:focus, body input[type='submit'].dokan-btn-theme:active
+body a.dokan-btn-theme:focus, body .dokan-btn-theme:focus, body input[type='submit'].dokan-btn-theme:active,
+body a.dokan-btn-theme, body .dokan-btn-theme
 {
   background-color: var(--e-global-color-07ebab1);
 }
