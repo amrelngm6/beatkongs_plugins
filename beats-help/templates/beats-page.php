@@ -69,7 +69,7 @@ $bulk_statuses = [
             $args    = [
                 'post_author'         => dokan_get_current_user_id(),
                 'post_type'         => 'free_beat',
-                's' => sanitize_text_field($_GET['post_status']) ?? '',
+                's' => sanitize_text_field($_GET['seatch_title']) ?? '',
                 'post_status'         => (sanitize_text_field($_GET['post_status']) && sanitize_text_field($_GET['post_status']) != '-1') ? sanitize_text_field($_GET['post_status']) : ['publish','pending'],
             ];
 
@@ -168,16 +168,10 @@ $bulk_statuses = [
                     <button type="submit" name="product_listing_search" value="ok"
                         class="dokan-btn dokan-btn-theme">Search</button>
 
-                    <input type="hidden" id="_product_listing_filter_nonce" name="_product_listing_filter_nonce"
-                        value="26d3090b3f">
                     <div class="dokan-form-group">
-                        <input type="text" class="dokan-form-control" name="product_search_name"
+                        <input type="text" class="dokan-form-control" name="seatch_title"
                             placeholder="Search Products" value="">
                     </div>
-
-                    <input type="hidden" name="product_cat" value="-1">
-
-                    <input type="hidden" name="post_status" value="all">
                 </form>
 
             </div>
