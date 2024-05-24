@@ -236,7 +236,8 @@ $bulk_statuses = [
                                 <td><img width="50" src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></td>
                                 <td><?php echo $beat->post_title; ?></td>
                                 <td><?php echo $beat->post_status; ?></td>
-                                <td><?php echo  wp_get_post_terms( $beatId, 'category')[0]->name; ?></td>
+                                <?php $category =  wp_get_post_terms( $beat->ID, 'category'); ?>
+                                <td><?php echo  $category[0]->name; ?></td>
 
                                 <td><?php echo $beat->post_type; ?></td>
                                 <td><?php echo date('Y-m-d', strtotime($beat->post_date)); ?></td>
