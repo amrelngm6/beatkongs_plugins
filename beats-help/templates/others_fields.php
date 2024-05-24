@@ -22,7 +22,7 @@ $postMeta = get_metadata( 'post', $beatId);
             <label for="beat_status" class="form-label"><?php esc_html_e( 'Beat Status', 'dokan-lite' ); ?></label>
             <select id="beat_status" class="dokan-form-control" name="beat_status">
                 <?php foreach ( $post_statuses as $name ) : // phpcs:ignore ?>
-                    <option value="<?php echo esc_attr( $name ); ?>" <?php echo ($post->post_status == $name) ? 'selected' : ''; ?>>
+                    <option value="<?php echo esc_attr( $name ); ?>" <?php echo ($post->post_status === $name) ? 'selected' : ''; ?>>
                         <?php echo esc_html( ucfirst($name )); ?>
                     </option>
                 <?php endforeach; ?>
