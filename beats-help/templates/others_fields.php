@@ -53,7 +53,7 @@ $postMeta = get_metadata( 'post', $beatId);
                 $post_id,
                 'beat_enable_reviews',
                 [
-                    'value' =>  (isset($postMeta['beat_enable_reviews'][0]) && 'yes' === $postMeta['beat_enable_reviews'][0]) ? 'yes' : 'no',
+                    'value' =>  $postMeta['beat_enable_reviews'][0] ?? 'no',
                     'label' => __( 'Enable beat reviews', 'dokan-lite' ),
                 ],
                 'checkbox'
