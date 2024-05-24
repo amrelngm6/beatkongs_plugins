@@ -1,5 +1,6 @@
 <?php
 $post_statuses = ['publish', 'pending'];
+global $postMeta;
 ?>
 
 <div class="dokan-other-options dokan-edit-row dokan-clearfix <?php echo esc_attr( $class ); ?>">
