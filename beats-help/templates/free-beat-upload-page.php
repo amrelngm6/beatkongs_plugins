@@ -207,6 +207,47 @@ if ( $new_product ) {
                             </div>
                         </div>
 
+                        
+                        <div class="dokan-product-short-description">
+                            <label for="post_excerpt" class="form-label"><?php esc_html_e( 'Short Description', 'dokan-lite' ); ?></label>
+                            <?php
+                            wp_editor(
+                                $post_excerpt,
+                                'post_excerpt',
+                                apply_filters(
+                                    'dokan_product_short_description',
+                                    [
+                                        'editor_height' => 50,
+                                        'quicktags'     => true,
+                                        'media_buttons' => false,
+                                        'teeny'         => false,
+                                        'editor_class'  => 'post_excerpt',
+                                    ]
+                                )
+                            );
+                            ?>
+                        </div>
+
+                        <div class="dokan-product-description">
+                            <label for="post_content" class="form-label"><?php esc_html_e( 'Description', 'dokan-lite' ); ?></label>
+                            <?php
+                            wp_editor(
+                                $post_content,
+                                'post_content',
+                                apply_filters(
+                                    'dokan_product_description',
+                                    [
+                                        'editor_height' => 50,
+                                        'quicktags'     => true,
+                                        'media_buttons' => false,
+                                        'teeny'         => false,
+                                        'editor_class'  => 'post_content',
+                                    ]
+                                )
+                            );
+                            ?>
+                        </div>
+                        
                         <?php echo do_action('dokan_load_others_fields'); ?>
 
                     </div><!-- .content-half-part -->
