@@ -100,8 +100,6 @@ $bulk_statuses = [
 
                 <form class="dokan-form-inline dokan-w8 dokan-product-date-filter" method="get">
                     <div class="dokan-form-group">
-                    <?php echo $_GET['beat_cat']; ?>
-                    <?php echo $_GET['beat_station']; ?>
                         <select name="beat_cat" id="filter-by-date" class="dokan-form-control">
                             <option value="0">- Select category -</option>
                             <?php foreach ($categories as $category) : ?>
