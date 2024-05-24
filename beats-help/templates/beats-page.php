@@ -83,12 +83,20 @@ $bulk_statuses = [
                         'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
                         'terms'    => array(sanitize_text_field($_GET['beat_cat'])), // Replace with your categories
                     ),
+                );
+            }
+
+            if (!empty($_GET['beat_station']) && $_GET['beat_station'] > 0)
+            {
+                $args['tax_query'] = array(
+                    'relation' => 'AND', // Use 'AND' if you want to match both taxonomies
     
-                    // Station taxonomy query
-                    // array(
-                    //     'taxonomy' => 'station',
-                    //     'field'    => 'slug', // Can be 'term_id', 'name', or 'slug'
-                    // ),
+                    // Category taxonomy query
+                    array(
+                        'taxonomy' => 'station',
+                        'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
+                        'terms'    => array(sanitize_text_field($_GET['beat_station'])), // Replace with your categories
+                    ),
                 );
             }
 
