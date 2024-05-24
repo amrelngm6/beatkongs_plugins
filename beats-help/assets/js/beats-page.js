@@ -155,7 +155,11 @@
             mp3_frame.open();
         });
 
-        jQuery('#toggle-mobile-menu').attr('checked','checked')
+        jQuery('#toggle-mobile-menu').attr('checked','checked');
+        if (window.screen.availWidth < 800)
+        {
+            jQuery('#dokan-dash-sidebar').addClass('hidden')
+        }
 
     });
 })(jQuery);
