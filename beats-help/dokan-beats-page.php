@@ -66,9 +66,9 @@ function dokan_station_popup_template(  ) {
 }
 
 
-add_action('init', 'fbu_register_taxonomies');
+add_action('init', 'beats_register_taxonomies');
 
-add_action('init', 'fbu_handle_form_submission');
+add_action('init', 'beats_handle_form_submission');
 
 
 
