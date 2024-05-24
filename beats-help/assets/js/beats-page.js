@@ -162,6 +162,7 @@
         }
 
         jQuery(document).on('click', '.dokan-section-toggle', function(e){
+            e.preventDefault();
             let targetId = jQuery(this).attr('data-target');
             jQuery(targetId).toggleClass('hidden')
         })
