@@ -88,15 +88,13 @@ $bulk_statuses = [
 
             if (!empty($_GET['beat_station']) && $_GET['beat_station'] > 0)
             {
-                $args['tax_query'] = array(
-                    'relation' => 'AND', // Use 'AND' if you want to match both taxonomies
+                $args['tax_query'][] =
     
                     // Category taxonomy query
                     array(
                         'taxonomy' => 'station',
                         'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
                         'terms'    => array(sanitize_text_field($_GET['beat_station'])), // Replace with your categories
-                    ),
                 );
             }
 
