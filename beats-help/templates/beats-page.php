@@ -304,5 +304,11 @@ $bulk_statuses = [
         ?>
 
 </div><!-- .dokan-dashboard-wrap -->
+<script>
+    $(document).ready(function () {
+        jQuery('.active.dashboard').removeClass('activve')
+        jQuery('.dokan-beats').addClass('activve')
+    });
 
+</script>
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
