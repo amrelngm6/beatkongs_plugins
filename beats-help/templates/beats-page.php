@@ -120,9 +120,9 @@ $bulk_statuses = [
                     <div class="dokan-form-group">
                         <select name="post_status" class="dokan-form-control">
                             <option selected="selected" value="-1">- Select Status -</option>
-                            <option value="pending">Pending </option>
-                            <option value="draft">Draft </option>
-                            <option value="publish"> Publish </option>
+                            <?php foreach (['publish', 'pending'] as $value) : ?>
+                                <option <?php (isset($_GET['post_status']) && $_GET['post_status'] == $value) ? 'selected' : '' ?>  value="<?php echo $value; ?>"><?php echo ucfirst($value); ?></option>
+                            <?php endforeach ; ?>
                         </select>
                     </div>
 
