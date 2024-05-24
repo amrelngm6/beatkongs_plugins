@@ -14,9 +14,9 @@ $beatsErrors = [];
 $beatsSucess = [];
 
 echo plugin_dir_path(__FILE__) ;
-include plugin_dir_path(__FILE__) . '/includes/filters.php';
-include plugin_dir_path(__FILE__) . '/includes/inits.php';
-include plugin_dir_path(__FILE__) . '/includes/shortcodes.php';
+include plugin_dir_path(__FILE__) . 'includes/filters.php';
+include plugin_dir_path(__FILE__) . 'includes/inits.php';
+include plugin_dir_path(__FILE__) . 'includes/shortcodes.php';
 
 
 
