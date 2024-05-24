@@ -98,6 +98,7 @@ function beats_handle_form_submission()
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
             $beat_mp3_url = sanitize_text_field($_POST['beat_mp3_url']);
             $beat_picture = sanitize_text_field($_POST['beat_picture']);
+            $beat_status = sanitize_text_field($_POST['beat_status']);
             $beat_agreement = sanitize_text_field($_POST['beat_agreement']);
             $beat_visibility = sanitize_text_field($_POST['beat_visibility']);
             $beat_enable_reviews = sanitize_text_field($_POST['beat_enable_reviews']);
@@ -126,7 +127,7 @@ function beats_handle_form_submission()
             $beat_post = array(
                 'post_title'    => $title,
                 'post_content'  => '',
-                'post_status'   => 'publish',
+                'post_status'   => $beat_status ?? 'publish',
                 'post_type'     => 'free_beat',
                 'meta_input'    => array(
                     'beat_type' => $type,

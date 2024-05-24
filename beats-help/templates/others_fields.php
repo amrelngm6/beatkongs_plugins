@@ -14,11 +14,11 @@ $post_statuses = ['publish', 'pending'];
 
     <div class="dokan-section-content" id="others-content-fields">
         <div class="dokan-form-group content-half-part">
-            <label for="post_status" class="form-label"><?php esc_html_e( 'Beat Status', 'dokan-lite' ); ?></label>
-            <select id="post_status" class="dokan-form-control" name="post_status">
-                <?php foreach ( $post_statuses as $status => $label ) : // phpcs:ignore ?>
-                    <option value="<?php echo esc_attr( $status ); ?>" <?php selected( $status, $post_status ); ?>>
-                        <?php echo esc_html( $label ); ?>
+            <label for="beat_status" class="form-label"><?php esc_html_e( 'Beat Status', 'dokan-lite' ); ?></label>
+            <select id="beat_status" class="dokan-form-control" name="beat_status">
+                <?php foreach ( $post_statuses as $name ) : // phpcs:ignore ?>
+                    <option value="<?php echo esc_attr( $name ); ?>" <?php ($post->post_status == $name) ? 'selected' : ''; ?>>
+                        <?php echo esc_html( ucfirst($name )); ?>
                     </option>
                 <?php endforeach; ?>
             </select>
