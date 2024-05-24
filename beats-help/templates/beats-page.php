@@ -71,6 +71,27 @@ $bulk_statuses = [
                 'post_type'         => 'free_beat',
                 'post_status'         => (sanitize_text_field($_GET['post_status']) && sanitize_text_field($_GET['post_status']) != '-1') ? sanitize_text_field($_GET['post_status']) : ['publish','pending'],
             ];
+
+            if (isset($_GET['beat_cat']))
+            {
+                $args['tax_query'] = array(
+                    'relation' => 'AND', // Use 'AND' if you want to match both taxonomies
+    
+                    // Category taxonomy query
+                    array(
+                        'taxonomy' => 'category',
+                        'field'    => 'slug', // Can be 'term_id', 'name', or 'slug'
+                        'terms'    => array(sanitize_text_field($_GET['beat_cat'])), // Replace with your categories
+                    ),
+    
+                    // Station taxonomy query
+                    // array(
+                    //     'taxonomy' => 'station',
+                    //     'field'    => 'slug', // Can be 'term_id', 'name', or 'slug'
+                    // ),
+                );
+            }
+
             $beats_query = get_posts($args);
             if ( $beats_query ) {
             ?>
