@@ -66,7 +66,7 @@ function dokan_station_popup_template(  ) {
 }
 add_action( 'dokan_load_others_fields', 'dokan_others_fields_template' );
 function dokan_others_fields_template(  ) {
-     include plugin_dir_path(__FILE__) . 'templates/others.php';
+     include plugin_dir_path(__FILE__) . 'templates/others_fields.php';
 }
 
 
