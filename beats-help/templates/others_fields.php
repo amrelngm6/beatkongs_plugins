@@ -38,8 +38,8 @@ $post_statuses = ['publish', 'pending'];
         <div class="dokan-clearfix"></div>
 
         <div class="dokan-form-group">
-            <label for="_purchase_note" class="form-label"><?php esc_html_e( 'Purchase Note', 'dokan-lite' ); ?></label>
-            <?php dokan_post_input_box( $post_id, '_purchase_note', array( 'placeholder' => __( 'Customer will get this info in their order email', 'dokan-lite' ) ), 'textarea' ); ?>
+            <label for="beat_agreement" class="form-label"><?php esc_html_e( 'FREE BEAT AGREEMENT', 'dokan-lite' ); ?></label>
+            <?php dokan_post_input_box( $beatId, 'beat_agreement', array( 'placeholder' => __( 'AGREEMENT OF FREE BEAT ', 'dokan-lite' ) ), 'textarea' ); ?>
         </div>
 
         <div class="dokan-form-group">
