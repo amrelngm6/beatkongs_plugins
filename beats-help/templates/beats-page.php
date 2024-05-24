@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 
 $categories = get_terms(array(
     'taxonomy' => 'category',
-    'hide_empty' => true,
+    'hide_empty' => false,
 ));
 
 $stations = get_terms(array(
@@ -16,12 +16,12 @@ $stations = get_terms(array(
 
 $tags = get_terms(array(
     'taxonomy' => 'tag',
-    'hide_empty' => true,
+    'hide_empty' => false,
 ));
 
 $moods = get_terms(array(
     'taxonomy' => 'mood',
-    'hide_empty' => true,
+    'hide_empty' => false,
 ));
 
 $bulk_statuses = [
