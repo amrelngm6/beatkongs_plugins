@@ -25,10 +25,10 @@ $post_statuses = ['publish', 'pending'];
         </div>
 
         <div class="dokan-form-group content-half-part">
-            <label for="_visibility" class="form-label"><?php esc_html_e( 'Visibility', 'dokan-lite' ); ?></label>
-            <select name="_visibility" id="_visibility" class="dokan-form-control">
+            <label for="beat_visibility" class="form-label"><?php esc_html_e( 'Visibility', 'dokan-lite' ); ?></label>
+            <select name="beat_visibility" id="beat_visibility" class="dokan-form-control">
                 <?php foreach ( ['visible', 'hidden'] as $name ) : ?>
-                    <option value="<?php echo esc_attr( $name ); ?>" <?php (isset($postMeta->visibility[0]->name) && $postMeta->visibility[0]->name == $name) ? 'selected' : ''; ?>>
+                    <option value="<?php echo esc_attr( $name ); ?>" <?php (isset($postMeta->beat_visibility[0]->name) && $postMeta->beat_visibility[0]->name == $name) ? 'selected' : ''; ?>>
                         <?php echo esc_html( ucfirst($name) ); ?>
                     </option>
                 <?php endforeach; ?>
