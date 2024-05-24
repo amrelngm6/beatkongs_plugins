@@ -207,7 +207,7 @@ if ( $new_product ) {
                             </div>
                         </div>
 
-                        <?php do_action('dokan_load_others_fields'); ?>
+                        <?php echo do_action('dokan_load_others_fields'); ?>
 
                     </div><!-- .content-half-part -->
 
