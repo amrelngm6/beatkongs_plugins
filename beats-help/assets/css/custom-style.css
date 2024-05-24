@@ -2,6 +2,10 @@ body.elementor-kit-3
 {
   --e-global-color-07ebab1: #f9901d;
 }
+body a.dokan-btn-theme:focus, body .dokan-btn-theme:focus, body input[type='submit'].dokan-btn-theme:active
+{
+  background-color: var(--e-global-color-07ebab1);
+}
 
 body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li 
 {
