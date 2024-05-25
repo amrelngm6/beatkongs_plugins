@@ -58,9 +58,6 @@ if ( $new_product ) {
         <?php
             esc_html_e( 'Free Beat', 'dokan-lite' );
         ?>
-        <span class="dokan-label <?php echo esc_attr( dokan_get_post_status_label_class( $post->post_status ) ); ?> dokan-product-status-label">
-            <?php echo esc_html( dokan_get_post_status( $post->post_status ) ); ?>
-        </span>
 
         <?php if ( $post->post_status === 'publish' ) : ?>
             <span class="dokan-right">
