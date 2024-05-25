@@ -79,7 +79,7 @@ $bulk_statuses = [
                     <input type="hidden" id="nonce_CMB2phpcmb2_usage_terms_box" name="nonce_CMB2phpcmb2_usage_terms_box"
                         value="b76d838a5f" />
                     <div class="cmb2-wrap form-table">
-                        <div id="cmb2-metabox-cmb2_usage_terms_box" class="cmb2-metabox cmb-field-list">
+                        <div id="cmb2-metabox-cmb2_usage_terms_box" class="container cmb2-metabox cmb-field-list">
                             <div class="cmb-row cmb-type-multicheck cmb2-id-usageterms-filetypes"
                                 data-fieldtype="multicheck">
                                 <div class="cmb-th">
