@@ -254,11 +254,11 @@ $bulk_statuses = [
                                     
                                 </div>
                             </div>
-                            <div class="cmb-row cmb-type-title cmb2-id-var-usageterms-build-your-contract"
+                            <div style="width:100%" class="cmb-row cmb-type-title cmb2-id-var-usageterms-build-your-contract"
                                 data-fieldtype="title">
 
                                 <div class="cmb-td">
-                                    <h5 class="cmb2-metabox-title" id="var-usageterms-build-your-contract"
+                                    <h5 style="margin: 0" class="cmb2-metabox-title" id="var-usageterms-build-your-contract"
                                         data-hash='66pu33jua620'>
                                         Use the variables below to build your contract</h5>
                                 </div>
