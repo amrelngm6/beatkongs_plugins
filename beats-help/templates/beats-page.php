@@ -232,12 +232,12 @@ $bulk_statuses = [
                                 <td><img width="50" src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></td>
                                 <td><?php echo $beat->post_title; ?></td>
                                 <td><?php echo $beat->post_status; ?></td>
-                                <?php $category =  wp_get_post_terms( $beat->ID, 'category'); ?>
+                                <td><?php echo '0' ; ?></td>
                                 <?php  $postMeta = get_metadata( 'post', $beat->ID); ?>
                                 <td><?php echo $postMeta['_eael_post_view_count'][0] ?? '0' ; ?></td>
+                                <td><?php echo '0' ; ?></td>
 
                                 <td><?php echo $beat->post_type; ?></td>
-                                <td><?php echo date('Y-m-d', strtotime($beat->post_date)); ?></td>
                                 <td><a href="/upload-free-beat/?beat_id=<?php echo $beat->ID; ?>">Edit</a></td>
                             </tr>
                             <?php endforeach ; ?>
