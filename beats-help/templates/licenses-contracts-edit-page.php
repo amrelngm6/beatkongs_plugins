@@ -72,7 +72,7 @@ $bulk_statuses = [
 
             <div id="cmb2_usage_terms_box" class="postbox  cmb2-postbox">
                 <div class="postbox-header">
-                    <h2 class="hndle">What is included in the license</h2>
+                    <h5 class="hndle">What is included in the license</h5>
                     <div class="handle-actions hide-if-no-js"><button type="button" class="handle-order-higher"
                             aria-disabled="false"
                             aria-describedby="cmb2_usage_terms_box-handle-order-higher-description"><span
