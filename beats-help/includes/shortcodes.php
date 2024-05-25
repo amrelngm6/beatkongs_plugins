@@ -10,3 +10,8 @@ function dokan_beats_page_template_view() {
 function dokan_free_beat_upload_page_template() {
     include plugin_dir_path(__FILE__) . '../templates/free-beat-upload-page.php';
 }
+
+// Licenses & Contracts form shortcode  [licenses_contracts_page]
+function dokan_licenses_contracts_page_template() {
+    include plugin_dir_path(__FILE__) . '../templates/licenses-contracts-page.php';
+}
