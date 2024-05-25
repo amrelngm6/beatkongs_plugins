@@ -93,7 +93,7 @@ $bulk_statuses = [
                                     <?php echo $category->term_id; ?>
                                 </td>
                                 <td><?php echo $category->name; ?></td>
-                                <td><a href="/license-edit/?license_id=<?php echo $category->term_id; ?>">Edit</a></td>
+                                <td><a href="/edit-license-contract/?license_id=<?php echo $category->term_id; ?>">Edit</a></td>
                             </tr>
                             <?php endforeach ; ?>
                         </tbody>
