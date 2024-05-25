@@ -251,7 +251,6 @@ $bulk_statuses = [
                                 <div class="cmb-td">
                                             
                                     <div class="dokan-product-description">
-                                        <label for="post_content" class="form-label"><?php esc_html_e( 'The Contract', 'dokan-lite' ); ?></label>
                                         <?php
                                         wp_editor(
                                             $post['post_content'] ?? '',
