@@ -263,6 +263,7 @@ $bulk_statuses = [
                                         Use the variables below to build your contract</h5>
                                 </div>
                             </div>
+                            <hr />
                             <div class="cmb-row cmb-type-title cmb2-id-var-usageterms-license srmp3-var-licensecontract"
                                 data-fieldtype="title">
 
