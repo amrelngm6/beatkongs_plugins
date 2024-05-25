@@ -77,8 +77,7 @@ $bulk_statuses = [
                         <thead>
                             <tr>
                                 <th id="cb" class="manage-column column-cb check-column">
-                                    <label for="cb-select-all"></label>
-                                    <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
+                                    #
                                 </th>
                                 <th><?php esc_html_e( 'Title', 'dokan-lite' ); ?></th>
                                 <th><?php esc_html_e( 'Edit', 'dokan-lite' ); ?></th>
@@ -91,8 +90,7 @@ $bulk_statuses = [
                             <tr id="taxonomy-<?php $category->term_id; ?>" >
 
                                 <td id="cb" class="manage-column column-cb check-column">
-                                    <label for="cb-select-all"></label>
-                                    <input id="cb-select-all" class="dokan-checkbox" name="taxonomy_id[]" value="<?php echo $category->term_id; ?>" type="checkbox">
+                                    <?php echo $category->term_id; ?>
                                 </td>
                                 <td><?php echo $category->name; ?></td>
                                 <td><a href="/license-edit/?license_id=<?php echo $category->term_id; ?>">Edit</a></td>
