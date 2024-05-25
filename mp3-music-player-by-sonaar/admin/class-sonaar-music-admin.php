@@ -6345,19 +6345,19 @@ class Sonaar_Music_Admin {
                     'show_names'    => true,
                     'capability'    => 'manage_options',
                 ) );
-                $cmb_post_usageterms->add_field( array(
-                    'name'              => esc_html__('Bind this license to which product attribute?', 'sonaar-music'),
-                    'description'       => esc_html__('Product attributes are created in Products > Attributes.', 'sonaar-music'),
-                    'id'                => 'usageterms_product_variation',
-                    'show_option_none'  => true,
-                    'column' => array(
-                        'position' => 2,
-                        'name'     => esc_html__('Linked Product Attribute','sonaar-music')
-                    ),
-                    'type'              => 'select',
-                    'options_cb'        => [$this, 'srmp3_get_terms_variations'],
+                // $cmb_post_usageterms->add_field( array(
+                //     'name'              => esc_html__('Bind this license to which product attribute?', 'sonaar-music'),
+                //     'description'       => esc_html__('Product attributes are created in Products > Attributes.', 'sonaar-music'),
+                //     'id'                => 'usageterms_product_variation',
+                //     'show_option_none'  => true,
+                //     'column' => array(
+                //         'position' => 2,
+                //         'name'     => esc_html__('Linked Product Attribute','sonaar-music')
+                //     ),
+                //     'type'              => 'select',
+                //     'options_cb'        => [$this, 'srmp3_get_terms_variations'],
                     
-                ) );
+                // ) );
                 $cmb_post_usageterms->add_field( array(
                     'name'    => 'Files to Deliver when this license is Purchased',
                     'id'      => 'usageterms_filetypes',
