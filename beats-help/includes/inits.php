@@ -5,20 +5,20 @@
 // Also set its related taxonomies 
 function register_beat_post_type() {
     $labels = array(
-        'name' => 'Free Beats',
-        'singular_name' => 'Free Beat',
-        'menu_name' => 'Free Beats',
-        'name_admin_bar' => 'Free Beat',
+        'name' => 'Beats',
+        'singular_name' => 'Beat',
+        'menu_name' => 'Beats',
+        'name_admin_bar' => 'Beat',
         'add_new' => 'Add New',
-        'add_new_item' => 'Add New Free Beat',
+        'add_new_item' => 'Add New Beat',
         'new_item' => 'New Beat',
         'edit_item' => 'Edit Beat',
         'view_item' => 'View Beat',
-        'all_items' => 'All Free Beats',
-        'search_items' => 'Search Free Beats',
-        'parent_item_colon' => 'Parent Free Beats:',
-        'not_found' => 'No Free beats found.',
-        'not_found_in_trash' => 'No Free beats found in Trash.'
+        'all_items' => 'All Beats',
+        'search_items' => 'Search Beats',
+        'parent_item_colon' => 'Parent Beats:',
+        'not_found' => 'No beats found.',
+        'not_found_in_trash' => 'No beats found in Trash.'
     );
 
     $args = array(
@@ -28,6 +28,40 @@ function register_beat_post_type() {
         'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
         'menu_position' => 5,
         'taxonomies', array('category', 'tag', 'mood', 'station','author_license'),
+        'menu_icon' => 'dashicons-format-audio',
+    );
+
+    register_post_type('beat', $args);
+}
+
+
+// Add Free Beats nmenu at the Dashboard sidebar
+// Also set its related taxonomies 
+function register_license_post_type() {
+    $labels = array(
+        'name' => 'Beats Licenses',
+        'singular_name' => 'Beats License',
+        'menu_name' => 'Beats Licenses',
+        'name_admin_bar' => 'Beats License',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Beats License',
+        'new_item' => 'New Beat',
+        'edit_item' => 'Edit Beat',
+        'view_item' => 'View Beat',
+        'all_items' => 'All Beats Licenses',
+        'search_items' => 'Search Beats Licenses',
+        'parent_item_colon' => 'Parent Beats Licenses:',
+        'not_found' => 'No Beats Licenses found.',
+        'not_found_in_trash' => 'No Beats Licenses found in Trash.'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'menu_position' => 6,
+        'taxonomies', array('pa_license'),
         'menu_icon' => 'dashicons-format-audio',
     );
 
@@ -68,6 +102,7 @@ function beats_register_taxonomies() {
         'hierarchical' => true,
         'show_in_rest' => true,
     ));
+    
 }
 
 
