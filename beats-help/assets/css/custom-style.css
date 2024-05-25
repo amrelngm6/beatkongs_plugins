@@ -202,3 +202,10 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
   color: #666;
   height: auto;
 }
+.cmb-th {
+  width: 25%;
+}
+.cmb-row {
+  display: flex;
+  gap: 30px;
+}
