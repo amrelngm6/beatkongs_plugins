@@ -6592,15 +6592,15 @@ class Sonaar_Music_Admin {
                     'type'          => 'title',
                     'id'            => 'var_usageterms_build_your_contract'
                 ) );
-                if(function_exists('acf')){
-                    $cmb_post_usageterms->add_field( array(
-                        'classes'       => 'srmp3-var-licensecontract',
-                        'name'          => esc_html__('{acf_Your-ACF-ID-Here}', 'sonaar-music'),
-                        'type'          => 'title',
-                        'description'   => __( 'Want to use ACF Field from your product ?<br> use the ACF ID prefixed with {acf_xxxx}', 'sonaar-music' ),
-                        'id'            => 'var_usageterms_acf'
-                    ) );
-                }
+                // if(function_exists('acf')){
+                //     $cmb_post_usageterms->add_field( array(
+                //         'classes'       => 'srmp3-var-licensecontract',
+                //         'name'          => esc_html__('{acf_Your-ACF-ID-Here}', 'sonaar-music'),
+                //         'type'          => 'title',
+                //         'description'   => __( 'Want to use ACF Field from your product ?<br> use the ACF ID prefixed with {acf_xxxx}', 'sonaar-music' ),
+                //         'id'            => 'var_usageterms_acf'
+                //     ) );
+                // }
                 $cmb_post_usageterms->add_field( array(
                     'classes'       => 'srmp3-var-licensecontract',
                     'name'          => esc_html__('{LICENSE_NAME}', 'sonaar-music'),
