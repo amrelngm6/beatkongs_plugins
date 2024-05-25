@@ -439,6 +439,7 @@ class SRMP3_WooCommerce {
 		$usageTermsPosts = get_posts(array(
 			'post_type' => 'usage-terms',
 			'posts_per_page' => -1,
+			'post_author' => 1
 		));
 		$usageTerms_selectedAtribute = [];
 		foreach ( $usageTermsPosts as $post ) {
