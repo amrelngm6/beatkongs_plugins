@@ -208,4 +208,5 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
 .cmb-row {
   display: flex;
   gap: 30px;
+  padding: 15px 0;
 }
