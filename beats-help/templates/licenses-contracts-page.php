@@ -135,7 +135,7 @@ $bulk_statuses = [
 <script>
     window.addEventListener("load", (event) => {
         jQuery('.active.dashboard').removeClass('active')
-        jQuery('.licenses').addClass('active')
+        jQuery('.licenses_contracts').addClass('active')
     });
 </script>
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
