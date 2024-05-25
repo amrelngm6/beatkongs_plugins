@@ -29,6 +29,12 @@ function add_custom_beats_upload_menu($urls) {
         'url'   => dokan_get_navigation_url('../beats'),
         'pos'   => 50
     );
+    $urls['licenses_contracts'] = array(
+        'title' => __('Licenses & Contracts', 'dokan'),
+        'url'   => site_url('/licenses_contracts'),
+        'icon'  => '<i class="fa fa-cogs"></i>',
+        'pos'   => 190,
+    );
     return $urls;
 }
 
