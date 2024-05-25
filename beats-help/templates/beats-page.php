@@ -233,7 +233,8 @@ $bulk_statuses = [
                                 <td><?php echo $beat->post_title; ?></td>
                                 <td><?php echo $beat->post_status; ?></td>
                                 <?php $category =  wp_get_post_terms( $beat->ID, 'category'); ?>
-                                <td><?php echo $category[0]->name ; ?></td>
+                                <?php  $postMeta = get_metadata( 'post', $beat->ID); ?>
+                                <td><?php echo $postMeta['_eael_post_view_count'][0] ?? '0' ; ?></td>
 
                                 <td><?php echo $beat->post_type; ?></td>
                                 <td><?php echo date('Y-m-d', strtotime($beat->post_date)); ?></td>
