@@ -215,3 +215,8 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
   border-radius: 5px;
   border: 1px solid #999;
 }
+.cmb-row.cmb-type-title
+{
+  display: inline-block;
+  width: 33%;
+}
