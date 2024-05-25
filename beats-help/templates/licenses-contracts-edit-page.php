@@ -73,22 +73,6 @@ $bulk_statuses = [
             <div id="cmb2_usage_terms_box" class="postbox  cmb2-postbox">
                 <div class="postbox-header">
                     <h5 class="hndle">What is included in the license</h5>
-                    <div class="handle-actions hide-if-no-js"><button type="button" class="handle-order-higher"
-                            aria-disabled="false"
-                            aria-describedby="cmb2_usage_terms_box-handle-order-higher-description"><span
-                                class="screen-reader-text">Move up</span><span class="order-higher-indicator"
-                                aria-hidden="true"></span></button><span class="hidden"
-                            id="cmb2_usage_terms_box-handle-order-higher-description">Move What is included in the
-                            license box
-                            up</span><button type="button" class="handle-order-lower" aria-disabled="false"
-                            aria-describedby="cmb2_usage_terms_box-handle-order-lower-description"><span
-                                class="screen-reader-text">Move down</span><span class="order-lower-indicator"
-                                aria-hidden="true"></span></button><span class="hidden"
-                            id="cmb2_usage_terms_box-handle-order-lower-description">Move What is included in the
-                            license box
-                            down</span><button type="button" class="handlediv" aria-expanded="true"><span
-                                class="screen-reader-text">Toggle panel: What is included in the license</span><span
-                                class="toggle-indicator" aria-hidden="true"></span></button></div>
                 </div>
                 <div class="inside">
                     <!-- Begin CMB2 Fields -->
@@ -105,15 +89,14 @@ $bulk_statuses = [
                                 <div class="cmb-td">
                                     <ul class="cmb2-checkbox-list no-select-all cmb2-list">
                                         <li><input type="checkbox" class="cmb2-option" name="usageterms_filetypes[]"
-                                                id="usageterms_filetypes1" value="mp3" checked="checked"
-                                                data-hash='7npgi75uqe90' />
+                                                id="usageterms_filetypes1" value="mp3" />
                                             <label for="usageterms_filetypes1">MP3</label>
                                         </li>
                                         <li><input type="checkbox" class="cmb2-option" name="usageterms_filetypes[]"
-                                                id="usageterms_filetypes2" value="wav" data-hash='7npgi75uqe90' />
+                                                id="usageterms_filetypes2" value="wav" />
                                             <label for="usageterms_filetypes2">WAV</label></li>
                                         <li><input type="checkbox" class="cmb2-option" name="usageterms_filetypes[]"
-                                                id="usageterms_filetypes3" value="stems" data-hash='7npgi75uqe90' />
+                                                id="usageterms_filetypes3" value="stems" />
                                             <label for="usageterms_filetypes3">TRACK STEMS</label></li>
                                     </ul>
                                 </div>
