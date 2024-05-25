@@ -208,12 +208,13 @@ $bulk_statuses = [
                                     <input id="cb-select-all" class="dokan-checkbox" type="checkbox">
                                 </th>
                                 <th><?php esc_html_e( 'Image', 'dokan-lite' ); ?></th>
-                                <th><?php esc_html_e( 'Name', 'dokan-lite' ); ?></th>
+                                <th><?php esc_html_e( 'Track title', 'dokan-lite' ); ?></th>
                                 <th><?php esc_html_e( 'Status', 'dokan-lite' ); ?></th>
-                                <th><?php esc_html_e( 'Category', 'dokan-lite' ); ?></th>
+                                <th><?php esc_html_e( 'BASIC LICENSE price', 'dokan-lite' ); ?></th>
+                                <th><?php esc_html_e( 'Views', 'dokan-lite' ); ?></th>
+                                <th><?php esc_html_e( 'Plays', 'dokan-lite' ); ?></th>
 
                                 <th><?php esc_html_e( 'Type', 'dokan-lite' ); ?></th>
-                                <th><?php esc_html_e( 'Date', 'dokan-lite' ); ?></th>
                                 <th><?php esc_html_e( 'Edit', 'dokan-lite' ); ?></th>
                             </tr>
                         </thead>
