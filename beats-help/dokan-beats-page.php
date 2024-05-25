@@ -40,6 +40,12 @@ function add_dokan_beats_page_menu($urls) {
         'icon'  => '<i class="fa fa-music"></i>',
         'pos'   => 190,
     );
+    $urls['licenses'] = array(
+        'title' => __('Licenses & Contracts', 'dokan'),
+        'url'   => site_url('/licenses'),
+        'icon'  => '<i class="fa fa-cogs"></i>',
+        'pos'   => 190,
+    );
     return $urls;
 }
 
