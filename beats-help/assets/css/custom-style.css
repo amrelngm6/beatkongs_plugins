@@ -220,3 +220,8 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
   display: inline-block;
   width: 33%;
 }
+.license-box
+{
+  background-color: #fff;
+  padding: 20px;
+}
