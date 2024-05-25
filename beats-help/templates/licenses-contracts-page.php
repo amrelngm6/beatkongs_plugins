@@ -543,4 +543,5 @@ window.addEventListener("load", (event) => {
     jQuery('.dokan-beats').addClass('active')
 });
 </script>
+<link href="https://beatkongs.medianssolutions.com/wp-content/plugins/mp3-music-player-by-sonaar/admin/library/cmb2/css/cmb2.min.css?ver=6.5.3" type="text/css">
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
