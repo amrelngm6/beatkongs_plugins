@@ -210,7 +210,7 @@ $bulk_statuses = [
                                 <th><?php esc_html_e( 'Image', 'dokan-lite' ); ?></th>
                                 <th><?php esc_html_e( 'Track title', 'dokan-lite' ); ?></th>
                                 <th><?php esc_html_e( 'Status', 'dokan-lite' ); ?></th>
-                                <th><?php esc_html_e( 'BASIC LICENSE price', 'dokan-lite' ); ?></th>
+                                <th><?php esc_html_e( 'Price', 'dokan-lite' ); ?></th>
                                 <th><?php esc_html_e( 'Views', 'dokan-lite' ); ?></th>
                                 <th><?php esc_html_e( 'Plays', 'dokan-lite' ); ?></th>
 
