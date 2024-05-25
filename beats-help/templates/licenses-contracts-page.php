@@ -63,7 +63,7 @@ $bulk_statuses = [
         <article class="dokan-product-listing-area">
             
             <div class="product-listing-top dokan-clearfix flex">
-                <h4 class="w-full">Free beats</h4>
+                <h4 class="w-full">Licenses & Contracts</h4>
             </div>
 
             <?php if ( $categories ) { ?>
