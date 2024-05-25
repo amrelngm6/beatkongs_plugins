@@ -57,6 +57,7 @@ function enqueue_dokan_beats_page_scripts() {
 add_shortcode('beats_page', 'dokan_beats_page_template_view');
 add_shortcode('free_beat_upload_page', 'dokan_free_beat_upload_page_template');
 add_shortcode('licenses_contracts_page', 'dokan_licenses_contracts_page_template');
+add_shortcode('licenses_contracts_edit_page', 'dokan_licenses_contracts_edit_page_template');
 add_action( 'dokan_load_category', 'dokan_custom_product_view_load_template' );
 function dokan_custom_product_view_load_template(  ) {
      include plugin_dir_path(__FILE__) . 'templates/category-popup.php';
