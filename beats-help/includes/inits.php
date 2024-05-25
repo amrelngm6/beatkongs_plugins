@@ -35,9 +35,9 @@ function register_beat_post_type() {
 }
 
 
-// Add Free Beats nmenu at the Dashboard sidebar
+// Add Beat license nmenu at the Dashboard sidebar
 // Also set its related taxonomies 
-function register_license_post_type() {
+function register_beat_license_post_type() {
     $labels = array(
         'name' => 'Beats Licenses',
         'singular_name' => 'Beats License',
