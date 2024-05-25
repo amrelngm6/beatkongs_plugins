@@ -27,7 +27,7 @@ function register_beat_post_type() {
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
         'menu_position' => 5,
-        'taxonomies', array('category', 'tag', 'mood', 'station'),
+        'taxonomies', array('category', 'tag', 'mood', 'station','author_license'),
         'menu_icon' => 'dashicons-format-audio',
     );
 

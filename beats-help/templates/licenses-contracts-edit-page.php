@@ -76,12 +76,10 @@ $bulk_statuses = [
                 </div>
                 <div class="inside">
                     <!-- Begin CMB2 Fields -->
-                    <input type="hidden" id="nonce_CMB2phpcmb2_usage_terms_box" name="nonce_CMB2phpcmb2_usage_terms_box"
-                        value="b76d838a5f" />
+                    <input type="hidden" id="nonce_CMB2phpcmb2_usage_terms_box" name="nonce_CMB2phpcmb2_usage_terms_box" value="b76d838a5f" />
                     <div class="cmb2-wrap form-table">
                         <div id="cmb2-metabox-cmb2_usage_terms_box" class="container cmb2-metabox cmb-field-list">
-                            <div class="cmb-row cmb-type-multicheck cmb2-id-usageterms-filetypes"
-                                data-fieldtype="multicheck">
+                            <div class="cmb-row cmb-type-multicheck cmb2-id-usageterms-filetypes" data-fieldtype="multicheck">
                                 <div class="cmb-th">
                                     <label for="usageterms_filetypes">Files to Deliver when this license is
                                         Purchased</label>
