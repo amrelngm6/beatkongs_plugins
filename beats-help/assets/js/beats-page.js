@@ -197,7 +197,7 @@
                         console.log(e)
                         console.log(this)
                         console.log(jQuery(e))
-                        console.log(jQuery(this))
+                        console.log(jQuery(this).val())
                         e.val( selected )
                     })
                 ) : '';
