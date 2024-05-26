@@ -33,7 +33,7 @@
                             
                             foreach ($list as $key => $value) {
                             ?>
-                                <li class="choose-genre cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  
+                                <li class="cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  
                                     <input type="checkbox" name="selected_cat[]" value="<?php echo $value->term_id; ?>" />
                                     <?php echo $value->name; ?> 
                                 </li>
@@ -41,6 +41,7 @@
                             }
                             ?>
                             </ul>
+                            <button class="choose-genre" value="Done"></button>
                         </div>
 
                     </div>
