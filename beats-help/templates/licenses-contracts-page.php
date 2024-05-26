@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) {
 
 $args = array(
 'post_type' => 'usage-terms',
+'author'    => 1
 );
 
 $default_licenses = new WP_Query( $args );
