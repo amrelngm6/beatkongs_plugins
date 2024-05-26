@@ -31,6 +31,8 @@
                                 'hide_empty' => false,
                             ));
                             
+                            $selectedCategory = wp_get_post_terms( $beatId, 'category');
+                            print_r($selectedCategory);
                             foreach ($list as $key => $value) {
                             ?>
                                 <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
