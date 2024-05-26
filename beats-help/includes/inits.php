@@ -59,7 +59,7 @@ function register_beat_license_post_type() {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'supports' => array('title', 'editor',  'custom-fields'),
         'menu_position' => 5,
         'taxonomies', array('pa_license'),
         'menu_icon' => 'dashicons-format-audio',
