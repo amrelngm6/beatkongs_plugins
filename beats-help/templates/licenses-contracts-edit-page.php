@@ -17,11 +17,6 @@ $defaultPostMeta = isset($_GET['license_post_id']) ? get_metadata( 'post', $defa
 
 $authorPost = [];
 
-$BeatLicense = new BeatLicense($defaultPost, $authorPost);
-$BeatLicense->defaultValue = $defaultPost;
-$BeatLicense->defaultMetaValue = $defaultPostMeta;
-$BeatLicense->authorValue = $authorPost;
-
 // Custom query to retrieve beats
 $args = array(
     'post_type'     => 'usage-terms', // Your custom post type name
@@ -31,11 +26,14 @@ $args = array(
 );
 
 $posts = get_posts($args);
-print_r($posts);    
-// $post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
-// $postMeta = isset($_GET['license_id']) ? get_metadata( 'post', $beatLicenseId) : null;
-// print_r($post);
-// print_r($postMeta);
+$authorPost = $posts[0] ?? [];
+print_r($authorPost);    
+
+
+$BeatLicense = new BeatLicense($defaultPost, $authorPost);
+$BeatLicense->defaultValue = $defaultPost;
+$BeatLicense->defaultMetaValue = $defaultPostMeta;
+$BeatLicense->authorValue = (array) $authorPost;
 
 ?>
 
