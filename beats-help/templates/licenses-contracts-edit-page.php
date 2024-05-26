@@ -460,7 +460,7 @@ $BeatLicense->authorValue = $authorPost;
 <script>
 window.addEventListener("load", (event) => {
     jQuery('.active.dashboard').removeClass('active')
-    jQuery('.dokan-beats').addClass('active')
+    jQuery('.licenses_contracts').addClass('active')
 });
 </script>
 <?php do_action( 'dokan_dashboard_wrap_end' ); ?>
