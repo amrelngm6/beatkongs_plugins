@@ -36,7 +36,8 @@ $BeatLicense->defaultMetaValue = $defaultPostMeta;
 $BeatLicense->authorValue = (array) $authorPost;
 $BeatLicense->authorPostMeta = $authorPostMeta;
 
-print_r($BeatLicense->authorPostMeta);
+print_r($BeatLicense->authorPostMeta['usageterms_producer_alias']);
+print_r($BeatLicense->authorPostMeta['usageterms_producer_alias'][0]);
 
 ?>
 
