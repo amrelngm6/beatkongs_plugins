@@ -26,8 +26,10 @@ $args = array(
 );
 
 $posts = get_posts($args);
-$authorPost = $posts[0] ?? [];
+$authorPost = $posts[0] ?? (object) [];
+$authorPostMeta = isset($authorPost->ID) ? get_metadata( 'post', $authorPost->ID) : null;
 print_r($authorPost);    
+print_r($authorPostMeta);    
 
 
 $BeatLicense = new BeatLicense($defaultPost, $authorPost);
@@ -89,7 +91,7 @@ $BeatLicense->authorValue = (array) $authorPost;
                         <input type="hidden" name="post_type" value="usage-terms" />
                         <input type="hidden" name="license_title" value="<?php echo $defaultPost['post_title']; ?>" />
                         <input type="hidden" name="post_parent" value="<?php echo $defaultLicenseId; ?>" />
-                        <input type="hidden" name="post_id" value="<?php echo $authorPost['ID'] ?? 0; ?>" />
+                        <input type="hidden" name="post_id" value="<?php echo $authorPost->ID ?? 0; ?>" />
                         <?php wp_nonce_field(basename(__FILE__), 'beats_license_nonce'); ?>
                         <!-- Begin CMB2 Fields -->
                         <div class="cmb2-wrap form-table">
