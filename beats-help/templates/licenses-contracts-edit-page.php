@@ -36,6 +36,7 @@ $BeatLicense = new BeatLicense($defaultPost, $authorPost);
 $BeatLicense->defaultValue = $defaultPost;
 $BeatLicense->defaultMetaValue = $defaultPostMeta;
 $BeatLicense->authorValue = (array) $authorPost;
+$BeatLicense->authorPostMeta = $authorPostMeta;
 
 ?>
 
