@@ -238,26 +238,6 @@ if ( $new_product ) {
                             );
                             ?>
                         </div>
-
-                        <div class="dokan-product-description">
-                            <label for="post_content" class="form-label"><?php esc_html_e( 'Description', 'dokan-lite' ); ?></label>
-                            <?php
-                            wp_editor(
-                                $post['post_content'] ?? '',
-                                'post_content',
-                                apply_filters(
-                                    'dokan_product_description',
-                                    [
-                                        'editor_height' => 50,
-                                        'quicktags'     => true,
-                                        'media_buttons' => false,
-                                        'teeny'         => false,
-                                        'editor_class'  => 'post_content',
-                                    ]
-                                )
-                            );
-                            ?>
-                        </div>
                         
                         <?php echo do_action('dokan_load_downloadable_section'); ?>
                         
