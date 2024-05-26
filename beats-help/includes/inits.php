@@ -127,8 +127,8 @@ function beats_handle_form_submission()
         if (isset($_POST['beat_title'])) {
             $title = sanitize_text_field($_POST['beat_title']);
             $type = sanitize_text_field($_POST['beat_type']);
-            $category = sanitize_text_field($_POST['beat_category']);
-            $station = sanitize_text_field($_POST['beat_station']);
+            $category = sanitize_text_field($_POST['selected_cats']);
+            $station = sanitize_text_field($_POST['selected_stations']);
             $moods = sanitize_text_field($_POST['beat_moods']);
             $tags = sanitize_text_field($_POST['beat_tags']);
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
@@ -187,17 +187,12 @@ function beats_handle_form_submission()
             $beatId = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
             
             // Save Category
-            $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
-            if ($category_id) {
-                wp_set_post_terms($beatId, array($category_id), 'category');
-            }
+            $cats = $_POST['selected_cat'] ?? null;
+            wp_set_post_terms($beatId, $cats, 'category');
+            
             // Save Station
-            $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
-            if ($station) {
-                wp_set_object_terms($beatId, array($station), 'station');
-            } else {
-                array_push($beatsErrors, 'station is required');
-            }
+            $stations = $_POST['selected_stations'] ?? null;
+            wp_set_post_terms($beatId, $stations, 'category');
 
             // Save Tags
             $tags = isset($_POST['beat_tags']) ? json_decode(stripslashes($_POST['beat_tags']), true) : '';
