@@ -110,7 +110,7 @@ print_r($BeatLicense->authorMetaValue);
                                                     id="usageterms_filetypes2" value="wav" <?php echo $BeatLicense->checkMetaChecked('usageterms_filetypes', 'wav'); ?> />
                                                 <label for="usageterms_filetypes2">WAV</label></li>
                                             <li><input type="checkbox" class="cmb2-option" name="usageterms_filetypes[]"
-                                                    id="usageterms_filetypes3" value="stems" <?php echo $BeatLicense->checkMetaChecked('usageterms_filetypes', 'wav'); ?> />
+                                                    id="usageterms_filetypes3" value="stems" <?php echo $BeatLicense->checkMetaChecked('usageterms_filetypes', 'stems'); ?> />
                                                 <label for="usageterms_filetypes3">TRACK STEMS</label></li>
                                         </ul>
                                     </div>
