@@ -254,6 +254,8 @@ if ( $new_product ) {
                         </div>
                         
                         <?php echo do_action('dokan_load_others_fields'); ?>
+                        
+                        <?php echo do_action('dokan_load_downloadable_section'); ?>
 
                     </div><!-- .content-half-part -->
 

@@ -75,6 +75,10 @@ add_action( 'dokan_load_others_fields', 'dokan_others_fields_template' );
 function dokan_others_fields_template(  ) {
      include plugin_dir_path(__FILE__) . 'templates/others_fields.php';
 }
+add_action( 'dokan_load_downloadable_section', 'dokan_downloadable_section_template' );
+function dokan_downloadable_section_template(  ) {
+     include plugin_dir_path(__FILE__) . 'templates/downloadable-section.php';
+}
 
 
 
