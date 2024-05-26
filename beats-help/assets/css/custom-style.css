@@ -8,6 +8,10 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li.active
 {
   background-color: var(--e-global-color-07ebab1) !important;
 }
+body.elementor-kit-3 button:hover, body.elementor-kit-3 button:focus, body.elementor-kit-3 input[type="button"]:hover, body.elementor-kit-3 input[type="button"]:focus, body.elementor-kit-3 input[type="submit"]:hover, body.elementor-kit-3 input[type="submit"]:focus, body.elementor-kit-3 .elementor-button:hover, body.elementor-kit-3 .elementor-button:focus
+{
+  background-color: #f9901d !important;
+}
 
 body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li 
 {
