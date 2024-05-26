@@ -238,6 +238,7 @@
         });
 
         jQuery(document).on('change', 'input#beat_type', function(e){
+            console.log(e)
             jQuery('form.dokan-beat-edit-form').toggleClass('sell')
         });
 
