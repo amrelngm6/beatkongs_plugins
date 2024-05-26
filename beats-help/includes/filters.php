@@ -31,7 +31,7 @@ function add_custom_beats_upload_menu($urls) {
     );
     $urls['licenses_contracts'] = array(
         'title' => __('Licenses & Contracts', 'dokan'),
-        'url'   => site_url('/licenses_contracts'),
+        'url'   => site_url('/licenses-contracts'),
         'icon'  => '<i class="fa fa-cogs"></i>',
         'pos'   => 190,
     );
