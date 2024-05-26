@@ -168,7 +168,7 @@
         })
         
         jQuery(document).on('change', '.genre-checkbox', function(e){
-            let parent = jQuery(this).parent();
+            let parent = jQuery(this).parent('ul');
             console.log(parent);
             parent.find("input:checkbox:checked").each(function(){
                 console.log($(this).val());
