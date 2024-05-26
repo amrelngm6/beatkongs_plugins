@@ -55,9 +55,9 @@ Class BeatLicense
         }
 
         // Return default license option value 
-        if (isset($this->defaultValue[$key]))
+        if (isset($this->defaultMetaValue[$key]))
         {
-            return $this->defaultValue[$key][0] ?? '';
+            return $this->defaultMetaValue[$key][0] ?? '';
         }
     }
 }
