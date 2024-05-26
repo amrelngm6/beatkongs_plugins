@@ -280,7 +280,7 @@ function beats_license_handle_form_submission()
             'post_excerpt'  => '',
             'post_status'   => 'publish',
             'post_type'     => $type,
-            'post_parent'     => $type,
+            'post_parent'     => intval($post_parent),
             'meta_input'    => array(
                 'usageterms_filetypes' => $usageterms_filetypes,
                 'usageterms_producer_alias' => $usageterms_producer_alias ,
