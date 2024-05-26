@@ -37,6 +37,7 @@
                             ?>
                             
                                 <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
+                                <?php if ($key < 2) { ?> <input  type="hidden" class="genre-checkbox" name="selected_stations[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" /><?php } ?>
                                     <input <?php echo $checked; ?>  type="checkbox" class="genre-checkbox" name="selected_stations[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
                                     <?php echo $value->name; ?> 
                                 </label>
