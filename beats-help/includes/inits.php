@@ -180,6 +180,25 @@ function beats_handle_form_submission()
                     'beat_downloadable' => $beat_downloadable,
                 ),
             );
+
+            
+            if ($type == 'sell')
+            {
+                $args = array(
+                    'post_type' => 'usage-terms',
+                    'author'    => 1
+                );
+                $default_licenses = new WP_Query( $args );
+                foreach ($default_licenses->posts as $key => $value) 
+                {
+                    $url = $value->post_name.'_wc_file_url';
+                    $id = $value->post_name.'_wc_file_id';
+                    $price = $value->post_name.'_wc_file_price';
+                    $beat_post['meta_input'][$url] = sanitize_text_field($_POST[$url]);
+                    $beat_post['meta_input'][$id] = sanitize_text_field($_POST[$id]);
+                    $beat_post['meta_input'][$price] = sanitize_text_field($_POST[$price]);
+                }
+            }
             
             if (!empty($_POST['beat_id']))
             {
@@ -222,6 +241,8 @@ function beats_handle_form_submission()
             } else {
                 array_push($beatsErrors, 'Mood is required');
             }
+
+
 
             if ($beatId) {
                 set_post_thumbnail($beatId, $beat_picture);
