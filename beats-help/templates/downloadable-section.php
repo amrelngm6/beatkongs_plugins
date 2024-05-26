@@ -17,7 +17,7 @@
                     <tfoot>
                         <tr>
                             <th colspan="3">
-                                                                <a href="#" class="insert-file-row dokan-btn dokan-btn-sm dokan-btn-success" data-row="&lt;tr&gt;
+                                <a href="#" class="insert-file-row dokan-btn dokan-btn-sm dokan-btn-success" data-target="#downloads-tbody" data-row="&lt;tr&gt;
     &lt;td&gt;
         &lt;input type=&quot;text&quot; class=&quot;dokan-form-control input_text&quot; placeholder=&quot;File Name&quot; name=&quot;_wc_file_names[]&quot; value=&quot;&quot; /&gt;
     &lt;/td&gt;
@@ -46,8 +46,10 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                                            </tbody>
+                    <tbody id="downloads-tbody">
+
+                    
+                    </tbody>
                 </table>
 
                 <div class="dokan-clearfix">

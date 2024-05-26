@@ -171,6 +171,13 @@
             jQuery(targetId).toggleClass('hidden')
         })
         
+        jQuery(document).on('click', '.insert-file-row', function(e){
+            e.preventDefault();
+            let row = jQuery(this).data('row');
+            let target = jQuery(this).data('target');
+            jQuery(target).append(row);
+        });
+
         jQuery(document).on('change', '.genre-checkbox', function(e){
 
             let label = jQuery(this).parent();
