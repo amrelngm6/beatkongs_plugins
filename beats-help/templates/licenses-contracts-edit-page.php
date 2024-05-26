@@ -85,7 +85,7 @@ print_r($posts);
                 </div>
                 
                 <div class="inside">
-                    <form class="dokan-beat-license-edit-form" role="form" method="post" id="post">
+                    <form class="dokan-beat-license-edit-form" action="../licenses-contracts"  role="form" method="post" id="post">
                         <input type="hidden" value="beat_license_edit" name="true" />
                         <input type="hidden" value="post_type" name="usage-terms" />
                         <input type="hidden" value="license_title" name="<?php echo $defaultPost['post_title']; ?>" />
