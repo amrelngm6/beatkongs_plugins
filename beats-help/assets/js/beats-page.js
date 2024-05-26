@@ -50,9 +50,9 @@
             let selectedNames = '';
             let checked = jQuery(target).find("input:checkbox:checked");
             checked.each(function(){
-                selectedNames += $(this).attr('data-title') + ' , ';
+                selectedNames +=  ', ' + $(this).attr('data-title');
             });
-            $(categoryText).html(selectedNames);
+            $(categoryText).html(selectedNames.slice(1));
             modal.hide();
         });
 
