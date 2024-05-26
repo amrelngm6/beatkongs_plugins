@@ -23,7 +23,7 @@
                                     <span><i class="fas fa-chevron-left"></i></span>
                                 </span>
                             </span>
-                            <ul class="dokan-single-categories" id="dokan-single-categories">
+                            <ul class="dokan-single-categories" id="dokan-single-stations">
                                 
                             <?php
                             $list = $categories = get_terms(array(
@@ -34,11 +34,16 @@
                             foreach ($list as $key => $value) {
                                 $checked = ($key < 2) ? 'disabled checked' : ((isset($selectedStation[0]->name) && $selectedStation[0]->term_id == $value->term_id) ? 'checked' : '') ;
                             ?>
-                                <li <?php echo $checked; ?> class="choose-genre cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
+                            
+                                <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
+                                    <input type="checkbox" class="genre-checkbox" name="selected_stations[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
+                                    <?php echo $value->name; ?> 
+                                </label>
                             <?php 
                             }
                             ?>
                             </ul>
+                            <button class="choose-genre" data-target="#dokan-single-stations" >Done</button>
                         </div>
 
                     </div>
