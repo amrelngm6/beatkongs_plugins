@@ -61,13 +61,13 @@
                         <tr>
                             <td>
                                 <p>
-                                    <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[]" disabled value="<?php echo $value->post_title ?? '';?>">
+                                    <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[<?php echo $value->ID; ?>]" disabled value="<?php echo $value->post_title ?? '';?>">
                                 </p>
                             </td>
                             <td>
                                 <p>
-                                    <input type="url" id="file-url-<?php echo $key; ?>" class="dokan-form-control dokan-w8 input_text wc_file_url" placeholder="https://" name="_wc_file_urls[]" value="" style="margin-right: 8px;">
-                                    <input class="file_id" id="file-id-<?php echo $key; ?>" type="hidden" name="_wc_file_ids[]">
+                                    <input type="url" id="file-url-<?php echo $key; ?>" class="dokan-form-control dokan-w8 input_text wc_file_url" placeholder="https://" name="_wc_file_urls[<?php echo $value->ID; ?>]" value="" style="margin-right: 8px;">
+                                    <input class="file_id" id="file-id-<?php echo $key; ?>" type="hidden" name="_wc_file_ids[<?php echo $value->ID; ?>]">
                                     <a href="#" class="downloads_media_manager dokan-btn dokan-btn-sm dokan-btn-default upload_file_button" data-input=".file_id" data-url=".wc_file_url">Choose&nbsp;file</a>
                                 </p>
                             </td>

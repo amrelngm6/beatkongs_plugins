@@ -140,6 +140,7 @@ function beats_handle_form_submission()
             $beat_enable_reviews = sanitize_text_field($_POST['beat_enable_reviews']);
             $post_excerpt = sanitize_text_field($_POST['post_excerpt']);
             $post_content = sanitize_text_field($_POST['post_content']);
+            $beat_downloadable = sanitize_text_field($_POST['beat_downloadable']);
             
             if (!$title)
             {
@@ -176,6 +177,7 @@ function beats_handle_form_submission()
                     'beat_agreement' => $beat_agreement,
                     'beat_visibility' => $beat_visibility,
                     'beat_enable_reviews' => $beat_enable_reviews,
+                    'beat_downloadable' => $beat_downloadable,
                 ),
             );
             
