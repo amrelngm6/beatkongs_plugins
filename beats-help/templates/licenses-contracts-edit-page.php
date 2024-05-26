@@ -28,8 +28,6 @@ $args = array(
 $posts = get_posts($args);
 $authorPost = $posts[0] ?? (object) [];
 $authorPostMeta = isset($authorPost->ID) ? get_metadata( 'post', $authorPost->ID) : null;
-print_r($authorPost);    
-print_r($authorPostMeta);    
 
 
 $BeatLicense = new BeatLicense($defaultPost, $authorPost);
