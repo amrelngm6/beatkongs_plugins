@@ -275,6 +275,7 @@ function beats_license_handle_form_submission()
         
         // Create a new post of custom post type 'usage-terms'
         $license_post = array(
+            'ID'    => sanitize_text_field($_POST['post_id']) ?? 0,
             'post_title'    => $title,
             'post_content'  => '',
             'post_excerpt'  => '',
@@ -297,10 +298,6 @@ function beats_license_handle_form_submission()
             ),
         );
         
-        if (!empty($_POST['post_id']))
-        {
-            $license_post['ID'] = sanitize_text_field($_POST['post_id']);
-        }
         
         $licenseId = isset($license_post['ID']) ? wp_update_post($license_post) : wp_insert_post($license_post);
         
