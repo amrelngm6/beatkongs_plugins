@@ -8,6 +8,20 @@ $categories = get_terms(array(
     'taxonomy' => 'usage-terms',
     'hide_empty' => false,
 ));
+// $taxonomy = 'my_taxonomy'; // this is the name of the taxonomy
+// $terms = get_terms($taxonomy);
+$args = array(
+'post_type' => 'usage-terms',
+// 'tax_query' => array(
+//             array(
+//                 'taxonomy' => 'updates',
+//                 'field' => 'slug',
+//                 'terms' => wp_list_pluck($terms,'slug')
+//             )
+//         )
+);
+
+$categories = new WP_Query( $args );
 
 ?>
 
