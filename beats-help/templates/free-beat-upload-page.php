@@ -140,19 +140,7 @@ if ( $new_product ) {
                             
                             <label for="bpm" class="form-label"><?php esc_html_e( 'BPM', 'dokan-lite' ); ?></label>
                             <input type="number" min="0" max="300" name="bpm" id="bpm" value="" class="dokan-form-control valid" placeholder="BPM (Beats per minute).." aria-invalid="false">
-                            <?php
-                            dokan_post_input_box(
-                                $beatId,
-                                'bpm',
-                                [
-                                    'type'        => 'number',
-                                    'min'         => 0,
-                                    'max'         => 300,
-                                    'placeholder' => __( 'BPM (Beats per minute)..', 'dokan-lite' ),
-                                    'value'       => $postMeta['bpm'][0] ?? '',
-                                ]
-                            );
-                            ?>
+                            
                         </div>
 
                         <div class="flex  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
