@@ -168,10 +168,11 @@
         })
         
         jQuery(document).on('change', '.genre-checkbox', function(e){
-            let parent = jQuery(this).parent().parent();
-            console.log(parent);
-            parent.find("input:checkbox:checked").each(function(){
-                console.log($(this).val());
+            let label = jQuery(this).parent();
+            let ul = label.parent();
+            ul.find("input:checkbox:checked").each(function(){
+
+                console.log($(this).attr('data-title'));
             });
         })
 

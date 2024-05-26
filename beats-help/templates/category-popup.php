@@ -33,15 +33,15 @@
                             
                             foreach ($list as $key => $value) {
                             ?>
-                                <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>">  
-                                    <input type="checkbox" class="genre-checkbox" name="selected_cat[]" value="<?php echo $value->term_id; ?>" />
+                                <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
+                                    <input type="checkbox" class="genre-checkbox" name="selected_cat[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
                                     <?php echo $value->name; ?> 
                                 </label>
                             <?php 
                             }
                             ?>
                             </ul>
-                            <button class="choose-genre" >Done</button>
+                            <button class="fbu-close" type="" >Done</button>
                         </div>
 
                     </div>
