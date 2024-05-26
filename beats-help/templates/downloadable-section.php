@@ -79,7 +79,7 @@
 
                             <td>
                                 <p>
-                                    <input type="number" id="file-price-<?php echo $key; ?>" class="dokan-form-control input_text" placeholder="Price" name="<?php echo $value->post_name; ?>_wc_file_price" value="<?php echo $postMeta[$value->post_name.'_wc_file_price'][0] ?? ''; ?>">
+                                    <input type="number" min="0" id="file-price-<?php echo $key; ?>" class="dokan-form-control input_text" placeholder="Price" name="<?php echo $value->post_name; ?>_wc_file_price" value="<?php echo $postMeta[$value->post_name.'_wc_file_price'][0] ?? ''; ?>">
                                 </p>
                             </td>
                         </tr>
