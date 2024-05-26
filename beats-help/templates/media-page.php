@@ -41,8 +41,8 @@ if (!defined('ABSPATH')) {
                 <main id="main" class="site-main" role="main">
                     <div id="user-media-library">
                         <div id="selected-media" class="text-center">
-                            <p>Upload and Store all your beat files and images.</p>
-                            <p>Mp3, Wav and Zip files only.</p>
+                            <p><b>Upload and Store all your beat files and images.<br />
+                            Mp3, Wav and Zip files only.</b></p>
                         </div>
                         <button id="open-media-library">Open Media Library</button>
                     </div>
