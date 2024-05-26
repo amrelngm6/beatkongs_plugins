@@ -30,10 +30,11 @@
                                 'taxonomy' => 'station',
                                 'hide_empty' => false,
                             ));
-                            
+                            $selectedStation = wp_get_post_terms( $beatId, 'station');
                             foreach ($list as $key => $value) {
+                                $checked = ($key < 2) ? 'disabled checked' : ((isset($selectedStation[0]->name) && $selectedStation[0]->term_id == $value->term_id) ? 'checked' : '') ;
                             ?>
-                                <li class="choose-genre cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
+                                <li <?php echo $checked; ?> class="choose-genre cursor-pointer bg-gray-100" data-id="<?php echo $value->term_id; ?>">  <?php echo $value->name; ?> </li>
                             <?php 
                             }
                             ?>
