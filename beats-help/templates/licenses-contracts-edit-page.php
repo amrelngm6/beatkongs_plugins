@@ -441,6 +441,9 @@ print_r($posts);
                             </div>
                         </div>
                         <!-- End CMB2 Fields -->
+                        
+                        <!--hidden input for Firefox issue-->
+                        <input type="submit" name="dokan_update_product" id="publish" class="dokan-btn dokan-btn-theme dokan-btn-lg dokan-right" value="<?php esc_attr_e( 'Update', 'dokan-lite' ); ?>"/>
                     </form>
                 </div>
             </div>
