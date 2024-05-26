@@ -192,7 +192,11 @@
                 });
                 if(ids == '') return true;//if closed withput selecting an image
                 jQuery(inputElement).val(ids);
-                selected ? jQuery(urlElement).val( selected) : '';
+                selected ? (
+                    parent.find(inputElement).each(function(e){
+                        e.val( selected )
+                    })
+                ) : '';
             });
 
             mp3_frame.on('open',function() {
