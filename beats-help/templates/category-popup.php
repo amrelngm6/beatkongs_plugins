@@ -41,7 +41,7 @@
                             }
                             ?>
                             </ul>
-                            <button class="choose-genre" value="Done"></button>
+                            <button class="choose-genre" >Done</button>
                         </div>
 
                     </div>
