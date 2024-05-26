@@ -9,25 +9,6 @@ $categories = get_terms(array(
     'hide_empty' => false,
 ));
 
-$stations = get_terms(array(
-    'taxonomy' => 'station',
-    'hide_empty' => false,
-));
-
-$tags = get_terms(array(
-    'taxonomy' => 'tag',
-    'hide_empty' => false,
-));
-
-$moods = get_terms(array(
-    'taxonomy' => 'mood',
-    'hide_empty' => false,
-));
-
-$bulk_statuses = [
-    '0'     => __( 'Bulk Actions', 'dokan-lite' ),
-    'delete' => __( 'Delete Permanently', 'dokan-lite' ),
-];
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
