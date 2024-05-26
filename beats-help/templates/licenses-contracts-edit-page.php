@@ -80,11 +80,7 @@ $BeatLicense->authorMetaValue = $authorPostMeta;
             <?php if ( isset( $_GET['message'] ) && $_GET['message'] === 'success' ) : ?>
             <div class="dokan-message">
                 <button type="button" class="dokan-close" data-dismiss="alert">&times;</button>
-                <strong><?php esc_html_e( 'Success!', 'dokan-lite' ); ?></strong> <?php esc_html_e( 'The Beat has been saved successfully.', 'dokan-lite' ); ?>
-
-                <?php if ( $post->post_status === 'publish' ) : ?>
-                    <a href="<?php echo esc_url( get_permalink( $beatId ) ); ?>" target="_blank"><?php esc_html_e( 'View Beat &rarr;', 'dokan-lite' ); ?></a>
-                <?php endif; ?>
+                <strong><?php esc_html_e( 'Success!', 'dokan-lite' ); ?></strong> <?php esc_html_e( 'The License has been updated successfully.', 'dokan-lite' ); ?>
             </div>
             <?php endif; ?>
 
