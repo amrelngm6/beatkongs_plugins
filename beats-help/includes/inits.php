@@ -270,7 +270,7 @@ function beats_license_handle_form_submission()
         $usageterms_state = sanitize_text_field($_POST['usageterms_state']);
         $usageterms_country = sanitize_text_field($_POST['usageterms_country']);
         $usageterms_allow_profit_performances = sanitize_text_field($_POST['usageterms_allow_profit_performances']);
-        $usageterms_contract = sanitize_text_field($_POST['usageterms_contract']);
+        $usageterms_contract = $_POST['usageterms_contract'];
         
         
         // Create a new post of custom post type 'usage-terms'
