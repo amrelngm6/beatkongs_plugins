@@ -22,7 +22,7 @@ $args = array(
 );
 
 $categories = new WP_Query( $args );
-print_r($categories);
+print_r($categories->posts);
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
