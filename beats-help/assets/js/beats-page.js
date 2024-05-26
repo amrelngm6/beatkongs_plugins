@@ -169,12 +169,13 @@
         })
         
         jQuery(document).on('change', '.genre-checkbox', function(e){
+            let selectedNames = '';
             let label = jQuery(this).parent();
             let ul = label.parent();
             let checked = ul.find("input:checkbox:checked");
             let unchecked = ul.find("input:checkbox:not(:checked)");
             checked.each(function(){
-                console.log($(this).attr('data-title'));
+                selectedNames = selectedNames + $(this).attr('data-title') + ',';
             });
             if (checked.length > 2)
             {
