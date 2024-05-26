@@ -4,25 +4,11 @@ if (!defined('ABSPATH')) {
 }
 
 
-$categories = get_terms(array(
-    'taxonomy' => 'usage-terms',
-    'hide_empty' => false,
-));
-// $taxonomy = 'my_taxonomy'; // this is the name of the taxonomy
-// $terms = get_terms($taxonomy);
 $args = array(
 'post_type' => 'usage-terms',
-// 'tax_query' => array(
-//             array(
-//                 'taxonomy' => 'updates',
-//                 'field' => 'slug',
-//                 'terms' => wp_list_pluck($terms,'slug')
-//             )
-//         )
 );
 
-$categories = new WP_Query( $args );
-print_r($categories->posts);
+$default_licenses = new WP_Query( $args );
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
@@ -80,15 +66,15 @@ print_r($categories->posts);
                         </thead>
                         <tbody>
                             <?php 
-                            foreach ($categories as $key => $category) :
+                            foreach ($default_licenses as $key => $license) :
                             ?>
-                            <tr id="taxonomy-<?php $category->term_id; ?>" >
+                            <tr id="taxonomy-<?php $license->ID; ?>" >
 
                                 <td id="cb" class="manage-column column-cb check-column">
-                                    <?php echo $category->ID; ?>
+                                    <?php echo $license->ID; ?>
                                 </td>
-                                <td><?php echo $category->post_title; ?></td>
-                                <td><a href="/edit-license-contract/?license_id=<?php echo $category->ID; ?>">Edit</a></td>
+                                <td><?php echo $license->post_title; ?></td>
+                                <td><a href="/edit-license-contract/?license_post_id=<?php echo $license->ID; ?>">Edit</a></td>
                             </tr>
                             <?php endforeach ; ?>
                         </tbody>
