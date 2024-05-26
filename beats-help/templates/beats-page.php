@@ -221,9 +221,8 @@ $bulk_statuses = [
                         <tbody>
                             <?php 
                             foreach ($beats_query as $key => $beat) :
-                                setup_postdata($beat);
                             ?>
-                            <tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                            <tr id="post-<?php $beat->ID; ?>" >
 
                                 <td id="cb" class="manage-column column-cb check-column">
                                     <label for="cb-select-all"></label>
