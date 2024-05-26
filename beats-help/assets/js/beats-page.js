@@ -44,12 +44,12 @@
         });
         
         // Handle category selection
-        jQuery(document).on('click', 'li.choose-genre', function() {
-            console.log(this)
-            var selectedCategory = $(this).text();
-            var selectedId = $(this).attr('data-id');
-            $(categoryInput).val(selectedId);
-            $(categoryText).html(selectedCategory);
+        jQuery(document).on('click', 'button.choose-genre', function() {
+            let selectedNames = '';
+            checked.each(function(){
+                selectedNames = selectedNames + $(this).attr('data-title') + ',';
+            });
+            $(categoryText).html(selectedNames);
             modal.hide();
         });
 
@@ -169,14 +169,12 @@
         })
         
         jQuery(document).on('change', '.genre-checkbox', function(e){
-            let selectedNames = '';
+
             let label = jQuery(this).parent();
             let ul = label.parent();
             let checked = ul.find("input:checkbox:checked");
             let unchecked = ul.find("input:checkbox:not(:checked)");
-            checked.each(function(){
-                selectedNames = selectedNames + $(this).attr('data-title') + ',';
-            });
+            
             if (checked.length > 2)
             {
                 unchecked.each(function(){
