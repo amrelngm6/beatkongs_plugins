@@ -46,7 +46,9 @@
         // Handle category selection
         jQuery(document).on('click', 'button.choose-genre', function(e) {
             e.preventDefault();
+            let target  = jQuery(this).attr('data-target');
             let selectedNames = '';
+            let checked = jQuery(target).find("input:checkbox:checked");
             checked.each(function(){
                 selectedNames += $(this).attr('data-title') + ',';
             });

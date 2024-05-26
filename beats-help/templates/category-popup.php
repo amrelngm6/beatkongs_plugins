@@ -41,7 +41,7 @@
                             }
                             ?>
                             </ul>
-                            <button class="choose-genre" type="" >Done</button>
+                            <button class="choose-genre" data-target="#dokan-single-categories" >Done</button>
                         </div>
 
                     </div>
