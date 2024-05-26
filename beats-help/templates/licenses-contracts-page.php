@@ -47,7 +47,7 @@ $default_licenses = new WP_Query( $args );
                 <h4 class="w-full">Licenses & Contracts</h4>
             </div>
 
-            <?php if ( $categories ) { ?>
+            <?php if ( $default_licenses ) { ?>
 
             <div class="dokan-dashboard-product-listing-wrapper">
 
