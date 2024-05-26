@@ -64,7 +64,7 @@ $BeatLicense->authorValue = $authorPost;
 
 
             <div class="product-listing-top dokan-clearfix flex">
-                <h4 class="w-full"><?php echo $defaultPost->post_title; ?></h4>
+                <h4 class="w-full"><?php echo $defaultPost['post_title']; ?></h4>
             </div>
 
 
