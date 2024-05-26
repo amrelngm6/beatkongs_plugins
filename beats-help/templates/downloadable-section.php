@@ -33,7 +33,7 @@
 
     &lt;td&gt;
         &lt;p&gt;
-            &lt;a href=&quot;#&quot; class=&quot;dokan-btn dokan-btn-sm dokan-btn-danger dokan-product-delete&quot;&gt;&lt;span&gt;Delete&lt;/span&gt;&lt;/a&gt;
+            &lt;input type=&quot;number&quot; class=&quot;dokan-form-control input_text&quot; placeholder=&quot;Price&quot; name=&quot;_wc_file_price[]&quot; value=&quot;&quot; /&gt;
         &lt;/p&gt;
     &lt;/td&gt;
 &lt;/tr&gt;
