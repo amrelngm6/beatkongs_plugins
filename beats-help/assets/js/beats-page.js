@@ -159,6 +159,57 @@
             mp3_frame.open();
         });
 
+
+        jQuery('.downloads_media_manager').click(function(e) {
+
+            e.preventDefault();
+            var urlElement = $(this).attr('data-url')
+            var inputElement = $(this).attr('data-input')
+            var btnElement = $(this).attr('data-btn')
+
+            var mp3_frame;
+            if(mp3_frame){
+                mp3_frame.open();
+            }
+            // Define mp3_frame as wp.media object
+            mp3_frame = wp.media({
+                title: 'Select Media',
+                multiple : false,
+                library : {
+                    type : 'audio',
+                }
+            });
+
+            mp3_frame.on('close',function() {
+                // On close, get selections and save to the hidden input
+                // plus other AJAX stuff to refresh the image preview
+                var selection =  mp3_frame.state().get('selection');
+                var ids = '';
+                var selected = '';
+                selection.each(function(attachment) {
+                    selected = attachment.attributes.url;
+                    ids = attachment['id'];
+                });
+                if(ids == '') return true;//if closed withput selecting an image
+                jQuery(btnElement).html(' ');
+                jQuery(inputElement).val(ids);
+                selected ? jQuery(urlElement).val( selected) : '';
+            });
+
+            mp3_frame.on('open',function() {
+                // On open, get the id from the hidden input
+                // and select the appropiate images in the media manager
+                var selection =  mp3_frame.state().get('selection');
+                var id = jQuery(inputElement).val();
+                var attachment = wp.media.attachment(id);
+                attachment.fetch();
+                selection.add( attachment ? [ attachment ] : [] );
+            });
+
+            mp3_frame.open();
+        });
+
+
         jQuery('#toggle-mobile-menu').attr('checked','checked');
         if (window.screen.availWidth < 800)
         {

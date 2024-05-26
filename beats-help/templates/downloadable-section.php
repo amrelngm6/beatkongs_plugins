@@ -24,6 +24,7 @@
     &lt;td&gt;
         &lt;p&gt;
             &lt;input type=&quot;text&quot; class=&quot;dokan-form-control dokan-w8 input_text wc_file_url&quot; placeholder=&quot;https://&quot; name=&quot;_wc_file_urls[]&quot; value=&quot;&quot; style=&quot;margin-right: 8px;&quot; /&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;_wc_file_ids[]&quot; /&gt;
             &lt;a href=&quot;#&quot; class=&quot;dokan-btn dokan-btn-sm dokan-btn-default upload_file_button&quot; data-choose=&quot;Choose file&quot; data-update=&quot;Insert file URL&quot;&gt;Choose&nbsp;file&lt;/a&gt;
         &lt;/p&gt;
     &lt;/td&gt;
@@ -48,7 +49,7 @@
                     </thead>
                     <tbody id="downloads-tbody">
 
-                    
+
                     </tbody>
                 </table>
 
