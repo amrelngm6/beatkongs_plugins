@@ -87,6 +87,7 @@ print_r($posts);
                 <div class="inside">
                     <form class="dokan-beat-license-edit-form" role="form" method="post" id="post">
                         <input type="hidden" value="beat_license_edit" name="true" />
+                        <input type="hidden" value="post_type" name="usage-terms" />
                         <input type="hidden" value="license_title" name="<?php echo $defaultPost['post_title']; ?>" />
                         <input type="hidden" value="post_parent" name="<?php echo $defaultPost['ID']; ?>" />
                         <input type="hidden" value="post_id" name="<?php echo $defaultPost['ID']; ?>" />
@@ -249,7 +250,7 @@ print_r($posts);
                                             <?php
                                             wp_editor(
                                                 $BeatLicense->getMetaValue('usageterms_contract'),
-                                                'post_content',
+                                                'usageterms_contract',
                                                 apply_filters(
                                                     'dokan_product_description',
                                                     [

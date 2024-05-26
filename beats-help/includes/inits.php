@@ -257,56 +257,20 @@ function beats_license_handle_form_submission()
         }
 
         $title = sanitize_text_field($_POST['license_title']);
-        $type = sanitize_text_field($_POST['beat_type']);
-        $category = sanitize_text_field($_POST['beat_category']);
-        $station = sanitize_text_field($_POST['beat_station']);
-        $moods = sanitize_text_field($_POST['beat_moods']);
-        $tags = sanitize_text_field($_POST['beat_tags']);
-        $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
-        $beat_mp3_url = sanitize_text_field($_POST['beat_mp3_url']);
-        $beat_picture = sanitize_text_field($_POST['beat_picture']);
-        $beat_status = sanitize_text_field($_POST['beat_status']);
-        $beat_agreement = sanitize_text_field($_POST['beat_agreement']);
-        $beat_visibility = sanitize_text_field($_POST['beat_visibility']);
-        $beat_enable_reviews = sanitize_text_field($_POST['beat_enable_reviews']);
-        $post_excerpt = sanitize_text_field($_POST['post_excerpt']);
-        $post_content = sanitize_text_field($_POST['post_content']);
+        $type = sanitize_text_field($_POST['post_type']);
+        $usageterms_filetypes = serialize($_POST['usageterms_filetypes']);
+        $usageterms_producer_alias = serialize($_POST['usageterms_producer_alias']);
         
-        if (!$title)
-        {
-            array_push($beatsErrors, 'Beat Title is required');
-        }
-        
-        if (!$category)
-        {
-            array_push($beatsErrors, 'Category is required');
-        }
-        
-        if (!$beat_picture) {
-            array_push($beatsErrors, 'Picture is required');
-        }
-
-        
-        if (!empty($beatsErrors))
-        {
-            return;
-        }
         
         // Create a new post of custom post type 'beat'
         $beat_post = array(
             'post_title'    => $title,
-            'post_content'  => $post_content ?? '',
-            'post_excerpt'  => $post_excerpt ?? '',
-            'post_status'   => $beat_status ?? 'publish',
-            'post_type'     => 'beat',
+            'post_content'  => '',
+            'post_excerpt'  => '',
+            'post_status'   => 'publish',
+            'post_type'     => $type,
             'meta_input'    => array(
-                'beat_type' => $type,
-                'beat_picture' => $beat_picture,
-                'beat_mp3' => $beat_mp3,
-                'beat_mp3_url' => $beat_mp3_url,
-                'beat_agreement' => $beat_agreement,
-                'beat_visibility' => $beat_visibility,
-                'beat_enable_reviews' => $beat_enable_reviews,
+                ''
             ),
         );
         
