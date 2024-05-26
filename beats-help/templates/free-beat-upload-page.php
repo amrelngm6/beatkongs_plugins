@@ -95,7 +95,7 @@ if ( $new_product ) {
 
     <?php if ( apply_filters( 'dokan_can_post', true ) ) : ?>
         <?php if ( dokan_is_seller_enabled( get_current_user_id() ) ) : ?>
-            <form class="dokan-product-edit-form" role="form" method="post" id="post">
+            <form class="dokan-product-edit-form <?php echo $post->post_type;?>" role="form" method="post" id="post">
                 <input type="hidden" value="upload_beat" name="upload_beat" />
                 <?php wp_nonce_field(basename(__FILE__), 'beat_nonce'); ?>
 
@@ -131,7 +131,7 @@ if ( $new_product ) {
                             <label for="beat_type" class="form-label"><?php esc_html_e( 'Beat Type', 'dokan-lite' ); ?> <i class="fas fa-question-circle tips" aria-hidden="true" data-title="<?php esc_html_e( 'Choose Variable if your Beat has multiple attributes - like sizes, colors, quality etc', 'dokan-lite' ); ?>"></i></label>
                             <select name="beat_type" class="dokan-form-control" id="beat_type">
                                 <?php foreach ( $beat_types as $key => $value ) : ?>
-                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $post->post_type ?? 'free', $key ); ?>><?php echo esc_html( $value ); ?></option>
+                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $postMeta['beat_type'][0] ?? 'free', $key ); ?>><?php echo esc_html( $value ); ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>

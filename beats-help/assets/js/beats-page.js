@@ -237,6 +237,10 @@
             jQuery(target).append(row);
         });
 
+        jQuery(document).on('change', 'input#beat_type', function(e){
+
+        });
+        
         jQuery(document).on('change', '.genre-checkbox', function(e){
 
             let label = jQuery(this).parent();
