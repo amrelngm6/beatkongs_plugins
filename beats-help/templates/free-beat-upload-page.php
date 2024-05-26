@@ -138,7 +138,7 @@ if ( $new_product ) {
                         
                         <div class="dokan-form-group">
                             <label for="bpm" class="form-label"><?php esc_html_e( 'BPM', 'dokan-lite' ); ?></label>
-                            <input type="number" min="0" max="300" name="bpm" id="bpm" value="<?php echo $postMeta['bpm'][0] ?? ''; ?>" class="dokan-form-control valid" placeholder="BPM (Beats per minute).." aria-invalid="false">
+                            <input type="number" min="0" max="300" name="beat_bpm" id="beat_bpm" value="<?php echo $postMeta['beat_bpm'][0] ?? ''; ?>" class="dokan-form-control valid" placeholder="BPM (Beats per minute).." aria-invalid="false">
                         </div>
 
 

@@ -178,6 +178,7 @@ function beats_handle_form_submission()
                     'beat_visibility' => $beat_visibility,
                     'beat_enable_reviews' => $beat_enable_reviews,
                     'beat_downloadable' => $beat_downloadable,
+                    'beat_bpm' => $beat_bpm,
                 ),
             );
 
