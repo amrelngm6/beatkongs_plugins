@@ -191,14 +191,13 @@
                     ids = attachment['id'];
                 });
                 if(ids == '') return true;//if closed withput selecting an image
-                jQuery(inputElement).val(ids);
                 selected ? (
-                    parent.find(inputElement).each(function(e){
-                        console.log(e)
-                        console.log(this)
-                        console.log(jQuery(e))
-                        console.log(jQuery(this).val())
+                    parent.find(urlElement).each(function(e){
                         jQuery(this).val( selected )
+                    }),
+                    
+                    parent.find(inputElement).each(function(e){
+                        jQuery(this).val( ids )
                     })
                 ) : '';
             });
