@@ -96,29 +96,6 @@ if (!defined('ABSPATH')) {
                 multiple: true
             });
 
-            // When a file is selected, run a callback.
-            mediaFrame.on('select', function() {
-                var attachments = mediaFrame.state().get('selection').toJSON();
-                var mediaHtml = '';
-                attachments.forEach(function(attachment) {
-                    var mediaUrl = attachment.url;
-                    var mediaTitle = attachment.title;
-
-                    if (attachment.type === 'image') {
-                        mediaHtml += '<div class="media-item">';
-                        mediaHtml += '<img src="' + mediaUrl + '" alt="' + mediaTitle + '" style="max-width:100%; height:auto;">';
-                        mediaHtml += '<h3>' + mediaTitle + '</h3>';
-                        mediaHtml += '</div>';
-                    } else {
-                        mediaHtml += '<div class="media-item">';
-                        mediaHtml += '<a href="' + mediaUrl + '" target="_blank">' + mediaTitle + '</a>';
-                        mediaHtml += '</div>';
-                    }
-                });
-
-                $('#selected-media').html(mediaHtml);
-            });
-
             // Finally, open the modal on click
             mediaFrame.open();
         });
