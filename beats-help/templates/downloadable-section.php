@@ -46,7 +46,7 @@
                         <tr>
                             <th>Name <span class="tips" title="This is the name of the download shown to the customer.">[?]</span></th>
                             <th>File URL <span class="tips" title="This is the URL or absolute path to the file which customers will get access to.">[?]</span></th>
-                            <th>Action</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody id="downloads-tbody">
