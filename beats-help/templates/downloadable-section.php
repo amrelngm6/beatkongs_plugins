@@ -1,7 +1,7 @@
 <div class="dokan-download-options dokan-edit-row dokan-clearfix show_if_downloadable">
     <div class="dokan-section-heading" data-togglehandler="dokan_download_options">
         <h2><i class="fas fa-download" aria-hidden="true"></i> Licenses</h2>
-        <p>Configure your downloadable files settings</p>
+        <p>Configure your downloadable files settings foe each license</p>
         <a href="#" class="dokan-section-toggle">
             <i class="fas fa-sort-down fa-flip-vertical" aria-hidden="true"></i>
         </a>
