@@ -89,7 +89,8 @@ Class BeatLicense
         // Check if the author has filled his license option
         if (isset($this->authorMetaValue[$key]))
         {
-            return $this->authorMetaValue[$key][0] == $val ? 'checked' : '';
+            $list = $callback($this->authorMetaValue[$key][0]);
+            return (is_array($list) && in_array($val, $list) ) ? 'checked' : '';
         }
 
         // Return default license option value 
