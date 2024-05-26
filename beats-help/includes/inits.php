@@ -299,7 +299,7 @@ function beats_license_handle_form_submission()
         );
         
         
-        $licenseId = isset($license_post['ID']) ? wp_update_post($license_post) : wp_insert_post($license_post);
+        $licenseId = !empty($license_post['ID']) ? wp_update_post($license_post) : wp_insert_post($license_post);
         
         if ($licenseId) {
             wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
