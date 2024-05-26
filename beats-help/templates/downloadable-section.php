@@ -66,15 +66,15 @@
                             </td>
                             <td>
                                 <p>
-                                    <input type="url" id="file-url-<?php echo $key; ?>" class="dokan-form-control dokan-w8 input_text wc_file_url" placeholder="https://" name="<?php echo $value->slug; ?>_wc_file_urls[]" value="" style="margin-right: 8px;">
-                                    <input class="file_id" id="file-id-<?php echo $key; ?>" type="hidden" name="<?php echo $value->slug; ?>_wc_file_ids">
+                                    <input type="url" id="file-url-<?php echo $key; ?>" class="dokan-form-control dokan-w8 input_text wc_file_url" placeholder="https://" name="<?php echo $value->post_name; ?>_wc_file_urls[]" value="" style="margin-right: 8px;">
+                                    <input class="file_id" id="file-id-<?php echo $key; ?>" type="hidden" name="<?php echo $value->post_name; ?>_wc_file_ids">
                                     <a href="#" class="downloads_media_manager dokan-btn dokan-btn-sm dokan-btn-default upload_file_button" data-input=".file_id" data-url=".wc_file_url">Choose&nbsp;file</a>
                                 </p>
                             </td>
 
                             <td>
                                 <p>
-                                    <input type="number" id="file-price-<?php echo $key; ?>" class="dokan-form-control input_text" placeholder="Price" name="<?php echo $value->slug; ?>_wc_file_price" value="">
+                                    <input type="number" id="file-price-<?php echo $key; ?>" class="dokan-form-control input_text" placeholder="Price" name="<?php echo $value->post_name; ?>_wc_file_price" value="">
                                 </p>
                             </td>
                         </tr>
