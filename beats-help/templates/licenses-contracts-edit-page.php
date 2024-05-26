@@ -9,17 +9,20 @@ $categories = get_terms(array(
     'hide_empty' => false,
 ));
 
-$beatLicenseId =  $_GET['license_id'] ?? 0;
-$termId =  $_GET['term_id'] ?? 0;
+$defaultLicenseId =  $_GET['license_post_id'] ?? 0;
+// $beatLicenseId =  $_GET['license_id'] ?? 0;
 
-$post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
-$term = isset($_GET['term_id']) ? get_term( $termId, 'pa_license' ) : null; 
-$termMeta = isset($_GET['term_id']) ? get_term_meta( $termId ) : null; 
-$postMeta = get_metadata( 'post', $beatLicenseId);
-print_r($term);
-print_r($termMeta);
-print_r($post);
-print_r($postMeta);
+$defaultPost = isset($_GET['license_post_id']) ? get_post( $defaultLicenseId, ARRAY_A ) : null; 
+$defaultPostMeta = isset($_GET['license_post_id']) ? get_metadata( 'post', $defaultLicenseId) : null;
+print_r($defaultPost);
+print_r($defaultPostMeta);
+
+
+// $post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
+// $postMeta = isset($_GET['license_id']) ? get_metadata( 'post', $beatLicenseId) : null;
+// print_r($post);
+// print_r($postMeta);
+
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
