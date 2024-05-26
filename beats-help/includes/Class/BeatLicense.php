@@ -96,8 +96,7 @@ Class BeatLicense
         if (isset($this->defaultMetaValue[$key]))
         {
             $list = $callback($this->defaultMetaValue[$key][0]);
-            print_r($list);
-            return $this->defaultMetaValue[$key][0] == $val ? 'selected' : '';
+            return (is_array($list) && in_array($val, $list) ) ? 'checked' : '';
         }
     }
 }
