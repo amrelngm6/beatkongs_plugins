@@ -60,4 +60,21 @@ Class BeatLicense
             return $this->defaultMetaValue[$key][0] ?? '';
         }
     }
+
+    
+    public function checkMetaSelected($key, $val = '') 
+    {
+
+        // Check if the author has filled his license option
+        if (isset($this->authorValue[$key]))
+        {
+            return $this->authorValue[$key][0] == $val ? 'selected' : '';
+        }
+
+        // Return default license option value 
+        if (isset($this->defaultMetaValue[$key]))
+        {
+            return $this->defaultMetaValue[$key][0] == $val ? 'selected' : '';
+        }
+    }
 }

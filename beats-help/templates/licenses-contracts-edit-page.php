@@ -118,7 +118,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-small" name="usageterms_num_dist_copies"
-                                            id="usageterms_num_dist_copies" value="1000" data-hash='s0rt0tpsocc0' />
+                                            id="usageterms_num_dist_copies" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='s0rt0tpsocc0' />
                                         <span class="cmb2-metabox-description">Enter a number or the word Unlimited</span>
 
                                     </div>
@@ -130,7 +130,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-small" name="usageterms_num_audio_streams"
-                                            id="usageterms_num_audio_streams" value="20000" data-hash='kpg1abrhmc40' />
+                                            id="usageterms_num_audio_streams" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='kpg1abrhmc40' />
                                         <span class="cmb2-metabox-description">Enter a number or the word Unlimited</span>
 
                                     </div>
@@ -142,7 +142,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-small" name="usageterms_num_radio_stations"
-                                            id="usageterms_num_radio_stations" value="0" data-hash='5862dbtjru70' />
+                                            id="usageterms_num_radio_stations" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='5862dbtjru70' />
                                         <span class="cmb2-metabox-description">Enter a number or the word Unlimited</span>
 
                                     </div>
@@ -154,7 +154,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-small" name="usageterms_num_free_downloads"
-                                            id="usageterms_num_free_downloads" value="0" data-hash='4scge97438m0' />
+                                            id="usageterms_num_free_downloads" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='4scge97438m0' />
                                         <span class="cmb2-metabox-description">Enter a number or the word Unlimited</span>
 
                                     </div>
@@ -166,7 +166,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-small" name="usageterms_num_music_videos"
-                                            id="usageterms_num_music_videos" value="1" data-hash='10rqbbvvv8d8' />
+                                            id="usageterms_num_music_videos" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='10rqbbvvv8d8' />
                                         <span class="cmb2-metabox-description">Enter a number or the word Unlimited</span>
 
                                     </div>
@@ -179,7 +179,7 @@ $BeatLicense->authorValue = $authorPost;
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-small"
                                             name="usageterms_num_monetized_video_streams"
-                                            id="usageterms_num_monetized_video_streams" value="20000"
+                                            id="usageterms_num_monetized_video_streams" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>"
                                             data-hash='7vvgjfuqn2v0' />
                                         <span class="cmb2-metabox-description">Enter a number or the word Unlimited</span>
 
@@ -192,7 +192,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-medium" name="usageterms_state"
-                                            id="usageterms_state" value="New York" data-hash='4p1t3ak0uq70' />
+                                            id="usageterms_state" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='4p1t3ak0uq70' />
                                         <span class="cmb2-metabox-description">Enter your state or province</span>
 
                                     </div>
@@ -204,7 +204,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-medium" name="usageterms_country"
-                                            id="usageterms_country" value="USA" data-hash='5rr7dqr93750' />
+                                            id="usageterms_country" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='5rr7dqr93750' />
                                         <span class="cmb2-metabox-description">Enter your country name</span>
 
                                     </div>
@@ -218,9 +218,9 @@ $BeatLicense->authorValue = $authorPost;
                                     <div class="cmb-td">
                                         <select class="cmb2_select" name="usageterms_allow_profit_performances"
                                             id="usageterms_allow_profit_performances" data-hash='607o8fieck70'>
-                                            <option value="">None</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no" selected='selected'>No</option>
+                                            <option <?php echo $BeatLicense->checkMetaSelected('usageterms_allow_profit_performances', ''); ?> value="">None</option>
+                                            <option <?php echo $BeatLicense->checkMetaSelected('usageterms_allow_profit_performances', 'yes'); ?> value="yes">Yes</option>
+                                            <option <?php echo $BeatLicense->checkMetaSelected('usageterms_allow_profit_performances', 'no'); ?> value="no" selected='selected'>No</option>
                                         </select>
                                     </div>
                                 </div>
