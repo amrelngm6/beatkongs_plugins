@@ -76,6 +76,9 @@ $BeatLicense->authorValue = $authorPost;
                 <div class="inside">
                     <form class="dokan-beat-license-edit-form" role="form" method="post" id="post">
                         <input type="hidden" value="beat_license_edit" name="true" />
+                        <input type="hidden" value="license_title" name="<?php echo $defaultPost['post_title']; ?>" />
+                        <input type="hidden" value="post_parent" name="<?php echo $defaultPost['ID']; ?>" />
+                        <input type="hidden" value="post_id" name="<?php echo $defaultPost['ID']; ?>" />
                         <?php wp_nonce_field(basename(__FILE__), 'beats_license_nonce'); ?>
                         <!-- Begin CMB2 Fields -->
                         <div class="cmb2-wrap form-table">

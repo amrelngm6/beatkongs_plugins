@@ -256,113 +256,111 @@ function beats_license_handle_form_submission()
             require_once(ABSPATH . 'wp-admin/includes/image.php');
         }
 
-        if (isset($_POST['beat_title'])) {
-            $title = sanitize_text_field($_POST['beat_title']);
-            $type = sanitize_text_field($_POST['beat_type']);
-            $category = sanitize_text_field($_POST['beat_category']);
-            $station = sanitize_text_field($_POST['beat_station']);
-            $moods = sanitize_text_field($_POST['beat_moods']);
-            $tags = sanitize_text_field($_POST['beat_tags']);
-            $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
-            $beat_mp3_url = sanitize_text_field($_POST['beat_mp3_url']);
-            $beat_picture = sanitize_text_field($_POST['beat_picture']);
-            $beat_status = sanitize_text_field($_POST['beat_status']);
-            $beat_agreement = sanitize_text_field($_POST['beat_agreement']);
-            $beat_visibility = sanitize_text_field($_POST['beat_visibility']);
-            $beat_enable_reviews = sanitize_text_field($_POST['beat_enable_reviews']);
-            $post_excerpt = sanitize_text_field($_POST['post_excerpt']);
-            $post_content = sanitize_text_field($_POST['post_content']);
-            
-            if (!$title)
-            {
-                array_push($beatsErrors, 'Beat Title is required');
-            }
-            
-            if (!$category)
-            {
-                array_push($beatsErrors, 'Category is required');
-            }
-            
-            if (!$beat_picture) {
-                array_push($beatsErrors, 'Picture is required');
-            }
+        $title = sanitize_text_field($_POST['license_title']);
+        $type = sanitize_text_field($_POST['beat_type']);
+        $category = sanitize_text_field($_POST['beat_category']);
+        $station = sanitize_text_field($_POST['beat_station']);
+        $moods = sanitize_text_field($_POST['beat_moods']);
+        $tags = sanitize_text_field($_POST['beat_tags']);
+        $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
+        $beat_mp3_url = sanitize_text_field($_POST['beat_mp3_url']);
+        $beat_picture = sanitize_text_field($_POST['beat_picture']);
+        $beat_status = sanitize_text_field($_POST['beat_status']);
+        $beat_agreement = sanitize_text_field($_POST['beat_agreement']);
+        $beat_visibility = sanitize_text_field($_POST['beat_visibility']);
+        $beat_enable_reviews = sanitize_text_field($_POST['beat_enable_reviews']);
+        $post_excerpt = sanitize_text_field($_POST['post_excerpt']);
+        $post_content = sanitize_text_field($_POST['post_content']);
+        
+        if (!$title)
+        {
+            array_push($beatsErrors, 'Beat Title is required');
+        }
+        
+        if (!$category)
+        {
+            array_push($beatsErrors, 'Category is required');
+        }
+        
+        if (!$beat_picture) {
+            array_push($beatsErrors, 'Picture is required');
+        }
 
-            
-            if (!empty($beatsErrors))
-            {
-                return;
-            }
-            
-            // Create a new post of custom post type 'beat'
-            $beat_post = array(
-                'post_title'    => $title,
-                'post_content'  => $post_content ?? '',
-                'post_excerpt'  => $post_excerpt ?? '',
-                'post_status'   => $beat_status ?? 'publish',
-                'post_type'     => 'beat',
-                'meta_input'    => array(
-                    'beat_type' => $type,
-                    'beat_picture' => $beat_picture,
-                    'beat_mp3' => $beat_mp3,
-                    'beat_mp3_url' => $beat_mp3_url,
-                    'beat_agreement' => $beat_agreement,
-                    'beat_visibility' => $beat_visibility,
-                    'beat_enable_reviews' => $beat_enable_reviews,
-                ),
-            );
-            
-            if (!empty($_POST['beat_id']))
-            {
-                $beat_post['ID'] = sanitize_text_field($_POST['beat_id']);
-            }
-            
-            $beatId = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
-            
-            // Save Category
-            $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
-            if ($category_id) {
-                wp_set_post_terms($beatId, array($category_id), 'category');
-            }
-            // Save Station
-            $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
-            if ($station) {
-                wp_set_object_terms($beatId, array($station), 'station');
-            } else {
-                array_push($beatsErrors, 'station is required');
-            }
+        
+        if (!empty($beatsErrors))
+        {
+            return;
+        }
+        
+        // Create a new post of custom post type 'beat'
+        $beat_post = array(
+            'post_title'    => $title,
+            'post_content'  => $post_content ?? '',
+            'post_excerpt'  => $post_excerpt ?? '',
+            'post_status'   => $beat_status ?? 'publish',
+            'post_type'     => 'beat',
+            'meta_input'    => array(
+                'beat_type' => $type,
+                'beat_picture' => $beat_picture,
+                'beat_mp3' => $beat_mp3,
+                'beat_mp3_url' => $beat_mp3_url,
+                'beat_agreement' => $beat_agreement,
+                'beat_visibility' => $beat_visibility,
+                'beat_enable_reviews' => $beat_enable_reviews,
+            ),
+        );
+        
+        if (!empty($_POST['beat_id']))
+        {
+            $beat_post['ID'] = sanitize_text_field($_POST['beat_id']);
+        }
+        
+        $beatId = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
+        
+        // Save Category
+        $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
+        if ($category_id) {
+            wp_set_post_terms($beatId, array($category_id), 'category');
+        }
+        // Save Station
+        $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
+        if ($station) {
+            wp_set_object_terms($beatId, array($station), 'station');
+        } else {
+            array_push($beatsErrors, 'station is required');
+        }
 
-            // Save Tags
-            $tags = isset($_POST['beat_tags']) ? json_decode(stripslashes($_POST['beat_tags']), true) : '';
-            if ($tags) {
-                $ids = [];
-                foreach ($tags as $key => $value) {
-                    $term = term_exists($value['value']);
-                    $ids[$key] = $value['value']; 
-                }
-                $saveTag = wp_set_object_terms($beatId, array_filter($ids), 'tag');
-            } else {
-                array_push($beatsErrors, 'Tag is required');
+        // Save Tags
+        $tags = isset($_POST['beat_tags']) ? json_decode(stripslashes($_POST['beat_tags']), true) : '';
+        if ($tags) {
+            $ids = [];
+            foreach ($tags as $key => $value) {
+                $term = term_exists($value['value']);
+                $ids[$key] = $value['value']; 
             }
-            // Save Moods
-            $moods = isset($_POST['beat_moods']) ? json_decode(stripslashes($_POST['beat_moods']), true) : '';
-            if ($moods) {
-                
-                $ids = [];
-                foreach ($moods as $key => $value) {
-                    $term = term_exists($value['value']);
-                    $ids[$key] = $value['value']; 
-                }
-                $saveMood = wp_set_object_terms($beatId, array_filter($ids), 'mood');
+            $saveTag = wp_set_object_terms($beatId, array_filter($ids), 'tag');
+        } else {
+            array_push($beatsErrors, 'Tag is required');
+        }
+        // Save Moods
+        $moods = isset($_POST['beat_moods']) ? json_decode(stripslashes($_POST['beat_moods']), true) : '';
+        if ($moods) {
+            
+            $ids = [];
+            foreach ($moods as $key => $value) {
+                $term = term_exists($value['value']);
+                $ids[$key] = $value['value']; 
+            }
+            $saveMood = wp_set_object_terms($beatId, array_filter($ids), 'mood');
 
-            } else {
-                array_push($beatsErrors, 'Mood is required');
-            }
+        } else {
+            array_push($beatsErrors, 'Mood is required');
+        }
 
-            if ($beatId) {
-                set_post_thumbnail($beatId, $beat_picture);
-                wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
-                exit;
-            }
+        if ($beatId) {
+            set_post_thumbnail($beatId, $beat_picture);
+            wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
+            exit;
         }
     }
 
