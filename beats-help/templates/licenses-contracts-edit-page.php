@@ -14,7 +14,6 @@ $defaultLicenseId =  $_GET['license_post_id'] ?? 0;
 
 $defaultPost = isset($_GET['license_post_id']) ? get_post( $defaultLicenseId, ARRAY_A ) : null; 
 $defaultPostMeta = isset($_GET['license_post_id']) ? get_metadata( 'post', $defaultLicenseId) : null;
-print_r($defaultPostMeta);
 
 $authorPost = [];
 
