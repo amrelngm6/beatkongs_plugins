@@ -171,8 +171,9 @@
         jQuery(document).on('change', '.genre-checkbox', function(e){
             let label = jQuery(this).parent();
             let ul = label.parent();
-            ul.find("input:checkbox:checked").each(function(){
-
+            let checked = ul.find("input:checkbox:checked");
+            console.log(checked)
+            checked.each(function(){
                 console.log($(this).attr('data-title'));
             });
         })
