@@ -259,10 +259,12 @@ form.sell .show_if_downloadable {
   bottom: 100%; 
   max-width: 200px;
   padding: 10px;
+  border-radius: 15px;
   background-color: #333;
   color: #fff;
 }
 label:hover span.label-tips
 {
   display: block;
+  z-index: 9;
 } 
