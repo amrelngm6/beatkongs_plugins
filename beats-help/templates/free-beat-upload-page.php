@@ -176,7 +176,7 @@ if ( $new_product ) {
 
                         <div class="dokan-form-group">
                             <label>
-                                <input <?php echo isset($postMeta['beat_downloadable'][0]) ? 'checked' : ''; ?> type="checkbox" class="_is_downloadable" name="beat_downloadable" id="_downloadable"> Downloadable <i class="fas fa-question-circle tips" aria-hidden="true" data-title="Downloadable products give access to a file upon purchase." data-original-title="" title=""></i>
+                                <input <?php echo isset($postMeta['beat_downloadable'][0]) ? 'checked' : ''; ?> type="checkbox" class="_is_downloadable" name="beat_downloadable" id="_downloadable"> Downloadable <span class="label-tips">Downloadable products give access to a file upon purchase.</span> <i class="fas fa-question-circle "></i>
                             </label>
                         </div>
                         

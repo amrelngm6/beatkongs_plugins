@@ -252,3 +252,17 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
 form.sell .show_if_downloadable {
   display: block;
 }
+.label-tips
+{
+  display: none;
+  position: absolute;
+  bottom: 100%; 
+  max-width: 200px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+label:hover span.label-tips
+{
+  display: block;
+} 
