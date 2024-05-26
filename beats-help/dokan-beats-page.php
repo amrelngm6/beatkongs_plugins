@@ -118,3 +118,11 @@ add_action('init', 'beats_handle_form_submission');
 add_action('init', 'beats_license_handle_form_submission');
 add_filter('init', 'register_beat_license_post_type');
 add_action('init', 'register_beat_post_type');
+
+function filter_beats_license_by_author($query) {
+    if (is_admin() && $query->is_main_query() && $query->get('post_type') === 'usage-terms') {
+        $query->set('author', 1);
+    }
+}
+add_action('pre_get_posts', 'filter_beats_license_by_author');
+
