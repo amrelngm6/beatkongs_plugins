@@ -14,7 +14,7 @@
             
             <div class="dokan-side-body dokan-download-wrapper">
                 <table class="dokan-table">
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
                             <th colspan="3">
                                 <a href="#" class="insert-file-row dokan-btn dokan-btn-sm dokan-btn-success" data-target="#downloads-tbody" data-row="&lt;tr&gt;
@@ -41,10 +41,10 @@
                                     Add File                                </a>
                             </th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                     <thead>
                         <tr>
-                            <th>Name <span class="tips" title="This is the name of the download shown to the customer.">[?]</span></th>
+                            <th>License <span class="tips" title="This is the name of the download shown to the customer.">[?]</span></th>
                             <th>File URL <span class="tips" title="This is the URL or absolute path to the file which customers will get access to.">[?]</span></th>
                             <th>Price</th>
                         </tr>
@@ -81,26 +81,6 @@
                         <?php } ?>
                     </tbody>
                 </table>
-
-                <div class="dokan-clearfix">
-                    <div class="content-half-part">
-                        <label for="_download_limit" class="form-label">Download Limit</label>
-                                    <input                 type="text" name="_download_limit"
-                id="_download_limit"
-                value="-1"
-                class="dokan-form-control"
-                placeholder="Unlimited">
-                                </div><!-- .content-half-part -->
-
-                    <div class="content-half-part">
-                        <label for="_download_expiry" class="form-label">Download Expiry</label>
-                                    <input                 type="text" name="_download_expiry"
-                id="_download_expiry"
-                value="-1"
-                class="dokan-form-control"
-                placeholder="Never">
-                                </div><!-- .content-half-part -->
-                </div>
 
             </div> <!-- .dokan-side-body -->
         </div> <!-- .downloadable -->
