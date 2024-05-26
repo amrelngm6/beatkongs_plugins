@@ -30,7 +30,7 @@
                                 'taxonomy' => 'category',
                                 'hide_empty' => false,
                             ));
-                            
+                            $beatId =  $_GET['beat_id'] ?? 0;
                             $selectedCategory = wp_get_post_terms( $beatId, 'category');
                             print_r($selectedCategory);
                             foreach ($list as $key => $value) {
