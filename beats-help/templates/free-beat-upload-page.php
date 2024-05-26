@@ -137,10 +137,13 @@ if ( $new_product ) {
                         </div>
                         
                         <div class="dokan-form-group">
-                            
                             <label for="bpm" class="form-label"><?php esc_html_e( 'BPM', 'dokan-lite' ); ?></label>
                             <input type="number" min="0" max="300" name="bpm" id="bpm" value="" class="dokan-form-control valid" placeholder="BPM (Beats per minute).." aria-invalid="false">
-                            
+                        </div>
+
+                        <div class="dokan-form-group">
+                            <label for="downloadable" class="form-label"><?php esc_html_e( 'Downloadable', 'dokan-lite' ); ?></label>
+                            <input type="checkbox" name="downloadable" id="downloadable" value="1" >
                         </div>
 
                         <div class="flex  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
