@@ -38,7 +38,7 @@ function add_custom_beats_upload_menu($urls) {
     $urls['dokan-media'] = array(
         'title' => __('Media library', 'dokan'),
         'url'   => site_url('/author-media'),
-        'icon'  => '<i class="fa fa-picture"></i>',
+        'icon'  => '<i class="fa fa-picture-o"></i>',
         'pos'   => 190,
     );
     return $urls;
