@@ -127,8 +127,8 @@ function beats_handle_form_submission()
         if (isset($_POST['beat_title'])) {
             $title = sanitize_text_field($_POST['beat_title']);
             $type = sanitize_text_field($_POST['beat_type']);
-            $category = sanitize_text_field($_POST['selected_cats']);
-            $station = sanitize_text_field($_POST['selected_stations']);
+            $category = $_POST['selected_cats'];
+            $station = $_POST['selected_stations'];
             $moods = sanitize_text_field($_POST['beat_moods']);
             $tags = sanitize_text_field($_POST['beat_tags']);
             $beat_mp3 = sanitize_text_field($_POST['beat_mp3']);
