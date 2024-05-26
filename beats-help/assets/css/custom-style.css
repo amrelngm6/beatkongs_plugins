@@ -246,6 +246,10 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
   text-align: center;
   padding-top: 20%;
 }
+.media-modal.wp-core-ui
+{
+  color: #111;
+}
 .media-modal.wp-core-ui button.media-modal-close
 {
   padding: 0;
