@@ -31,7 +31,8 @@
         });
 
         // Close the modal
-        span.on('click', function() {
+        span.on('click', function(e) {
+            e.preventDefault();
             modal.hide();
         });
     
