@@ -141,11 +141,6 @@ if ( $new_product ) {
                             <input type="number" min="0" max="300" name="bpm" id="bpm" value="" class="dokan-form-control valid" placeholder="BPM (Beats per minute).." aria-invalid="false">
                         </div>
 
-                        <div class="dokan-form-group">
-                            <label>
-                                <input <?php echo isset($postMeta['beat_downloadable'][0]) ? 'checked' : ''; ?> type="checkbox" class="_is_downloadable" name="beat_downloadable" id="_downloadable"> Downloadable <i class="fas fa-question-circle tips" aria-hidden="true" data-title="Downloadable products give access to a file upon purchase." data-original-title="" title=""></i>
-                            </label>
-                        </div>
 
                         <div class="flex  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
                             <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-g">
@@ -179,6 +174,12 @@ if ( $new_product ) {
                             <input name='beat_tags' value="<?php echo implode(',', array_column($selectedTags, 'name')) ; ?>" placeholder='Choose tags...'>
                         </div>
 
+                        <div class="dokan-form-group">
+                            <label>
+                                <input <?php echo isset($postMeta['beat_downloadable'][0]) ? 'checked' : ''; ?> type="checkbox" class="_is_downloadable" name="beat_downloadable" id="_downloadable"> Downloadable <i class="fas fa-question-circle tips" aria-hidden="true" data-title="Downloadable products give access to a file upon purchase." data-original-title="" title=""></i>
+                            </label>
+                        </div>
+                        
                         <div >
                             <div  >
                                 <label for="product_tag_edit" class="form-label"><?php esc_html_e( 'Downloadable files', 'dokan-lite' ); ?></label>
