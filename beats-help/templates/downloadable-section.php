@@ -61,7 +61,7 @@
                         <tr>
                             <td>
                                 <p>
-                                    <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[]" disabled value="<?php echo $value->name;?>">
+                                    <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[]" disabled value="<?php echo $value['name'] ?? '';?>">
                                 </p>
                             </td>
                             <td>
