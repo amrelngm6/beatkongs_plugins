@@ -61,7 +61,9 @@ Class BeatLicense
         }
     }
 
-    
+    /**
+     * Check if the option is selected or not
+     */
     public function checkMetaSelected($key, $val = '') 
     {
 
@@ -74,6 +76,27 @@ Class BeatLicense
         // Return default license option value 
         if (isset($this->defaultMetaValue[$key]))
         {
+            return $this->defaultMetaValue[$key][0] == $val ? 'selected' : '';
+        }
+    }
+
+    /**
+     * Check if the option is checked or not
+     */
+    public function checkMetaChecked($key, $val = '', $callback = 'unserialize') 
+    {
+
+        // Check if the author has filled his license option
+        if (isset($this->authorValue[$key]))
+        {
+            return $this->authorValue[$key][0] == $val ? 'checked' : '';
+        }
+
+        // Return default license option value 
+        if (isset($this->defaultMetaValue[$key]))
+        {
+            $list = $callback($this->defaultMetaValue[$key][0]);
+            print_r($list);
             return $this->defaultMetaValue[$key][0] == $val ? 'selected' : '';
         }
     }

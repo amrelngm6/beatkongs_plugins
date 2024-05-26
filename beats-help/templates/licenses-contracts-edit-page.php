@@ -88,14 +88,14 @@ $BeatLicense->authorValue = $authorPost;
                                     <div class="cmb-td">
                                         <ul class="cmb2-checkbox-list no-select-all cmb2-list">
                                             <li><input type="checkbox" class="cmb2-option" name="usageterms_filetypes[]"
-                                                    id="usageterms_filetypes1" value="mp3" />
+                                                    id="usageterms_filetypes1" value="mp3" <?php echo $BeatLicense->checkMetaChecked('usageterms_filetypes', 'mp3'); ?> />
                                                 <label for="usageterms_filetypes1">MP3</label>
                                             </li>
                                             <li><input type="checkbox" class="cmb2-option" name="usageterms_filetypes[]"
-                                                    id="usageterms_filetypes2" value="wav" />
+                                                    id="usageterms_filetypes2" value="wav" <?php echo $BeatLicense->checkMetaChecked('usageterms_filetypes', 'wav'); ?> />
                                                 <label for="usageterms_filetypes2">WAV</label></li>
                                             <li><input type="checkbox" class="cmb2-option" name="usageterms_filetypes[]"
-                                                    id="usageterms_filetypes3" value="stems" />
+                                                    id="usageterms_filetypes3" value="stems" <?php echo $BeatLicense->checkMetaChecked('usageterms_filetypes', 'wav'); ?> />
                                                 <label for="usageterms_filetypes3">TRACK STEMS</label></li>
                                         </ul>
                                     </div>
