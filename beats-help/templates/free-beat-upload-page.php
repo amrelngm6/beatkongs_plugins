@@ -95,7 +95,7 @@ if ( $new_product ) {
 
     <?php if ( apply_filters( 'dokan_can_post', true ) ) : ?>
         <?php if ( dokan_is_seller_enabled( get_current_user_id() ) ) : ?>
-            <form class="dokan-product-edit-form <?php echo $postMeta['beat_type'][0] ?? '';?>" role="form" method="post" id="post">
+            <form class="dokan-beat-edit-form <?php echo $postMeta['beat_type'][0] ?? '';?>" role="form" method="post" id="post">
                 <input type="hidden" value="upload_beat" name="upload_beat" />
                 <?php wp_nonce_field(basename(__FILE__), 'beat_nonce'); ?>
 

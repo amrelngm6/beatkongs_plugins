@@ -249,6 +249,6 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
 .show_if_downloadable {
   display: none;
 }
-form.dokan-product-edit-form.sell .show_if_downloadable {
+form.sell .show_if_downloadable {
   display: block;
 }

@@ -238,9 +238,9 @@
         });
 
         jQuery(document).on('change', 'input#beat_type', function(e){
-
+            jQuery('form.dokan-beat-edit-form').toggleClass('sell')
         });
-        
+
         jQuery(document).on('change', '.genre-checkbox', function(e){
 
             let label = jQuery(this).parent();
