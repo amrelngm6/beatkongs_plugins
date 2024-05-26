@@ -172,10 +172,21 @@
             let label = jQuery(this).parent();
             let ul = label.parent();
             let checked = ul.find("input:checkbox:checked");
-            console.log(checked)
+            let unchecked = ul.find("input:checkbox:not(:checked)");
             checked.each(function(){
                 console.log($(this).attr('data-title'));
             });
+            if (checked.length > 2)
+            {
+                unchecked.each(function(){
+                    $(this).attr('disabled', true);
+                });
+            } else {
+                unchecked.each(function(){
+                    $(this).attr('disabled', false);
+                });
+            }
+            
         })
 
         
