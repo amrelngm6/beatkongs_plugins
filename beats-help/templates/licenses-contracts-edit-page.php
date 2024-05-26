@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
-
+echo plugin_dir_path(__FILE__);
 include plugin_dir_path(__FILE__) . '../includes/Class/BeatLicense.php';
 
 $categories = get_terms(array(
