@@ -9,25 +9,12 @@ $categories = get_terms(array(
     'hide_empty' => false,
 ));
 
-$stations = get_terms(array(
-    'taxonomy' => 'station',
-    'hide_empty' => false,
-));
+$beatLicenseId =  $_GET['license_id'] ?? 0;
 
-$tags = get_terms(array(
-    'taxonomy' => 'tag',
-    'hide_empty' => false,
-));
-
-$moods = get_terms(array(
-    'taxonomy' => 'mood',
-    'hide_empty' => false,
-));
-
-$bulk_statuses = [
-    '0'     => __( 'Bulk Actions', 'dokan-lite' ),
-    'delete' => __( 'Delete Permanently', 'dokan-lite' ),
-];
+$post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
+$postMeta = get_metadata( 'post', $beatLicenseId);
+print_r($post);
+print_r($postMeta);
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
