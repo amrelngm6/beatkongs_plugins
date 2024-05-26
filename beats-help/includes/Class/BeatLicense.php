@@ -90,6 +90,8 @@ Class BeatLicense
         if (isset($this->authorMetaValue[$key]))
         {
             $list = unserialize($this->authorMetaValue[$key][0]);
+            print_r($this->authorMetaValue[$key]);
+            print_r($list);
             return (is_array($list) && in_array($val, $list) ) ? 'checked' : '--';
         }
 
