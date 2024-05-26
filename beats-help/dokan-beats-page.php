@@ -109,7 +109,7 @@ add_action('add_meta_boxes', 'add_custom_meta_boxes');
 
 
 add_filter('default_beat_types', 'set_default_beat_types');
-add_filter('default_beat_license_types', 'register_beat_license_post_type');
 
 
+add_filter('init', 'register_beat_license_post_type');
 add_action('init', 'register_beat_post_type');
