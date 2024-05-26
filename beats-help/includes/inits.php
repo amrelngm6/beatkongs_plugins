@@ -258,71 +258,53 @@ function beats_license_handle_form_submission()
 
         $title = sanitize_text_field($_POST['license_title']);
         $type = sanitize_text_field($_POST['post_type']);
+        $post_parent = sanitize_text_field($_POST['post_parent']);
         $usageterms_filetypes = serialize($_POST['usageterms_filetypes']);
-        $usageterms_producer_alias = serialize($_POST['usageterms_producer_alias']);
+        $usageterms_producer_alias = sanitize_text_field($_POST['usageterms_producer_alias']);
+        $usageterms_num_dist_copies = sanitize_text_field($_POST['usageterms_num_dist_copies']);
+        $usageterms_num_audio_streams = sanitize_text_field($_POST['usageterms_num_audio_streams']);
+        $usageterms_num_radio_stations = sanitize_text_field($_POST['usageterms_num_radio_stations']);
+        $usageterms_num_free_downloads = sanitize_text_field($_POST['usageterms_num_free_downloads']);
+        $usageterms_num_music_videos = sanitize_text_field($_POST['usageterms_num_music_videos']);
+        $usageterms_num_monetized_video_streams = sanitize_text_field($_POST['usageterms_num_monetized_video_streams']);
+        $usageterms_state = sanitize_text_field($_POST['usageterms_state']);
+        $usageterms_country = sanitize_text_field($_POST['usageterms_country']);
+        $usageterms_allow_profit_performances = sanitize_text_field($_POST['usageterms_allow_profit_performances']);
+        $usageterms_contract = sanitize_text_field($_POST['usageterms_contract']);
         
         
-        // Create a new post of custom post type 'beat'
-        $beat_post = array(
+        // Create a new post of custom post type 'usage-terms'
+        $license_post = array(
             'post_title'    => $title,
             'post_content'  => '',
             'post_excerpt'  => '',
             'post_status'   => 'publish',
             'post_type'     => $type,
+            'post_parent'     => $type,
             'meta_input'    => array(
-                ''
+                'usageterms_filetypes' => $usageterms_filetypes,
+                'usageterms_producer_alias' => $usageterms_producer_alias ,
+                'usageterms_num_dist_copies' => $usageterms_num_dist_copies ,
+                'usageterms_num_audio_streams' => $usageterms_num_audio_streams ,
+                'usageterms_num_radio_stations' => $usageterms_num_radio_stations ,
+                'usageterms_num_free_downloads' => $usageterms_num_free_downloads ,
+                'usageterms_num_music_videos' => $usageterms_num_music_videos ,
+                'usageterms_num_monetized_video_streams' => $usageterms_num_monetized_video_streams ,
+                'usageterms_stat' => $usageterms_state ,
+                'usageterms_country' => $usageterms_country ,
+                'usageterms_allow_profit_performances' => $usageterms_allow_profit_performances ,
+                'usageterms_contract' => $usageterms_contract,
             ),
         );
         
-        if (!empty($_POST['beat_id']))
+        if (!empty($_POST['post_id']))
         {
-            $beat_post['ID'] = sanitize_text_field($_POST['beat_id']);
+            $license_post['ID'] = sanitize_text_field($_POST['post_id']);
         }
         
-        $beatId = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
+        $licenseId = isset($license_post['ID']) ? wp_update_post($license_post) : wp_insert_post($license_post);
         
-        // Save Category
-        $category_id = isset($_POST['beat_category']) ? intval($_POST['beat_category']) : '';
-        if ($category_id) {
-            wp_set_post_terms($beatId, array($category_id), 'category');
-        }
-        // Save Station
-        $station = isset($_POST['beat_station']) ? intval($_POST['beat_station']) : '';
-        if ($station) {
-            wp_set_object_terms($beatId, array($station), 'station');
-        } else {
-            array_push($beatsErrors, 'station is required');
-        }
-
-        // Save Tags
-        $tags = isset($_POST['beat_tags']) ? json_decode(stripslashes($_POST['beat_tags']), true) : '';
-        if ($tags) {
-            $ids = [];
-            foreach ($tags as $key => $value) {
-                $term = term_exists($value['value']);
-                $ids[$key] = $value['value']; 
-            }
-            $saveTag = wp_set_object_terms($beatId, array_filter($ids), 'tag');
-        } else {
-            array_push($beatsErrors, 'Tag is required');
-        }
-        // Save Moods
-        $moods = isset($_POST['beat_moods']) ? json_decode(stripslashes($_POST['beat_moods']), true) : '';
-        if ($moods) {
-            
-            $ids = [];
-            foreach ($moods as $key => $value) {
-                $term = term_exists($value['value']);
-                $ids[$key] = $value['value']; 
-            }
-            $saveMood = wp_set_object_terms($beatId, array_filter($ids), 'mood');
-
-        } else {
-            array_push($beatsErrors, 'Mood is required');
-        }
-
-        if ($beatId) {
-            set_post_thumbnail($beatId, $beat_picture);
+        if ($licenseId) {
             wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
             exit;
         }
