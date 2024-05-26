@@ -330,6 +330,10 @@ if ( $new_product ) {
                 <input type="hidden" name="dokan_update_product" value="<?php esc_attr_e( 'Save Beat', 'dokan-lite' ); ?>"/>
                 <input type="submit" name="dokan_update_product" id="publish" class="dokan-btn dokan-btn-theme dokan-btn-lg dokan-right" value="<?php esc_attr_e( 'Save Beat', 'dokan-lite' ); ?>"/>
                 <div class="dokan-clearfix"></div>
+                
+                <?php echo do_action('dokan_load_category'); ?>
+                <?php echo do_action('dokan_load_station'); ?>
+                
             </form>
         <?php else : ?>
             <div class="dokan-alert dokan-alert">
@@ -337,8 +341,6 @@ if ( $new_product ) {
             </div>
         <?php endif; ?>
 
-        <?php echo do_action('dokan_load_category'); ?>
-        <?php echo do_action('dokan_load_station'); ?>
              
     <?php else : ?>
 
