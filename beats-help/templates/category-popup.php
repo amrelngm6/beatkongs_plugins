@@ -35,7 +35,7 @@
                             foreach ($list as $key => $value) {
                             ?>
                                 <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
-                                    <input <?php echo in_array($selectedCategory, $value->term_id) ? 'checked' : ''; ?> type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
+                                    <input <?php echo in_array($value->term_id, $selectedCategory) ? 'checked' : ''; ?> type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
                                     <?php echo $value->name; ?> 
                                 </label>
                             <?php 
