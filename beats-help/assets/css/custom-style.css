@@ -273,7 +273,7 @@ label:hover span.label-tips
 {
   background: #000
 }
-.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li a
+body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li a
 {
   color: #fff !important;
 }
