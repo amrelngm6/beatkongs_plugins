@@ -85,10 +85,10 @@ $categories = new WP_Query( $args );
                             <tr id="taxonomy-<?php $category->term_id; ?>" >
 
                                 <td id="cb" class="manage-column column-cb check-column">
-                                    <?php echo $category->term_id; ?>
+                                    <?php echo $category->ID; ?>
                                 </td>
-                                <td><?php echo $category->name; ?></td>
-                                <td><a href="/edit-license-contract/?license_id=<?php echo $category->term_id; ?>">Edit</a></td>
+                                <td><?php echo $category->post_title; ?></td>
+                                <td><a href="/edit-license-contract/?license_id=<?php echo $category->ID; ?>">Edit</a></td>
                             </tr>
                             <?php endforeach ; ?>
                         </tbody>
