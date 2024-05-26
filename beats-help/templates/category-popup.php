@@ -31,12 +31,11 @@
                                 'hide_empty' => false,
                             ));
                             $beatId =  $_GET['beat_id'] ?? 0;
-                            $selectedCategory = wp_get_post_terms( $beatId, 'category');
-                            print_r($selectedCategory);
+                            $selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_id');
                             foreach ($list as $key => $value) {
                             ?>
                                 <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
-                                    <input type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
+                                    <input <?php echo in_array($selectedCategory, $value->term_id) ? 'checked' : ''; ?> type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
                                     <?php echo $value->name; ?> 
                                 </label>
                             <?php 
