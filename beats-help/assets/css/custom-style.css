@@ -283,6 +283,11 @@ label:hover span.label-tips
 {
   background: #000
 }
+body .media-router .media-menu-item:focus
+{
+  box-shadow: 0 0 0 2px #f9901d;
+  color: #fff;
+}
 body .media-router .media-menu-item:active, body .media-router .media-menu-item:hover,
 body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li a
 {
