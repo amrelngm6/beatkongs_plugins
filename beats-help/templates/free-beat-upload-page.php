@@ -135,6 +135,25 @@ if ( $new_product ) {
                                 <?php endforeach; ?>
                             </select>
                         </div>
+                        
+                        <div class="w-full">
+                            
+                            <label for="bpm" class="form-label"><?php esc_html_e( 'BPM', 'dokan-lite' ); ?></label>
+                            <?php
+                            dokan_post_input_box(
+                                $beatId,
+                                'bpm',
+                                [
+                                    'type'        => 'number',
+                                    'min'         => 0,
+                                    'max'         => 300,
+                                    'placeholder' => __( 'BPM (Beats per minute)..', 'dokan-lite' ),
+                                    'value'       => $postMeta['bpm'][0] ?? '',
+                                ]
+                            );
+                            ?>
+                        </div>
+
                         <div class="flex  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
                             <div  class="w-full dokan-form-group dokan-select-product-category dokan-category-open-modal" data-dokansclevel="0"  id="fbu-category-g">
                                 <label for="fbu-category" class="form-label"><?php esc_html_e( 'Category', 'dokan-lite' ); ?></label>
