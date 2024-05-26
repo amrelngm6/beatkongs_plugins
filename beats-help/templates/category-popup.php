@@ -41,7 +41,7 @@
                             }
                             ?>
                             </ul>
-                            <button class="fbu-close" type="" >Done</button>
+                            <button class="choose-genre" type="" >Done</button>
                         </div>
 
                     </div>

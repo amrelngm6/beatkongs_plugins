@@ -44,7 +44,8 @@
         });
         
         // Handle category selection
-        jQuery(document).on('click', 'button.choose-genre', function() {
+        jQuery(document).on('click', 'button.choose-genre', function(e) {
+            e.preventDefault();
             let selectedNames = '';
             checked.each(function(){
                 selectedNames = selectedNames + $(this).attr('data-title') + ',';
