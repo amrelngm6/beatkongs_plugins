@@ -160,7 +160,7 @@
         });
 
 
-        jQuery('.downloads_media_manager').click(function(e) {
+        jQuery(document).on('click', '.downloads_media_manager', function(e) {
 
             e.preventDefault();
             let parent = $(this).parent();
