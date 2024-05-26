@@ -74,7 +74,7 @@
 
                             <td>
                                 <p>
-                                    <input type="number" class="dokan-form-control input_text" placeholder="Price" name="_wc_file_price[]" value="">
+                                    <input type="number" id="file-price-<?php echo $key; ?>" class="dokan-form-control input_text" placeholder="Price" name="_wc_file_price[]" value="">
                                 </p>
                             </td>
                         </tr>
