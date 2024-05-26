@@ -76,6 +76,53 @@ if (!defined('ABSPATH')) {
     window.addEventListener("load", (event) => {
         jQuery('.active.dashboard').removeClass('active')
         jQuery('.dokan-media').addClass('active')
+
+        var mediaFrame;
+        $('#open-media-library').on('click', function(e) {
+            e.preventDefault();
+
+            // If the media frame already exists, reopen it.
+            if (mediaFrame) {
+                mediaFrame.open();
+                return;
+            }
+
+            // Create a new media frame
+            mediaFrame = wp.media({
+                title: 'Select Media',
+                button: {
+                    text: 'Insert Media'
+                },
+                multiple: true
+            });
+
+            // When a file is selected, run a callback.
+            mediaFrame.on('select', function() {
+                var attachments = mediaFrame.state().get('selection').toJSON();
+                var mediaHtml = '';
+                attachments.forEach(function(attachment) {
+                    var mediaUrl = attachment.url;
+                    var mediaTitle = attachment.title;
+
+                    if (attachment.type === 'image') {
+                        mediaHtml += '<div class="media-item">';
+                        mediaHtml += '<img src="' + mediaUrl + '" alt="' + mediaTitle + '" style="max-width:100%; height:auto;">';
+                        mediaHtml += '<h3>' + mediaTitle + '</h3>';
+                        mediaHtml += '</div>';
+                    } else {
+                        mediaHtml += '<div class="media-item">';
+                        mediaHtml += '<a href="' + mediaUrl + '" target="_blank">' + mediaTitle + '</a>';
+                        mediaHtml += '</div>';
+                    }
+                });
+
+                $('#selected-media').html(mediaHtml);
+            });
+
+            // Finally, open the modal on click
+            mediaFrame.open();
+        });
+        
     });
 
 </script>
