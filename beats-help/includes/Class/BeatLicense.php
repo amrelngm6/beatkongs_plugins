@@ -90,7 +90,7 @@ Class BeatLicense
         if (isset($this->authorMetaValue[$key]))
         {
             $list = $callback($this->authorMetaValue[$key][0]);
-            return (is_array($list) && in_array($val, $list) ) ? 'checked' : '';
+            return (is_array($list) && in_array($val, $list) ) ? 'checked' : '--';
         }
 
         // Return default license option value 
