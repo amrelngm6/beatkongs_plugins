@@ -269,7 +269,7 @@ label:hover span.label-tips
   display: block;
   z-index: 9;
 } 
-.dokan-dashboard .dokan-dash-sidebar #dokan-navigation > input:checked + ul.dokan-dashboard-menu > li
+.dokan-dashboard .dokan-dash-sidebar  ul.dokan-dashboard-menu > li
 {
   background: #000
 }
