@@ -36,7 +36,6 @@ $BeatLicense->defaultMetaValue = $defaultPostMeta;
 $BeatLicense->authorValue = (array) $authorPost;
 $BeatLicense->authorMetaValue = $authorPostMeta;
 
-print_r($BeatLicense->authorMetaValue);
 ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
