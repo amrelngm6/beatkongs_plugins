@@ -175,9 +175,6 @@
             mp3_frame = wp.media({
                 title: 'Select Media',
                 multiple : false,
-                library : {
-                    type : 'audio',
-                }
             });
 
             mp3_frame.on('close',function() {
