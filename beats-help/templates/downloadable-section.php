@@ -53,7 +53,9 @@
                         <?php 
                         $args = array(
                             'post_type' => 'usage-terms',
-                            'author'    => 1
+                            'author'    => 1,
+                            'orderby' => 'ID',
+                            'order' => 'ASC',
                         );
                         $default_licenses = new WP_Query( $args );
                         $beatId =  $_GET['beat_id'] ?? 0;
