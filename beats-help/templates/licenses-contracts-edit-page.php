@@ -11,7 +11,6 @@ $categories = get_terms(array(
 ));
 
 $defaultLicenseId =  $_GET['license_post_id'] ?? 0;
-// $beatLicenseId =  $_GET['license_id'] ?? 0;
 
 $defaultPost = isset($_GET['license_post_id']) ? get_post( $defaultLicenseId, ARRAY_A ) : null; 
 $defaultPostMeta = isset($_GET['license_post_id']) ? get_metadata( 'post', $defaultLicenseId) : null;
@@ -21,6 +20,9 @@ print_r($defaultPostMeta);
 $authorPost = [];
 
 $BeatLicense = new BeatLicense($defaultPost, $authorPost);
+$BeatLicense->defaultValue = $defaultPost;
+$BeatLicense->defaultMetaValue = $defaultPostMeta;
+$BeatLicense->authorValue = $authorPost;
 // $post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
 // $postMeta = isset($_GET['license_id']) ? get_metadata( 'post', $beatLicenseId) : null;
 // print_r($post);
@@ -106,7 +108,7 @@ $BeatLicense = new BeatLicense($defaultPost, $authorPost);
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-medium" name="usageterms_producer_alias"
-                                            id="usageterms_producer_alias" value="DJ Sonaar" data-hash='3up4uvi8ld80' />
+                                            id="usageterms_producer_alias" value="<?php echo $BeatLicense->getValue('usageterms_producer_alias'); ?>" data-hash='3up4uvi8ld80' />
                                         <span class="cmb2-metabox-description">Enter the contract producer name</span>
 
                                     </div>

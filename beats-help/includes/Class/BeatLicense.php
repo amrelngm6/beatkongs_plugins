@@ -12,31 +12,52 @@
 Class BeatLicense 
 {
     
-    protected $defaultValue;
+    public $defaultValue;
 
-    protected $authorValue;
+    public $defaultMetaValue;
+
+    public $authorValue;
+
+    public $authorMetaValue;
 
 
-    function __construct($defaultValue, $authorValue)
-    {
-        $this->defaultValue = $authorValue ? (object) $defaultValue : null;
+    // function __construct($defaultValue, $authorValue)
+    // {
+    //     $this->defaultValue = $authorValue ? $defaultValue : null;
 
-        $this->authorValue = $authorValue ? (object) $authorValue : null;
-    }
+    //     $this->authorValue = $authorValue ? $authorValue : null;
+    // }
 
     public function getValue($key) 
     {
 
         // Check if the author has filled his license option
-        if (isset($this->authorValue->$key))
+        if (isset($this->authorValue[$key]))
         {
-            return $this->authorValue->$key;
+            return $this->authorValue[$key];
         }
 
         // Return default license option value 
-        if (isset($this->defaultValue->$key))
+        if (isset($this->defaultValue[$key]))
         {
-            return $this->defaultValue->$key;
+            return $this->defaultValue[$key];
+        }
+    }
+
+    
+    public function getMetaValue($key) 
+    {
+
+        // Check if the author has filled his license option
+        if (isset($this->authorValue[$key]))
+        {
+            return $this->authorValue[$key][0] ?? '';
+        }
+
+        // Return default license option value 
+        if (isset($this->defaultValue[$key]))
+        {
+            return $this->defaultValue[$key][0] ?? '';
         }
     }
 }
