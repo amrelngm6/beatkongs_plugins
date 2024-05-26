@@ -142,8 +142,9 @@ if ( $new_product ) {
                         </div>
 
                         <div class="dokan-form-group">
-                            <label for="downloadable" class="form-label"><?php esc_html_e( 'Downloadable', 'dokan-lite' ); ?></label>
-                            <input type="checkbox" name="downloadable" id="downloadable" value="1" >
+                            <label>
+                                <input <?php echo isset($postMeta['beat_downloadable'][0]) ? 'checked' : ''; ?> type="checkbox" class="_is_downloadable" name="beat_downloadable" id="_downloadable"> Downloadable <i class="fas fa-question-circle tips" aria-hidden="true" data-title="Downloadable products give access to a file upon purchase." data-original-title="" title=""></i>
+                            </label>
                         </div>
 
                         <div class="flex  open-modal cursor-pointer" id="open-category-modal" data-modal="#fbu-category-modal" data-text="#fbu-category-text" data-input="#fbu-category">
