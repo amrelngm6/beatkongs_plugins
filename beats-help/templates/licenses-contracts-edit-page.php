@@ -21,6 +21,17 @@ $BeatLicense = new BeatLicense($defaultPost, $authorPost);
 $BeatLicense->defaultValue = $defaultPost;
 $BeatLicense->defaultMetaValue = $defaultPostMeta;
 $BeatLicense->authorValue = $authorPost;
+
+// Custom query to retrieve beats
+$args = array(
+    'post_type'     => 'usage-terms', // Your custom post type name
+    'posts_per_page'=> 1,     // Retrieve all beats
+    'post_parent'   => $defaultLicenseId, // Filter by post_parent
+    'author'        => get_current_user_id(), // Filter by post_author
+);
+
+$posts = get_posts($args);
+print_r($posts);    
 // $post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
 // $postMeta = isset($_GET['license_id']) ? get_metadata( 'post', $beatLicenseId) : null;
 // print_r($post);
