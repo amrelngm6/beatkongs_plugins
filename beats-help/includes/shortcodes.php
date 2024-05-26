@@ -20,3 +20,8 @@ function dokan_licenses_contracts_page_template() {
 function dokan_licenses_contracts_edit_page_template() {
     include plugin_dir_path(__FILE__) . '../templates/licenses-contracts-edit-page.php';
 }
+
+// Licenses & Contracts edit form shortcode  [media_page]
+function dokan_media_page_template() {
+    include plugin_dir_path(__FILE__) . '../templates/media-page.php';
+}
