@@ -136,7 +136,7 @@ if ( $new_product ) {
                             </select>
                         </div>
                         
-                        <div class="w-full">
+                        <div class="dokan-form-group">
                             
                             <label for="bpm" class="form-label"><?php esc_html_e( 'BPM', 'dokan-lite' ); ?></label>
                             <?php
