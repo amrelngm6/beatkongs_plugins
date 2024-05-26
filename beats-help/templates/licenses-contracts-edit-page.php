@@ -235,7 +235,7 @@ $BeatLicense->authorValue = $authorPost;
                                         <div class="dokan-product-description">
                                             <?php
                                             wp_editor(
-                                                $post['post_content'] ?? '',
+                                                $BeatLicense->getMetaValue('usageterms_contract'),
                                                 'post_content',
                                                 apply_filters(
                                                     'dokan_product_description',
