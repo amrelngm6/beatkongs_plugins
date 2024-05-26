@@ -21,6 +21,7 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 }
 .block {display: block;}
 .w-full {width: 100%;}
+.text-center { text-align: center;}
 p, td, label {
   position: relative;
 }

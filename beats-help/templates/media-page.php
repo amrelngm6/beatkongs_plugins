@@ -40,8 +40,11 @@ if (!defined('ABSPATH')) {
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
                     <div id="user-media-library">
+                        <div id="selected-media" class="text-center">
+                            <p>Upload and Store all your beat files and images.</p>
+                            <p>Mp3, Wav and Zip files only.</p>
+                        </div>
                         <button id="open-media-library">Open Media Library</button>
-                        <div id="selected-media"></div>
                     </div>
                 </main><!-- #main -->
             </div><!-- #primary -->
