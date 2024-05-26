@@ -194,6 +194,10 @@
                 jQuery(inputElement).val(ids);
                 selected ? (
                     parent.find(inputElement).each(function(e){
+                        console.log(e)
+                        console.log(this)
+                        console.log(jQuery(e))
+                        console.log(jQuery(this))
                         e.val( selected )
                     })
                 ) : '';
