@@ -246,3 +246,9 @@ body .product-edit-new-container .dokan-edit-row.dokan-other-options
   padding: 0;
   margin: 5px 20px;
 }
+.show_if_downloadable {
+  display: none;
+}
+form.dokan-product-edit-form.sell .show_if_downloadable {
+  display: block;
+}
