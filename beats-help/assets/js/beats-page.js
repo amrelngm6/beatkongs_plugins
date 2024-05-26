@@ -48,7 +48,7 @@
             e.preventDefault();
             let selectedNames = '';
             checked.each(function(){
-                selectedNames = selectedNames + $(this).attr('data-title') + ',';
+                selectedNames += $(this).attr('data-title') + ',';
             });
             $(categoryText).html(selectedNames);
             modal.hide();
