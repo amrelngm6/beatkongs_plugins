@@ -220,7 +220,7 @@ $BeatLicense->authorValue = $authorPost;
                                             id="usageterms_allow_profit_performances" data-hash='607o8fieck70'>
                                             <option <?php echo $BeatLicense->checkMetaSelected('usageterms_allow_profit_performances', ''); ?> value="">None</option>
                                             <option <?php echo $BeatLicense->checkMetaSelected('usageterms_allow_profit_performances', 'yes'); ?> value="yes">Yes</option>
-                                            <option <?php echo $BeatLicense->checkMetaSelected('usageterms_allow_profit_performances', 'no'); ?> value="no" selected='selected'>No</option>
+                                            <option <?php echo $BeatLicense->checkMetaSelected('usageterms_allow_profit_performances', 'no'); ?> value="no" >No</option>
                                         </select>
                                     </div>
                                 </div>
