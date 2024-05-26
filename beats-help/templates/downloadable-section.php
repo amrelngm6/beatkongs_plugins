@@ -56,7 +56,7 @@
                             'author'    => 1
                         );
                         $default_licenses = new WP_Query( $args );
-                        foreach ($default_licenses as $key => $value) {
+                        foreach ($default_licenses->posts as $key => $value) {
                         ?>
                         <tr>
                             <td>
