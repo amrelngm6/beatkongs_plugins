@@ -106,7 +106,7 @@ $BeatLicense->authorValue = $authorPost;
                                     </div>
                                     <div class="cmb-td">
                                         <input type="text" class="cmb2-text-medium" name="usageterms_producer_alias"
-                                            id="usageterms_producer_alias" value="<?php echo $BeatLicense->getValue('usageterms_producer_alias'); ?>" data-hash='3up4uvi8ld80' />
+                                            id="usageterms_producer_alias" value="<?php echo $BeatLicense->getMetaValue('usageterms_producer_alias'); ?>" data-hash='3up4uvi8ld80' />
                                         <span class="cmb2-metabox-description">Enter the contract producer name</span>
 
                                     </div>
