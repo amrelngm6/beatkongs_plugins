@@ -259,7 +259,7 @@ function beats_license_handle_form_submission()
         $title = sanitize_text_field($_POST['license_title']);
         $type = sanitize_text_field($_POST['post_type']);
         $post_parent = sanitize_text_field($_POST['post_parent']);
-        $usageterms_filetypes = sanitize_text_field($_POST['usageterms_filetypes']);
+        $usageterms_filetypes = serialize($_POST['usageterms_filetypes']);
         $usageterms_producer_alias = sanitize_text_field($_POST['usageterms_producer_alias']);
         $usageterms_num_dist_copies = sanitize_text_field($_POST['usageterms_num_dist_copies']);
         $usageterms_num_audio_streams = sanitize_text_field($_POST['usageterms_num_audio_streams']);
