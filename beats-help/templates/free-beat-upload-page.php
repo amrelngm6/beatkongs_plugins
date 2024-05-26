@@ -56,7 +56,7 @@ if ( $new_product ) {
 <header class="dokan-dashboard-header dokan-clearfix">
     <h4 class="entry-title">
         <?php
-            esc_html_e( 'Free Beat', 'dokan-lite' );
+            esc_html_e( 'Beat page', 'dokan-lite' );
         ?>
 
         <?php if ( $post->post_status === 'publish' ) : ?>
