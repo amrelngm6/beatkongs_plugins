@@ -13,7 +13,7 @@ $beatLicenseId =  $_GET['license_id'] ?? 0;
 $termId =  $_GET['term_id'] ?? 0;
 
 $post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
-$term = isset($_GET['term_id']) ? get_term( $termId, ARRAY_A ) : null; 
+$term = isset($_GET['term_id']) ? get_term( $termId, 'pa_license' ) : null; 
 $postMeta = get_metadata( 'post', $beatLicenseId);
 print_r($term);
 print_r($post);
