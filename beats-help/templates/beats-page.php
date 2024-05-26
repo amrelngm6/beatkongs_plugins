@@ -113,10 +113,6 @@ $bulk_statuses = [
                         <?php esc_html_e( 'Add new beat', 'dokan-lite' ); ?>
                     </a>
                     <?php endif; ?>
-
-                    <?php
-                                        // do_action( 'dokan_after_add_product_btn' );
-                                    ?>
                 </span>
                 <?php endif; ?>
             </div>
