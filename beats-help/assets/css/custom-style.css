@@ -21,7 +21,7 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 }
 .block {display: block;}
 .w-full {width: 100%;}
-p, td {
+p, td, label {
   position: relative;
 }
 label.error {
