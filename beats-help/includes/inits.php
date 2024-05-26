@@ -291,7 +291,7 @@ function beats_license_handle_form_submission()
                 'usageterms_num_free_downloads' => $usageterms_num_free_downloads ,
                 'usageterms_num_music_videos' => $usageterms_num_music_videos ,
                 'usageterms_num_monetized_video_streams' => $usageterms_num_monetized_video_streams ,
-                'usageterms_stat' => $usageterms_state ,
+                'usageterms_state' => $usageterms_state ,
                 'usageterms_country' => $usageterms_country ,
                 'usageterms_allow_profit_performances' => $usageterms_allow_profit_performances ,
                 'usageterms_contract' => $usageterms_contract,
