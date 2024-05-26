@@ -66,7 +66,7 @@ $default_licenses = new WP_Query( $args );
                         </thead>
                         <tbody>
                             <?php 
-                            foreach ($default_licenses as $key => $license) :
+                            foreach ($default_licenses->posts as $key => $license) :
                             ?>
                             <tr id="taxonomy-<?php $license->ID; ?>" >
 

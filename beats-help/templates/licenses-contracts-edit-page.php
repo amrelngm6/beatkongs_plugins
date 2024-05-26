@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
+include plugin_dir_path(__FILE__) . 'includes/Class/BeatLicense.php';
 
 $categories = get_terms(array(
     'taxonomy' => 'category',
@@ -17,7 +18,9 @@ $defaultPostMeta = isset($_GET['license_post_id']) ? get_metadata( 'post', $defa
 print_r($defaultPost);
 print_r($defaultPostMeta);
 
+$authorPost = [];
 
+$BeatLicense = new BeatLicense($defaultPost, $authorPost);
 // $post = isset($_GET['license_id']) ? get_post( $beatLicenseId, ARRAY_A ) : null; 
 // $postMeta = isset($_GET['license_id']) ? get_metadata( 'post', $beatLicenseId) : null;
 // print_r($post);
