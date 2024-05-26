@@ -262,6 +262,7 @@ form.sell .show_if_downloadable {
   border-radius: 15px;
   background-color: #333;
   color: #fff;
+  font-size: 14px;
 }
 label:hover span.label-tips
 {
