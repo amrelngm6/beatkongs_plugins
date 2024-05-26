@@ -35,6 +35,12 @@ function add_custom_beats_upload_menu($urls) {
         'icon'  => '<i class="fa fa-cogs"></i>',
         'pos'   => 190,
     );
+    $urls['dokan-media'] = array(
+        'title' => __('Media library', 'dokan'),
+        'url'   => site_url('/author-media'),
+        'icon'  => '<i class="fa fa-picture"></i>',
+        'pos'   => 190,
+    );
     return $urls;
 }
 
