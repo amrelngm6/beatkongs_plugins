@@ -173,7 +173,6 @@
             parent.find("input:checkbox:checked").each(function(){
                 console.log($(this).val());
             });
-            jQuery(targetId).toggleClass('hidden')
         })
 
         
