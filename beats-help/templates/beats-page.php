@@ -237,7 +237,7 @@ $bulk_statuses = [
                                 <td><?php echo $postMeta['_eael_post_view_count'][0] ?? '0' ; ?></td>
                                 <td><?php echo '0' ; ?></td>
 
-                                <td><?php echo $beat->post_type; ?></td>
+                                <td><?php echo strtoupper($postMeta['beat_type'][0]) ?? '' ; ?></td>
                                 <td><a href="/upload-free-beat/?beat_id=<?php echo $beat->ID; ?>">Edit</a></td>
                             </tr>
                             <?php endforeach ; ?>

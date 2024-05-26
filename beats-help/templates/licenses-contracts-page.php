@@ -5,11 +5,10 @@ if (!defined('ABSPATH')) {
 
 
 $args = array(
-'post_type' => 'usage-terms',
-'author'    => 1,
-
-'orderby' => 'ID',
-'order' => 'ASC',
+    'post_type' => 'usage-terms',
+    'author'    => 1,
+    'orderby' => 'ID',
+    'order' => 'ASC',
 );
 
 $default_licenses = new WP_Query( $args );
@@ -73,7 +72,6 @@ $default_licenses = new WP_Query( $args );
                             foreach ($default_licenses->posts as $key => $license) :
                             ?>
                             <tr id="taxonomy-<?php $license->ID; ?>" >
-
                                 <td id="cb" class="manage-column column-cb check-column">
                                     <?php echo $license->ID; ?>
                                 </td>
