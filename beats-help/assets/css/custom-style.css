@@ -6,7 +6,7 @@ body a.dokan-btn-theme:focus, body .dokan-btn-theme:focus, body input[type='subm
 body a.dokan-btn-theme, body .dokan-btn-theme, body input[type='submit'].dokan-btn-theme,
 body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li.active
 {
-  background-color: var(--e-global-color-07ebab1);
+  background-color: var(--e-global-color-07ebab1) !important;
 }
 
 body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li 
