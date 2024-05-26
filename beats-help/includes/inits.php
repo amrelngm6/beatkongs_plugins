@@ -45,9 +45,9 @@ function register_beat_license_post_type() {
         'name_admin_bar' => 'Beats License',
         'add_new' => 'Add New',
         'add_new_item' => 'Add New Beats License',
-        'new_item' => 'New Beat',
-        'edit_item' => 'Edit Beat',
-        'view_item' => 'View Beat',
+        'new_item' => 'New License',
+        'edit_item' => 'Edit License',
+        'view_item' => 'View License',
         'all_items' => 'All Beats Licenses',
         'search_items' => 'Search Beats Licenses',
         'parent_item_colon' => 'Parent Beats Licenses:',
@@ -65,7 +65,7 @@ function register_beat_license_post_type() {
         'menu_icon' => 'dashicons-format-audio',
     );
 
-    register_post_type('beat', $args);
+    register_post_type('beats_license', $args);
 }
 
 
