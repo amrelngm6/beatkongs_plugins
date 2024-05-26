@@ -89,8 +89,7 @@ Class BeatLicense
         // Check if the author has filled his license option
         if (isset($this->authorMetaValue[$key]))
         {
-            $list = unserialize($this->authorMetaValue[$key][0]);
-            print_r($this->authorMetaValue[$key]);
+            $list = unserialize(unserialize($this->authorMetaValue[$key][0]));
             print_r($list);
             return (is_array($list) && in_array($val, $list) ) ? 'checked' : '--';
         }
