@@ -49,9 +49,9 @@ Class BeatLicense
     {
 
         // Check if the author has filled his license option
-        if (isset($this->authorValue[$key]))
+        if (isset($this->authorMetaValue[$key]))
         {
-            return $this->authorValue[$key][0] ?? '';
+            return $this->authorMetaValue[$key][0] ?? '';
         }
 
         // Return default license option value 
@@ -68,9 +68,9 @@ Class BeatLicense
     {
 
         // Check if the author has filled his license option
-        if (isset($this->authorValue[$key]))
+        if (isset($this->authorMetaValue[$key]))
         {
-            return $this->authorValue[$key][0] == $val ? 'selected' : '';
+            return $this->authorMetaValue[$key][0] == $val ? 'selected' : '';
         }
 
         // Return default license option value 
@@ -87,9 +87,9 @@ Class BeatLicense
     {
 
         // Check if the author has filled his license option
-        if (isset($this->authorValue[$key]))
+        if (isset($this->authorMetaValue[$key]))
         {
-            return $this->authorValue[$key][0] == $val ? 'checked' : '';
+            return $this->authorMetaValue[$key][0] == $val ? 'checked' : '';
         }
 
         // Return default license option value 
