@@ -21,6 +21,17 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 }
 .block {display: block;}
 .w-full {width: 100%;}
+p, td {
+  position: relative;
+}
+label.error {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  font-size: 14px;
+  color: red;
+}
 .vendor-toggle-menu 
 {
   position: fixed;
