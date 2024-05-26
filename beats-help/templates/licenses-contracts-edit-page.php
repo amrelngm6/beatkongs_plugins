@@ -90,7 +90,7 @@ print_r($posts);
                         <input type="hidden" name="beat_license_edit" value="true" />
                         <input type="hidden" name="post_type" value="usage-terms" />
                         <input type="hidden" name="license_title" value="<?php echo $defaultPost['post_title']; ?>" />
-                        <input type="hidden" name="post_parent" value="<?php echo $defaultPost['ID']; ?>" />
+                        <input type="hidden" name="post_parent" value="<?php echo $defaultLicenseId; ?>" />
                         <input type="hidden" name="post_id" value="<?php echo $authorPost['ID'] ?? 0; ?>" />
                         <?php wp_nonce_field(basename(__FILE__), 'beats_license_nonce'); ?>
                         <!-- Begin CMB2 Fields -->
