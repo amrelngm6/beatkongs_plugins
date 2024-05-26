@@ -275,7 +275,7 @@ function beats_license_handle_form_submission()
         
         // Create a new post of custom post type 'usage-terms'
         $license_post = array(
-            'ID'    => sanitize_text_field($_POST['post_id']) ?? 0,
+            'ID'    => sanitize_text_field($_POST['author_license_id']) ?? 0,
             'post_title'    => $title,
             'post_content'  => '',
             'post_excerpt'  => '',
