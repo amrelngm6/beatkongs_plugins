@@ -141,6 +141,7 @@ function beats_handle_form_submission()
             $post_excerpt = sanitize_text_field($_POST['post_excerpt']);
             $post_content = sanitize_text_field($_POST['post_content']);
             $beat_downloadable = sanitize_text_field($_POST['beat_downloadable']);
+            $beat_bpm = sanitize_text_field($_POST['beat_bpm']);
             
             if (!$title)
             {
