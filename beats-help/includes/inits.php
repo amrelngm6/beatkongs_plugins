@@ -187,12 +187,12 @@ function beats_handle_form_submission()
             $beatId = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
             
             // Save Category
-            $cats = $_POST['selected_cat'] ?? null;
+            $cats = $_POST['selected_cats'] ?? null;
             wp_set_post_terms($beatId, $cats, 'category');
             
             // Save Station
             $stations = $_POST['selected_stations'] ?? null;
-            wp_set_post_terms($beatId, $stations, 'category');
+            wp_set_post_terms($beatId, $stations, 'station');
 
             // Save Tags
             $tags = isset($_POST['beat_tags']) ? json_decode(stripslashes($_POST['beat_tags']), true) : '';
