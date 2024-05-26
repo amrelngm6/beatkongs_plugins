@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 
 
 $categories = get_terms(array(
-    'taxonomy' => 'pa_license',
+    'taxonomy' => 'usage-terms',
     'hide_empty' => false,
 ));
 
