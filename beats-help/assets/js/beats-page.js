@@ -166,6 +166,17 @@
             let targetId = jQuery(this).attr('data-target');
             jQuery(targetId).toggleClass('hidden')
         })
+        
+        jQuery(document).on('change', '.genre-checkbox', function(e){
+            let parent = jQuery(this).parent();
+            console.log(parent);
+            parent.find("input:checkbox:checked").each(function(){
+                console.log($(this).val());
+            });
+            jQuery(targetId).toggleClass('hidden')
+        })
+
+        
 
     });
 })(jQuery);
