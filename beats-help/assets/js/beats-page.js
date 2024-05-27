@@ -291,7 +291,7 @@
             let output = '';
             for (let i = 0; i < list.length; i++) {
                 const element = list[i];
-                output += searchResultLi(element.name.toLowerCase(), element.term_id, text.toLowerCase());
+                output += searchResultLi(element.name, element.term_id, text);
             }
             if (output != '' )
             {
@@ -313,7 +313,7 @@ function searchResultLi(title, id, text = '')
 {
     console.log(title.search(text))
     console.log(title, text)
-    return title.search(text) > -1 ? '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
+    return title.toLowerCase().search(text.toLowerCase()) > -1 ? '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
     '<div class="dokan-cat-search-res-item">'+title+'</div>'+
     '<div class="dokan-cat-search-res-history">'+
     '<span class="dokan-cat-search-res-suggestion-selected"><span>'+title+'</span></span>'+
