@@ -296,3 +296,9 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li a
 {
   color: #fff !important;
 }
+body .dokan-product-category-modal .dokan-product-category-modal-content
+{
+  left: 0;
+  right: 0;
+  width: 70%;
+}
