@@ -100,7 +100,7 @@
                         
                         <li data-indexli="0" data-haschild="false" data-name="Genre" data-catlevel="1" class=" dokan-product-category-li " data-term-id="<?php echo $value->term_id; ?>" data-taxonomy="beat_category">
                         <label class="cursor-pointer block w-full " data-id="<?php echo $value->term_id; ?>" >  
-                            <span class="dokan-product-category"><?php echo $value->name; ?></span>
+                            <span class="dokan-product-category"><b><?php echo $value->name; ?></b></span>
                             <input  <?php echo in_array($value->term_id, $selectedCategory) ? 'checked' : (count($selectedCategory) == 3  ? 'disabled' : ''); ?> type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
                         </label>
                     </li>
