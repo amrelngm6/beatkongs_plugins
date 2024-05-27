@@ -266,18 +266,7 @@
 
         // On change category checkbox
         jQuery(document).on('change', '.genre-checkbox', function(e){
-
-            let selectedIems = '';
-            let label = jQuery(this).parent();
-            let ul = label.parent().parent();
-            let selectedSpan = jQuery(ul.attr('data-span'));
-            checked.each(function(){
-                selectedIems +=  ', ' + $(this).attr('data-title');
-            });
-            $(selectedSpan).html(selectedIems.slice(1));
-
-
-            
+            handleCheckboxes()
         })
 
 
