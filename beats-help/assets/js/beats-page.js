@@ -291,9 +291,11 @@
             }
             if (output != '' )
             {
-                result.removeClass('dokan-hide').html(output)            
+                result.html(output)            
+                result.parent().removeClass('dokan-hide')            
             } else {
-                result.removeClass('dokan-hide').html(' ')            
+                result.html(' ')            
+                result.parent().addClass('dokan-hide')            
             }
             
         })
