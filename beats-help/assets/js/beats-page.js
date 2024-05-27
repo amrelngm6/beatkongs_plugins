@@ -248,6 +248,7 @@
             let termCheckbox = jQuery(this).data('termid');
             let target = jQuery(this).data('name');
             jQuery('#'+termCheckbox).attr('checked',true);
+            jQuery(this).parent().parent().addClass('dokan-hide');
             // jQuery(target).append(row);
         });
 
