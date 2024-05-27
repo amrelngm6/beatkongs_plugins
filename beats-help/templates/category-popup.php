@@ -1,4 +1,13 @@
-   
+<?php
+
+$list = $categories = get_terms(array(
+    'taxonomy' => 'category',
+    'hide_empty' => false,
+));
+$beatId =  $_GET['beat_id'] ?? 0;
+$selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_id');
+
+?>
 
 <!-- The Modal -->
 <div id="dokan-product-category-modal" class="dokan-product-category-modal" >
@@ -19,7 +28,7 @@
                 <div class="dokan-cat-search-box">
                     <span class="dokan-cat-search-icon"><i class="fas fa-search"></i></span>
                     <input maxlength="100" id="dokan-single-cat-search-input" class="dokan-cat-search-input" data-result="#dokan-cat-search-res-ul" data-list="#dokan-cats-json-list" type="text" placeholder="Search Genre">
-                    <input id="dokan-cats-json-list"  type="hidden" value="<?php echo json_encode(array_column($categories, 'name')); ?>" >
+                    <input id="dokan-cats-json-list"  type="hidden" value="<?php echo json_encode(array_column($list, 'name')); ?>" >
                     <span class="dokan-cat-search-text-limit"><span id="dokan-cat-search-text-limit">0</span>/100</span>
                 </div>
                 <div id="dokan-cat-search-res" class="dokan-cat-search-res dokan-hide">
@@ -38,12 +47,6 @@
                 <ul id="1-level-cat-ul" data-span="#dokan-selected-category-span" class="dokan-product-category-ul 1-level-cat" data-level="1">
                     
                     <?php
-                    $list = $categories = get_terms(array(
-                        'taxonomy' => 'category',
-                        'hide_empty' => false,
-                    ));
-                    $beatId =  $_GET['beat_id'] ?? 0;
-                    $selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_id');
                     foreach ($list as $key => $value) {
                     ?>
                         
