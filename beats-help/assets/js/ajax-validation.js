@@ -24,10 +24,13 @@ jQuery(document).ready(function($) {
                 jQuery('#activate-permalink').show()
                 jQuery('#validate-permalink').hide()
                 jQuery('#beat_slug').attr('disabled', true)
-
             } else {
                 $('#slug-validation-message').css('color','red').text(response.data);
             }
+            setTimeout(function(){
+                $('#slug-validation-message').html('');
+            }, 5000)
+
         });
     });
 
