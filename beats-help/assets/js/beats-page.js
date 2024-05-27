@@ -250,12 +250,10 @@
                 alert('You can select up to 3 only'); 
             } else {
                 let termId = jQuery(this).data('termid');
-                let target = jQuery(this).data('name');
                 jQuery('#checkbox-cat-'+termId).attr('checked',true);
             }
             jQuery(this).parent().parent().addClass('dokan-hide');
-            modal.find('input[type=text]').val('')
-            modal.find('input:checkbox:not(:checked)').attr('disabled', (modal.find('input:checkbox:checked').length > 2) )
+            handleCheckboxes()
 
         });
 
