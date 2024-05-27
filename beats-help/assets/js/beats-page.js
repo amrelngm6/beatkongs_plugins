@@ -277,7 +277,7 @@
 
 
         
-        jQuery(document).on('change', '#dokan-single-cat-search-input', function(e){
+        jQuery(document).on('blur', '#dokan-single-cat-search-input', function(e){
 
             let text = jQuery(this).text();
             let listEle = jQuery(jQuery(this).attr('data-list'));
