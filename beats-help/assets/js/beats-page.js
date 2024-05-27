@@ -248,7 +248,36 @@
             jQuery('form.dokan-beat-edit-form').toggleClass('sell')
         });
 
+        // On change category checkbox
         jQuery(document).on('change', '.genre-checkbox', function(e){
+
+            let selectedIems = '';
+            let label = jQuery(this).parent();
+            let ul = label.parent().parent();
+            let selectedSpan = jQuery(ul.attr('data-span'));
+            let checked = ul.find("input:checkbox:checked");
+            let unchecked = ul.find("input:checkbox:not(:checked)");
+            checked.each(function(){
+                selectedIems +=  ', ' + $(this).attr('data-title');
+            });
+            $(selectedSpan).html(selectedIems.slice(1));
+
+            if (checked.length > 2)
+            {
+                unchecked.each(function(){
+                    $(this).attr('disabled', true);
+                });
+            } else {
+                unchecked.each(function(){
+                    $(this).attr('disabled', false);
+                });
+            }
+            
+        })
+
+
+        
+        jQuery(document).on('change', '#dokan-single-cat-search-input', function(e){
 
             let selectedIems = '';
             let label = jQuery(this).parent();
