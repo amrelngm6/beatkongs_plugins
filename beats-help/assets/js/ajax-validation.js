@@ -21,6 +21,10 @@ jQuery(document).ready(function($) {
 
             if (response.success) {
                 $('#slug-validation-message').css('color','green').text(response.data);
+                jQuery('#activate-permalink').show()
+                jQuery('#validate-permalink').hide()
+                jQuery('#beat_slug').attr('disabled', true)
+
             } else {
                 $('#slug-validation-message').css('color','red').text(response.data);
             }
