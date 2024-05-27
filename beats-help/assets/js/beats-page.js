@@ -300,7 +300,7 @@
 
 function searchResultLi(title, id, text = '')
 {
-    return title.name.search(text) > -1 ? '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
+    return title.search(text) > -1 ? '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
     '<div class="dokan-cat-search-res-item">'+title+'</div>'+
     '<div class="dokan-cat-search-res-history">'+
     '<span class="dokan-cat-search-res-suggestion-selected"><span>'+title+'</span></span>'+
