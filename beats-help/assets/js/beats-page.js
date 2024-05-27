@@ -248,8 +248,6 @@
             let checked =  modal.find('input:checkbox:checked')
             if (checked.length > 2) {
                 alert('You can select up to 3 only'); 
-                modal.find('input:checkbox:checked').attr('disabled', true)
-
             } else {
                 let termId = jQuery(this).data('termid');
                 let target = jQuery(this).data('name');
@@ -257,6 +255,8 @@
             }
             jQuery(this).parent().parent().addClass('dokan-hide');
             modal.find('input[type=text]').val('')
+            modal.find('input:checkbox:checked').attr('disabled', (modal.find('input:checkbox:checked').length > 2) )
+
         });
 
         jQuery(document).on('change', '#beat_type', function(e){
