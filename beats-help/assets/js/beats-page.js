@@ -288,11 +288,6 @@
             
         })
 
-        jQuery(document).on('click', '#activate-permalink', function(){
-            jQuery(this).hide()
-            jQuery('#validate-permalink').show()
-            jQuery('#beat_slug').attr('disabled', false)
-        })
         
 
     });
