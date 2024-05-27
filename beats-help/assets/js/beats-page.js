@@ -282,16 +282,18 @@
             let selectedIems = '';
             let text = jQuery(this).text();
             let titlesEle = jQuery(this).attr('data-titles');
-            console.log(jQuery(titlesEle).val())
-            console.log(JSON.parse(jQuery(titlesEle).val()))
-            console.log(JSON.parse(JSON.stringify(jQuery(titlesEle).val())))
             let titles = JSON.parse(jQuery(titlesEle).val());
+            console.log(titles)
+
             let list = jQuery(this).attr('data-list');
             let result = jQuery(this).attr('data-result');
             titles.each(function(e,a){
                 console.log(e, a)
-                
             });
+            for (let i = 0; i < titles.length; i++) {
+                const element = titles[i];
+                console.log(i, element)
+            }
 
             
         })
