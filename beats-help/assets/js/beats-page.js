@@ -282,7 +282,7 @@
             let selectedIems = '';
             let text = jQuery(this).text();
             let titlesEle = jQuery(jQuery(this).attr('data-titles'));
-            let titles = JSON.parse(titlesEle).val();
+            let titles = JSON.parse(titlesEle.val());
             let listEle = jQuery(jQuery(this).attr('data-list'));
             console.log(listEle)
             let list = JSON.parse(listEle).val();
