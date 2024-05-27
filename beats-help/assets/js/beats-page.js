@@ -280,10 +280,14 @@
         jQuery(document).on('input', '#dokan-single-cat-search-input', function(e){
 
             let text = jQuery(this).val();
+            
             let listEle = jQuery(jQuery(this).attr('data-list'));
             let list = JSON.parse(listEle.val());
             let result = jQuery(jQuery(this).attr('data-result'));
-            
+            if (!text) {
+                result.parent().addClass('dokan-hide')            
+                return;
+            }
             let output = '';
             for (let i = 0; i < list.length; i++) {
                 const element = list[i];
