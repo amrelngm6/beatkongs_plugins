@@ -57,7 +57,7 @@
         });
 
 
-        
+        // Open media library for uploading beat picture
         jQuery('#picture_media_manager').click(function(e) {
 
             e.preventDefault();
@@ -109,6 +109,8 @@
             image_frame.open();
         });
 
+
+        // Open media library for uploading beat MP3 file
         jQuery('#mp3_media_manager').click(function(e) {
 
             e.preventDefault();
@@ -160,6 +162,7 @@
         });
 
 
+        // Open media library for uploading beat Licenses downloads
         jQuery(document).on('click', '.downloads_media_manager', function(e) {
 
             e.preventDefault();

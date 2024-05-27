@@ -125,7 +125,7 @@
                 </span>
             </div>
             <div class="dokan-product-category-button-container">
-                <button class="dokan-single-cat-select-btn dokan-btn dokan-btn-default dokan-btn-theme" id="dokan-single-cat-select-btn" type='button'>Done</button>
+                <button class="dokan-single-cat-select-btn dokan-btn dokan-btn-default dokan-btn-theme choose-genre" data-target="#dokan-single-categories" id="dokan-single-cat-select-btn" type='button'>Done</button>
             </div>
         </div>
     </div>
