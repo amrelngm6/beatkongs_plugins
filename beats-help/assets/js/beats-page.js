@@ -9,24 +9,20 @@
             })   
         }
         
-        var modal, span,categoryInput,categoryText;
+        var modal, span,categoryText;
         var span = $('.fbu-close');
         
         $('#open-category-modal').on('click', function(e) {
             
             modal = $($(this).data('modal'));
-            categoryInput = $($(this).data('input'));
             categoryText = $($(this).data('text'));
-            console.log(modal, categoryInput, categoryText)
             modal.show();
         });
 
         $('#open-station-modal').on('click', function(e) {
             
             modal = $($(this).data('modal'));
-            categoryInput = $($(this).data('input'));
             categoryText = $($(this).data('text'));
-            console.log(modal, categoryInput, categoryText)
             modal.show();
         });
 
