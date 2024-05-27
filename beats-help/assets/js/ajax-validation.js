@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
-    $('#post-slug').on('blur', function() {
-        var slug = $(this).val();
+    jQuery('#validate-permalink').on('click', function() {
+        var slug = $('#beat_slug').val();
 
         // Validate slug format (optional)
         if (!slug) {
@@ -22,4 +22,11 @@ jQuery(document).ready(function($) {
             }
         });
     });
+
+    jQuery(document).on('click', '#activate-permalink', function(){
+        jQuery(this).hide()
+        jQuery('#validate-permalink').show()
+        jQuery('#beat_slug').attr('disabled', false)
+    })
+
 });
