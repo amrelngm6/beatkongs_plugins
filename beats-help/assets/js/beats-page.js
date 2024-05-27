@@ -270,16 +270,15 @@
             let list = JSON.parse(listEle.val());
             let result = jQuery(jQuery(this).attr('data-result'));
             if (!text) {
-                result.parent().addClass('dokan-hide')            
-                return;
+                result.parent().addClass('dokan-hide'); return;
             }
             let output = '';
             for (let i = 0; i < list.length; i++) {
                 const element = list[i];
                 output += searchResultLi(element.name, element.term_id, text);
             }
-            if (output != '' )
-            {
+
+            if (output != '' ) {
                 result.html(output)            
                 result.parent().removeClass('dokan-hide')            
             } else {
