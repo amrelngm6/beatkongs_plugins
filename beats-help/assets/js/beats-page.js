@@ -287,7 +287,7 @@
             console.log(listEle)
             let list = JSON.parse(listEle.val());
             console.log(list)
-            let result = jQuery(this).attr('data-result');
+            let result = jQuery(jQuery(this).attr('data-result'));
             
             let output = '';
             for (let i = 0; i < list.length; i++) {
