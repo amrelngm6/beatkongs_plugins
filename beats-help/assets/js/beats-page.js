@@ -15,14 +15,6 @@
         $('#open-category-modal').on('click', function(e) {
             modal = $($(this).data('modal'));
             categoryText = $($(this).data('text'));
-            categorySpan = $($(this).data('modal-span'));
-            
-            let selectedNames = '';
-            let checked = modal.find("input:checkbox:checked");
-            checked.each(function(){
-                selectedNames +=  ', ' + $(this).attr('data-title');
-            });
-            categorySpan.html(selectedNames.slice(1));
             modal.show();
         });
 
@@ -253,7 +245,7 @@
                 jQuery('#checkbox-cat-'+termId).attr('checked',true);
             }
             jQuery(this).parent().parent().addClass('dokan-hide');
-            handleCheckboxes()
+            handleCheckboxes(modal)
 
         });
 
@@ -264,7 +256,7 @@
 
         // On change category checkbox
         jQuery(document).on('change', '.genre-checkbox', function(e){
-            handleCheckboxes()
+            handleCheckboxes(modal)
         })
 
 
@@ -311,7 +303,7 @@ function searchResultLi(title, id, text = '')
     '</div></li>' : '';
 }
 
-function handleCheckboxes()
+function handleCheckboxes(modal)
 {
     let unchecked = modal.find("input:checkbox:not(:checked)");
     let checked = modal.find("input:checkbox:checked");
