@@ -127,10 +127,11 @@ if ( $new_product ) {
                         
                         <?php wp_nonce_field('check_slug_nonce', 'security'); ?>
                         <div class="dokan-form-group">
-                            <label for="bpm" class="form-label"><?php esc_html_e( 'BPM', 'dokan-lite' ); ?></label>
+                            <label for="bpm" class="form-label"><?php esc_html_e( 'Beat link', 'dokan-lite' ); ?></label>
                             <div class="w-full flex">
-                                <span><?php echo get_site_url();?></span>
+                                <span style="font-size: 14px"><?php echo get_site_url();?></span>
                                 <input type="number" min="0" max="300" name="post-slug" id="beat_bpm" value="<?php echo $postMeta['beat_bpm'][0] ?? ''; ?>" class="dokan-form-control valid" placeholder="BPM (Beats per minute).." aria-invalid="false">
+                                <span>Validate</span>
                             </div>
                         </div>
 
