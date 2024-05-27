@@ -29,7 +29,7 @@ $selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_
                     <span class="dokan-cat-search-icon"><i class="fas fa-search"></i></span>
                     <input maxlength="100" id="dokan-single-cat-search-input" class="dokan-cat-search-input" data-result="#dokan-cat-search-res-ul" data-list="#dokan-cats-json-list" data-titles="#dokan-cats-json-titles" type="text" placeholder="Search Genre">
                     <input id="dokan-cats-json-titles"  type="hidden" value="<?php echo json_encode(array_column($list, 'name')); ?>" >
-                    <input id="dokan-cats-json-list"  type="hidden" value="<?php echo json_encode($list); ?>" >
+                    <input id="dokan-cats-json-list"  type="hidden" value='<?php echo json_encode($list); ?>' >
                     <span class="dokan-cat-search-text-limit"><span id="dokan-cat-search-text-limit">0</span>/100</span>
                 </div>
                 <div id="dokan-cat-search-res" class="dokan-cat-search-res dokan-hide">
