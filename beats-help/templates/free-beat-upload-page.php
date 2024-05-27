@@ -133,10 +133,10 @@ if ( $new_product ) {
                                 <input disabled="true" style="max-width:200px" type="text"  name="beat_slug" id="beat_slug" value="<?php echo $post['post_name'] ?? ''; ?>" class="dokan-form-control valid" placeholder="Link path.." aria-invalid="false">
                                 <span id="activate-permalink">Change</span> <span style="display:none" id="validate-permalink">Validate</span> 
                                 <span style="display:none" id="ajax-span-loader"><img src="<?php echo plugin_dir_url(__FILE__); ?>../assets/img/loader.gif" width="26" /></span>
+                                <div id="slug-validation-message"></div>
                             </div>
                         </div>
 
-                        <div id="slug-validation-message"></div>
 
                         <?php $beat_types = apply_filters('default_beat_types', 'free'); ?>
 

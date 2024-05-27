@@ -20,9 +20,9 @@ jQuery(document).ready(function($) {
             loader.hide()
 
             if (response.success) {
-                $('#slug-validation-message').text(response.data);
+                $('#slug-validation-message').css('color','green').text(response.data);
             } else {
-                $('#slug-validation-message').text(response.data);
+                $('#slug-validation-message').css('color','red').text(response.data);
             }
         });
     });
