@@ -328,10 +328,7 @@ function handleCheckboxes()
 {
     let unchecked = modal.find("input:checkbox:not(:checked)");
     let checked = modal.find("input:checkbox:checked");
-    checked.each(function(){
-        selectedIems +=  ', ' + $(this).attr('data-title');
-    });
-    
+   
     if (checked.length > 2) {
         unchecked.each(function(){
             $(this).attr('disabled', true);
