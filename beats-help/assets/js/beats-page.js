@@ -280,13 +280,13 @@
         jQuery(document).on('change', '#dokan-single-cat-search-input', function(e){
 
             let selectedIems = '';
-            let label = jQuery(this).parent();
-            let ul = label.parent().parent();
-            let selectedSpan = jQuery(ul.attr('data-span'));
-            let checked = ul.find("input:checkbox:checked");
-            let unchecked = ul.find("input:checkbox:not(:checked)");
-            checked.each(function(){
-                selectedIems +=  ', ' + $(this).attr('data-title');
+            let text = jQuery(this).text();
+            let titles = jQuery(this).attr('data-titles');
+            let list = jQuery(this).attr('data-list');
+            let result = jQuery(this).attr('data-result');
+            titles.each(function(e,a){
+                console.log(e, a)
+                
             });
             $(selectedSpan).html(selectedIems.slice(1));
 
