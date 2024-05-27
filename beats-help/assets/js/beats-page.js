@@ -245,7 +245,7 @@
         jQuery(document).on('change', '.genre-checkbox', function(e){
 
             let label = jQuery(this).parent();
-            let ul = label.parent();
+            let ul = label.parent().parent();
             let checked = ul.find("input:checkbox:checked");
             let unchecked = ul.find("input:checkbox:not(:checked)");
             
