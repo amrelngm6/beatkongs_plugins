@@ -281,14 +281,16 @@
 
             let selectedIems = '';
             let text = jQuery(this).text();
-            let titlesEle = jQuery(this).attr('data-titles');
-            let titles = JSON.parse(jQuery(titlesEle).val());
+            let titlesEle = jQuery(jQuery(this).attr('data-titles'));
+            let titles = JSON.parse(titlesEle).val();
+            let listEle = jQuery(jQuery(this).attr('data-list'));
+            let list = JSON.parse(listEle).val();
 
             let result = jQuery(this).attr('data-result');
             
             let output = '';
-            for (let i = 0; i < titles.length; i++) {
-                const element = titles[i];
+            for (let i = 0; i < list.length; i++) {
+                const element = list[i];
                 output += searchResultLi(element.name, element.term_id);
             }
             result.html(output)            
