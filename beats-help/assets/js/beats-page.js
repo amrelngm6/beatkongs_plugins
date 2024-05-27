@@ -248,7 +248,6 @@
             let checked =  modal.find('input:checkbox:checked')
             if (checked.length > 2) {
                 alert('You can select up to 3 only'); 
-                return;
             } else {
                 let termId = jQuery(this).data('termid');
                 let target = jQuery(this).data('name');
