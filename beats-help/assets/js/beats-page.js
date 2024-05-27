@@ -279,7 +279,7 @@
         
         jQuery(document).on('input', '#dokan-single-cat-search-input', function(e){
 
-            let text = jQuery(this).text();
+            let text = jQuery(this).val();
             let listEle = jQuery(jQuery(this).attr('data-list'));
             let list = JSON.parse(listEle.val());
             let result = jQuery(jQuery(this).attr('data-result'));
