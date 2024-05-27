@@ -59,7 +59,7 @@
     <div class="dokan-product-category-modal-content">
         <div class="dokan-product-category-modal-header">
             <div class="dokan-product-category-title">
-                <span class="dokan-single-title">Add new Genre</span>
+                <span class="dokan-single-title">Select Genres</span>
                 <span class="dokan-single-des">Please choose the right Genre for this beat</span>
             </div>
             <div class="dokan-product-category-close">
