@@ -246,16 +246,17 @@
         jQuery(document).on('click', '.dokan-cat-search-res-li', function(e){
             e.preventDefault();
             let checked =  modal.find('input:checkbox:checked')
-            if (checked.length > 2)
-            {
-                alert('You can select up to 3 only')   
+            if (checked.length > 2) {
+                alert('You can select up to 3 only'); 
+                jQuery(this).parent().parent().addClass('dokan-hide');
+                modal.find('input[type=text]').val('')
+                return;
             }
             let termId = jQuery(this).data('termid');
             let target = jQuery(this).data('name');
             jQuery('#checkbox-cat-'+termId).attr('checked',true);
             jQuery(this).parent().parent().addClass('dokan-hide');
             modal.find('input[type=text]').val('')
-            // jQuery(target).append(row);
         });
 
         jQuery(document).on('change', '#beat_type', function(e){
