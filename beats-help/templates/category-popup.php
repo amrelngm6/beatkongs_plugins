@@ -97,25 +97,18 @@
                     $selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_id');
                     foreach ($list as $key => $value) {
                     ?>
-                        <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
-                            <input  <?php echo in_array($value->term_id, $selectedCategory) ? 'checked' : (count($selectedCategory) == 3  ? 'disabled' : ''); ?> type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
-                            <?php echo $value->name; ?> 
-                        </label>
+                        
                         <li data-indexli="0" data-haschild="false" data-name="Genre" data-catlevel="1" class=" dokan-product-category-li " data-term-id="<?php echo $value->term_id; ?>" data-taxonomy="beat_category">
-                        <span class="dokan-product-category"><?php echo $value->name; ?></span>
-                        <span class="dokan-product-category-icon"><i class="fas fa-chevron-right"></i></span>
+                        <label class="cursor-pointer block w-full bg-gray-100" data-id="<?php echo $value->term_id; ?>" >  
+                            <span class="dokan-product-category"><?php echo $value->name; ?></span>
+                            <input  <?php echo in_array($value->term_id, $selectedCategory) ? 'checked' : (count($selectedCategory) == 3  ? 'disabled' : ''); ?> type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
+                        </label>
                     </li>
                     <?php 
                     }
                     ?>
-                    <li data-indexli="3" data-haschild="false" data-name="Trending Tracks" data-catlevel="2" class=" dokan-product-category-li " data-term-id="23" data-taxonomy="product_cat">
-                        <span class="dokan-product-category">Trending Tracks</span>
-                        <span class="dokan-product-category-icon"><i class="fas fa-chevron-right"></i></span>
-                    </li></ul>
-                    <ul id="2-level-cat-ul" class="dokan-product-category-ul 2-level-cat" data-level="2"><li data-indexli="9" data-haschild="false" data-name="West Coast Beats" data-catlevel="2" class=" dokan-product-category-li " data-term-id="83" data-taxonomy="product_cat">
-                        <span class="dokan-product-category">West Coast Beats</span>
-                        <span class="dokan-product-category-icon"><i class="fas fa-chevron-right"></i></span>
-                    </li></ul>
+                    </ul>
+                    
                 </div>
                 <span class="dokan-single-categories-right dokan-single-categories-arrow dokan-hide">
                     <span class="dokan-single-categories-right-box">
