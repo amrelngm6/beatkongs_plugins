@@ -287,13 +287,14 @@
 
             let list = jQuery(this).attr('data-list');
             let result = jQuery(this).attr('data-result');
-            titles.each(function(e,a){
-                console.log(e, a)
-            });
+            
             for (let i = 0; i < titles.length; i++) {
                 const element = titles[i];
                 console.log(i, element)
             }
+            titles.each(function(e,a){
+                console.log(e, a)
+            });
 
             
         })
