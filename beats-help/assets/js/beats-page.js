@@ -288,18 +288,7 @@
                 console.log(e, a)
                 
             });
-            $(selectedSpan).html(selectedIems.slice(1));
 
-            if (checked.length > 2)
-            {
-                unchecked.each(function(){
-                    $(this).attr('disabled', true);
-                });
-            } else {
-                unchecked.each(function(){
-                    $(this).attr('disabled', false);
-                });
-            }
             
         })
 
