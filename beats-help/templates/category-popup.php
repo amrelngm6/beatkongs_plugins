@@ -34,7 +34,7 @@
                     </span>
                 </span>
                 <div class="dokan-single-categories" id="dokan-single-categories">
-                <ul id="1-level-cat-ul" class="dokan-product-category-ul 1-level-cat" data-level="1">
+                <ul id="1-level-cat-ul" data-span="#dokan-selected-category-span" class="dokan-product-category-ul 1-level-cat" data-level="1">
                     
                     <?php
                     $list = $categories = get_terms(array(
