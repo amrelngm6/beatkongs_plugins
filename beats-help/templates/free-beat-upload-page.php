@@ -59,9 +59,9 @@ if ( $new_product ) {
             esc_html_e( 'Beat page', 'dokan-lite' );
         ?>
 
-        <?php if ( $post->post_status === 'publish' ) : ?>
+        <?php if ( $post['post_status'] === 'publish' ) : ?>
             <span class="dokan-right">
-                <a class="dokan-btn dokan-btn-theme dokan-btn-sm" href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" target="_blank"><?php esc_html_e( 'View Beat', 'dokan-lite' ); ?></a>
+                <a class="dokan-btn dokan-btn-theme dokan-btn-sm" href="<?php echo esc_url( get_permalink( $post['ID'] ) ); ?>" target="_blank"><?php esc_html_e( 'View Beat', 'dokan-lite' ); ?></a>
             </span>
         <?php endif; ?>
 
@@ -130,7 +130,7 @@ if ( $new_product ) {
                             <label for="bpm" class="form-label"><?php esc_html_e( 'Beat link', 'dokan-lite' ); ?></label>
                             <div class="w-full flex">
                                 <span style="padding-top:5px; font-size: 14px"><?php echo get_site_url();?></span>
-                                <input style="max-width:200px" type="text"  name="beat_slug" id="beat_slug" value="<?php echo $post->post_name ?? ''; ?>" class="dokan-form-control valid" placeholder="Link path.." aria-invalid="false">
+                                <input style="max-width:200px" type="text"  name="beat_slug" id="beat_slug" value="<?php echo $post['post_name'] ?? ''; ?>" class="dokan-form-control valid" placeholder="Link path.." aria-invalid="false">
                                 <span>Validate</span>
                             </div>
                         </div>
