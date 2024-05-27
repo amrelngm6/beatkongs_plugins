@@ -132,7 +132,7 @@ add_action('pre_get_posts', 'filter_beats_license_by_author');
 
 
 function enqueue_ajax_validation_script() {
-    wp_enqueue_script('ajax-validation-script', plugin_dir_path(__FILE__) . 'assets/js/ajax-validation.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('ajax-validation-script', plugin_dir_url(__FILE__) . 'assets/js/ajax-validation.js', array('jquery'), '1.0', true);
 
     // Localize the script with new data
     wp_localize_script('ajax-validation-script', 'ajax_object', array(
