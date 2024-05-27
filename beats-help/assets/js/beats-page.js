@@ -249,6 +249,7 @@
             let target = jQuery(this).data('name');
             jQuery('#checkbox-cat-'+termId).attr('checked',true);
             jQuery(this).parent().parent().addClass('dokan-hide');
+            jQuery('#dokan-single-cat-search-input').val('')
             // jQuery(target).append(row);
         });
 
