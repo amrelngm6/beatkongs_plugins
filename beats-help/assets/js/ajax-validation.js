@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
     jQuery('#validate-permalink').on('click', function() {
+        var loader = $('#ajax-span-loader');
+        loader.show()
         var slug = $('#beat_slug').val();
 
         // Validate slug format (optional)
@@ -15,6 +17,8 @@ jQuery(document).ready(function($) {
         };
 
         $.post(ajax_object.ajax_url, data, function(response) {
+            loader.hide()
+
             if (response.success) {
                 $('#slug-validation-message').text(response.data);
             } else {
