@@ -15,6 +15,7 @@
         $('#open-category-modal').on('click', function(e) {
             modal = $($(this).data('modal'));
             categoryText = $($(this).data('text'));
+            handleCheckboxes(modal)
             modal.show();
         });
 
