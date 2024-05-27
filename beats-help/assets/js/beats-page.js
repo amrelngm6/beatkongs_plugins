@@ -15,13 +15,14 @@
         $('#open-category-modal').on('click', function(e) {
             modal = $($(this).data('modal'));
             categoryText = $($(this).data('text'));
+            categorySpan = $($(this).data('modal-span'));
             
             let selectedNames = '';
             let checked = modal.find("input:checkbox:checked");
             checked.each(function(){
                 selectedNames +=  ', ' + $(this).attr('data-title');
             });
-            $(categoryText).html(selectedNames.slice(1));
+            categorySpan.html(selectedNames.slice(1));
             modal.show();
         });
 
