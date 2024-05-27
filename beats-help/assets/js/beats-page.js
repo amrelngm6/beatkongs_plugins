@@ -289,7 +289,12 @@
                 const element = list[i];
                 output += searchResultLi(element.name, element.term_id, text);
             }
-            result.html(output)            
+            if (output != '' )
+            {
+                result.removeClass('dokan-hide').html(output)            
+            } else {
+                result.removeClass('dokan-hide').html(' ')            
+            }
             
         })
 
