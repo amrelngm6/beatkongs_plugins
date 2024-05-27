@@ -251,7 +251,7 @@
             checked.each(function(){
                 selectedIems +=  ', ' + $(this).attr('data-title');
             });
-            $(selectedSpan).html(selectedNames.slice(1));
+            $(selectedSpan).html(selectedIems.slice(1));
 
             if (checked.length > 2)
             {
