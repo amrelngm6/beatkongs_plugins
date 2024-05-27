@@ -245,6 +245,7 @@
         
         jQuery(document).on('click', '.dokan-cat-search-res-li', function(e){
             e.preventDefault();
+            let checked =  modal.find('input:checkbox:checked')
             let termId = jQuery(this).data('termid');
             let target = jQuery(this).data('name');
             jQuery('#checkbox-cat-'+termId).attr('checked',true);
