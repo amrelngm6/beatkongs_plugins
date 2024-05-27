@@ -311,8 +311,6 @@
 
 function searchResultLi(title, id, text = '')
 {
-    console.log(title.search(text))
-    console.log(title, text)
     return title.toLowerCase().search(text.toLowerCase()) > -1 ? '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
     '<div class="dokan-cat-search-res-item">'+title+'</div>'+
     '<div class="dokan-cat-search-res-history">'+
