@@ -279,20 +279,15 @@
         
         jQuery(document).on('change', '#dokan-single-cat-search-input', function(e){
 
-            let selectedIems = '';
             let text = jQuery(this).text();
-            let titlesEle = jQuery(jQuery(this).attr('data-titles'));
-            let titles = JSON.parse(titlesEle.val());
             let listEle = jQuery(jQuery(this).attr('data-list'));
-            console.log(listEle)
             let list = JSON.parse(listEle.val());
-            console.log(list)
             let result = jQuery(jQuery(this).attr('data-result'));
             
             let output = '';
             for (let i = 0; i < list.length; i++) {
                 const element = list[i];
-                output += searchResultLi(element.name, element.term_id);
+                output += searchResultLi(element.name, element.term_id, text);
             }
             result.html(output)            
             
@@ -303,11 +298,11 @@
     });
 })(jQuery);
 
-function searchResultLi(title, id)
+function searchResultLi(title, id, text = '')
 {
-    return '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
+    return title.name.search(text) > -1 ? '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
     '<div class="dokan-cat-search-res-item">'+title+'</div>'+
     '<div class="dokan-cat-search-res-history">'+
     '<span class="dokan-cat-search-res-suggestion-selected"><span>'+title+'</span></span>'+
-    '</div></li>';
+    '</div></li>' : '';
 }
