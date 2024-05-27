@@ -74,7 +74,9 @@
                     <span class="dokan-cat-search-text-limit"><span id="dokan-cat-search-text-limit">0</span>/100</span>
                 </div>
                 <div id="dokan-cat-search-res" class="dokan-cat-search-res dokan-hide">
-                    <ul id="dokan-cat-search-res-ul" class="dokan-cat-search-res-ul"></ul>
+                    <ul id="dokan-cat-search-res-ul" class="dokan-cat-search-res-ul">
+                        
+                    </ul>
                 </div>
             </div>
             <div class="dokan-single-categories-container">
@@ -83,14 +85,27 @@
                         <span><i class="fas fa-chevron-left"></i></span>
                     </span>
                 </span>
-                <div class="dokan-single-categories" id="dokan-single-categories"></div>
+                <div class="dokan-single-categories" id="dokan-single-categories">
+                <ul id="1-level-cat-ul" class="dokan-product-category-ul 1-level-cat" data-level="1"><li data-indexli="0" data-haschild="false" data-name="Genre" data-catlevel="1" class=" dokan-product-category-li " data-term-id="86" data-taxonomy="product_cat">
+                        <span class="dokan-product-category">Genre</span>
+                        <span class="dokan-product-category-icon"><i class="fas fa-chevron-right"></i></span>
+                    </li><li data-indexli="1" data-haschild="false" data-name="Hip Hop" data-catlevel="1" class="dokan-product-category-li-active dokan-product-category-li " data-term-id="15" data-taxonomy="product_cat">
+                        <span class="dokan-product-category">Hip Hop</span>
+                        <span class="dokan-product-category-icon"><i class="fas fa-chevron-right"></i></span>
+                    </li><li data-indexli="2" data-haschild="true" data-name="Stations" data-catlevel="1" class=" dokan-product-category-li dokan-cat-has-child" data-term-id="70" data-taxonomy="product_cat">
+                        <span class="dokan-product-category">Stations</span>
+                        <span class="dokan-product-category-icon"><i class="fas fa-chevron-right"></i></span>
+                    </li><li data-indexli="3" data-haschild="false" data-name="Trending Tracks" data-catlevel="1" class=" dokan-product-category-li " data-term-id="23" data-taxonomy="product_cat">
+                        <span class="dokan-product-category">Trending Tracks</span>
+                        <span class="dokan-product-category-icon"><i class="fas fa-chevron-right"></i></span>
+                    </li></ul>
+                </div>
                 <span class="dokan-single-categories-right dokan-single-categories-arrow dokan-hide">
                     <span class="dokan-single-categories-right-box">
                         <span><i class="fas fa-chevron-right"></i></span>
                     </span>
                 </span>
             </div>
-
         </div>
         <div class="dokan-product-category-modal-footer">
             <div class="dokan-selected-category-label-container">
