@@ -128,7 +128,7 @@ if ( $new_product ) {
                         <?php wp_nonce_field('check_slug_nonce', 'security'); ?>
                         <div class="dokan-form-group">
                             <label for="bpm" class="form-label"><?php esc_html_e( 'Beat link', 'dokan-lite' ); ?></label>
-                            <div class="w-full flex">
+                            <div class="w-full flex gap-2">
                                 <span style="padding-top:5px; font-size: 14px"><?php echo get_site_url();?></span>
                                 <input disabled="true" style="max-width:200px" type="text"  name="beat_slug" id="beat_slug" value="<?php echo $post['post_name'] ?? ''; ?>" class="dokan-form-control valid" placeholder="Link path.." aria-invalid="false">
                                 <span id="activate-permalink">Change</span> <span style="display:none" id="validate-permalink">Validate</span> 
