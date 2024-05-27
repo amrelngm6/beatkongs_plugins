@@ -255,7 +255,7 @@
             }
             jQuery(this).parent().parent().addClass('dokan-hide');
             modal.find('input[type=text]').val('')
-            modal.find('input:checkbox:checked').attr('disabled', (modal.find('input:checkbox:checked').length > 2) )
+            modal.find('input:checkbox:not(:checked)').attr('disabled', (modal.find('input:checkbox:checked').length > 2) )
 
         });
 
