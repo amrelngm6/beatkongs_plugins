@@ -246,6 +246,10 @@
         jQuery(document).on('click', '.dokan-cat-search-res-li', function(e){
             e.preventDefault();
             let checked =  modal.find('input:checkbox:checked')
+            if (checked.length > 2)
+            {
+                alert('You can select up to 3 only')   
+            }
             let termId = jQuery(this).data('termid');
             let target = jQuery(this).data('name');
             jQuery('#checkbox-cat-'+termId).attr('checked',true);
