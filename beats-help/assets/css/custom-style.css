@@ -17,11 +17,10 @@ body.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li
 {
   display: block;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) and (max-width:1600px) {
   .flex {
     display: flex;
   }
-  
 }
 .block {display: block;}
 .w-full {width: 100%;}
