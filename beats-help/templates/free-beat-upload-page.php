@@ -296,9 +296,6 @@ if ( $new_product ) {
                                                 endforeach;
                                             endif;
                                             ?>
-                                            <li class="add-image add-product-images tips" data-title="<?php esc_html_e( 'Add gallery image', 'dokan-lite' ); ?>">
-                                                <a href="#" class="add-product-images"><i class="fas fa-plus" aria-hidden="true"></i></a>
-                                            </li>
                                         </ul>
 
                                         <input type="hidden" id="product_image_gallery" name="product_image_gallery" value="<?php echo esc_attr( $product_images ); ?>">
