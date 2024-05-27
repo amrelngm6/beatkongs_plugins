@@ -124,7 +124,10 @@ if ( $new_product ) {
                             <div id="edit-slug-box" class="hide-if-no-js"></div>
                             <?php wp_nonce_field( 'samplepermalink', 'samplepermalinknonce', false ); ?>
                         </div>
-
+                        <?php wp_nonce_field('check_slug_nonce', 'security'); ?>
+                        <input type="text" id="post-slug" name="post-slug" placeholder="Enter post slug">
+                        <div id="slug-validation-message"></div>
+                        
                         <?php $beat_types = apply_filters('default_beat_types', 'free'); ?>
 
                         <div class="dokan-form-group">
