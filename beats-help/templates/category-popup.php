@@ -46,9 +46,9 @@
                     foreach ($list as $key => $value) {
                     ?>
                         
-                        <li data-indexli="0" data-haschild="false" data-name="Genre" data-catlevel="1" class=" dokan-product-category-li " data-term-id="<?php echo $value->term_id; ?>" data-taxonomy="beat_category">
-                            <span class="dokan-product-category w-full" style="font-weight: 600"><?php echo $value->name; ?></span>
+                    <li data-indexli="0" data-haschild="false" data-name="Genre" data-catlevel="1" class=" dokan-product-category-li " data-term-id="<?php echo $value->term_id; ?>" data-taxonomy="beat_category">
                         <label class="cursor-pointer w-full flex" data-id="<?php echo $value->term_id; ?>" >  
+                            <span class="dokan-product-category w-full" style="font-weight: 600"><?php echo $value->name; ?></span>
                             <input  <?php echo in_array($value->term_id, $selectedCategory) ? 'checked' : (count($selectedCategory) == 3  ? 'disabled' : ''); ?> type="checkbox" class="genre-checkbox" name="selected_cats[]" data-title="<?php echo $value->name; ?>"  value="<?php echo $value->term_id; ?>" />
                         </label>
                     </li>
