@@ -271,23 +271,12 @@
             let label = jQuery(this).parent();
             let ul = label.parent().parent();
             let selectedSpan = jQuery(ul.attr('data-span'));
-            let checked = ul.find("input:checkbox:checked");
-            let unchecked = ul.find("input:checkbox:not(:checked)");
             checked.each(function(){
                 selectedIems +=  ', ' + $(this).attr('data-title');
             });
             $(selectedSpan).html(selectedIems.slice(1));
 
-            if (checked.length > 2)
-            {
-                unchecked.each(function(){
-                    $(this).attr('disabled', true);
-                });
-            } else {
-                unchecked.each(function(){
-                    $(this).attr('disabled', false);
-                });
-            }
+
             
         })
 
@@ -333,4 +322,32 @@ function searchResultLi(title, id, text = '')
     '<div class="dokan-cat-search-res-history">'+
     '<span class="dokan-cat-search-res-suggestion-selected"><span>'+title+' '+selectedText+'</span></span>'+
     '</div></li>' : '';
+}
+
+function handleCheckboxes()
+{
+    let unchecked = modal.find("input:checkbox:not(:checked)");
+    let checked = modal.find("input:checkbox:checked");
+    checked.each(function(){
+        selectedIems +=  ', ' + $(this).attr('data-title');
+    });
+    
+    if (checked.length > 2) {
+        unchecked.each(function(){
+            $(this).attr('disabled', true);
+        });
+    } else {
+        unchecked.each(function(){
+            $(this).attr('disabled', false);
+        });
+    }
+
+    let selectedIems = '';
+    let selectedSpan = jQuery(modal.attr('data-span'));
+    checked.each(function(){
+        selectedIems +=  ', ' + $(this).attr('data-title');
+    });
+    $(selectedSpan).html(selectedIems.slice(1));
+
+
 }

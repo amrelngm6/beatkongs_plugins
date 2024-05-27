@@ -10,7 +10,7 @@ $selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_
 ?>
 
 <!-- The Modal -->
-<div id="dokan-product-category-modal" class="dokan-product-category-modal" >
+<div id="dokan-product-category-modal" class="dokan-product-category-modal" data-span="#dokan-selected-category-span"  >
 
     <!-- Modal content -->
     <div class="dokan-product-category-modal-content">
@@ -45,7 +45,7 @@ $selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_
                     </span>
                 </span>
                 <div class="dokan-single-categories" id="dokan-single-categories">
-                <ul id="1-level-cat-ul" data-span="#dokan-selected-category-span" class="dokan-product-category-ul 1-level-cat" data-level="1">
+                <ul id="1-level-cat-ul" class="dokan-product-category-ul 1-level-cat" data-level="1">
                     
                     <?php
                     foreach ($list as $key => $value) {
