@@ -283,19 +283,15 @@
             let text = jQuery(this).text();
             let titlesEle = jQuery(this).attr('data-titles');
             let titles = JSON.parse(jQuery(titlesEle).val());
-            console.log(titles)
 
-            let list = jQuery(this).attr('data-list');
             let result = jQuery(this).attr('data-result');
             
+            let output = '';
             for (let i = 0; i < titles.length; i++) {
                 const element = titles[i];
-                console.log(i, element)
+                output += searchResultLi(element.name, element.term_id);
             }
-            titles.each(function(e,a){
-                console.log(e, a)
-            });
-
+            result.html(output)            
             
         })
 
@@ -304,4 +300,11 @@
     });
 })(jQuery);
 
-
+function searchResultLi(title, id)
+{
+    return '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
+    '<div class="dokan-cat-search-res-item">'+title+'</div>'+
+    '<div class="dokan-cat-search-res-history">'+
+    '<span class="dokan-cat-search-res-suggestion-selected"><span>'+title+'</span></span>'+
+    '</div></li>';
+}
