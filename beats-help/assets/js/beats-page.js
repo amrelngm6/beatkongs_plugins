@@ -242,6 +242,14 @@
             let target = jQuery(this).data('target');
             jQuery(target).append(row);
         });
+        
+        jQuery(document).on('click', '.dokan-cat-search-res-li', function(e){
+            e.preventDefault();
+            let termCheckbox = jQuery(this).data('termid');
+            let target = jQuery(this).data('name');
+            jQuery('#'+termCheckbox).attr('checked',true);
+            // jQuery(target).append(row);
+        });
 
         jQuery(document).on('change', '#beat_type', function(e){
             console.log(e)
