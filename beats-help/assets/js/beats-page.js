@@ -320,7 +320,7 @@
 
 function searchResultLi(title, id, text = '')
 {
-    let selectedText = document.getElementById('checkbox-cat-'+id).checked ? 'Selected' : '';
+    let selectedText = document.getElementById('checkbox-cat-'+id).checked ? '<b>Selected</b>' : '';
     return title.toLowerCase().search(text.toLowerCase()) > -1 ? '<li data-name="'+title+'" data-termid="'+id+'" data-index="0" class="dokan-cat-search-res-li">'+
     '<div class="dokan-cat-search-res-item">'+title+'</div>'+
     '<div class="dokan-cat-search-res-history">'+
