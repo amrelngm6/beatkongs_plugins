@@ -126,6 +126,7 @@ function beats_handle_form_submission()
 
         if (isset($_POST['beat_title'])) {
             $title = sanitize_text_field($_POST['beat_title']);
+            $beat_slug = sanitize_text_field($_POST['beat_slug']);
             $type = sanitize_text_field($_POST['beat_type']);
             $category = $_POST['selected_cats'];
             $station = $_POST['selected_stations'];
@@ -166,9 +167,10 @@ function beats_handle_form_submission()
             // Create a new post of custom post type 'beat'
             $beat_post = array(
                 'post_title'    => $title,
+                'post_name'     => $beat_slug ?? '',
+                'post_status'   => $beat_status ?? 'publish',
                 'post_content'  => $post_content ?? '',
                 'post_excerpt'  => $post_excerpt ?? '',
-                'post_status'   => $beat_status ?? 'publish',
                 'post_type'     => 'beat',
                 'meta_input'    => array(
                     'beat_type' => $type,
