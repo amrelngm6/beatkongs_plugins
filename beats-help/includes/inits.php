@@ -158,6 +158,12 @@ function beats_handle_form_submission()
                 array_push($beatsErrors, 'Picture is required');
             }
 
+            $post_exists = get_page_by_path($beat_slug, OBJECT);
+            if (!empty($post_exists))
+            {
+                array_push($beatsErrors, 'Slug already exists');
+            }
+
             
             if (!empty($beatsErrors))
             {
@@ -343,9 +349,9 @@ function check_post_slug() {
         $slug = sanitize_title($_POST['slug']);
 
         // Check if a post with the given slug already exists
-        $post_exists = get_posts(['post_name'=>$slug]);
+        $post_exists = get_page_by_path($slug, OBJECT);
 
-        if ($post_exists->posts) {
+        if ($post_exists) {
             wp_send_json_error('Slug already exists.');
         } else {
             wp_send_json_success('valid');
