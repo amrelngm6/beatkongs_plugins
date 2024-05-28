@@ -11,7 +11,7 @@
     <div class="dokan-panel-body">
         <div class="dokan-progress">
             <div class="dokan-progress-bar dokan-progress-bar-info dokan-progress-bar-striped" role="progressbar"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress ?>%">
+                aria-valuenow="<?php echo $progress ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress ?>%">
                 <?php echo $progress . __( '% Profile complete', 'dokan' ) ?>
             </div>
         </div>
