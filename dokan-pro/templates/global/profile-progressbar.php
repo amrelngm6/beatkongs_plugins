@@ -35,7 +35,7 @@
                     <div class="flex lg:col-span-3">
                         <div class="h-12 w-12 rounded-full shadow-sm bg-white"><img
                                 class="h-full w-full object-cover p-1 rounded-full"
-                                src="https://secure.gravatar.com/avatar/1caa217160c95b55ae8e431e7d4851a0?s=96&amp;d=mm&amp;r=g"
+                                src="<?php echo $user->avatar; ?>"
                                 alt="Your avatar"></div>
                         <div>
                             <div class="ml-2 text-white">
