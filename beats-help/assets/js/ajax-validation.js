@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
     jQuery('#validate-permalink').on('click', function() {
         var loader = $('#ajax-span-loader');
         loader.show()
-        var slug = $('#beat_slug').val();
+        var slug = $('#beat_slug_value').val();
 
         // Validate slug format (optional)
         if (!slug) {
@@ -23,7 +23,8 @@ jQuery(document).ready(function($) {
                 $('#slug-validation-message').css('color','green').text(response.data);
                 jQuery('#activate-permalink').show()
                 jQuery('#validate-permalink').hide()
-                jQuery('#beat_slug').attr('disabled', true)
+                jQuery('#beat_slug_value').attr('disabled', true)
+                jQuery('#beat_slug').val(slug)
             } else {
                 $('#slug-validation-message').css('color','red').text(response.data);
             }
@@ -37,7 +38,7 @@ jQuery(document).ready(function($) {
     jQuery(document).on('click', '#activate-permalink', function(){
         jQuery(this).hide()
         jQuery('#validate-permalink').show()
-        jQuery('#beat_slug').attr('disabled', false)
+        jQuery('#beat_slug_value').attr('disabled', false)
     })
 
 });

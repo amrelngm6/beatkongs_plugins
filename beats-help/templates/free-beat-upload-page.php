@@ -130,7 +130,8 @@ if ( $new_product ) {
                             <label for="bpm" class="form-label"><?php esc_html_e( 'Beat link', 'dokan-lite' ); ?></label>
                             <div class="w-full flex gap-2">
                                 <span style="padding-top:5px; font-size: 14px"><?php echo get_site_url();?></span>
-                                <input disabled="true" style="max-width:200px" type="text"  name="beat_slug" id="beat_slug" value="<?php echo $post['post_name'] ?? ''; ?>" class="dokan-form-control valid" placeholder="Link path.." aria-invalid="false">
+                                <input  type="hidden"  name="beat_slug" id="beat_slug" value="<?php echo $post['post_name'] ?? ''; ?>" class="dokan-form-control valid" placeholder="Link path.." aria-invalid="false">
+                                <input disabled="true" style="max-width:200px" type="text"  id="beat_slug_value" value="<?php echo $post['post_name'] ?? ''; ?>" class="dokan-form-control valid" placeholder="Link path.." aria-invalid="false">
                                 <span id="activate-permalink" class="cursor-pointer">Change</span> <span  class="cursor-pointer" style="display:none" id="validate-permalink">Validate</span> 
                                 <span style="display:none" id="ajax-span-loader"><img src="<?php echo plugin_dir_url(__FILE__); ?>../assets/img/loader.gif" width="26" /></span>
                                 <div id="slug-validation-message"></div>
