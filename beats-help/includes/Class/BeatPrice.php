@@ -45,7 +45,7 @@ Class BeatPrice
             $i++;
         }
         
-        return min($amounts) ?? 'FREE'; 
+        return min(array_filter($amounts)) ?? 'FREE'; 
     }
 
     /**
