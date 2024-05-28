@@ -39,10 +39,10 @@ Class BeatPrice
         
         foreach ($beatLicense->loadLicenses() as $key => $value) 
         {
-            $newKey = $value->name.'_wc_file_price';
+            $newKey = $value->post_title.'_wc_file_price';
             $amounts[$key] = $this->getValue($newKey);
         }
-        
+        print_r($amounts);
        return min($amounts); 
     }
 
