@@ -55,7 +55,10 @@
                                     <div class="font-hairline">
                                         <p class="mt-1">Your profile is&nbsp;<span
                                                 class="font-extrabold"><?php echo $progress . __( '% Profile complete', 'dokan' ) ?>&nbsp;</span></p>
-                                        <p class="mt-2"><b>Next Goal:</b>&nbsp;Add Banner to gain <?php echo $progress . __( '% ', 'dokan' ) ?> progress</p>
+                                            <?php echo esc_html( dokan_progressbar_translated_string( $next_todo, $value, $progress ) ); ?>
+                                            <?php if ( $progress >= 100 ) : ?>
+                                                <p class="mt-2"><b>Next Goal:</b>&nbsp;<?php echo wp_create_nonce( 'dokan_user_closed_progressbar' ); ?></p>
+                                            <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
