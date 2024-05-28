@@ -44,8 +44,8 @@ Class BeatPrice
             $amounts[$i] = $this->getValue($newKey);
             $i++;
         }
-        print_r(array_filter($amounts));
-        // return min(array_filter($amounts)) ?? 'FREE'; 
+
+        return array_filter($amounts) ? min(array_filter($amounts)) : 'FREE'; 
     }
 
     /**
