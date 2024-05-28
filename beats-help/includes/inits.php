@@ -343,9 +343,9 @@ function check_post_slug() {
         $slug = sanitize_title($_POST['slug']);
 
         // Check if a post with the given slug already exists
-        $post_exists = get_page_by_path($slug, OBJECT);
+        $post_exists = get_posts(['post_name'=>$slug]);
 
-        if ($post_exists) {
+        if ($post_exists->posts) {
             wp_send_json_error('Slug already exists.');
         } else {
             wp_send_json_success('valid');
