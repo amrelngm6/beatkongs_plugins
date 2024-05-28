@@ -25,6 +25,7 @@
     </div>
 </div>
 
+<?php $user = wp_get_current_user(); ?>
 
 <div style="padding-bottom: 30px">
     <div id="profile-completeness" class="flex-grow-1 mt-3 md:mt-0">
@@ -35,11 +36,10 @@
                     <div class="flex lg:col-span-3">
                         <div class="h-12 w-12 rounded-full shadow-sm bg-white"><img
                                 class="h-full w-full object-cover p-1 rounded-full"
-                                src="<?php echo get_avatar_url(); ?>"
+                                src="<?php echo get_avatar_url($user->user_id); ?>"
                                 alt="Your avatar"></div>
                         <div>
                             <div class="ml-2 text-white">
-                                <?php $user = wp_get_current_user(); ?>
                                 <div class="text-dokan-sm-title">Welcome back,</div>
                                 <div class="text-dokan-lg-title font-extrabold"><?php echo $user->display_name; ?> !</div>
                                 <div class="md:w-auto w-48 mt-3">
