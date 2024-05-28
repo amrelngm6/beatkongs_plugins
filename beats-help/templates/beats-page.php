@@ -219,7 +219,6 @@ $bulk_statuses = [
                             <?php 
                             $class = new BeatPrice;
                             foreach ($beats_query as $key => $beat) :
-                                $class->setDefaultValue($beat);
                             ?>
                             <tr id="post-<?php $beat->ID; ?>" >
 
@@ -230,7 +229,9 @@ $bulk_statuses = [
                                 <td><img width="50" src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></td>
                                 <td><?php echo $beat->post_title; ?></td>
                                 <td><?php echo $beat->post_status; ?></td>
-                                <?php  $postMeta = get_metadata( 'post', $beat->ID); ?>
+                                <?php  $postMeta = get_metadata( 'post', $beat->ID); 
+                                    $class->setDefaultValue($postMeta);
+                                ?>
                                 <td><?php echo $class->getLowestPrice($postMeta) ?? '' ; ?></td>
                                 <td><?php echo $postMeta['_eael_post_view_count'][0] ?? '0' ; ?></td>
                                 <td><?php echo '0' ; ?></td>
