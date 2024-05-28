@@ -18,9 +18,9 @@
 </div>
 <div style="padding: 20px 0">
     <div id="profile-completeness" class="flex-grow-1 mt-3 md:mt-0">
-        <div class="pb-35px rounded-md border border-gray-default mt-0px pt-35px bg-blue-dodger">
-            <div class="px-25px"></div>
-            <div class="px-25px">
+        <div class="pb-20 rounded-md border border-gray-default mt-0 pt-20 bg-blue-dodger">
+            <div class="px-12"></div>
+            <div class="px-12">
                 <div class="grid lg:grid-cols-5 md:grid-flow-row md:row-gap-3 lg:grid-flow-col min-w-full">
                     <div class="flex lg:col-span-3">
                         <div class="h-12 w-12 rounded-full shadow-sm bg-white"><img
