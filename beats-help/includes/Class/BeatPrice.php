@@ -26,6 +26,7 @@ Class BeatPrice
         // Return default license option value 
         if (isset($this->defaultValue[$key]))
         {
+            print_r($this->defaultValue[$key]);
             return $this->defaultValue[$key][0] ?? 0;
         }
     }
