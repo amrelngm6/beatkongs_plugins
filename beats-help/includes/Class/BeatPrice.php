@@ -38,7 +38,7 @@ Class BeatPrice
         $beatLicense = new BeatLicense();
         
         $i = 0;
-        foreach ($beatLicense->loadLicenses() as $key => $value) 
+        foreach ($beatLicense->loadLicenses()->posts as $key => $value) 
         {
             $newKey = $value->post_name.'_wc_file_price';
             $amounts[$i] = $this->getValue($newKey);
