@@ -1,5 +1,6 @@
 <?php 
 
+include 'BeatLicense.php';
 /**
  * Name:  BeatPrice
  * 
