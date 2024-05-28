@@ -44,7 +44,6 @@ Class BeatPrice
             $amounts[$i] = $this->getValue($newKey);
             $i++;
         }
-        print_r($beatLicense->loadLicenses());
         print_r($amounts);
        return min($amounts); 
     }
