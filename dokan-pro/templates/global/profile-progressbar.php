@@ -26,7 +26,7 @@
 </div>
 
 
-<div>
+<div style="padding-nottom: 20px">
     <div id="profile-completeness" class="flex-grow-1 mt-3 md:mt-0">
         <div class="pb-35px rounded-md border border-gray-default mt-0px pt-35px bg-blue-dodger">
             <div class="px-25px"></div>
