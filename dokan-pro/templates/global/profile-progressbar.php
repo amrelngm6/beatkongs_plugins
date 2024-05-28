@@ -35,7 +35,7 @@
                     <div class="flex lg:col-span-3">
                         <div class="h-12 w-12 rounded-full shadow-sm bg-white"><img
                                 class="h-full w-full object-cover p-1 rounded-full"
-                                src="<?php echo $user->avatar; ?>"
+                                src="<?php echo get_avatar_url(); ?>"
                                 alt="Your avatar"></div>
                         <div>
                             <div class="ml-2 text-white">
