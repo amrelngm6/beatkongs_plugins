@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
     jQuery(document).on('click', '#activate-permalink', function(){
         jQuery(this).hide()
         jQuery('#validate-permalink').show()
-        jQuery('#beat_slug_value').attr('disabled', false)
+        jQuery('#beat_slug_value').attr('disabled', false).focus()
     })
 
 });
