@@ -26,7 +26,6 @@ Class BeatPrice
         // Return default license option value 
         if (isset($this->defaultValue[$key]))
         {
-            print_r($this->defaultValue[$key]);
             return $this->defaultValue[$key][0] ?? 0;
         }
     }
@@ -38,10 +37,12 @@ Class BeatPrice
         $amounts = [];
         $beatLicense = new BeatLicense();
         
+        $i = 0;
         foreach ($beatLicense->loadLicenses() as $key => $value) 
         {
             $newKey = $value->post_name.'_wc_file_price';
-            $amounts[$key] = $this->getValue($newKey);
+            $amounts[$i] = $this->getValue($newKey);
+            $i++;
         }
         print_r($amounts);
        return min($amounts); 
