@@ -1,64 +1,48 @@
 <?php 
 
 /**
- * Name:  BeatLicense
+ * Name:  BeatPrice
  * 
- * Description: Extract the License option value
- * or get default value if Author license is empty
+ * Description: Extract the prices value
+ * or get lowest price for the beat
  * 
  */
 
 
-Class BeatLicense 
+Class BeatPrice 
 {
     
     public $defaultValue;
 
-    public $defaultMetaValue;
-
-    public $authorValue;
-
-    public $authorMetaValue;
-
-
-    // function __construct($defaultValue, $authorValue)
-    // {
-    //     $this->defaultValue = $authorValue ? $defaultValue : null;
-
-    //     $this->authorValue = $authorValue ? $authorValue : null;
-    // }
+    public function setDefaultValue($value)
+    {
+        $this->defaultValue = $value;
+    }
 
     public function getValue($key) 
     {
 
-        // Check if the author has filled his license option
-        if (isset($this->authorValue[$key]))
-        {
-            return $this->authorValue[$key];
-        }
-
         // Return default license option value 
         if (isset($this->defaultValue[$key]))
         {
-            return $this->defaultValue[$key];
+            return $this->defaultValue[$key][0] ?? 0;
         }
     }
 
     
-    public function getMetaValue($key) 
+    public function getLowestPrice($key) 
     {
 
-        // Check if the author has filled his license option
-        if (isset($this->authorMetaValue[$key]))
+        $amounts = [];
+        $beatLicense = new BeatLicense();
+        
+        foreach ($beatLicense->loadLicenses() as $key => $value) 
         {
-            return $this->authorMetaValue[$key][0] ?? '';
+            $newKey = $value->name.'_wc_file_price';
+            $amounts[$key] = $this->getValue($newKey);
         }
-
-        // Return default license option value 
-        if (isset($this->defaultMetaValue[$key]))
-        {
-            return $this->defaultMetaValue[$key][0] ?? '';
-        }
+        
+       return min($amounts); 
     }
 
     /**
@@ -99,17 +83,5 @@ Class BeatLicense
             $list = unserialize($this->defaultMetaValue[$key][0]);
             return (is_array($list) && in_array($val, $list) ) ? 'checked' : '';
         }
-    }
-
-    public function loadLicenses()
-    {
-        $args = array(
-            'post_type' => 'usage-terms',
-            'author'    => 1,
-            'orderby' => 'ID',
-            'order' => 'ASC',
-        );
-
-        return new WP_Query( $args );
     }
 }

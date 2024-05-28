@@ -2,8 +2,8 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
-include plugin_dir_path(__FILE__) . '../includes/Class/BeatLicense.php';
 
+include plugin_dir_path(__FILE__) . '../includes/Class/BeatPrice.php';
 
 $categories = get_terms(array(
     'taxonomy' => 'category',
@@ -217,9 +217,9 @@ $bulk_statuses = [
                         </thead>
                         <tbody>
                             <?php 
-                            $class = new BeatLicense;
-                            print_r($class);
+                            $class = new BeatPrice;
                             foreach ($beats_query as $key => $beat) :
+                                $class->setDefaultValue($beat);
                             ?>
                             <tr id="post-<?php $beat->ID; ?>" >
 
@@ -231,7 +231,7 @@ $bulk_statuses = [
                                 <td><?php echo $beat->post_title; ?></td>
                                 <td><?php echo $beat->post_status; ?></td>
                                 <?php  $postMeta = get_metadata( 'post', $beat->ID); ?>
-                                <td><?php echo strtoupper($postMeta['standard_wc_file_price'][0]) ?? '' ; ?></td>
+                                <td><?php echo $class->getLowestPrice($postMeta) ?? '' ; ?></td>
                                 <td><?php echo $postMeta['_eael_post_view_count'][0] ?? '0' ; ?></td>
                                 <td><?php echo '0' ; ?></td>
                                 <td><?php echo strtoupper($postMeta['beat_type'][0]) ?? '' ; ?></td>
