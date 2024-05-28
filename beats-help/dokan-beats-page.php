@@ -121,8 +121,8 @@ add_filter('default_beat_types', 'set_default_beat_types');
 add_action('init', 'beats_register_taxonomies');
 add_action('init', 'beats_handle_form_submission');
 add_action('init', 'beats_license_handle_form_submission');
-add_filter('init', 'register_beat_license_post_type');
 add_action('init', 'register_beat_post_type');
+// add_filter('init', 'register_beat_license_post_type');
 
 function filter_beats_license_by_author($query) {
     if (is_admin() && $query->is_main_query() && $query->get('post_type') === 'usage-terms') {
