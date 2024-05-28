@@ -11,7 +11,7 @@
 
 <?php $user = wp_get_current_user(); ?>
 
-<div style="padding-bottom: 30px">
+<div style="padding: 20px 0">
     <div id="profile-completeness" class="flex-grow-1 mt-3 md:mt-0">
         <div class="pb-35px rounded-md border border-gray-default mt-0px pt-35px bg-blue-dodger">
             <div class="px-25px"></div>
