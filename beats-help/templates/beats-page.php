@@ -216,6 +216,8 @@ $bulk_statuses = [
                         </thead>
                         <tbody>
                             <?php 
+                            $class = new BeatLicense;
+                            print_r($class);
                             foreach ($beats_query as $key => $beat) :
                             ?>
                             <tr id="post-<?php $beat->ID; ?>" >
