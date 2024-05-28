@@ -48,7 +48,7 @@ add_action('wp_enqueue_scripts', 'enqueue_dokan_beats_page_scripts');
 function enqueue_dokan_beats_page_scripts() {
      // Enqueue CSS
      wp_enqueue_style('dokan-beats-page-css2', plugin_dir_url(__FILE__) . 'assets/css/beats-page.css', array('wp-element'), '1.0', true);
-     wp_enqueue_style('dokan-dashboard-css', plugin_dir_url(__FILE__) . '../../dokan-vendor-dashboard/build/main.css', array('wp-element'), '1.0', true);
+     wp_enqueue_style('dokan-dashboard-css', plugin_dir_url(__FILE__) . '../dokan-vendor-dashboard/build/main.css', array('wp-element'), '1.0', true);
     //  wp_enqueue_style('beats-tailwind-page-css', plugin_dir_url(__FILE__) . 'assets/css/tailwind.css', array('wp-element'), '1.0', true);
     if (isset($_GET['beat_id']))
     {
