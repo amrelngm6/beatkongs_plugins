@@ -311,3 +311,7 @@ input[type="checkbox"]:checked + label
 {
   background-color: red;
 }
+.bg-blue-dodger
+{
+  background-color: rgba(24, 136, 245, 1);
+}
