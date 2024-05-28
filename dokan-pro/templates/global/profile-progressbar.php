@@ -11,6 +11,11 @@
 
 <?php $user = wp_get_current_user(); ?>
 
+<div>
+    <div class="dokan-alert dokan-alert-danger text-center">
+        <strong>Your Account is not enabled to sell, Please contact the admin</strong>
+    </div>
+</div>
 <div style="padding: 20px 0">
     <div id="profile-completeness" class="flex-grow-1 mt-3 md:mt-0">
         <div class="pb-35px rounded-md border border-gray-default mt-0px pt-35px bg-blue-dodger">
