@@ -193,6 +193,12 @@ body.elementor-kit-3 button
 {
   padding: 6px 20px;
 }
+body #profile-completeness .text-dokan-lg-title
+{
+  color: black;
+  font-size: 34px;
+  font-weight: 700;
+}
 body #profile-completeness button {
   padding: 15px 38px;
   background: #000;
