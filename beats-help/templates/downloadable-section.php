@@ -66,10 +66,10 @@
                             $disabled = empty($postMeta[$value->post_name.'_wc_file_url'][0]) ? 'disabled' : '';
                         ?>
                         <tr id="check-license-<?php echo $key;?>" >
-                            <td><input style="margin-top: 25px;" type="checkbox" class="switch-license-downloads" data-target="#check-license-<?php echo $key;?>"  value="<?php echo $key;?>" /></td>
+                            <td><input <?php echo $checked;?> style="margin-top: 25px;" type="checkbox" class="switch-license-downloads" data-target="#check-license-<?php echo $key;?>"  value="<?php echo $key;?>" /></td>
                             <td>
                                 <p>
-                                    <input <?php echo $checked;?>  type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[<?php echo $value->ID; ?>]" disabled value="<?php echo $value->post_title ?? '';?>">
+                                    <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[<?php echo $value->ID; ?>]" disabled value="<?php echo $value->post_title ?? '';?>">
                                 </p>
                             </td>
                             <td>
