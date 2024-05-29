@@ -62,26 +62,28 @@
                         $beatId =  $_GET['beat_id'] ?? 0;
                         $postMeta = get_metadata( 'post', $beatId);
                         foreach ($default_licenses->posts as $key => $value) {
-
+                            $checked = !empty($postMeta[$value->post_name.'_wc_file_url'][0]) ? 'checked' : '';
+                            $disabled = empty($postMeta[$value->post_name.'_wc_file_url'][0]) ? 'disabled' : '';
                         ?>
                         <tr id="check-license-<?php echo $key;?>" >
                             <td><input style="margin-top: 25px;" type="checkbox" class="switch-license-downloads" data-target="#check-license-<?php echo $key;?>"  value="<?php echo $key;?>" /></td>
                             <td>
                                 <p>
-                                    <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[<?php echo $value->ID; ?>]" disabled value="<?php echo $value->post_title ?? '';?>">
+                                    <input <?php echo $checked;?>  type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[<?php echo $value->ID; ?>]" disabled value="<?php echo $value->post_title ?? '';?>">
                                 </p>
                             </td>
                             <td>
                                 <p>
-                                    <input type="url" id="file-url-<?php echo $key; ?>" class="dokan-form-control dokan-w8 input_text wc_file_url valid" placeholder="https://" name="<?php echo $value->post_name; ?>_wc_file_url" value="<?php echo $postMeta[$value->post_name.'_wc_file_url'][0] ?? ''; ?>" style="margin-right: 8px;">
-                                    <input class="file_id" id="file-id-<?php echo $key; ?>" type="hidden" name="<?php echo $value->post_name; ?>_wc_file_id" value="<?php echo $postMeta[$value->post_name.'_wc_file_id'][0] ?? ''; ?>">
+                                    <input type="hidden" name="<?php echo $value->post_name; ?>_wc_file_url" value="<?php echo $postMeta[$value->post_name.'_wc_file_url'][0] ?? ''; ?>" >
+                                    <input type="hidden" class="file_id" id="file-id-<?php echo $key; ?>" name="<?php echo $value->post_name; ?>_wc_file_id" value="<?php echo $postMeta[$value->post_name.'_wc_file_id'][0] ?? ''; ?>">
+                                    <input <?php echo $disabled;?> type="url" id="file-url-<?php echo $key; ?>" class="dokan-form-control dokan-w8 input_text wc_file_url valid" placeholder="https://" name="<?php echo $value->post_name; ?>_wc_file_url" value="<?php echo $postMeta[$value->post_name.'_wc_file_url'][0] ?? ''; ?>" style="margin-right: 8px;">
                                     <a href="#" class="downloads_media_manager dokan-btn dokan-btn-sm dokan-btn-default upload_file_button" data-input=".file_id" data-url=".wc_file_url">Choose&nbsp;file</a>
                                 </p>
                             </td>
 
                             <td>
                                 <p>
-                                    <input type="number" min="0" id="file-price-<?php echo $key; ?>" class="dokan-form-control input_text" placeholder="Price" name="<?php echo $value->post_name; ?>_wc_file_price" value="<?php echo $postMeta[$value->post_name.'_wc_file_price'][0] ?? ''; ?>">
+                                    <input <?php echo $disabled;?>  type="number" min="0" id="file-price-<?php echo $key; ?>" class="dokan-form-control input_text" placeholder="Price" name="<?php echo $value->post_name; ?>_wc_file_price" value="<?php echo $postMeta[$value->post_name.'_wc_file_price'][0] ?? ''; ?>">
                                 </p>
                             </td>
                         </tr>
