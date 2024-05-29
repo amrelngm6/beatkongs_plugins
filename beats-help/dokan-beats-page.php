@@ -50,9 +50,9 @@ function enqueue_dokan_beats_page_scripts() {
      wp_enqueue_style('dokan-beats-page-css2', plugin_dir_url(__FILE__) . 'assets/css/beats-page.css', array('wp-element'), '1.0', true);
     //  wp_enqueue_style('dokan-dashboard-css0', '/wp-content/plugins/dokan-vendor-dashboard/build/main.css');
      wp_enqueue_style('dokan-beats-tailwind-page-css', plugin_dir_url(__FILE__) . 'assets/css/tailwind.min.css');
+     wp_enqueue_style('dokan-beats-page-css', '/wp-content/plugins/dokan-lite/assets/css/dokan-product-category-ui.css?ver=1716242573');
     if (isset($_GET['beat_id']))
     {
-        wp_enqueue_style('dokan-beats-page-css', '/wp-content/plugins/dokan-lite/assets/css/dokan-product-category-ui.css?ver=1716242573');
     }
      wp_enqueue_style('dokan-beats-page-css1', plugin_dir_url(__FILE__) . 'assets/css/custom-style.css');
      wp_enqueue_script('dokan-beats-page-js', plugin_dir_url(__FILE__) . 'assets/js/beats-page.js', array('wp-element'), '1.0', true);
