@@ -251,9 +251,15 @@
         });
 
         jQuery(document).on('change', '#beat_type', function(e){
-            console.log(e)
             jQuery('form.dokan-beat-edit-form').toggleClass('sell')
         });
+
+        // Switch license download
+        jQuery(document).on('change', '.switch-license-downloads', function(e){
+            let target = jQuery(jQuery(this).attr('data-target'))
+            target.find('input').attr('disabled', !(target.prop("checked")))
+        });
+
 
         // On change category checkbox
         jQuery(document).on('change', '.genre-checkbox', function(e){

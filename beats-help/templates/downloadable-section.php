@@ -64,7 +64,8 @@
                         foreach ($default_licenses->posts as $key => $value) {
 
                         ?>
-                        <tr>
+                        <tr id="check-license-<?php echo $key;?>" >
+                            <td><input type="checkbox" class="switch-license-downloads" data-target="check-license-<?php echo $key;?>"  value="<?php echo $key;?>" /></td>
                             <td>
                                 <p>
                                     <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[<?php echo $value->ID; ?>]" disabled value="<?php echo $value->post_title ?? '';?>">
