@@ -44,6 +44,7 @@
                     </tfoot> -->
                     <thead>
                         <tr>
+                            <th>Enable <span class="tips" title="Choose to enable this license.">[?]</span></th>
                             <th>License <span class="tips" title="This is the name of the download shown to the customer.">[?]</span></th>
                             <th>File URL <span class="tips" title="This is the URL or absolute path to the file which customers will get access to.">[?]</span></th>
                             <th>Price</th>
@@ -54,7 +55,7 @@
                         $args = array(
                             'post_type' => 'usage-terms',
                             'author'    => 1,
-                            'orderby' => 'ID',
+                            'orderby' => 'menu_order',
                             'order' => 'ASC',
                         );
                         $default_licenses = new WP_Query( $args );
