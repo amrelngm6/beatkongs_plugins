@@ -193,6 +193,10 @@ body.elementor-kit-3 button
 {
   padding: 6px 20px;
 }
+body #profile-completeness button {
+  padding: 15px 38px;
+  background: #000;
+}
 .dokan-form-inline
 {
   padding-bottom: 10px;
