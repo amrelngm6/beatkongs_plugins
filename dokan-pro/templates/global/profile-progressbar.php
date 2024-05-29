@@ -58,12 +58,12 @@
                             <div
                                 class="grid grid-rows-1 justify-center justify-items-center md:grid-cols-2 mt-2 lg:mt-5 lg:mb-3 w-full">
                                 <div class="justify-items-center md:justify-self-start lg:pl-2">
-                                    <div class="text-dokan-lg-title text-center md:text-left font-extrabold ">30%</div>
+                                    <div class="text-dokan-lg-title text-center md:text-left font-extrabold "><?php echo $progress . __( '%', 'dokan' ) ?></div>
                                     <div class="py-2 text-secondary">Profile completion</div>
                                 </div>
-                                <div class="justify-items-center md:justify-self-end"><button type="button"
-                                        class="transition bg-green-500 text-white rounded-md px-3 py-2 m-3">Complete
-                                        Your Profile</button></div>
+                                <div class="justify-items-center md:justify-self-end"><a href="/import/settings/store"
+                                        class="transition bg-black block text-white rounded-full px-3 py-2 m-3">Complete
+                                        Your Profile</a></div>
                             </div>
                         </div>
                     </div>

@@ -199,9 +199,10 @@ body #profile-completeness .text-dokan-lg-title
   font-size: 34px;
   font-weight: 700;
 }
-body #profile-completeness button {
+body #profile-completeness a {
   padding: 15px 38px;
   background: #000;
+  display: block;
 }
 .dokan-form-inline
 {
