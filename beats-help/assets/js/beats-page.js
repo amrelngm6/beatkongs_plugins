@@ -257,7 +257,8 @@
         // Switch license download
         jQuery(document).on('change', '.switch-license-downloads', function(e){
             let target = jQuery(jQuery(this).attr('data-target'))
-            target.find('input').attr('disabled', !(target.prop("checked")))
+            target.find('input[type=url]').attr('disabled', !(target.prop("checked")))
+            target.find('input[type=number]').attr('disabled', !(target.prop("checked")))
         });
 
 

@@ -44,7 +44,7 @@
                     </tfoot> -->
                     <thead>
                         <tr>
-                            <th>Enable <span class="tips" title="Choose to enable this license.">[?]</span></th>
+                            <th># <span class="tips" title="Choose to enable this license.">[?]</span></th>
                             <th>License <span class="tips" title="This is the name of the download shown to the customer.">[?]</span></th>
                             <th>File URL <span class="tips" title="This is the URL or absolute path to the file which customers will get access to.">[?]</span></th>
                             <th>Price</th>
@@ -65,7 +65,7 @@
 
                         ?>
                         <tr id="check-license-<?php echo $key;?>" >
-                            <td><input type="checkbox" class="switch-license-downloads" data-target="#check-license-<?php echo $key;?>"  value="<?php echo $key;?>" /></td>
+                            <td><input style="margin-top: 25px;" type="checkbox" class="switch-license-downloads" data-target="#check-license-<?php echo $key;?>"  value="<?php echo $key;?>" /></td>
                             <td>
                                 <p>
                                     <input type="text" class="dokan-form-control input_text" placeholder="File Name" name="_wc_file_names[<?php echo $value->ID; ?>]" disabled value="<?php echo $value->post_title ?? '';?>">
