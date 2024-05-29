@@ -44,7 +44,7 @@
                     </tfoot> -->
                     <thead>
                         <tr>
-                            <th># <span class="tips" title="Choose to enable this license.">[?]</span></th>
+                            <th>#</th>
                             <th>License <span class="tips" title="This is the name of the download shown to the customer.">[?]</span></th>
                             <th>File URL <span class="tips" title="This is the URL or absolute path to the file which customers will get access to.">[?]</span></th>
                             <th>Price</th>
