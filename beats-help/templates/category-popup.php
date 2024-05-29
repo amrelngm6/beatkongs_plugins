@@ -20,7 +20,7 @@ $selectedCategory = array_column(wp_get_post_terms( $beatId, 'category'), 'term_
                 <span class="dokan-single-des">Please choose the right Genre for this beat</span>
             </div>
             <div class="dokan-product-category-close">
-                <span class="close" id="dokan-category-close-modal">&times;</span>
+                <span class="close fbu-close" id="dokan-category-close-modal">&times;</span>
             </div>
         </div>
         <div class="dokan-product-category-modal-body">
