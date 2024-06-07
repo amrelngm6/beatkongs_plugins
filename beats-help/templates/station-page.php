@@ -148,6 +148,52 @@ $beats = get_posts($args);
                                             data-swiper-source="track"
                                             data-params="{loop:false,spaceBetween:5,slidesPerView:1,speed:300,effect:'slide',breakpoints:{ 767: {slidesPerView: 1 }, 1024: {slidesPerView: 1 }, },}">
                                             <div class="swiper-wrapper">
+                                                <div class="swiper-slide" data-post-id="867" data-track-pos="0"
+                                                    data-slide-id="0" data-slide-id="0" data-slide-index="0">
+                                                    <div class="srp_swiper-album-art"
+                                                        style="background-image:url(<?php echo get_site_url();?>/wp-content/uploads/2022/11/Pop-Up-Podcast-Intro-Short-mp3-image.jpg)">
+                                                        <div class="srp_swiper_overlay"></div>
+                                                        <div class="srp_swiper-control">
+                                                            <div class="srp_play" aria-label="Play"><i
+                                                                    class="sricon-play"></i></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="srp_swiper-titles">
+                                                        <div class="srp_index">1</div>
+                                                        <div class="srp_swiper-track-title">Night</div>
+                                                        <div class="srp_swiper-track-artist"> Produced by Abel Cardin
+                                                        </div><span class="store-list">
+                                                            <div class="song-store-list-menu"><i
+                                                                    class="fas fa-ellipsis-v"></i>
+                                                                <div class="song-store-list-container"><a
+                                                                        href="<?php echo get_site_url();?>/beats/night/"
+                                                                        class="song-store sr_store_wc_round_bt"
+                                                                        target="_self" title="$0.00" aria-label="$0.00"
+                                                                        data-source-post-id="867" data-store-id="0-0"
+                                                                        tabindex="1"><i
+                                                                            class="fas fa-cart-plus"></i><span
+                                                                            class="srp_cta_label">$0.00</span></a><a
+                                                                        href="<?php echo get_site_url();?>/beats/night/"
+                                                                        class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
+                                                                        target="_self" title="View Beat"
+                                                                        aria-label="View Beat" data-source-post-id="867"
+                                                                        data-store-id="0-1" tabindex="1"><i
+                                                                            class="sricon-info"></i><span
+                                                                            class="srp_cta_label">View Beat</span></a><a
+                                                                        href="<?php echo get_site_url();?>/beats/night/"
+                                                                        class="song-store sr_store_force_share_bt"
+                                                                        target="_self" title="Share" aria-label="Share"
+                                                                        data-source-post-id="867" data-store-id="0-2"
+                                                                        tabindex="1"><i class="sricon-share"></i></a><a
+                                                                        href="#" class="song-store srp-fav-bt"
+                                                                        target="_self" title="Like" aria-label="Like"
+                                                                        data-source-post-id="867" data-store-id="0-3"
+                                                                        tabindex="1"><i
+                                                                            class="sricon-heart-fill"></i></a></div>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
                                                 
                                             </div>
                                         </div>
