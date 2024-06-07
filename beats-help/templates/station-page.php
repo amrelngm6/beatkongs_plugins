@@ -313,8 +313,9 @@ $beats = get_posts($args);
                                                     data-icecast_json="" data-icecast_mount="">
                                                     <div class="sr-playlist-item-flex">
                                                         <div class="sr_track_cover">
-                                                            <div class="srp_play"><i class="sricon-play"></i></div><img
-                                                                src=<?php echo get_the_post_thumbnail_url($beat->ID);?>
+                                                            <div class="srp_play"><i class="sricon-play"></i></div>
+                                                            <img
+                                                                src=<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                                 alt="track-artwork" />
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
