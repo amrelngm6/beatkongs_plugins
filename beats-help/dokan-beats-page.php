@@ -142,3 +142,8 @@ function enqueue_ajax_validation_script() {
     ));
 }
 add_action('wp_enqueue_scripts', 'enqueue_ajax_validation_script');
+
+
+
+register_activation_hook( __FILE__, 'dokan_beats_page_activate' );
+add_action('template_redirect', 'dokan_beats_page_template_redirect');
