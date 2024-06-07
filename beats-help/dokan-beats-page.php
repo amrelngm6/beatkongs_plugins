@@ -38,7 +38,7 @@ function dokan_beats_page_template_redirect() {
             include plugin_dir_path(__FILE__) . 'templates/stations-page.php';
         }
         echo ob_get_clean(); // Return the buffered content
-        // exit();
+        die();
 
     }
 
