@@ -73,13 +73,3 @@ function dokan_beats_page_template_redirect() {
         exit();
     }
 }
-
-/**
- * Activate the plugin.
- */
-function dokan_beats_page_activate() { 
-	// Trigger our function that registers the custom post type plugin.
-	dokan_beats_page_setup_post_type(); 
-	// Clear the permalinks after the post type has been registered.
-	flush_rewrite_rules(); 
-}
