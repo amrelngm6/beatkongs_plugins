@@ -149,9 +149,8 @@ $beats = get_posts($args);
                                             data-params="{loop:false,spaceBetween:5,slidesPerView:1,speed:300,effect:'slide',breakpoints:{ 767: {slidesPerView: 1 }, 1024: {slidesPerView: 1 }, },}">
                                             <div class="swiper-wrapper">
                                                 <?php foreach ($beats as $key => $beat) { ?>
-
                                                 <div class="swiper-slide" data-post-id="<?php echo $beat->ID;?>"
-                                                    data-track-pos="<?php echo $key; ?>" data-slide-id="<?php echo $key + 1; ?>" data-slide-id="<?php echo $key + 1; ?>"
+                                                    data-track-pos="<?php echo $key ?? '0'; ?>" data-slide-id="<?php echo $key + 1; ?>" data-slide-id="<?php echo $key + 1; ?>"
                                                     data-slide-index="<?php echo $key+1; ?>">
                                                     <div class="srp_swiper-album-art"
                                                         style="background-image:url(<?php echo get_the_post_thumbnail_url($beat->ID);?>">
@@ -291,10 +290,14 @@ $beats = get_posts($args);
                                             </div>
                                             <ul class="srp_list"
                                                 data-filters="product_cat,product_tag,pa_license,instruments,mood,bpm">
-                                                <?php foreach ($beats as $key => $beat) { ?>
+                                                <?php foreach ($beats as $key => $beat) {     
+                                                    $postMeta = get_metadata( 'post', $beat->ID);
+                                                    $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+                                                    $beatMP3 = wp_get_attachment_url($beatMP3Id);
+                                                ?>
 
                                                 <li class="sr-playlist-item"
-                                                    data-audiopath="<?php echo get_post_meta($beat->ID, 'beat_mp3_url', true);?>"
+                                                    data-audiopath="<?php echo $beatMP3;?>"
                                                     data-showloading="1" data-albumTitle="Cloudways"
                                                     data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                     data-releasedate="" data-date="2022/11/23"
