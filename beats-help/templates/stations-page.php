@@ -10,6 +10,7 @@ $stations = get_terms(array(
 
 ?>
 
+<?php wp_head(); ?>
 <?php get_header(); ?>
 
 <?php do_action( 'dokan_dashboard_wrap_start' ); ?>
