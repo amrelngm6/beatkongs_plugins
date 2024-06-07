@@ -29,9 +29,16 @@ function dokan_beats_page_template_redirect() {
 
     $name = $wp_query->query_vars['name'] ?? null;
 
-    if ($name && in_array($name , ['stations2', 'stations2'])) {
+    if ($name && in_array($name , ['stations2'])) {
 
-        echo $name;
+        status_header(200); // Ensure HTTP status code is 200
+        ob_start(); 
+        if ($name == 'stations2') {
+            $params = shortcode_atts($_GET, $_GET, 'stations-page');
+            include plugin_dir_path(__FILE__) . '../templates/stations-page.php';
+        }
+        echo ob_get_clean(); // Return the buffered content
+        exit();
 
     }
 
