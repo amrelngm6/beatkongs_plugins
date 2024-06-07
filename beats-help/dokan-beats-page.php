@@ -25,32 +25,40 @@ add_filter('query_vars', 'dokan_beats_page_query_vars');
 // Template redirect
 add_action('template_redirect', 'dokan_beats_page_template_redirect');
 function dokan_beats_page_template_redirect() {
+    global $wp_query;
+
+    $name = $wp_query->query_vars['name'] ?? null;
+
+    if ($name && in_array($name , ['stations2', 'stations2'])) {
+
+        echo $name;
+
+    }
+
     if (get_query_var('dokan_beats_page')) {
         echo 'dokan_beats_pagedokan_beats_page';
         include plugin_dir_path(__FILE__) . 'templates/beats-page.php';
         exit;
     }
-    // status_header(200); // Ensure HTTP status code is 200
-    // ob_start(); 
-    // if ($name == 'embed_medians_playlist') {
-    //     $params = shortcode_atts($_GET, $_GET, 'medians_playlist');
-    //     include plugin_dir_path(__FILE__) . '../templates/playlist/embed.php';
-    // }
-    // echo ob_get_clean(); // Return the buffered content
-    // exit();
 }
 
-// // Add a new menu item to the Dokan vendor dashboard
-// add_action('dokan_vendor_dashboard_menu', 'add_dokan_beats_page_menu', 10);
-// function add_dokan_beats_page_menu($urls) {
-//     $urls['beats'] = array(
-//         'title' => __('Beats', 'dokan'),
-//         'url'   => site_url('/dokan-beats'),
-//         'icon'  => '<i class="fa fa-music"></i>',
-//         'pos'   => 190,
-//     );
-//     return $urls;
-// }
+
+// Register custom rewrite rules
+function medians_beats_player_rewrite_rules() {
+    add_rewrite_rule(
+        '^embed_medians_beat/?$', // Custom slug
+        'index.php?embed_medians_beats=1', // Internal query var
+        'top'
+    );
+
+    add_rewrite_rule(
+        '^embed_medians_playlist/?$', // Custom slug
+        'index.php?embed_medians_playlist=1', // Internal query var
+        'top'
+    );
+}
+add_action('init', 'medians_beats_player_rewrite_rules');
+
 
 // Enqueue scripts for the React component
 add_action('wp_enqueue_scripts', 'enqueue_dokan_beats_page_scripts');
