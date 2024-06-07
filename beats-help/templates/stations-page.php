@@ -74,14 +74,19 @@ $stations = get_terms(array(
         <div class="e-con-inner">
            
             <?php foreach ($stations as $key => $value) { ?>
-                
+            
+                <?php 
+                $thumb_id = get_woocommerce_term_meta( $value->term_id, 'thumbnail_id', true );
+                $term_img = wp_get_attachment_url(  $thumb_id );
+                ?>
+
             <div class="elementor-element elementor-element-3a87ce2 elementor-cta--skin-cover elementor-cta--valign-bottom elementor-widget__width-initial elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action"
                 data-id="3a87ce2" data-element_type="widget" data-widget_type="call-to-action.default">
                 <div class="elementor-widget-container">
-                    <a class="elementor-cta" href="https://beatkongs.com/test/product-category/playlists/edm-music/">
+                    <a class="elementor-cta" href="<?php echo get_site_url(); ?>station/<?php echo $value->slug;?>">
                         <div class="elementor-cta__bg-wrapper">
                             <div class="elementor-cta__bg elementor-bg"
-                                style="background-image: url(https://beatkongs.medianssolutions.com/wp-content/uploads/2023/05/electronic-PhotoRoom.png);">
+                                style="background-image: url(<?php echo $term_img; ?>">
                             </div>
                             <div class="elementor-cta__bg-overlay"></div>
                         </div>
