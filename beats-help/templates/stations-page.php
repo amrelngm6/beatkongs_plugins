@@ -81,7 +81,7 @@ $stations = get_terms(array(
                     <a class="elementor-cta" href="<?php echo get_site_url(); ?>/station/<?php echo $value->slug;?>">
                         <div class="elementor-cta__bg-wrapper">
                             <div class="elementor-cta__bg elementor-bg"
-                                style="background-image: url(<?php echo get_site_url(); ?>/wp-content/uploads/2024/06/s0<?php echo $key + 1; ?>.png">
+                                style="background-image: url(<?php echo get_site_url(); ?>/wp-content/uploads/2024/06/s0<?php echo $key + 1; ?>.png)">
                             </div>
                             <div class="elementor-cta__bg-overlay"></div>
                         </div>
