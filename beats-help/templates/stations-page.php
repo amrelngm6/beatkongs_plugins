@@ -77,54 +77,9 @@ $stations = get_terms(array(
     <div class="elementor-element elementor-element-d9ec654 e-flex e-con-boxed e-con e-parent" data-id="d9ec654"
         data-element_type="container">
         <div class="e-con-inner">
-            <div class="elementor-element elementor-element-f749d74 elementor-cta--skin-cover elementor-cta--valign-bottom elementor-widget__width-initial elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action"
-                data-id="f749d74" data-element_type="widget" data-widget_type="call-to-action.default">
-                <div class="elementor-widget-container">
-                    <link rel="stylesheet"
-                        href="https://beatkongs.medianssolutions.com/wp-content/plugins/elementor-pro/assets/css/widget-call-to-action.min.css">
-                    <a class="elementor-cta" href="https://beatkongs.com/test/stations/beats247/">
-                        <div class="elementor-cta__bg-wrapper">
-                            <div class="elementor-cta__bg elementor-bg"
-                                style="background-image: url(https://beatkongs.medianssolutions.com/wp-content/uploads/2023/05/compilation_01.jpg);">
-                            </div>
-                            <div class="elementor-cta__bg-overlay"></div>
-                        </div>
-                        <div class="elementor-cta__content">
-
-                            <h2
-                                class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--shrink">
-                                Beats 24/7</h2>
-                            <div
-                                class="elementor-cta__description elementor-cta__content-item elementor-content-item elementor-animated-item--shrink">
-                                All Beats Catalog </div>
-
-                        </div>
-                        <div class="elementor-ribbon">
-                            <div class="elementor-ribbon-inner">Main </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elementor-element elementor-element-0361257 elementor-cta--skin-cover elementor-cta--valign-bottom elementor-widget__width-initial elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action"
-                data-id="0361257" data-element_type="widget" data-widget_type="call-to-action.default">
-                <div class="elementor-widget-container">
-                    <a class="elementor-cta" href="https://beatkongs.com/test/product-category/playlists/lofi-hip-hop/">
-                        <div class="elementor-cta__bg-wrapper">
-                            <div class="elementor-cta__bg elementor-bg"
-                                style="background-image: url(https://beatkongs.medianssolutions.com/wp-content/uploads/2024/05/OIG1.png);">
-                            </div>
-                            <div class="elementor-cta__bg-overlay"></div>
-                        </div>
-                        <div class="elementor-cta__content">
-
-                            <h2
-                                class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--shrink">
-                                Fresh Beats</h2>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
+           
+            <?php foreach ($stations as $key => $value) { ?>
+                
             <div class="elementor-element elementor-element-3a87ce2 elementor-cta--skin-cover elementor-cta--valign-bottom elementor-widget__width-initial elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action"
                 data-id="3a87ce2" data-element_type="widget" data-widget_type="call-to-action.default">
                 <div class="elementor-widget-container">
@@ -139,72 +94,14 @@ $stations = get_terms(array(
 
                             <h2
                                 class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--shrink">
-                                EDM Music</h2>
+                                <?php echo $value->name; ?></h2>
 
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="elementor-element elementor-element-5f35d8e elementor-cta--skin-cover elementor-cta--valign-bottom elementor-widget__width-initial elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action"
-                data-id="5f35d8e" data-element_type="widget" data-widget_type="call-to-action.default">
-                <div class="elementor-widget-container">
-                    <a class="elementor-cta" href="https://beatkongs.com/test/product-category/playlists/staff-picks/">
-                        <div class="elementor-cta__bg-wrapper">
-                            <div class="elementor-cta__bg elementor-bg"
-                                style="background-image: url(https://beatkongs.medianssolutions.com/wp-content/uploads/2023/05/Maxwell_afrobeat_album_cover_ccf0297c-7cf6-4aa0-bcda-6619ce56d326.png);">
-                            </div>
-                            <div class="elementor-cta__bg-overlay"></div>
-                        </div>
-                        <div class="elementor-cta__content">
+            <?php } ?>
 
-                            <h2
-                                class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--shrink">
-                                Staff Picks</h2>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elementor-element elementor-element-8c94950 elementor-cta--skin-cover elementor-cta--valign-bottom elementor-widget__width-initial elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action"
-                data-id="8c94950" data-element_type="widget" data-widget_type="call-to-action.default">
-                <div class="elementor-widget-container">
-                    <a class="elementor-cta" href="https://beatkongs.com/test/product-category/playlists/afrobeats/">
-                        <div class="elementor-cta__bg-wrapper">
-                            <div class="elementor-cta__bg elementor-bg"
-                                style="background-image: url(https://beatkongs.medianssolutions.com/wp-content/uploads/2023/05/Maxwell_afrobeats_urban_album_cover_with_african_musicians_both_93ecfbfb-d1a8-4ea1-acd1-fb238d96f351.png);">
-                            </div>
-                            <div class="elementor-cta__bg-overlay"></div>
-                        </div>
-                        <div class="elementor-cta__content">
-
-                            <h2
-                                class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--shrink">
-                                AfroBeats</h2>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elementor-element elementor-element-3cfeb4c elementor-cta--skin-cover elementor-cta--valign-bottom elementor-widget__width-initial elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action"
-                data-id="3cfeb4c" data-element_type="widget" data-widget_type="call-to-action.default">
-                <div class="elementor-widget-container">
-                    <a class="elementor-cta" href="https://beatkongs.com/test/product-category/playlists/afrobeats/">
-                        <div class="elementor-cta__bg-wrapper">
-                            <div class="elementor-cta__bg elementor-bg"
-                                style="background-image: url(https://beatkongs.medianssolutions.com/wp-content/uploads/2022/03/Flipperman_a_heavy_metal_album_cover_by_Sever_the_System_simpli_63b02cdc-cb92-4f20-970e-9961b81db7ed.jpg);">
-                            </div>
-                            <div class="elementor-cta__bg-overlay"></div>
-                        </div>
-                        <div class="elementor-cta__content">
-
-                            <h2
-                                class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--shrink">
-                                Best of the Year</h2>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
