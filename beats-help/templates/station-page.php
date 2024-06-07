@@ -2,7 +2,15 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
-$currentKey = 0;
+$stations = get_terms(array(
+    'taxonomy' => 'station',
+    'hide_empty' => false,
+));
+$ids = array_column($stations, 'term_id');
+
+$term = get_queried_object();
+
+$currentKey = array_search($term->term_id, $ids);
 ?>
 <?php get_header(); ?>
 
@@ -25,7 +33,7 @@ $currentKey = 0;
                         <div class="elementor-element elementor-element-d76ff50 elementor-widget elementor-widget-heading"
                             data-id="d76ff50" data-element_type="widget" data-widget_type="heading.default">
                             <div class="elementor-widget-container">
-                                <h2 class="elementor-heading-title elementor-size-default">Beats 24/7</h2>
+                                <h2 class="elementor-heading-title elementor-size-default"><?php echo $term->name; ?></h2>
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-3525373 e-con-full e-flex e-con e-child"
