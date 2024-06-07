@@ -7,6 +7,8 @@ if (!defined('ABSPATH')) {
 <?php wp_head(); ?>
 <?php get_header(); ?>
 
+<link rel='stylesheet' id='elementor-post-36-css' href='<?php echo get_site_url(); ?>/wp-content/uploads/elementor/css/post-36.css?ver=126' media='all' />
+
 <div data-elementor-type="product-archive" data-elementor-id="36" class="elementor elementor-36 elementor-location-archive product">
 
 
