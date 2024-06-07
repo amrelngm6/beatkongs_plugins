@@ -59,8 +59,8 @@ function dokan_beats_page_query_vars($vars) {
 function load_custom_station_template($template) {
 
     if (is_tax('station')) {
-        add_action('get_footer', 'remove_footer_design', 1);
-        add_action('wp_default_scripts', 'move_scripts_to_footer');
+        // add_action('get_footer', 'remove_footer_design', 1);
+        // add_action('wp_default_scripts', 'move_scripts_to_footer');
         $plugin_template = plugin_dir_path(__FILE__) . '../templates/station-page.php';
         if (file_exists($plugin_template)) {
             return $plugin_template;
