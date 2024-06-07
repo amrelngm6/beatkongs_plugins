@@ -66,7 +66,7 @@ $bulk_statuses = [
             <?php
             $one_step_product_create = 'on' === dokan_get_option( 'one_step_product_create', 'dokan_selling', 'on' );
             $disable_product_popup   = $one_step_product_create || 'on' === dokan_get_option( 'disable_product_popup', 'dokan_selling', 'off' );
-            $new_product_url         = '/upload-free-beat';
+            $new_product_url         = get_site_url().'/upload-free-beat';
             $args    = [
                 'post_author'         => dokan_get_current_user_id(),
                 'post_type'         => 'beat',

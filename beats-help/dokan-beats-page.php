@@ -136,7 +136,6 @@ function enqueue_ajax_validation_script() {
     wp_enqueue_script('ajax-validation-script', plugin_dir_url(__FILE__) . 'assets/js/ajax-validation.js', array('jquery'), '1.0', true);
 
     // Localize the script with new data
-    
     wp_localize_script('ajax-validation-script', 'ajax_object', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'security' => wp_create_nonce('check_slug_nonce')

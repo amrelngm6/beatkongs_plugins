@@ -263,7 +263,7 @@ if ( $new_product ) {
 
                         <div class="dokan-feat-image-upload dokan-new-product-featured-img">
                             <?php
-                            $wrap_class        = ' dokan-hide';
+                            $wrap_class        = ' ';
                             $instruction_class = '';
                             $image_id     = 0;
 

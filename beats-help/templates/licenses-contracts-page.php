@@ -76,7 +76,7 @@ $default_licenses = new WP_Query( $args );
                                     <?php echo $license->ID; ?>
                                 </td>
                                 <td><?php echo $license->post_title; ?></td>
-                                <td><a href="/edit-license-contract/?license_post_id=<?php echo $license->ID; ?>">Edit</a></td>
+                                <td><a href="<?php echo get_site_url();?>/edit-license-contract/?license_post_id=<?php echo $license->ID; ?>">Edit</a></td>
                             </tr>
                             <?php endforeach ; ?>
                         </tbody>
