@@ -144,60 +144,12 @@ $beats = get_posts($args);
                                                 data-swiper-source="track"
                                                 data-params="{loop:false,spaceBetween:5,slidesPerView:1,speed:300,effect:'slide',breakpoints:{ 767: {slidesPerView: 1 }, 1024: {slidesPerView: 1 }, },}">
                                                 <div class="swiper-wrapper">
-                                                    <div class="swiper-slide" data-post-id="867" data-track-pos="0"
-                                                        data-slide-id="0" data-slide-id="0" data-slide-index="0">
-                                                        <div class="srp_swiper-album-art"
-                                                            style="background-image:url(<?php echo get_site_url();?>/wp-content/uploads/2022/11/Pop-Up-Podcast-Intro-Short-mp3-image.jpg)">
-                                                            <div class="srp_swiper_overlay"></div>
-                                                            <div class="srp_swiper-control">
-                                                                <div class="srp_play" aria-label="Play"><i
-                                                                        class="sricon-play"></i></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="srp_swiper-titles">
-                                                            <div class="srp_index">1</div>
-                                                            <div class="srp_swiper-track-title">Night</div>
-                                                            <div class="srp_swiper-track-artist"> Produced by Abel Cardin
-                                                            </div>
-                                                            <span class="store-list">
-                                                                <div class="song-store-list-menu"><i
-                                                                        class="fas fa-ellipsis-v"></i>
-                                                                    <div class="song-store-list-container"><a
-                                                                            href="<?php echo get_site_url();?>/beats/night/"
-                                                                            class="song-store sr_store_wc_round_bt"
-                                                                            target="_self" title="$0.00" aria-label="$0.00"
-                                                                            data-source-post-id="867" data-store-id="0-0"
-                                                                            tabindex="1"><i
-                                                                                class="fas fa-cart-plus"></i><span
-                                                                                class="srp_cta_label">$0.00</span></a><a
-                                                                            href="<?php echo get_site_url();?>/beats/night/"
-                                                                            class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
-                                                                            target="_self" title="View Beat"
-                                                                            aria-label="View Beat" data-source-post-id="867"
-                                                                            data-store-id="0-1" tabindex="1"><i
-                                                                                class="sricon-info"></i><span
-                                                                                class="srp_cta_label">View Beat</span></a><a
-                                                                            href="<?php echo get_site_url();?>/beats/night/"
-                                                                            class="song-store sr_store_force_share_bt"
-                                                                            target="_self" title="Share" aria-label="Share"
-                                                                            data-source-post-id="867" data-store-id="0-2"
-                                                                            tabindex="1"><i class="sricon-share"></i></a><a
-                                                                            href="#" class="song-store srp-fav-bt"
-                                                                            target="_self" title="Like" aria-label="Like"
-                                                                            data-source-post-id="867" data-store-id="0-3"
-                                                                            tabindex="1"><i
-                                                                                class="sricon-heart-fill"></i></a>
-                                                                    </div>
-                                                                </div>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <?php foreach ($beats as $key => $value) { ?>
+                                                    <?php foreach ($beats as $key => $beat) { ?>
                                                         
-                                                    <div class="swiper-slide" data-post-id="875" data-track-pos="0"
+                                                    <div class="swiper-slide" data-post-id="<?php echo $beat->ID;?>" data-track-pos="0"
                                                         data-slide-id="1" data-slide-id="1" data-slide-index="1">
                                                         <div class="srp_swiper-album-art"
-                                                            style="background-image:url(<?php echo get_site_url();?>/wp-content/uploads/2022/11/AtlanticTunes-The-Stomp-mp3-image.jpg)">
+                                                            style="background-image:url(<?php echo get_post_thumbnail_url($beat->ID);?>">
                                                             <div class="srp_swiper_overlay"></div>
                                                             <div class="srp_swiper-control">
                                                                 <div class="srp_play" aria-label="Play"><i
@@ -205,21 +157,21 @@ $beats = get_posts($args);
                                                             </div>
                                                         </div>
                                                         <div class="srp_swiper-titles">
-                                                            <div class="srp_index">2</div>
-                                                            <div class="srp_swiper-track-title">Stomper Snooper</div>
+                                                            <div class="srp_index"><?php echo $key + 1;?></div>
+                                                            <div class="srp_swiper-track-title"><?php echo $beat->post_title;?></div>
                                                             <div class="srp_swiper-track-artist"> Produced by Vinyl Kiwi
                                                             </div>
                                                             <span class="store-list">
                                                                 <div class="song-store-list-menu"><i
                                                                         class="fas fa-ellipsis-v"></i>
                                                                     <div class="song-store-list-container"><a
-                                                                            href="<?php echo get_site_url();?>/beats/stomper-snooper/"
+                                                                            href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name;?>"
                                                                             class="song-store sr_store_wc_round_bt srp_wc_variation_button"
-                                                                            target="_self" title="$19.99"
-                                                                            aria-label="$19.99" data-source-post-id="875"
+                                                                            target="_self" title="$00.00"
+                                                                            aria-label="$00.00" data-source-post-id="875"
                                                                             data-store-id="1-0" tabindex="1"><i
                                                                                 class="fas fa-cart-plus"></i><span
-                                                                                class="srp_cta_label">$19.99</span></a><a
+                                                                                class="srp_cta_label">$00.00</span></a><a
                                                                             href="<?php echo get_site_url();?>/beats/stomper-snooper/"
                                                                             class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
                                                                             target="_self" title="View Beat"
