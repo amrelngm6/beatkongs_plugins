@@ -285,6 +285,64 @@ $beats = get_posts($args);
                                             </div>
                                             <ul class="srp_list"
                                                 data-filters="product_cat,product_tag,pa_license,instruments,mood,bpm">
+                                                <?php foreach ($beats as $key => $beat) {     
+                                                    $postMeta = get_metadata( 'post', $beat->ID);
+                                                    $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+                                                    $beatMP3 = wp_get_attachment_url($beatMP3Id);
+                                                ?>
+
+                                                <li class="sr-playlist-item"
+                                                    data-audiopath="<?php echo $beatMP3;?>"
+                                                    data-showloading="1" data-albumTitle="California"
+                                                    data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
+                                                    data-releasedate="" data-date="2022/12/03"
+                                                    data-date-formated="December 3, 2022" data-show-date=""
+                                                    data-trackTitle="<?php echo $beat->post_title;?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Abel Cardin&lt;/span&gt;"
+                                                    data-artist="Abel Cardin" data-trackID="861" data-trackTime="0:30"
+                                                    data-relatedTrack="" data-post-url="" data-post-id="867"
+                                                    data-track-pos="0"
+                                                    data-peakFile="<?php echo get_site_url();?>/wp-content/uploads/audio_peaks/861_preview.peak"
+                                                    data-peakFile-allow="1" data-is-preview="1" data-track-lyric=""
+                                                    data-icecast_json="" data-icecast_mount="">
+                                                    <div class="sr-playlist-item-flex">
+                                                        <div class="sr_track_cover">
+                                                            <div class="srp_play"><i class="sricon-play"></i></div><img
+                                                                src="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
+                                                                alt="track-artwork" />
+                                                        </div><span class="store-list">
+                                                            <div class="song-store-list-menu"><i
+                                                                    class="fas fa-ellipsis-v"></i>
+                                                                <div class="song-store-list-container"><a
+                                                                        href="<?php echo get_site_url();?>/beats/night/"
+                                                                        class="song-store sr_store_wc_round_bt"
+                                                                        target="_self" title="$0.00" aria-label="$0.00"
+                                                                        data-source-post-id="867" data-store-id="0-0"
+                                                                        tabindex="1"><i
+                                                                            class="fas fa-cart-plus"></i><span
+                                                                            class="srp_cta_label">$0.00</span></a><a
+                                                                        href="<?php echo get_site_url();?>/beats/night/"
+                                                                        class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
+                                                                        target="_self" title="View Beat"
+                                                                        aria-label="View Beat" data-source-post-id="867"
+                                                                        data-store-id="0-1" tabindex="1"><i
+                                                                            class="sricon-info"></i><span
+                                                                            class="srp_cta_label">View Beat</span></a><a
+                                                                        href="<?php echo get_site_url();?>/beats/night/"
+                                                                        class="song-store sr_store_force_share_bt"
+                                                                        target="_self" title="Share" aria-label="Share"
+                                                                        data-source-post-id="867" data-store-id="0-2"
+                                                                        tabindex="1"><i class="sricon-share"></i></a><a
+                                                                        href="#" class="song-store srp-fav-bt"
+                                                                        target="_self" title="Like" aria-label="Like"
+                                                                        data-source-post-id="867" data-store-id="0-3"
+                                                                        tabindex="1"><i
+                                                                            class="sricon-heart-fill"></i></a></div>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="srp_track_description"></div>
+                                                </li>
+                                                <?php } ?>
 
                                                 
                                                 
