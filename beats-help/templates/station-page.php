@@ -4,6 +4,8 @@ if (!defined('ABSPATH')) {
 }
 
 ?>
+<?php wp_head(); ?>
+<?php get_header(); ?>
 
 <div data-elementor-type="wp-page" class="elementor ">
            
@@ -16,3 +18,4 @@ if (!defined('ABSPATH')) {
         </div>
     </div>
 </div>
+<?php get_footer(); ?>
