@@ -10,11 +10,6 @@ $stations = get_terms(array(
 
 ?>
 
-<?php wp_head(); ?>
-<?php get_header(); ?>
-
-<?php do_action( 'dokan_dashboard_wrap_start' ); ?>
-
 <div data-elementor-type="wp-page" class="elementor ">
     <div class="elementor-element elementor-element-8d9b08a e-flex e-con-boxed e-con e-parent" 
         data-element_type="container">
@@ -105,4 +100,3 @@ $stations = get_terms(array(
         </div>
     </div>
 </div>
-<?php get_footer(); ?>
