@@ -345,50 +345,7 @@ $beats = get_posts($args);
                                                 <?php } ?>
 
                                                 
-                                                <li class="sr-playlist-item"
-                                                    data-audiopath="<?php echo get_site_url();?>/wp-content/uploads/audio_preview/483_V-5_preview.mp3"
-                                                    data-showloading="1" data-albumTitle="Black Sub"
-                                                    data-albumArt="<?php echo get_site_url();?>/wp-content/uploads/2023/05/techno_speaker.jpg"
-                                                    data-releasedate="" data-date="2022/03/09"
-                                                    data-date-formated="March 9, 2022" data-show-date=""
-                                                    data-trackTitle="Quntis Animantis&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by DJ Radial&lt;/span&gt;"
-                                                    data-artist="DJ Radial" data-trackID="836" data-trackTime="0:08"
-                                                    data-relatedTrack="" data-post-url="" data-post-id="483"
-                                                    data-track-pos="5"
-                                                    data-peakFile="<?php echo get_site_url();?>/wp-content/uploads/audio_peaks/836_preview.peak"
-                                                    data-peakFile-allow="1" data-is-preview="1" data-track-lyric=""
-                                                    data-icecast_json="" data-icecast_mount="">
-                                                    <div class="sr-playlist-item-flex">
-                                                        <div class="sr_track_cover">
-                                                            <div class="srp_play"><i class="sricon-play"></i></div><img
-                                                                src=<?php echo get_site_url();?>/wp-content/uploads/2023/05/techno_speaker-150x150.jpg
-                                                                alt="track-artwork" />
-                                                        </div><span class="store-list">
-                                                            <div class="song-store-list-menu"><i
-                                                                    class="fas fa-ellipsis-v"></i>
-                                                                <div class="song-store-list-container"><a
-                                                                        href="<?php echo get_site_url();?>/playlist/playlist-of-the-year/"
-                                                                        class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
-                                                                        target="_self" title="View Beat"
-                                                                        aria-label="View Beat" data-source-post-id="483"
-                                                                        data-store-id="5-0" tabindex="1"><i
-                                                                            class="sricon-info"></i><span
-                                                                            class="srp_cta_label">View Beat</span></a><a
-                                                                        href="<?php echo get_site_url();?>/playlist/playlist-of-the-year/"
-                                                                        class="song-store sr_store_force_share_bt"
-                                                                        target="_self" title="Share" aria-label="Share"
-                                                                        data-source-post-id="483" data-store-id="5-1"
-                                                                        tabindex="1"><i class="sricon-share"></i></a><a
-                                                                        href="#" class="song-store srp-fav-bt"
-                                                                        target="_self" title="Like" aria-label="Like"
-                                                                        data-source-post-id="483" data-store-id="5-2"
-                                                                        tabindex="1"><i
-                                                                            class="sricon-heart-fill"></i></a></div>
-                                                            </div>
-                                                        </span>
-                                                    </div>
-                                                    <div class="srp_track_description"></div>
-                                                </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
