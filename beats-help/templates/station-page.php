@@ -11,10 +11,22 @@ $ids = array_column($stations, 'term_id');
 $term = get_queried_object();
 
 $currentKey = array_search($term->term_id, $ids);
+
+$args    = [
+    'post_author'         => get_current_user_id(),
+    'post_type'         => 'beat',
+    'post_status'         => ['publish'],
+    'tax_query'         =>  array(
+        'taxonomy' => 'station',
+        'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
+        'terms'    => array($term->$term_id), // Replace with your categories
+    )
+];
+
+$beats_query = get_posts($args);
+print_r($beats_query);
 ?>
 <?php get_header(); ?>
-
-<!-- <link rel='stylesheet' id='elementor-post-36-css' href='<?php echo get_site_url(); ?>/wp-content/uploads/elementor/css/post-36.css?ver=126' media='all' /> -->
 
 <style id='elementor-frontend-inline-css'>
 .elementor-36 .elementor-element.elementor-element-888e8b0:not(.elementor-motion-effects-element-type-background), .elementor-36 .elementor-element.elementor-element-888e8b0 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("<?php echo get_site_url(); ?>/wp-content/uploads/2024/06/s0<?php echo $currentKey + 1; ?>.png");}
