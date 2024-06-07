@@ -285,13 +285,19 @@ $beats = get_posts($args);
                                             </div>
                                             <ul class="srp_list"
                                                 data-filters="product_cat,product_tag,pa_license,instruments,mood,bpm">
+                                                <?php foreach ($beats as $key => $beat) {     
+                                                    $postMeta = get_metadata( 'post', $beat->ID);
+                                                    $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+                                                    $beatMP3 = wp_get_attachment_url($beatMP3Id);
+                                                ?>
+
                                                 <li class="sr-playlist-item"
-                                                    data-audiopath="<?php echo get_site_url();?>/wp-content/uploads/audio_preview/867_V-2_preview.mp3"
+                                                    data-audiopath="<?php echo $beatMP3;?>"
                                                     data-showloading="1" data-albumTitle="California"
-                                                    data-albumArt="<?php echo get_site_url();?>/wp-content/uploads/2022/11/Pop-Up-Podcast-Intro-Short-mp3-image.jpg"
+                                                    data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                     data-releasedate="" data-date="2022/12/03"
                                                     data-date-formated="December 3, 2022" data-show-date=""
-                                                    data-trackTitle="Night&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Abel Cardin&lt;/span&gt;"
+                                                    data-trackTitle="<?php echo $beat->post_title;?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Abel Cardin&lt;/span&gt;"
                                                     data-artist="Abel Cardin" data-trackID="861" data-trackTime="0:30"
                                                     data-relatedTrack="" data-post-url="" data-post-id="867"
                                                     data-track-pos="0"
@@ -301,7 +307,7 @@ $beats = get_posts($args);
                                                     <div class="sr-playlist-item-flex">
                                                         <div class="sr_track_cover">
                                                             <div class="srp_play"><i class="sricon-play"></i></div><img
-                                                                src=<?php echo get_site_url();?>/wp-content/uploads/2022/11/Pop-Up-Podcast-Intro-Short-mp3-image-150x150.jpg
+                                                                src="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                                 alt="track-artwork" />
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
@@ -336,6 +342,8 @@ $beats = get_posts($args);
                                                     </div>
                                                     <div class="srp_track_description"></div>
                                                 </li>
+                                                <?php } ?>
+
                                                 <li class="sr-playlist-item"
                                                     data-audiopath="<?php echo get_site_url();?>/wp-content/uploads/audio_preview/875_Claps-and-Stomp_preview.mp3"
                                                     data-showloading="1" data-albumTitle="Electro Funko"
