@@ -18,13 +18,7 @@ $stations = get_terms(array(
                 data-element_type="container">
                 <div class="elementor-element elementor-element-8818902 e-con-full e-flex e-con e-child"
                     data-id="8818902" data-element_type="container">
-                    <div class="elementor-element elementor-element-d5cf088 elementor-widget elementor-widget-heading"
-                        data-id="d5cf088" data-element_type="widget" data-widget_type="heading.default">
-                        <div class="elementor-widget-container">
-                            <h2 class="elementor-heading-title elementor-size-default">Streaming<br>Stations<sup>
-                                    NEW</sup></h2>
-                        </div>
-                    </div>
+                    
                     <div class="elementor-element elementor-element-ea5bff6 elementor-widget__width-initial elementor-widget elementor-widget-text-editor"
                         data-id="ea5bff6" data-element_type="widget" data-widget_type="text-editor.default">
                         <div class="elementor-widget-container">
