@@ -154,7 +154,7 @@ $beats = get_posts($args);
                                                     data-track-pos="<?php echo $key; ?>" data-slide-id="<?php echo $key + 1; ?>" data-slide-id="<?php echo $key + 1; ?>"
                                                     data-slide-index="<?php echo $key+1; ?>">
                                                     <div class="srp_swiper-album-art"
-                                                        style="background-image:url(<?php echo get_post_thumbnail_url($beat->ID);?>">
+                                                        style="background-image:url(<?php echo get_the_post_thumbnail_url($beat->ID);?>">
                                                         <div class="srp_swiper_overlay"></div>
                                                         <div class="srp_swiper-control">
                                                             <div class="srp_play" aria-label="Play"><i
@@ -296,7 +296,7 @@ $beats = get_posts($args);
                                                 <li class="sr-playlist-item"
                                                     data-audiopath="<?php echo get_post_meta($beat->ID, 'beat_mp3_url', true);?>"
                                                     data-showloading="1" data-albumTitle="Cloudways"
-                                                    data-albumArt="<?php echo get_post_thumbnail_url($beat->ID);?>"
+                                                    data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                     data-releasedate="" data-date="2022/11/23"
                                                     data-date-formated="November 23, 2022" data-show-date=""
                                                     data-trackTitle="<?php echo $beat->post_title;?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;/span&gt;"
@@ -309,7 +309,7 @@ $beats = get_posts($args);
                                                     <div class="sr-playlist-item-flex">
                                                         <div class="sr_track_cover">
                                                             <div class="srp_play"><i class="sricon-play"></i></div><img
-                                                                src=<?php echo get_post_thumbnail_url($beat->ID);?>
+                                                                src=<?php echo get_the_post_thumbnail_url($beat->ID);?>
                                                                 alt="track-artwork" />
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
