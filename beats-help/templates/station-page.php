@@ -7,7 +7,8 @@ if (!defined('ABSPATH')) {
 <?php wp_head(); ?>
 <?php get_header(); ?>
 
-<div data-elementor-type="wp-page" class="elementor ">
+<div data-elementor-type="product-archive" data-elementor-id="36" class="elementor elementor-36 elementor-location-archive product">
+
 
     <div data-elementor-type="product-archive" data-elementor-id="36"
         class="elementor elementor-36 elementor-location-archive product">
