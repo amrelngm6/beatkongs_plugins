@@ -2,14 +2,14 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
-
+$currentKey = 0;
 ?>
 <?php get_header(); ?>
 
 <!-- <link rel='stylesheet' id='elementor-post-36-css' href='<?php echo get_site_url(); ?>/wp-content/uploads/elementor/css/post-36.css?ver=126' media='all' /> -->
 
 <style id='elementor-frontend-inline-css'>
-.elementor-36 .elementor-element.elementor-element-888e8b0:not(.elementor-motion-effects-element-type-background), .elementor-36 .elementor-element.elementor-element-888e8b0 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("https://beatkongs.com/test/wp-content/uploads/2023/05/compilation_01.jpg");}
+.elementor-36 .elementor-element.elementor-element-888e8b0:not(.elementor-motion-effects-element-type-background), .elementor-36 .elementor-element.elementor-element-888e8b0 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("<?php echo get_site_url(); ?>/wp-content/uploads/2024/06/s0<?php echo $currentKey + 1; ?>.png");}
 </style>
 <div data-elementor-type="product-archive" data-elementor-id="36" class="elementor elementor-36 elementor-location-archive product">
 
