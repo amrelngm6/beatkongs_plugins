@@ -30,3 +30,5 @@ function dokan_media_page_template() {
 function dokan_media_stations_page_template() {
     include plugin_dir_path(__FILE__) . '../templates/stations-page.php';
 }
+
+

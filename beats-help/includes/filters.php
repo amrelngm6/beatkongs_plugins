@@ -54,3 +54,16 @@ function dokan_beats_page_query_vars($vars) {
 
 
 
+
+
+function load_custom_station_template($template) {
+    if (is_tax('station')) {
+        $plugin_template = plugin_dir_path(__FILE__) . 'templates/station-page.php';
+        if (file_exists($plugin_template)) {
+            return $plugin_template;
+        }
+    }
+    return $template;
+}
+add_filter('template_include', 'load_custom_station_template');
+
