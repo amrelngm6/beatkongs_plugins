@@ -150,7 +150,8 @@ $beats = get_posts($args);
                                             <div class="swiper-wrapper">
                                                 <?php foreach ($beats as $key => $beat) { ?>
                                                 <div class="swiper-slide" data-post-id="<?php echo $beat->ID;?>"
-                                                    data-track-pos="<?php echo $key ?? '0'; ?>" data-slide-id="<?php echo $key + 1; ?>" data-slide-id="<?php echo $key + 1; ?>"
+                                                    data-track-pos="<?php echo $key ?? '0'; ?>" 
+                                                    data-slide-id="<?php echo $key + 1; ?>"
                                                     data-slide-index="<?php echo $key+1; ?>">
                                                     <div class="srp_swiper-album-art"
                                                         style="background-image:url(<?php echo get_the_post_thumbnail_url($beat->ID);?>">
@@ -298,7 +299,8 @@ $beats = get_posts($args);
 
                                                 <li class="sr-playlist-item"
                                                     data-audiopath="<?php echo $beatMP3;?>"
-                                                    data-showloading="1" data-albumTitle="Cloudways"
+                                                    data-showloading="1" 
+                                                    data-albumTitle="Cloudways"
                                                     data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                     data-releasedate="" data-date="2022/11/23"
                                                     data-date-formated="November 23, 2022" data-show-date=""
