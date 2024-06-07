@@ -66,6 +66,7 @@ add_shortcode('free_beat_upload_page', 'dokan_free_beat_upload_page_template');
 add_shortcode('licenses_contracts_page', 'dokan_licenses_contracts_page_template');
 add_shortcode('licenses_contracts_edit_page', 'dokan_licenses_contracts_edit_page_template');
 add_shortcode('media_page', 'dokan_media_page_template');
+add_shortcode('stations_page', 'dokan_media_stations_page_template');
 
 
 add_action( 'dokan_load_category', 'dokan_custom_product_view_load_template' );
