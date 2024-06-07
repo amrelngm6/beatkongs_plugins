@@ -143,3 +143,7 @@ function enqueue_ajax_validation_script() {
     ));
 }
 add_action('wp_enqueue_scripts', 'enqueue_ajax_validation_script');
+
+
+
+

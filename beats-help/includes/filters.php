@@ -59,6 +59,8 @@ function dokan_beats_page_query_vars($vars) {
 function load_custom_station_template($template) {
 
     if (is_tax('station')) {
+        add_action('wp_default_scripts', 'move_scripts_to_footer');
+        add_action('get_footer', 'remove_footer_design', 1);
         $plugin_template = plugin_dir_path(__FILE__) . '../templates/station-page.php';
         if (file_exists($plugin_template)) {
             return $plugin_template;
@@ -67,4 +69,21 @@ function load_custom_station_template($template) {
     return $template    ;
 }
 add_filter('template_include', 'load_custom_station_template');
+
+
+
+
+// Move all scripts to footer
+function move_scripts_to_footer($scripts) {
+    if (!is_admin()) {
+        foreach ($scripts->registered as $script) {
+            $script->args = 1; // Set all scripts to load in the footer
+        }
+    }
+}
+
+// Remove footer design
+function remove_footer_design() {
+    remove_all_actions('wp_footer'); // Remove all actions hooked to wp_footer
+}
 
