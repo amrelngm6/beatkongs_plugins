@@ -54,22 +54,3 @@ function dokan_beats_page_query_vars($vars) {
 
 
 
-
-
-// Intercept the request and load custom template
-function dokan_beats_page_template_redirect() {
-    global $wp_query;
-    
-    $name = $wp_query->query_vars['name'] ?? null;
-
-    if ($name && in_array($name , ['embed_medians_beat', 'embed_medians_playlist'])) {
-        status_header(200); // Ensure HTTP status code is 200
-        ob_start(); 
-        if ($name == 'embed_medians_playlist') {
-            $params = shortcode_atts($_GET, $_GET, 'medians_playlist');
-            include plugin_dir_path(__FILE__) . '../templates/playlist/embed.php';
-        }
-        echo ob_get_clean(); // Return the buffered content
-        exit();
-    }
-}

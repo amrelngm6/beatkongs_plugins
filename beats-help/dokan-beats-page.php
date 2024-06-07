@@ -26,9 +26,18 @@ add_filter('query_vars', 'dokan_beats_page_query_vars');
 add_action('template_redirect', 'dokan_beats_page_template_redirect');
 function dokan_beats_page_template_redirect() {
     if (get_query_var('dokan_beats_page')) {
+        echo 'dokan_beats_pagedokan_beats_page';
         include plugin_dir_path(__FILE__) . 'templates/beats-page.php';
         exit;
     }
+    // status_header(200); // Ensure HTTP status code is 200
+    // ob_start(); 
+    // if ($name == 'embed_medians_playlist') {
+    //     $params = shortcode_atts($_GET, $_GET, 'medians_playlist');
+    //     include plugin_dir_path(__FILE__) . '../templates/playlist/embed.php';
+    // }
+    // echo ob_get_clean(); // Return the buffered content
+    // exit();
 }
 
 // // Add a new menu item to the Dokan vendor dashboard
@@ -143,7 +152,3 @@ function enqueue_ajax_validation_script() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_ajax_validation_script');
 
-
-
-register_activation_hook( __FILE__, 'dokan_beats_page_activate' );
-add_action('template_redirect', 'dokan_beats_page_template_redirect');
