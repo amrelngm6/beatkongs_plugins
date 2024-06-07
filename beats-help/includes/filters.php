@@ -57,8 +57,10 @@ function dokan_beats_page_query_vars($vars) {
 
 
 function load_custom_station_template($template) {
+    echo 'loaaaded';
     if (is_tax('station')) {
         $plugin_template = plugin_dir_path(__FILE__) . 'templates/station-page.php';
+    echo 'loaaaded here';
         if (file_exists($plugin_template)) {
             return $plugin_template;
         }
