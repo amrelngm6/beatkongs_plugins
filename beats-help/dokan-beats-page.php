@@ -35,7 +35,7 @@ function dokan_beats_page_template_redirect() {
         ob_start(); 
         if ($name == 'stations2') {
             $params = shortcode_atts($_GET, $_GET, 'stations-page');
-            include plugin_dir_path(__FILE__) . '../templates/stations-page.php';
+            include plugin_dir_path(__FILE__) . 'templates/stations-page.php';
         }
         echo ob_get_clean(); // Return the buffered content
         exit();
