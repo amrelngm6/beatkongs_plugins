@@ -148,6 +148,7 @@ $beats = get_posts($args);
                                             data-swiper-source="track"
                                             data-params="{loop:false,spaceBetween:5,slidesPerView:1,speed:300,effect:'slide',breakpoints:{ 767: {slidesPerView: 1 }, 1024: {slidesPerView: 1 }, },}">
                                             <div class="swiper-wrapper">
+                                                <?php foreach ($beats as $key => $beat) { ?>
                                                 <div class="swiper-slide" data-post-id="867" data-track-pos="0"
                                                     data-slide-id="0" data-slide-id="0" data-slide-index="0">
                                                     <div class="srp_swiper-album-art"
@@ -194,7 +195,7 @@ $beats = get_posts($args);
                                                         </span>
                                                     </div>
                                                 </div>
-                                                
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
