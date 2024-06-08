@@ -3532,9 +3532,10 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
 
             }
-            error_log(json_encode($args));
+            error_log('has_category');
             $albums = get_posts($args);
         }else{
+            error_log('dont has_category');
             
             // retrieve albums from category
             $returned_data = $this->getAlbumsFromTerms($category, $posts_not_in, $category_not_in, $posts_per_pages, true, $player, $reverse_tracklist); 
@@ -3933,6 +3934,7 @@ class Sonaar_Music_Widget extends WP_Widget{
 
             }
         } else {      
+            error_log('albums here');
 
             foreach ( $albums as $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
