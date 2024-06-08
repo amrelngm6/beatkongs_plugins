@@ -3910,7 +3910,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
                 
                 if ($album_tracks != '' && $trackSource == 'post'){ 
-                    
+
                     /*
                     //
                     //
