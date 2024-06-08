@@ -2177,6 +2177,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         );
         //error_log("Query Args: " . print_r($query_args, true));
         $query = new WP_Query($query_args);
+        print_r($query->found_posts);
         
         $total_items = $query->found_posts; // 2035
         $total_pages = intval(ceil($query->max_num_pages));
