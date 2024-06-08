@@ -352,6 +352,7 @@ IRON.sonaar = {
             if (jsonFromCookie) {
               return jsonFromCookie;
             } else {
+              console.log(srp_vars.site_url + "?load=playlist.json&title=" + title + "&albums=" + playlistID + "&category=" + category + "&el_widget_id=" + elwidget + "&posts_per_pages=-1")
               return srp_vars.site_url + "?load=playlist.json&title=" + title + "&albums=" + playlistID + "&category=" + category + "&el_widget_id=" + elwidget + "&posts_per_pages=-1";
             }
           } else {

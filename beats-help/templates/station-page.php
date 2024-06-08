@@ -128,7 +128,6 @@ $beats = $stationClass->loadStationItems();
                                     data-albums="" 
                                     data-category="all"
                                     data-url-playlist="<?php echo get_site_url();?>/?load=station.json&station_id=1"
-                                    <!-- data-url-playlist="<?php echo get_site_url();?>/?load=playlist.json&#038;title=&#038;albums=&#038;category=all&#038;posts_not_in=&#038;category_not_in=&#038;feed_title=&#038;feed=&#038;feed_img=&#038;el_widget_id=&#038;artwork=&#038;posts_per_pages=-1&#038;all_category=1&#038;single_playlist=&#038;reverse_tracklist=&#038;audio_meta_field=&#038;repeater_meta_field=&#038;import_file=&#038;rss_items=-1&#038;rss_item_title=&#038;is_favorite=&#038;is_recentlyplayed=&#038;srp_order=date_DESC" -->
                                     data-sticky-player="1" data-shuffle="1" data-playlist_title="" data-scrollbar=""
                                     data-wave-color="#FDFDFB" data-wave-progress-color="#FFFFFF" data-spectro=""
                                     data-no-wave="1" data-hide-progressbar="" data-progress-bar-style=""
