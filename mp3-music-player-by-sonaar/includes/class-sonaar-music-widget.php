@@ -1,4 +1,5 @@
 <?php
+require_once plugin_dir_path(__FILE__) .'../../beats-help/includes/Music/MediansTrack.php';
 /**
 * Radio Widget Class
 *
@@ -3901,7 +3902,6 @@ class Sonaar_Music_Widget extends WP_Widget{
 
                     $album_tracks = [$a];
                     $album_tracks = apply_filters( 'srmp3_album_tracks', $album_tracks, $a->ID );
-                    print_r($album_tracks);
                 }
 
                 if ( get_post_meta( $a->ID, 'reverse_post_tracklist', true) && is_array($album_tracks)){
@@ -4030,6 +4030,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $num = 1;
                         $album_tracks[$i] = array();
                         
+                        print_r($album_tracks);
                         $album_tracks[$i]["id"] = ( $mp3_id )? $mp3_id : '' ;
                         $album_tracks[$i]["mp3"] = $audioSrc;
                         $album_tracks[$i]["loading"] = $showLoading;
