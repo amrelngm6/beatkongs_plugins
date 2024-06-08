@@ -4128,6 +4128,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                     $tracksToFilter = array_key_exists('tracks', $album_tracks) ? $album_tracks['tracks'] : $album_tracks;
                 
                     foreach ($tracksToFilter as $track) {
+                        $track = (array) $track;
                         if (!isset($track['favorite']) || $track['favorite'] !== false) {
                             $filtered_tracks[] = $track;
                         }
