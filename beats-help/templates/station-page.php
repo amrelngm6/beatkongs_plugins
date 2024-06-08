@@ -150,7 +150,7 @@ $beats = get_posts($args);
                                             <div class="swiper-wrapper">
                                                 <?php foreach ($beats as $key => $beat) { ?>
                                                 <div class="swiper-slide" data-post-id="867" data-track-pos="0"
-                                                    data-slide-id="0" data-slide-id="0" data-slide-index="0">
+                                                    data-slide-id="<?php echo $key;?>" data-slide-index="<?php echo $key;?>">
                                                     <div class="srp_swiper-album-art"
                                                         style="background-image:url(<?php echo get_site_url();?>/wp-content/uploads/2022/11/Pop-Up-Podcast-Intro-Short-mp3-image.jpg)">
                                                         <div class="srp_swiper_overlay"></div>
