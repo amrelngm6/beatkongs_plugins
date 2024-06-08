@@ -389,4 +389,4 @@ function medians_load_station_beats() {
         die();
     }
 }
-add_action('init', 'medians_load_station_beats');
+// add_action('init', 'medians_load_station_beats');
