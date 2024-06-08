@@ -3873,7 +3873,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         } else {      
 
             $station = get_term($station_id);
-            print_r($station);
+
             foreach ( $albums as $i => $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
                 $wc_buynow_bt =  $this->wc_buynow_bt($a->ID);
@@ -3969,7 +3969,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                                     $track_title = ( get_the_title($mp3_id) !== '' && $track_title !== get_the_title($mp3_id))? get_the_title($mp3_id): $track_title;
                                     $track_title = html_entity_decode($track_title, ENT_COMPAT, 'UTF-8');
                                     $track_artist = ( isset( $mp3_metadata['artist'] ) && $mp3_metadata['artist'] !== '' )? $mp3_metadata['artist'] : get_the_author_meta('display_name', $beatItem['post_author']);
-                                    $album_title = ( isset( $mp3_metadata['album'] ) && $mp3_metadata['album'] !== '' )? $mp3_metadata['album'] : false;
+                                    $album_title = ( isset( $mp3_metadata['album'] ) && $mp3_metadata['album'] !== '' )? $mp3_metadata['album'] : $station->name;
                                     $track_length = ( isset( $mp3_metadata['length_formatted'] ) && $mp3_metadata['length_formatted'] !== '' )? $mp3_metadata['length_formatted'] : false;
                                     $media_post = get_post( $mp3_id );
                                     $track_description = ( isset ($beatItem["track_description"]) && $beatItem["track_description"] !== '' )? $beatItem["track_description"] : false;
