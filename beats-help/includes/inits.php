@@ -377,17 +377,17 @@ function medians_load_station_beats() {
     // Check if the nonce is set and valid
     check_ajax_referer('check_slug_nonce', 'security');
 
-    if (isset($_POST['slug'])) {
-        $slug = sanitize_title($_POST['slug']);
+    if (isset($_GET['station_id']) && isset($_GET['load']) && $_GET['load'] == 'station.json') {
 
-        // Check if a post with the given slug already exists
-        $post_exists = get_page_by_path($slug, OBJECT);
+        $station_id = intval(sanitize_text_field($_GET['station_id']));
 
-        if ($post_exists) {
-            wp_send_json_error('Slug already exists.');
-        } else {
-            wp_send_json_success('valid');
+        if (class_exists('MediansStation')) {
+            $station = get_term($station_id);
+            $class = new MediansStation($station);
+            echo $class->loadStationItemsPlayer();
+            die();
         }
+
     } else {
         wp_send_json_error('Invalid request.');
     }
