@@ -350,12 +350,14 @@ IRON.sonaar = {
         var elwidget = elwidget ? elwidget + "&feed=1" : null;
           if (this.selectedPlayer === null && playlistID) {
             if (jsonFromCookie) {
-              return jsonFromCookie;
+            console.log(jsonFromCookie)
+            return jsonFromCookie;
             } else {
               return srp_vars.site_url + "?load=playlist.json&title=" + title + "&albums=" + playlistID + "&category=" + category + "&el_widget_id=" + elwidget + "&posts_per_pages=-1";
             }
           } else {
             json_url = this.selectedPlayer.attr("data-url-playlist");
+            console.log(json_url)
             return json_url;
           }
       },
