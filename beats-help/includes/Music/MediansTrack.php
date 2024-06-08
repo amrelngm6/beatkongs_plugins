@@ -35,7 +35,7 @@ class MediansTrack {
         $this->sourcePostID = $post->ID;
         $this->track_title = $post->post_title;
         $this->description = $post->post_content;
-        $this->track_artist = get_the_author_meta('display_name', $post->author);
+        $this->track_artist = get_the_author_meta('display_name', $post->post_author);
         $this->poster = get_the_post_thumbnail_url($post->ID);
         $this->track_image_id = get_post_thumbnail_id($post->ID);
         $this->peakFile = get_site_url()."/wp-content/uploads/audio_peaks/$post->ID.peack";
