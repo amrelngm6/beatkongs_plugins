@@ -3919,7 +3919,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                     //
                     */
                    
-                    print_r($album_tracks);
 
                         $beatItem = $a;
 
