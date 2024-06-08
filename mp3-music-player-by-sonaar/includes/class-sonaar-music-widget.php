@@ -3960,7 +3960,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         switch ($fileOrStream) {
                             case 'mp3':
                                 if ( isset( $beatItem["beat_mp3"] ) ) {
-                                    $mp3_id = $beatItem["beat_mp3"];
+                                    $mp3_id = get_post_meta($beatItem['ID'], 'beat_mp3', true);
                                     $mp3_metadata = wp_get_attachment_metadata( $mp3_id );
                                     $track_title = ( isset( $mp3_metadata["title"] ) && $mp3_metadata["title"] !== '' )? $mp3_metadata["title"] : false ;
                                     $track_title = ( get_the_title($mp3_id) !== '' && $track_title !== get_the_title($mp3_id))? get_the_title($mp3_id): $track_title;
