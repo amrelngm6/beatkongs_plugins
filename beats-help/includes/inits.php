@@ -381,6 +381,7 @@ function medians_load_station_beats() {
         $station_id = intval(sanitize_text_field($_GET['station_id']));
 
         if (class_exists('MediansStation')) {
+            status_header(200); // Ensure HTTP status code is 200
             $station = get_term($station_id);
             $class = new MediansStation($station);
             echo $class->loadStationItemsPlayer();
