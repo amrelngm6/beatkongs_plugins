@@ -4,6 +4,7 @@ class MediansTrack {
 
     
 
+    public $id = 0;
     public $ID = 0;
     public $mp3;
     public $loading = true;
@@ -29,6 +30,7 @@ class MediansTrack {
 
     function __construct($post = null, ) {
         if (!$post) { return;}
+        $this->id = $post->ID;
         $this->ID = $post->ID;
         $this->sourcePostID = $post->ID;
         $this->track_title = $post->post_title;
