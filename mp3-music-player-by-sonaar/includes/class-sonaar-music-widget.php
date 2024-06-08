@@ -1,5 +1,26 @@
 <?php
 include plugin_dir_path(__FILE__) .'../../beats-help/vendor/autoload.php';
+
+/**
+ * Get MP3 file duration 
+ */
+function getMp3Duration($filePath) {
+    $getID3 = new getID3;
+    
+    $mp3FilePath = str_replace(get_site_url(), '', $filePath); 
+    $path =  $_SERVER['DOCUMENT_ROOT'] . $filePath;
+    $fileInfo = $getID3->analyze($path);
+    if (isset($fileInfo['playtime_seconds'])) {
+        
+        $minutes = floor($fileInfo['playtime_seconds'] / 60);
+        $remainingSeconds = $fileInfo['playtime_seconds'] % 60;
+        return sprintf('%02d:%02d', $minutes, $remainingSeconds);
+
+    } else {
+        return 'Unable to determine duration';
+    }
+}
+
 /**
 * Radio Widget Class
 *
