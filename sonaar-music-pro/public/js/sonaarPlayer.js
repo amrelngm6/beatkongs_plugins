@@ -357,6 +357,7 @@ IRON.sonaar = {
             }
           } else {
             json_url = this.selectedPlayer.attr("data-url-playlist");
+            console.log(json_url)
             return json_url;
           }
       },
