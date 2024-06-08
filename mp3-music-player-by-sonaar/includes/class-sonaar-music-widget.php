@@ -3667,7 +3667,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                 $tracks = array_merge($tracks, $album_tracks);
             }     
         }else if ( isset($audio_meta_field) && $audio_meta_field != ''){
-            echo 'has_meta';
             // 003. FEED SOURCE IS METAKEY (ACF)
             if(is_numeric($audio_meta_field) ){
                 $meta_key_type = 'id';
@@ -3871,7 +3870,6 @@ class Sonaar_Music_Widget extends WP_Widget{
 
             }
         } else {      
-            echo 'else';
 
             foreach ( $albums as $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
@@ -3908,6 +3906,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
                 
                 if ($album_tracks != '' && $trackSource == 'post'){ 
+            echo "post";
+
                     /*
                     //
                     //
