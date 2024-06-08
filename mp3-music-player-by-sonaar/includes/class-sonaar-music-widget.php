@@ -2073,12 +2073,12 @@ class Sonaar_Music_Widget extends WP_Widget{
                     );
                 }
             }
-$or_query[] = array(
-            'taxonomy' => 'station',
-            'field'    => 'term_id',
-            'terms'    => [$station_id],
-        );
-            $tax_query[] = $or_query;
+            
+            $tax_query = [array(
+                'taxonomy' => 'station',
+                'field'    => 'term_id',
+                'terms'    => [$station_id],
+            )];
 
             $query_args = array(
                 'fields'         => $fields,
