@@ -3474,12 +3474,8 @@ class Sonaar_Music_Widget extends WP_Widget{
         }else{
 
             // retrieve albums from category
-            $returned_data = $this->getAlbumsFromTerms($station_id, $category, $posts_not_in, $category_not_in, $posts_per_pages, true, $player, $reverse_tracklist); 
-            
-            echo 'here';
-            print_r($returned_data);
+            $returned_data = $this->getAlbumsFromTerms($station_id, $category, $posts_not_in, $category_not_in, $posts_per_pages, true, $player, $reverse_tracklist);             
             $albums = $returned_data['albums'];// true means get post objects. false means get Ids only
-            print_r($albums);
     
         }
 
@@ -3875,6 +3871,8 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
         } else {      
 
+            echo 'here';
+            echo count($albums);
 
             foreach ( $albums as $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
