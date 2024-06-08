@@ -387,9 +387,6 @@ function medians_load_station_beats() {
             echo $class->loadStationItemsPlayer();
             die();
         }
-
-    } else {
-        wp_send_json_error('Invalid request.');
     }
 }
 add_action('wp_ajax_medians_load_station_beats', 'medians_load_station_beats');
