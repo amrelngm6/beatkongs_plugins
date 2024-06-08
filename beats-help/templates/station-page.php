@@ -144,7 +144,7 @@ $beats = new MediansStation($term);
                                                 <div class="swiper-slide" data-post-id="867" data-track-pos="0"
                                                     data-slide-id="0" data-slide-id="0" data-slide-index="0">
                                                     <div class="srp_swiper-album-art"
-                                                        style="background-image:url(<?php echo get_site_url();?>/wp-content/uploads/2022/11/Pop-Up-Podcast-Intro-Short-mp3-image.jpg)">
+                                                        style="background-image:url(<?php echo get_the_post_thumbnail_url($beat->ID);?>)">
                                                         <div class="srp_swiper_overlay"></div>
                                                         <div class="srp_swiper-control">
                                                             <div class="srp_play" aria-label="Play"><i
