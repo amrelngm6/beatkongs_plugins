@@ -9,6 +9,7 @@ function getMp3Duration($filePath) {
     
     $mp3FilePath = str_replace(get_site_url(), '', $filePath); 
     $path =  $_SERVER['DOCUMENT_ROOT'] . $filePath;
+    echo $path;
     $fileInfo = $getID3->analyze($path);
     if (isset($fileInfo['playtime_seconds'])) {
         
@@ -3985,16 +3986,16 @@ class Sonaar_Music_Widget extends WP_Widget{
                             case 'mp3':
                                 if ( isset( $beatItem["beat_mp3"] ) ) {
                                     $mp3_id = get_post_meta($beatItem['ID'], 'beat_mp3', true);
+                                    $audioSrc = wp_get_attachment_url($mp3_id);
                                     $mp3_metadata = wp_get_attachment_metadata( $mp3_id );
                                     $track_title = ( isset( $mp3_metadata["title"] ) && $mp3_metadata["title"] !== '' )? $mp3_metadata["title"] : false ;
                                     $track_title = ( get_the_title($mp3_id) !== '' && $track_title !== get_the_title($mp3_id))? get_the_title($mp3_id): $track_title;
                                     $track_title = html_entity_decode($track_title, ENT_COMPAT, 'UTF-8');
                                     $track_artist = ( isset( $mp3_metadata['artist'] ) && $mp3_metadata['artist'] !== '' )? $mp3_metadata['artist'] : get_the_author_meta('display_name', $beatItem['post_author']);
                                     $album_title = ( isset( $mp3_metadata['album'] ) && $mp3_metadata['album'] !== '' )? $mp3_metadata['album'] : $station->name;
-                                    $track_length = ( isset( $mp3_metadata['length_formatted'] ) && $mp3_metadata['length_formatted'] !== '' )? $mp3_metadata['length_formatted'] : false;
+                                    $track_length = ( isset( $mp3_metadata['length_formatted'] ) && $mp3_metadata['length_formatted'] !== '' )? $mp3_metadata['length_formatted'] : getMp3Duration($audioSrc);
                                     $media_post = get_post( $mp3_id );
                                     $track_description = ( isset ($beatItem["track_description"]) && $beatItem["track_description"] !== '' )? $beatItem["track_description"] : false;
-                                    $audioSrc = wp_get_attachment_url($mp3_id);
                                     $showLoading = true;
                                 }
                                 break;
