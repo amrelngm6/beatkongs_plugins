@@ -127,7 +127,7 @@ $beats = $stationClass->loadStationItems();
                                     data-id="arbitrary-instance-66638ad5c0d15" data-track-sw-cursor="" data-lazyload=""
                                     data-albums="" 
                                     data-category="all"
-                                    data-url-playlist="<?php echo get_site_url();?>/?load=station.json&station_id=1"
+                                    data-url-playlist="<?php echo get_site_url();?>/?load=station.json&station_id=1&audio_meta_field="
                                     data-sticky-player="1" data-shuffle="1" data-playlist_title="" data-scrollbar=""
                                     data-wave-color="#FDFDFB" data-wave-progress-color="#FFFFFF" data-spectro=""
                                     data-no-wave="1" data-hide-progressbar="" data-progress-bar-style=""

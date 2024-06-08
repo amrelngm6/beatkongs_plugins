@@ -349,10 +349,11 @@ IRON.sonaar = {
         var title = title || "";
         var elwidget = elwidget ? elwidget + "&feed=1" : null;
           if (this.selectedPlayer === null && playlistID) {
+            console.log(srp_vars.site_url + "?load=playlist.json&title=" + title + "&albums=" + playlistID + "&category=" + category + "&el_widget_id=" + elwidget + "&posts_per_pages=-1")
             if (jsonFromCookie) {
+              console.log(jsonFromCookie);
               return jsonFromCookie;
             } else {
-              console.log(srp_vars.site_url + "?load=playlist.json&title=" + title + "&albums=" + playlistID + "&category=" + category + "&el_widget_id=" + elwidget + "&posts_per_pages=-1")
               return srp_vars.site_url + "?load=playlist.json&title=" + title + "&albums=" + playlistID + "&category=" + category + "&el_widget_id=" + elwidget + "&posts_per_pages=-1";
             }
           } else {
