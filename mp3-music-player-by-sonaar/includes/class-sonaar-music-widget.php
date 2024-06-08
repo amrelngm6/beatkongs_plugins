@@ -2051,11 +2051,11 @@ class Sonaar_Music_Widget extends WP_Widget{
                 );
             }
         }
-        $tax_query[] = array(
-            'taxonomy' => 'station',
-            'field'    => 'term_id',
-            'terms'    => [$station_id],
-        );
+        // $tax_query[] = array(
+        //     'taxonomy' => 'station',
+        //     'field'    => 'term_id',
+        //     'terms'    => [$station_id],
+        // );
         $sr_postypes = Sonaar_Music_Admin::get_cpt($all = true);
         // If specific terms are provided, use tax_query to fetch related post IDs
         if ($terms != 'all') {
