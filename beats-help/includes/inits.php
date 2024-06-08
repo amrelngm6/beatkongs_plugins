@@ -377,7 +377,7 @@ function medians_load_station_beats() {
     // Check if the nonce is set and valid
 
     if (isset($_GET['station_id']) && isset($_GET['load']) && $_GET['load'] == 'station.json') {
-
+    echo 110;
         $station_id = intval(sanitize_text_field($_GET['station_id']));
 
         if (class_exists('MediansStation')) {
