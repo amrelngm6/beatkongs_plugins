@@ -144,7 +144,7 @@ $beats = new MediansStation($term);
                                                 <div class="swiper-slide" data-post-id="867" data-track-pos="0"
                                                     data-slide-id="0" data-slide-id="0" data-slide-index="0">
                                                     <div class="srp_swiper-album-art"
-                                                        style="background-image:url(<?php echo get_the_post_thumbnail_url($beat->ID);?>)">
+                                                        style="background-image:url(<?php echo get_site_url();?>/wp-content/uploads/2022/11/Pop-Up-Podcast-Intro-Short-mp3-image.jpg)">
                                                         <div class="srp_swiper_overlay"></div>
                                                         <div class="srp_swiper-control">
                                                             <div class="srp_play" aria-label="Play"><i
@@ -153,13 +153,13 @@ $beats = new MediansStation($term);
                                                     </div>
                                                     <div class="srp_swiper-titles">
                                                         <div class="srp_index">1</div>
-                                                        <div class="srp_swiper-track-title"><?php echo $beat->post_title;?></div>
+                                                        <div class="srp_swiper-track-title">Night</div>
                                                         <div class="srp_swiper-track-artist"> Produced by Abel Cardin
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
                                                                     class="fas fa-ellipsis-v"></i>
                                                                 <div class="song-store-list-container"><a
-                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name;?>"
+                                                                        href="<?php echo get_site_url();?>/beats/night/"
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_self" title="$0.00" aria-label="$0.00"
                                                                         data-source-post-id="867" data-store-id="0-0"
