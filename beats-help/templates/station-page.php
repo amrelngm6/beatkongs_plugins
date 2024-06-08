@@ -130,7 +130,7 @@ $beats = $stationClass->loadStationItems();
                                     data-id="arbitrary-instance-66638ad5c0d15" data-track-sw-cursor="" data-lazyload=""
                                     data-albums="" 
                                     data-category="all"
-                                    data-url-playlist="<?php echo get_site_url();?>/?load=station.json&title=&station_id=1&albums=&category=all&posts_not_in=&category_not_in=&feed_title=&feed=&feed_img=&el_widget_id=&artwork=&posts_per_pages=-1&all_category=1&single_playlist=&reverse_tracklist=&audio_meta_field=&repeater_meta_field=&import_file=&rss_items=-1&rss_item_title=&is_favorite=&is_recentlyplayed=&srp_order=date_DESC"
+                                    data-url-playlist="<?php echo get_site_url();?>/?load=station.json&title=&station_id=<?php echo $term->term_id;?>&albums=&category=all&posts_not_in=&category_not_in=&feed_title=&feed=&feed_img=&el_widget_id=&artwork=&posts_per_pages=-1&all_category=1&single_playlist=&reverse_tracklist=&audio_meta_field=&repeater_meta_field=&import_file=&rss_items=-1&rss_item_title=&is_favorite=&is_recentlyplayed=&srp_order=date_DESC"
                                     data-sticky-player="1" data-shuffle="1" data-playlist_title="" data-scrollbar=""
                                     data-wave-color="#FDFDFB" data-wave-progress-color="#FFFFFF" data-spectro=""
                                     data-no-wave="1" data-hide-progressbar="" data-progress-bar-style=""
