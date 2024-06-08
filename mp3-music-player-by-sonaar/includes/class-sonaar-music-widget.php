@@ -3959,6 +3959,8 @@ class Sonaar_Music_Widget extends WP_Widget{
 
                         switch ($fileOrStream) {
                             case 'mp3':
+                                print_r($fileOrStream);
+
                                 if ( isset( $beatItem["track_mp3"] ) ) {
                                     $mp3_id = $beatItem["track_mp3_id"];
                                     $mp3_metadata = wp_get_attachment_metadata( $mp3_id );
@@ -4030,7 +4032,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $num = 1;
                         $album_tracks[$i] = array();
                         
-                        print_r($album_tracks);
                         $album_tracks[$i]["id"] = ( $mp3_id )? $mp3_id : '' ;
                         $album_tracks[$i]["mp3"] = $audioSrc;
                         $album_tracks[$i]["loading"] = $showLoading;
