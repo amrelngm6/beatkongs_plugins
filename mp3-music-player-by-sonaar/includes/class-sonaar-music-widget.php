@@ -3923,12 +3923,13 @@ class Sonaar_Music_Widget extends WP_Widget{
 
                     for($i = 0 ; $i < count($album_tracks) ; $i++) {
                         
-                       
+                        $beatItem = $album_tracks[$i];
+
                         $track_artist = ''; // reset artist value.
-                        $fileOrStream =  $album_tracks[$i]['FileOrStream'];
+                        $fileOrStream =  $beatItem['FileOrStream'];
                         $thumb_id = get_post_thumbnail_id($a->ID);
-                        if(isset($album_tracks[$i]["track_image_id"]) && $album_tracks[$i]["track_image_id"] != ''){
-                            $thumb_id = $album_tracks[$i]["track_image_id"];
+                        if(isset($beatItem["track_image_id"]) && $beatItem["track_image_id"] != ''){
+                            $thumb_id = $beatItem["track_image_id"];
                         }
                         
                         $artworkImageSize = ( $player == 'sticky' )? 'medium' : Sonaar_Music::get_option('music_player_coverSize', 'srmp3_settings_widget_player');
@@ -3945,7 +3946,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $media_post = false;
                         $track_description = false;
                         $audioSrc = '';
-                        $song_store_list = isset($album_tracks[$i]["song_store_list"]) ? $album_tracks[$i]["song_store_list"] : '' ;
+                        $song_store_list = isset($beatItem["song_store_list"]) ? $beatItem["song_store_list"] : '' ;
                         $album_store_list = ($wc_add_to_cart == 'true' || $wc_buynow_bt == 'true') ? $this->push_woocart_in_storelist($a, $is_variable_product, $wc_add_to_cart, $wc_buynow_bt) : false;
                        
                       
@@ -3957,12 +3958,12 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $icecast_mount = false; 
                         $showLoading = false;
                         $track_length = false;
-                        $has_lyric = (isset($album_tracks[$i]['track_lyrics']) && $album_tracks[$i]['track_lyrics'] != false)? true : false;
+                        $has_lyric = (isset($beatItem['track_lyrics']) && $beatItem['track_lyrics'] != false)? true : false;
 
                         switch ($fileOrStream) {
                             case 'mp3':
-                                if ( isset( $album_tracks[$i]["track_mp3"] ) ) {
-                                    $mp3_id = $album_tracks[$i]["track_mp3_id"];
+                                if ( isset( $beatItem["track_mp3"] ) ) {
+                                    $mp3_id = $beatItem["track_mp3_id"];
                                     $mp3_metadata = wp_get_attachment_metadata( $mp3_id );
                                     $track_title = ( isset( $mp3_metadata["title"] ) && $mp3_metadata["title"] !== '' )? $mp3_metadata["title"] : false ;
                                     $track_title = ( get_the_title($mp3_id) !== '' && $track_title !== get_the_title($mp3_id))? get_the_title($mp3_id): $track_title;
@@ -3971,7 +3972,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                                     $album_title = ( isset( $mp3_metadata['album'] ) && $mp3_metadata['album'] !== '' )? $mp3_metadata['album'] : false;
                                     $track_length = ( isset( $mp3_metadata['length_formatted'] ) && $mp3_metadata['length_formatted'] !== '' )? $mp3_metadata['length_formatted'] : false;
                                     $media_post = get_post( $mp3_id );
-                                    $track_description = ( isset ($album_tracks[$i]["track_description"]) && $album_tracks[$i]["track_description"] !== '' )? $album_tracks[$i]["track_description"] : false;
+                                    $track_description = ( isset ($beatItem["track_description"]) && $beatItem["track_description"] !== '' )? $beatItem["track_description"] : false;
                                     $audioSrc = wp_get_attachment_url($mp3_id);
                                     $showLoading = true;
                                 }
@@ -3979,50 +3980,50 @@ class Sonaar_Music_Widget extends WP_Widget{
 
                             case 'stream':
                                 
-                                $audioSrc = ( array_key_exists ( "stream_link" , $album_tracks[$i] ) && $album_tracks[$i]["stream_link"] !== '' )? $album_tracks[$i]["stream_link"] : false;
-                                $track_title = (  array_key_exists ( 'stream_title' , $album_tracks[$i] ) && $album_tracks[$i]["stream_title"] !== '' )? $album_tracks[$i]["stream_title"] : false;
-                                $album_title = ( isset ($album_tracks[$i]["stream_album"]) && $album_tracks[$i]["stream_album"] !== '' )? $album_tracks[$i]["stream_album"] : false;
-                                $track_artist = ( isset ($album_tracks[$i]["artist_name"]) && $album_tracks[$i]["artist_name"] !== '' )? $album_tracks[$i]["artist_name"] : false;
-                                $track_description = ( isset ($album_tracks[$i]["track_description"]) && $album_tracks[$i]["track_description"] !== '' )? $album_tracks[$i]["track_description"] : false;
-                                $track_length = ( isset( $album_tracks[$i]["stream_lenght"] ) && $album_tracks[$i]["stream_lenght"] !== '' ) ? $album_tracks[$i]["stream_lenght"] : false;
+                                $audioSrc = ( array_key_exists ( "stream_link" , $beatItem ) && $beatItem["stream_link"] !== '' )? $beatItem["stream_link"] : false;
+                                $track_title = (  array_key_exists ( 'stream_title' , $beatItem ) && $beatItem["stream_title"] !== '' )? $beatItem["stream_title"] : false;
+                                $album_title = ( isset ($beatItem["stream_album"]) && $beatItem["stream_album"] !== '' )? $beatItem["stream_album"] : false;
+                                $track_artist = ( isset ($beatItem["artist_name"]) && $beatItem["artist_name"] !== '' )? $beatItem["artist_name"] : false;
+                                $track_description = ( isset ($beatItem["track_description"]) && $beatItem["track_description"] !== '' )? $beatItem["track_description"] : false;
+                                $track_length = ( isset( $beatItem["stream_lenght"] ) && $beatItem["stream_lenght"] !== '' ) ? $beatItem["stream_lenght"] : false;
                                 $showLoading = true;
                                 
                                 break;
 
                             case 'icecast':
                             
-                                $audioSrc = ( array_key_exists ( "icecast_link" , $album_tracks[$i] ) && $album_tracks[$i]["icecast_link"] !== '' )? $album_tracks[$i]["icecast_link"] : false;
-                                $track_title = (  array_key_exists ( 'icecast_title' , $album_tracks[$i] ) && $album_tracks[$i]["icecast_title"] !== '' )? $album_tracks[$i]["icecast_title"] : false;
-                                $album_title = ( isset ($album_tracks[$i]["icecast_album"]) && $album_tracks[$i]["icecast_album"] !== '' )? $album_tracks[$i]["icecast_album"] : false;
-                                $feed_status = ( isset ($album_tracks[$i]["feed_status"]) && $album_tracks[$i]["feed_status"] !== '' )? $album_tracks[$i]["feed_status"] : false;
-                                $track_artist = ( isset ($album_tracks[$i]["icecast_hostname"]) && $album_tracks[$i]["icecast_hostname"] !== '' )? $album_tracks[$i]["icecast_hostname"] : false;
-                                $track_description = ( isset ($album_tracks[$i]["track_description"]) && $album_tracks[$i]["track_description"] !== '' )? $album_tracks[$i]["track_description"] : false;
+                                $audioSrc = ( array_key_exists ( "icecast_link" , $beatItem ) && $beatItem["icecast_link"] !== '' )? $beatItem["icecast_link"] : false;
+                                $track_title = (  array_key_exists ( 'icecast_title' , $beatItem ) && $beatItem["icecast_title"] !== '' )? $beatItem["icecast_title"] : false;
+                                $album_title = ( isset ($beatItem["icecast_album"]) && $beatItem["icecast_album"] !== '' )? $beatItem["icecast_album"] : false;
+                                $feed_status = ( isset ($beatItem["feed_status"]) && $beatItem["feed_status"] !== '' )? $beatItem["feed_status"] : false;
+                                $track_artist = ( isset ($beatItem["icecast_hostname"]) && $beatItem["icecast_hostname"] !== '' )? $beatItem["icecast_hostname"] : false;
+                                $track_description = ( isset ($beatItem["track_description"]) && $beatItem["track_description"] !== '' )? $beatItem["track_description"] : false;
                                 $track_length = false;
-                                $icecast_json = ( array_key_exists ( "icecast_json" , $album_tracks[$i] ) && $album_tracks[$i]["icecast_json"] !== '' )? $album_tracks[$i]["icecast_json"] : false; 
-                                $icecast_mount = ( array_key_exists ( "icecast_mount" , $album_tracks[$i] ) && $album_tracks[$i]["icecast_mount"] !== '' )? $album_tracks[$i]["icecast_mount"] : false; 
+                                $icecast_json = ( array_key_exists ( "icecast_json" , $beatItem ) && $beatItem["icecast_json"] !== '' )? $beatItem["icecast_json"] : false; 
+                                $icecast_mount = ( array_key_exists ( "icecast_mount" , $beatItem ) && $beatItem["icecast_mount"] !== '' )? $beatItem["icecast_mount"] : false; 
                                 $showLoading = true;
                                 
                                 break;   
                             default:
-                                $album_tracks[$i] = array();
+                                $beatItem = array();
                                 break;
                         }
                         $isPreview = false;
                         if ($isPreviewEnabled) {
-                           if(isset($album_tracks[$i]["audio_preview"]) && $album_tracks[$i]["audio_preview"] != ''){
-                                $file_path = str_replace($upload_dir['baseurl'], $upload_dir['basedir'], $album_tracks[$i]["audio_preview"]);
+                           if(isset($beatItem["audio_preview"]) && $beatItem["audio_preview"] != ''){
+                                $file_path = str_replace($upload_dir['baseurl'], $upload_dir['basedir'], $beatItem["audio_preview"]);
                                 // Check for non-logged-in users
                                 if (!$isUserLoggedIn) {
                                     if (file_exists($file_path)) {
                                         $isPreview = true;
-                                        $audioSrc = $album_tracks[$i]["audio_preview"];
+                                        $audioSrc = $beatItem["audio_preview"];
                                     }         
                                 }else {
                                     // Check if user role is in the allowed roles for audio preview
                                     if (array_intersect($user->roles, $allowed_roles)) {
                                         if (file_exists($file_path)) {
                                             $isPreview = true;
-                                            $audioSrc = $album_tracks[$i]["audio_preview"];
+                                            $audioSrc = $beatItem["audio_preview"];
                                         }
                                     }
                                 }
