@@ -36,7 +36,7 @@ final class MediansStation
     /**
      * Load Station items
      */
-    public function loadStationItems($term_id)
+    public function loadStationItems()
     {
         
         $args    = [
