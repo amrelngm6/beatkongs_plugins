@@ -1,5 +1,5 @@
 <?php
-
+include plugin_dir_path(__FILE__) .'../../beats-help/vendor/autoload.php';
 /**
 * Radio Widget Class
 *
