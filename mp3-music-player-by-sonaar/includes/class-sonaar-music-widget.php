@@ -3956,11 +3956,10 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $showLoading = false;
                         $track_length = false;
                         $has_lyric = (isset($beatItem['track_lyrics']) && $beatItem['track_lyrics'] != false)? true : false;
+                        print_r($fileOrStream);
 
                         switch ($fileOrStream) {
                             case 'mp3':
-                                print_r($fileOrStream);
-
                                 if ( isset( $beatItem["track_mp3"] ) ) {
                                     $mp3_id = $beatItem["track_mp3_id"];
                                     $mp3_metadata = wp_get_attachment_metadata( $mp3_id );
