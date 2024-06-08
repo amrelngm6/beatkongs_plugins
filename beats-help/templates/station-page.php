@@ -160,8 +160,8 @@ $beats = get_posts($args);
                                                         </div>
                                                     </div>
                                                     <div class="srp_swiper-titles">
-                                                        <div class="srp_index">1</div>
-                                                        <div class="srp_swiper-track-title">Night</div>
+                                                        <div class="srp_index"><?php echo $key + 1;?></div>
+                                                        <div class="srp_swiper-track-title"><?php echo $beat->post_title;?></div>
                                                         <div class="srp_swiper-track-artist"> Produced by Abel Cardin
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
@@ -298,8 +298,8 @@ $beats = get_posts($args);
                                                     data-releasedate="" data-date="2022/12/03"
                                                     data-date-formated="December 3, 2022" data-show-date=""
                                                     data-trackTitle="<?php echo $beat->post_title;?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Abel Cardin&lt;/span&gt;"
-                                                    data-artist="Abel Cardin" data-trackID="861" data-trackTime="0:30"
-                                                    data-relatedTrack="" data-post-url="" data-post-id="867"
+                                                    data-artist="Abel Cardin" data-trackID="<?php echo get_post_meta($beat->ID, 'beat_mp3', true); ?>" data-trackTime="0:30"
+                                                    data-relatedTrack="" data-post-url="" data-post-id="<?php echo $beat->ID;?>"
                                                     data-track-pos="0"
                                                     data-peakFile="<?php echo get_site_url();?>/wp-content/uploads/audio_peaks/861_preview.peak"
                                                     data-peakFile-allow="1" data-is-preview="1" data-track-lyric=""
