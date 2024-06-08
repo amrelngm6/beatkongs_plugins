@@ -27,6 +27,9 @@ $beats = $stationClass->loadStationItems();
     background-image: url("<?php echo get_site_url(); ?>/wp-content/uploads/2024/06/s0<?php echo $currentKey + 1; ?>.png");
 }
 </style>
+
+<link rel='stylesheet' id='srp-swiper-style-css' href='<?php echo get_site_url(); ?>/wp-content/plugins/sonaar-music-pro/public/css/swiper-bundle.min.css?ver=9.3.2' media='all' />
+
 <div data-elementor-type="product-archive" data-elementor-id="36"
     class="elementor elementor-36 elementor-location-archive product">
 
