@@ -1,6 +1,5 @@
 <?php
 
-include plugin_dir_path(__FILE__) .'../includes/Music/MediansStation.php';
 
 // Add Free Beats nmenu at the Dashboard sidebar
 // Also set its related taxonomies 
@@ -380,13 +379,14 @@ function medians_load_station_beats() {
     if (isset($_GET['station_id']) && isset($_GET['load']) && $_GET['load'] == 'station.json') {
         $station_id = intval(sanitize_text_field($_GET['station_id']));
 
-        if (class_exists('MediansStation')) {
-            status_header(200); // Ensure HTTP status code is 200
-            $station = get_term($station_id);
-            $class = new MediansStation($station);
-            echo $class->loadStationItemsPlayer();
-            die();
+        if (!class_exists('MediansStation')) {
+            include plugin_dir_path(__FILE__) .'../includes/Music/MediansStation.php';
         }
+        status_header(200); // Ensure HTTP status code is 200
+        $station = get_term($station_id);
+        $class = new MediansStation($station);
+        echo $class->loadStationItemsPlayer();
+        die();
     }
 }
 add_action('init', 'medians_load_station_beats');
