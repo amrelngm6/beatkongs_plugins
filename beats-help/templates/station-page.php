@@ -142,7 +142,7 @@ $beats = $stationClass->loadStationItems();
                                             data-params="{loop:false,spaceBetween:5,slidesPerView:1,speed:300,effect:'slide',breakpoints:{ 767: {slidesPerView: 1 }, 1024: {slidesPerView: 1 }, },}">
                                             <div class="swiper-wrapper">
                                                 <?php foreach ($beats as $key => $beat) { ?>
-                                                <div class="swiper-slide" data-post-id="867" data-track-pos="0"
+                                                <div class="swiper-slide" data-post-id="<?php echo $beat->ID;?>" data-track-pos="0"
                                                     data-slide-id="<?php echo $key;?>" data-slide-index="<?php echo $key;?>">
                                                     <div class="srp_swiper-album-art"
                                                         style="background-image:url(<?php echo get_the_post_thumbnail_url($beat->ID);?>)">
