@@ -1,5 +1,5 @@
 <?php
-require_once plugin_dir_path(__FILE__) .'../../beats-help/includes/Music/MediansTrack.php';
+
 /**
 * Radio Widget Class
 *
@@ -3920,8 +3920,9 @@ class Sonaar_Music_Widget extends WP_Widget{
                     */
                    
 
-                        $beatItem = (array) $a;
-
+                        $beatItem =  (array) $a ;
+                        $beatItem = array_merge(get_metadata($a->ID), $beatItem) ;
+                    print_r($beatItem);
                         $track_artist = ''; // reset artist value.
                         $fileOrStream =  $beatItem['FileOrStream'] ?? 'mp3';
                         $thumb_id = get_post_thumbnail_id($a->ID);
@@ -4047,7 +4048,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $album_tracks[$i]["album_store_list"] = $album_store_list;
                         $album_tracks[$i]['sourcePostID'] = $a->ID;
                         $album_tracks[$i]['has_lyric'] = $has_lyric;
-                        print_r($album_tracks);
                         
                         //check if track_length is less than 45 minutes
                         $album_tracks[$i]["peak_allow_frontend"] = false;
