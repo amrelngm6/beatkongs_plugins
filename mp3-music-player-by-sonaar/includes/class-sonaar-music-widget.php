@@ -3884,6 +3884,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
                            
                 if ( $trackSource == 'csv' || $trackSource == 'rss' ){
+                    print_r('$csv');
+
                      /*
                     //
                     //
