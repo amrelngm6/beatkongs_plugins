@@ -47,6 +47,9 @@ class Sonaar_Music_Widget extends WP_Widget{
             if ( isset($_GET['load']) && $_GET['load'] == 'playlist.json' ) {     
                 $this->print_playlist_json();
             }
+            if ( isset($_GET['load']) && $_GET['load'] == 'station.json' ) {     
+                $this->print_station_json();
+            }
         });
         parent::__construct('sonaar-music', esc_html_x('Sonaar: Music Player', 'Widget', 'sonaar-music'), $widget_ops);
         
@@ -3307,8 +3310,8 @@ class Sonaar_Music_Widget extends WP_Widget{
     }
 
     private function get_playlist($album_ids = array(), $category = null, $posts_not_in = null, $category_not_in = null, $title = null, $feed_title = null, $feed = null, $feed_img = null, $el_widget_id = null, $artwork = null, $posts_per_pages = null, $all_category = null, $single_playlist = false, $reverse_tracklist = false, $audio_meta_field = null, $repeater_meta_field = null, $player = 'widget', $track_desc_postcontent  = null, $import_file = null, $rss_items = -1, $rss_item_title = null, $isFavorite = null) {
-        // Capture the start time
-   // $start_time = microtime(true);
+       
+        
         global $post;
  
         $playlist = array();
@@ -4140,7 +4143,8 @@ class Sonaar_Music_Widget extends WP_Widget{
 
     }
 
-public function importFile($import_file, $a = null, $combinedtracks = false, $rss_items = -1, $rss_item_title = null, $isFavorite = null, $favoriteList = null ){
+    
+    public function importFile($import_file, $a = null, $combinedtracks = false, $rss_items = -1, $rss_item_title = null, $isFavorite = null, $favoriteList = null ){
       $upload_dir = wp_get_upload_dir();
       $peaks_dir = Sonaar_Music::get_peak_dir();
       // Load file contents into a string variable
