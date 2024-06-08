@@ -3871,7 +3871,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
         } else {      
 
-            foreach ( $albums as $a ) {
+            foreach ( $albums as $i => $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
                 $wc_buynow_bt =  $this->wc_buynow_bt($a->ID);
                 $is_variable_product = ($wc_add_to_cart == 'true' || $wc_buynow_bt == 'true' ) ? $this->is_variable_product($a->ID) : '';
@@ -3900,9 +3900,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }else{
 
                     $album_tracks = [$a];
-                    print_r($album_tracks);
                     $album_tracks = apply_filters( 'srmp3_album_tracks', $album_tracks, $a->ID );
-                   print_r($album_tracks);
                     
                 }
 
@@ -3921,10 +3919,9 @@ class Sonaar_Music_Widget extends WP_Widget{
                     //
                     */
                    
+                    print_r($album_tracks);
 
-                    for($i = 0 ; $i < count($album_tracks) ; $i++) {
-                        
-                        $beatItem = $album_tracks[$i];
+                        $beatItem = $a;
 
                         $track_artist = ''; // reset artist value.
                         $fileOrStream =  $beatItem['FileOrStream'];
@@ -4121,7 +4118,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                         if ($isFavorite){
                             $album_tracks[$i]['favorite'] = $trackFavorited;
                         }
-                    }
                     
                 }
                
