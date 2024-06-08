@@ -3479,7 +3479,6 @@ class Sonaar_Music_Widget extends WP_Widget{
     
         }
 
-        print_r($albums);
         if(Sonaar_Music::get_option('show_artist_name', 'srmp3_settings_general') ){
             $artistSeparator = (Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general') && Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general') != '' && Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general') != 'by' )?Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general'): esc_html__('by', 'sonaar-music');
             $artistSeparator = ' ' . $artistSeparator . ' ';
@@ -3668,6 +3667,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 $tracks = array_merge($tracks, $album_tracks);
             }     
         }else if ( isset($audio_meta_field) && $audio_meta_field != ''){
+            echo 'has_meta';
             // 003. FEED SOURCE IS METAKEY (ACF)
             if(is_numeric($audio_meta_field) ){
                 $meta_key_type = 'id';
@@ -3871,6 +3871,7 @@ class Sonaar_Music_Widget extends WP_Widget{
 
             }
         } else {      
+            echo 'else';
 
             foreach ( $albums as $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
