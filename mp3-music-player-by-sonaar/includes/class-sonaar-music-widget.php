@@ -4026,7 +4026,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                                 }
                             }
                         }
-                        
                         $num = 1;
                         $album_tracks[$i] = array();
                         
@@ -4048,6 +4047,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $album_tracks[$i]["album_store_list"] = $album_store_list;
                         $album_tracks[$i]['sourcePostID'] = $a->ID;
                         $album_tracks[$i]['has_lyric'] = $has_lyric;
+                        print_r($album_tracks);
                         
                         //check if track_length is less than 45 minutes
                         $album_tracks[$i]["peak_allow_frontend"] = false;
