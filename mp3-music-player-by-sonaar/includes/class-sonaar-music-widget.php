@@ -3923,8 +3923,6 @@ class Sonaar_Music_Widget extends WP_Widget{
 
                     for($i = 0 ; $i < count($album_tracks) ; $i++) {
                         
-                    print_r('$album_tracks 2 ');
-                    print_r($album_tracks[$i]);
                        
                         $track_artist = ''; // reset artist value.
                         $fileOrStream =  $album_tracks[$i]['FileOrStream'];
