@@ -286,6 +286,8 @@ IRON.sonaar = {
         }
         $(audioPlayer).attr("trackselected", eq);
         var params = audioPlayer.data("url-playlist").slice(audioPlayer.data("url-playlist").indexOf("title")).split("&");
+        console.log(params)
+        console.log(audioPlayer.data("url-playlist"))
         let newParams = [];
         params.forEach(function (el) {
           let paramName;
