@@ -2088,13 +2088,6 @@ class Sonaar_Music_Widget extends WP_Widget{
             );
         } else {
             
-            echo 'aa';
-            $tax_query = [array(
-                'taxonomy' => 'station',
-                'field'    => 'term_id',
-                'terms'    => [$station_id],
-            )];
-
             // Get the option value and ensure it's an array
             // Remove overlapping IDs
             $query_args = array(
@@ -2169,6 +2162,11 @@ class Sonaar_Music_Widget extends WP_Widget{
         if (!empty($tag_query)) {
             $query_args['tax_query'][] = $tag_query;
         }
+        $query_args['tax_query'][] =  [array(
+            'taxonomy' => 'station',
+            'field'    => 'term_id',
+            'terms'    => [$station_id],
+        )];
 
         //error_log("Query Args: " . print_r($query_args, true));
         $query = new WP_Query($query_args);
