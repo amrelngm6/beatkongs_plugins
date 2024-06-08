@@ -113,7 +113,6 @@
                 <div class="srp_track_title">{{list.tracks[currentTrack].track_title}}</div>
                 <div class="srp_artist">{{list.tracks[currentTrack].track_artist }}</div>
               </div>
-              <cta :player="this" :storeid="'srp-fav-bt'" :label=false></cta>
             </div>
             <waveform :player="this"></waveform>
             <div class="srp_ext_control" v-if="list.tracks.length >= 1">
@@ -140,6 +139,7 @@
                   <cta class="srp_ext_cta_share" :player="this" :storeid="'sr_store_force_share_bt'" :label=false></cta>
                   <cta class="srp_ext_cta_addtocart" :player="this" :storeid="'fas fa-cart-plus'" :label=true></cta>
                   <cta class="srp_ext_cta_buynow" :player="this" :storeid="'fas fa-shopping-cart'" :label=true></cta>
+                  <cta :player="this" :storeid="'srp-fav-bt'" :label=false></cta>
               </div>
             </div>
           </div>
