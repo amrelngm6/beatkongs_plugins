@@ -47,6 +47,9 @@ class Sonaar_Music_Widget extends WP_Widget{
             if ( isset($_GET['load']) && $_GET['load'] == 'playlist.json' ) {     
                 $this->print_playlist_json();
             }
+            if ( isset($_GET['load']) && $_GET['load'] == 'station.json' ) {     
+                $this->print_playlist_json();
+            }
         });
         parent::__construct('sonaar-music', esc_html_x('Sonaar: Music Player', 'Widget', 'sonaar-music'), $widget_ops);
         
