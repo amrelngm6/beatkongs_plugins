@@ -297,7 +297,7 @@ $beats = get_posts($args);
                                                     data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                     data-releasedate="" data-date="2022/12/03"
                                                     data-date-formated="December 3, 2022" data-show-date=""
-                                                    data-trackTitle="<?php echo $beat->post_title;?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Abel Cardin&lt;/span&gt;"
+                                                    data-trackTitle="<?php echo $beat->post_title;?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Cardin&lt;/span&gt;"
                                                     data-artist="Abel Cardin" data-trackID="<?php echo get_post_meta($beat->ID, 'beat_mp3', true); ?>" data-trackTime="0:30"
                                                     data-relatedTrack="" data-post-url="" data-post-id="<?php echo $beat->ID;?>"
                                                     data-track-pos="0"

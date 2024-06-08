@@ -297,7 +297,7 @@
 
         if (typeof IRON != 'undefined')
         {
-            console.log(IRON.sonaar.player.play());
+            console.log(IRON.sonaar.player);
         }
 
     });
