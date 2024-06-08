@@ -1,5 +1,6 @@
 <?php
 
+include plugin_dir_path(__FILE__) .'../includes/Music/MediansStation.php';
 
 // Add Free Beats nmenu at the Dashboard sidebar
 // Also set its related taxonomies 
@@ -377,7 +378,6 @@ function medians_load_station_beats() {
     // Check if the nonce is set and valid
 
     if (isset($_GET['station_id']) && isset($_GET['load']) && $_GET['load'] == 'station.json') {
-    echo 110;
         $station_id = intval(sanitize_text_field($_GET['station_id']));
 
         if (class_exists('MediansStation')) {
