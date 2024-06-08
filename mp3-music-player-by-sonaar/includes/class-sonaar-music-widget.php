@@ -3900,8 +3900,10 @@ class Sonaar_Music_Widget extends WP_Widget{
                     print_r('$album_tracks');
 
                     $album_tracks = [$a];
+                    print_r('$album_tracks 1 ');
                     print_r($album_tracks);
                     $album_tracks = apply_filters( 'srmp3_album_tracks', $album_tracks, $a->ID );
+                    print_r('$album_tracks 2 ');
                     print_r($album_tracks);
                     
                 }
