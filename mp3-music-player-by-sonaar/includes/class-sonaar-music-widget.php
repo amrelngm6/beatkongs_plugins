@@ -2165,12 +2165,16 @@ class Sonaar_Music_Widget extends WP_Widget{
         
         print_r($query_args);
         print_r($query_args['tax_query']);
-        $query_args['tax_query'][] =  array(
-            'taxonomy' => 'station',
-            'field'    => 'term_id',
-            'terms'    => [$station_id],
+        // $query_args['tax_query'][] =  array(
+        //     'taxonomy' => 'station',
+        //     'field'    => 'term_id',
+        //     'terms'    => [$station_id],
+        // );
+        $query_args['tax_query'][]         =  array(
+                'taxonomy' => 'station',
+                'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
+                'terms'    => array($station_id), // Replace with your categories
         );
-
         //error_log("Query Args: " . print_r($query_args, true));
         $query = new WP_Query($query_args);
         
