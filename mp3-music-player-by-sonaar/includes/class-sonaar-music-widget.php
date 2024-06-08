@@ -2163,22 +2163,16 @@ class Sonaar_Music_Widget extends WP_Widget{
             $query_args['tax_query'][] = $tag_query;
         }
         
-        print_r($query_args);
-        // $query_args['tax_query'][] =  array(
-        //     'taxonomy' => 'station',
-        //     'field'    => 'term_id',
-        //     'terms'    => [$station_id],
-        // );
+
         $query_args['tax_query'][]         =  array(
                 'taxonomy' => 'station',
                 'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
                 'terms'    => array($station_id), // Replace with your categories
         );
-        print_r($query_args['tax_query']);
+
         //error_log("Query Args: " . print_r($query_args, true));
         $query = new WP_Query($query_args);
-        print_r($query->found_posts);
-        
+
         $total_items = $query->found_posts; // 2035
         $total_pages = intval(ceil($query->max_num_pages));
         $albums = $query->posts;
@@ -3478,7 +3472,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
             $albums = get_posts($args);
         }else{
-            echo $station_id ?? 'noo';
+
             // retrieve albums from category
             $returned_data = $this->getAlbumsFromTerms($station_id, $category, $posts_not_in, $category_not_in, $posts_per_pages, true, $player, $reverse_tracklist); 
             $albums = $returned_data['albums'];// true means get post objects. false means get Ids only
