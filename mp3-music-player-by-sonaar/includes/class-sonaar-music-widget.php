@@ -3923,7 +3923,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $beatItem = (array) $a;
 
                         $track_artist = ''; // reset artist value.
-                        $fileOrStream =  $beatItem['FileOrStream'];
+                        $fileOrStream =  $beatItem['FileOrStream'] ?? 'mp3';
                         $thumb_id = get_post_thumbnail_id($a->ID);
                         if(isset($beatItem["track_image_id"]) && $beatItem["track_image_id"] != ''){
                             $thumb_id = $beatItem["track_image_id"];
@@ -3956,7 +3956,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $showLoading = false;
                         $track_length = false;
                         $has_lyric = (isset($beatItem['track_lyrics']) && $beatItem['track_lyrics'] != false)? true : false;
-                        print_r($fileOrStream);
 
                         switch ($fileOrStream) {
                             case 'mp3':
