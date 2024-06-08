@@ -2821,6 +2821,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         $feed_img = !empty($_GET["feed_img"]) ? sanitize_url($_GET["feed_img"]) : null;
         $artwork =  !empty($_GET["artwork"]) ? sanitize_url($_GET["artwork"]) : null;
         $posts_per_pages = !empty($_GET["posts_per_pages"]) ? intval($_GET["posts_per_pages"]) : null;
+        $station_id = !empty($_GET["station_id"]) ? intval($_GET["station_id"]) : null;
         $category =  !empty($_GET["category"]) ? sanitize_text_field($_GET["category"]) : null;
         $posts_not_in =  !empty($_GET["posts_not_in"]) ? sanitize_text_field($_GET["posts_not_in"]) : null;
         $category_not_in =  !empty($_GET["category_not_in"]) ? sanitize_text_field($_GET["category_not_in"]) : null;
@@ -2834,7 +2835,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         $rss_item_title = !empty($_GET["rss_item_title"]) ? sanitize_text_field($_GET["rss_item_title"]) : null;
         $isFavorite = !empty($_GET["is_favorite"]) ? sanitize_text_field($_GET["is_favorite"]) : null;
         $this->shortcodeParams = null;
-        $station = $this->get_station($albums, $category, $posts_not_in, $category_not_in, $title, $feed_title, $feed, $feed_img, $el_widget_id, $artwork, $posts_per_pages, $all_category, $single_playlist, $reverse_tracklist, $audio_meta_field, $repeater_meta_field, 'sticky', $track_desc_postcontent, $import_file, $rss_items, $rss_item_title, $isFavorite);
+        $station = $this->get_station($albums, $category, $station_id, $posts_not_in, $category_not_in, $title, $feed_title, $feed, $feed_img, $el_widget_id, $artwork, $posts_per_pages, $all_category, $single_playlist, $reverse_tracklist, $audio_meta_field, $repeater_meta_field, 'sticky', $track_desc_postcontent, $import_file, $rss_items, $rss_item_title, $isFavorite);
         if(!is_array($station) || empty($station['tracks']))
         wp_send_json('');
        
@@ -3371,9 +3372,8 @@ class Sonaar_Music_Widget extends WP_Widget{
      * Get Station items
      */
     
-     private function get_station($album_ids = array(), $category = null, $posts_not_in = null, $category_not_in = null, $title = null, $feed_title = null, $feed = null, $feed_img = null, $el_widget_id = null, $artwork = null, $posts_per_pages = null, $all_category = null, $single_playlist = false, $reverse_tracklist = false, $audio_meta_field = null, $repeater_meta_field = null, $player = 'widget', $track_desc_postcontent  = null, $import_file = null, $rss_items = -1, $rss_item_title = null, $isFavorite = null) {
+     private function get_station($album_ids = array(), $category = null, $station_id = null, $posts_not_in = null, $category_not_in = null, $title = null, $feed_title = null, $feed = null, $feed_img = null, $el_widget_id = null, $artwork = null, $posts_per_pages = null, $all_category = null, $single_playlist = false, $reverse_tracklist = false, $audio_meta_field = null, $repeater_meta_field = null, $player = 'widget', $track_desc_postcontent  = null, $import_file = null, $rss_items = -1, $rss_item_title = null, $isFavorite = null) {
        
-        
         global $post;
  
         $playlist = array();
@@ -3463,33 +3463,42 @@ class Sonaar_Music_Widget extends WP_Widget{
                     if( ($get_podcastshow_terms && $get_playlistcat_terms) || ($get_podcastshow_terms && $get_product_terms) || ($get_playlistcat_terms && $get_product_terms) ){
                         $args['tax_query'] = array('relation' => 'OR');
                     }
-                    if($get_podcastshow_terms){
-                        array_push($args['tax_query'] , array(
-                            array(
-                            'taxonomy' => 'podcast-show',
-                            'field'    => 'id',
-                            'terms'    =>  $get_podcastshow_terms
-                            ),
-                        ));
-                    }
-                    if($get_playlistcat_terms){
-                        array_push($args['tax_query'], array(
-                            array(
-                            'taxonomy' => 'playlist-category',
-                            'field'    => 'id',
-                            'terms'    =>  $get_playlistcat_terms
-                            ),
-                        ));
-                    }
-                    if($get_product_terms){
-                        array_push($args['tax_query'], array(
-                            array(
-                            'taxonomy' => 'product_cat',
-                            'field'    => 'id',
-                            'terms'    =>  $get_product_terms
-                            ),
-                        ));
-                    }
+
+                    array_push($args['tax_query'] , array(
+                        array(
+                            'taxonomy' => 'station',
+                            'field'    => 'term_id',
+                            'terms'    =>  $station_id
+                        ),
+                    ));
+
+                    // if($get_podcastshow_terms){
+                    //     array_push($args['tax_query'] , array(
+                    //         array(
+                    //         'taxonomy' => 'podcast-show',
+                    //         'field'    => 'id',
+                    //         'terms'    =>  $get_podcastshow_terms
+                    //         ),
+                    //     ));
+                    // }
+                    // if($get_playlistcat_terms){
+                    //     array_push($args['tax_query'], array(
+                    //         array(
+                    //         'taxonomy' => 'playlist-category',
+                    //         'field'    => 'id',
+                    //         'terms'    =>  $get_playlistcat_terms
+                    //         ),
+                    //     ));
+                    // }
+                    // if($get_product_terms){
+                    //     array_push($args['tax_query'], array(
+                    //         array(
+                    //         'taxonomy' => 'product_cat',
+                    //         'field'    => 'id',
+                    //         'terms'    =>  $get_product_terms
+                    //         ),
+                    //     ));
+                    // }
                 }else{
                     $args['post__in'] = $album_ids;
                 }
@@ -3523,6 +3532,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
 
             }
+            error_log(json_encode($args));
             $albums = get_posts($args);
         }else{
             
