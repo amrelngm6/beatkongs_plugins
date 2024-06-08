@@ -3906,7 +3906,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
                 
                 if ($album_tracks != '' && $trackSource == 'post'){ 
-            echo "post";
 
                     /*
                     //
@@ -4121,6 +4120,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
                
                 if (is_array($album_tracks)) {
+            echo "album_tracks";
+
                     $filtered_tracks = array();
                 
                     $tracksToFilter = array_key_exists('tracks', $album_tracks) ? $album_tracks['tracks'] : $album_tracks;
@@ -4132,6 +4133,9 @@ class Sonaar_Music_Widget extends WP_Widget{
                     }
                 
                     $tracks = array_merge($tracks, $filtered_tracks);
+                } else  {
+            echo "no album_tracks";
+
                 }
             }
 
