@@ -15,7 +15,7 @@ $term = get_queried_object();
 
 $currentKey = array_search($term->term_id, $ids);
 
-$beats = new MediansPlaylist($term);
+$beats = new MediansStation($term);
 
 ?>
 <?php get_header(); ?>
