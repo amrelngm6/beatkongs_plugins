@@ -75,7 +75,11 @@ final class MediansStation
         foreach ($beats as $key => $value) {
             $reponse[$key] = new MediansTrack($value);
         }
-        return json_encode($reponse);
+        
+        return json_encode([
+            'playlist_name' => $this->title,
+            'tracks'        => $reponse
+        ]);
     }
     
     
