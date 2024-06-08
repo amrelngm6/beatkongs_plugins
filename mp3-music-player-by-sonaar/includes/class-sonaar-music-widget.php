@@ -3478,7 +3478,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
             $albums = get_posts($args);
         }else{
-            
+            echo $station_id ?? 'noo';
             // retrieve albums from category
             $returned_data = $this->getAlbumsFromTerms($station_id, $category, $posts_not_in, $category_not_in, $posts_per_pages, true, $player, $reverse_tracklist); 
             $albums = $returned_data['albums'];// true means get post objects. false means get Ids only
