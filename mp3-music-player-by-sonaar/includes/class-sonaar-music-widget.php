@@ -3872,6 +3872,8 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
         } else {      
 
+            $station = get_term($station_id);
+            print_r($station);
             foreach ( $albums as $i => $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
                 $wc_buynow_bt =  $this->wc_buynow_bt($a->ID);
