@@ -1000,7 +1000,7 @@ IRON.sonaar = {
         }
 
         var storesObjects = [];
-        if (song_store && song_store.length < 1 || song_store.length === false) {
+        if (song_store && song_store.length < 1 || !(song_store)) {
           storesObjects = album_store !== undefined ? album_store : [];
         } else {
           storesObjects = album_store === false ? song_store : song_store.concat(album_store);
