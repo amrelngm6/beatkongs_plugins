@@ -440,6 +440,7 @@ IRON.sonaar = {
           const endingTrack = this.currentTrack;
           $.when($.getJSON(this.getPlaylistbyID(params.id, params.category, params.title, params.el_widget_id, params.jsonFromCookie))).done(
             function (data) {
+              alert('Here');
               if (!$("body").hasClass("artistPlayer-enable")) {
                 this.classes.enable = true;
                 if (!IRON.sonaar.player.classes.continued) {
