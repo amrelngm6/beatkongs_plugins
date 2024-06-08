@@ -3920,7 +3920,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                     */
                    
 
-                        $beatItem = $a;
+                        $beatItem = (array) $a;
 
                         $track_artist = ''; // reset artist value.
                         $fileOrStream =  $beatItem['FileOrStream'];
