@@ -1,6 +1,6 @@
 <?php
 
-class MediansBeat {
+class MediansTrack {
 
     
 
