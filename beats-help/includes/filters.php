@@ -57,6 +57,7 @@ function dokan_beats_page_query_vars($vars) {
 
 
 function load_custom_station_template($template) {
+    wp_register_style( 'srp-swiper-style', plugin_dir_url( __FILE__ ) . '../../sonaar-music-pro/public/css/swiper-bundle.min.css', array(), '9.3.2', 'all' );
 
     if (is_tax('station')) {
         // add_action('get_footer', 'remove_footer_design', 1);
