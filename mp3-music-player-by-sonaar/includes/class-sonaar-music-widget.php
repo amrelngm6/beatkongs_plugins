@@ -3479,6 +3479,7 @@ class Sonaar_Music_Widget extends WP_Widget{
     
         }
 
+        print_r($albums);
         if(Sonaar_Music::get_option('show_artist_name', 'srmp3_settings_general') ){
             $artistSeparator = (Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general') && Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general') != '' && Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general') != 'by' )?Sonaar_Music::get_option('artist_separator', 'srmp3_settings_general'): esc_html__('by', 'sonaar-music');
             $artistSeparator = ' ' . $artistSeparator . ' ';
