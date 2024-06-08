@@ -2,6 +2,9 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
+
+include plugin_dir_path(__FILE__) .'../includes/Music/MediansStation.php';
+
 $stations = get_terms(array(
     'taxonomy' => 'station',
     'hide_empty' => false,
@@ -12,18 +15,8 @@ $term = get_queried_object();
 
 $currentKey = array_search($term->term_id, $ids);
 
-$args    = [
-    'post_author'         => get_current_user_id(),
-    'post_type'         => 'beat',
-    'post_status'         => ['publish'],
-    'tax_query'         =>  array(
-        'taxonomy' => 'station',
-        'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
-        'terms'    => array($term->$term_id), // Replace with your categories
-    )
-];
-
-$beats = get_posts($args);
+$stationClass = new MediansStation($term);
+$beats = $stationClass->loadStationItems();
 
 ?>
 <?php get_header(); ?>
@@ -162,7 +155,7 @@ $beats = get_posts($args);
                                                     <div class="srp_swiper-titles">
                                                         <div class="srp_index"><?php echo $key + 1;?></div>
                                                         <div class="srp_swiper-track-title"><?php echo $beat->post_title;?></div>
-                                                        <div class="srp_swiper-track-artist"> Produced by <?php echo get_the_author_meta('display_name', $beat->author); ?>
+                                                        <div class="srp_swiper-track-artist"> Produced by <?php echo get_the_author_meta('display_name', $beat->post_author); ?>
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
                                                                     class="fas fa-ellipsis-v"></i>
