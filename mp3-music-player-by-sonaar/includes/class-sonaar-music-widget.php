@@ -3871,9 +3871,6 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
         } else {      
 
-            echo 'here';
-            echo count($albums);
-
             foreach ( $albums as $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
                 $wc_buynow_bt =  $this->wc_buynow_bt($a->ID);
@@ -3910,6 +3907,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                 
                 if ($album_tracks != '' && $trackSource == 'post'){ 
 
+                    echo 'here';
+                    echo count($albums);
                     /*
                     //
                     //
