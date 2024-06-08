@@ -41,7 +41,6 @@ class MediansBeat {
         $this->length = $post->length ?? "";
         $this->mp3 = $this->handleMp3Path($post->ID);
         $this->handleStoreList($post);
-
     }
 
     /**

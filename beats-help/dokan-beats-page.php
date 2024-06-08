@@ -31,18 +31,6 @@ function dokan_beats_page_template_redirect() {
     }
 }
 
-// // Add a new menu item to the Dokan vendor dashboard
-// add_action('dokan_vendor_dashboard_menu', 'add_dokan_beats_page_menu', 10);
-// function add_dokan_beats_page_menu($urls) {
-//     $urls['beats'] = array(
-//         'title' => __('Beats', 'dokan'),
-//         'url'   => site_url('/dokan-beats'),
-//         'icon'  => '<i class="fa fa-music"></i>',
-//         'pos'   => 190,
-//     );
-//     return $urls;
-// }
-
 // Enqueue scripts for the React component
 add_action('wp_enqueue_scripts', 'enqueue_dokan_beats_page_scripts');
 function enqueue_dokan_beats_page_scripts() {

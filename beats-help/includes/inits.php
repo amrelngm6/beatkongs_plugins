@@ -364,3 +364,33 @@ add_action('wp_ajax_check_post_slug', 'check_post_slug');
 add_action('wp_ajax_nopriv_check_post_slug', 'check_post_slug');
 
 
+
+
+/**
+ * Load station beats for Sonar Player
+ */
+
+/**
+ * Validate slug and check availability
+ */
+function medians_load_station_beats() {
+    // Check if the nonce is set and valid
+    check_ajax_referer('check_slug_nonce', 'security');
+
+    if (isset($_POST['slug'])) {
+        $slug = sanitize_title($_POST['slug']);
+
+        // Check if a post with the given slug already exists
+        $post_exists = get_page_by_path($slug, OBJECT);
+
+        if ($post_exists) {
+            wp_send_json_error('Slug already exists.');
+        } else {
+            wp_send_json_success('valid');
+        }
+    } else {
+        wp_send_json_error('Invalid request.');
+    }
+}
+add_action('wp_ajax_medians_load_station_beats', 'medians_load_station_beats');
+add_action('wp_ajax_nopriv_medians_load_station_beats', 'medians_load_station_beats');

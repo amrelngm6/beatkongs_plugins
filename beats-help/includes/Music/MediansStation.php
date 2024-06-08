@@ -1,5 +1,6 @@
 <?php 
 
+include 'MediansTrack.php';
 
 /**
  * Medians Beats Station
@@ -50,9 +51,32 @@ final class MediansStation
         ];
 
         return get_posts($args);
-
     }
     
+    
+    /**
+     * Load Station items
+     */
+    public function loadStationItemsPlayer()
+    {
+        
+        $args    = [
+            'post_type'         => 'beat',
+            'post_status'         => ['publish'],
+            'tax_query'         =>  array(
+                'taxonomy' => 'station',
+                'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
+                'terms'    => array($this->id), // Replace with your categories
+            )
+        ];
+
+        $reponse = [];
+        $beats = get_posts($args);
+        foreach ($beats as $key => $value) {
+            $reponse[$key] = new MediansTrack($value);
+        }
+        return json_encode($reponse);
+    }
     
     
     
