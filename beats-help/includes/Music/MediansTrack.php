@@ -24,6 +24,8 @@ class MediansBeat {
     public $description = "<p>80BPM | #piano<\/p>";
     public $icecast_json = false;
     public $icecast_mount = false;
+    public $album_store_list = [];
+    public $optional_storelist_cta = [];
 
     function __construct($post = null, ) {
         if (!$post) { return;}
@@ -37,8 +39,9 @@ class MediansBeat {
         $this->peakFile = get_site_url()."/wp-content/uploads/audio_peaks/$post->ID.peack";
         $this->length = get_post_meta($post->ID, 'beat_mp3', true) ;
         $this->length = $post->length ?? "";
-
         $this->mp3 = $this->handleMp3Path($post->ID);
+        $this->handleStoreList($post);
+
     }
 
     /**
@@ -53,6 +56,24 @@ class MediansBeat {
         return !empty($beatMP3Url) 
         ? $beatMP3Url
         : $localBeatMP3;
+        
+    }
+
+    /**
+     * Handle Beat MP3 file path
+     */
+    function handleStoreList($post) {
+        
+            $this->album_store_list[] =  
+            [
+                "store-icon" => "fas fa-cart-plus",
+                "store-link"=> get_site_url()."/beat/".$post->post_name,
+                "store-name"=> "$00.00",
+                "store-target"=> "_self",
+                "show-label"=> true,
+                "has-variation"=> true,
+                "product-id"=> get_site_url()."/beat/".$post->ID
+            ];
         
     }
 
