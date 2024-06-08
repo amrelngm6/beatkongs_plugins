@@ -136,10 +136,10 @@
               </div>
               <div class="srp_ext_featured_cta_center" @click="closeExtendedPlayer"></div>
               <div class="srp_ext_featured_cta_right">
-                  <cta class="srp_ext_cta_share" :player="this" :storeid="'sr_store_force_share_bt'" :label=false></cta>
+                <cta :player="this" :storeid="'srp-fav-bt'" :label=false></cta>
+                <cta class="srp_ext_cta_share" :player="this" :storeid="'sr_store_force_share_bt'" :label=false></cta>
                   <cta class="srp_ext_cta_addtocart" :player="this" :storeid="'fas fa-cart-plus'" :label=true></cta>
                   <cta class="srp_ext_cta_buynow" :player="this" :storeid="'fas fa-shopping-cart'" :label=true></cta>
-                  <cta :player="this" :storeid="'srp-fav-bt'" :label=false></cta>
               </div>
             </div>
           </div>
