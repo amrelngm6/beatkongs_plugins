@@ -2786,6 +2786,63 @@ class Sonaar_Music_Widget extends WP_Widget{
         wp_send_json($playlist);
         
     }
+    
+
+    
+    private function print_station_json() {
+        $jsonData = array();
+
+        if ( ! empty($_GET["albums"]) ){
+            $re = '/^\d+(?:,\d+)*$/';
+            if ( preg_match($re, $_GET["albums"]) )
+                $albums = sanitize_text_field($_GET["albums"]);
+            else
+                $albums = array();
+        }else{
+            $albums = array();
+        }
+       
+        if(!empty($_GET["el_widget_id"]) && ctype_alnum($_GET["el_widget_id"])){
+            $el_widget_id = sanitize_text_field($_GET["el_widget_id"]);
+        }else{
+            $el_widget_id = null;
+        }
+
+        $single_playlist = !empty($_GET["single_playlist"]) ? rest_sanitize_boolean($_GET["single_playlist"]) : false;
+        $title = !empty($_GET["title"]) ? sanitize_text_field($_GET["title"]) : null;
+        $feed_title = !empty($_GET["feed_title"]) ? sanitize_text_field($_GET["feed_title"]) : null;
+        if ($feed_title !== null) {
+            $feed_title = str_replace("apos;", "'", $feed_title); //replace ' with apos; to avoid conflict with json
+        }
+        $feed = !empty($_GET["feed"]) ? sanitize_text_field($_GET["feed"]) : null; 
+        if ($feed !== null) {
+            $feed = str_replace('amp;', '&', $feed); //replace & with amp; to avoid conflict with json
+        }
+        $feed_img = !empty($_GET["feed_img"]) ? sanitize_url($_GET["feed_img"]) : null;
+        $artwork =  !empty($_GET["artwork"]) ? sanitize_url($_GET["artwork"]) : null;
+        $posts_per_pages = !empty($_GET["posts_per_pages"]) ? intval($_GET["posts_per_pages"]) : null;
+        $category =  !empty($_GET["category"]) ? sanitize_text_field($_GET["category"]) : null;
+        $posts_not_in =  !empty($_GET["posts_not_in"]) ? sanitize_text_field($_GET["posts_not_in"]) : null;
+        $category_not_in =  !empty($_GET["category_not_in"]) ? sanitize_text_field($_GET["category_not_in"]) : null;
+        $all_category = !empty($_GET["all_category"]) ? true : null;
+        $reverse_tracklist = !empty($_GET["reverse_tracklist"]) ? true : false;
+        $audio_meta_field = !empty($_GET["audio_meta_field"]) ? $_GET["audio_meta_field"] : null;
+        $repeater_meta_field = !empty($_GET["repeater_meta_field"]) ? $_GET["repeater_meta_field"] : null;
+        $track_desc_postcontent = (isset($track_desc_postcontent)) ? $track_desc_postcontent : null;
+        $import_file = !empty($_GET["import_file"]) ? sanitize_url($_GET["import_file"]) : null;
+        $rss_items = !empty($_GET["rss_items"]) ?  intval($_GET["rss_items"]) : null;
+        $rss_item_title = !empty($_GET["rss_item_title"]) ? sanitize_text_field($_GET["rss_item_title"]) : null;
+        $isFavorite = !empty($_GET["is_favorite"]) ? sanitize_text_field($_GET["is_favorite"]) : null;
+        $this->shortcodeParams = null;
+        $playlist = $this->get_playlist($albums, $category, $posts_not_in, $category_not_in, $title, $feed_title, $feed, $feed_img, $el_widget_id, $artwork, $posts_per_pages, $all_category, $single_playlist, $reverse_tracklist, $audio_meta_field, $repeater_meta_field, 'sticky', $track_desc_postcontent, $import_file, $rss_items, $rss_item_title, $isFavorite);
+        if(!is_array($playlist) || empty($playlist['tracks']))
+        wp_send_json('');
+       
+        wp_send_json($playlist);
+        
+    }
+
+    
     private function findData($arr, $id, &$results = []){
         foreach ($arr as $data) {           
             if ( is_array($data) ){
