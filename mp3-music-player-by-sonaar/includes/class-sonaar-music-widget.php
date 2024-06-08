@@ -9,7 +9,6 @@ function getMp3Duration($filePath) {
     
     $mp3FilePath = str_replace(get_site_url(), '', $filePath); 
     $path =  $_SERVER['DOCUMENT_ROOT'] . $filePath;
-    echo $path;
     $fileInfo = $getID3->analyze($path);
     if (isset($fileInfo['playtime_seconds'])) {
         
