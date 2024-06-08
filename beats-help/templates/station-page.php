@@ -153,13 +153,13 @@ $beats = new MediansStation($term);
                                                     </div>
                                                     <div class="srp_swiper-titles">
                                                         <div class="srp_index">1</div>
-                                                        <div class="srp_swiper-track-title">Night</div>
+                                                        <div class="srp_swiper-track-title"><?php echo $beat->post_title;?></div>
                                                         <div class="srp_swiper-track-artist"> Produced by Abel Cardin
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
                                                                     class="fas fa-ellipsis-v"></i>
                                                                 <div class="song-store-list-container"><a
-                                                                        href="<?php echo get_site_url();?>/beats/night/"
+                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name;?>"
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_self" title="$0.00" aria-label="$0.00"
                                                                         data-source-post-id="867" data-store-id="0-0"

@@ -4,7 +4,7 @@ class MediansBeat {
 
     
 
-    public $id = 0;
+    public $ID = 0;
     public $mp3;
     public $loading = true;
     public $track_title = "";
@@ -27,7 +27,7 @@ class MediansBeat {
 
     function __construct($post = null, ) {
         if (!$post) { return;}
-        $this->id = $post->ID;
+        $this->ID = $post->ID;
         $this->sourcePostID = $post->ID;
         $this->track_title = $post->post_title;
         $this->description = $post->post_content;
@@ -78,7 +78,7 @@ class MediansBeat {
     }
         
     function setId($id) {
-        $this->id = $id;
+        $this->ID = $id;
         return $this;
     }
 
@@ -113,7 +113,7 @@ class MediansBeat {
     }
 
     function getId() {
-        return $this->id;
+        return $this->ID;
     }
 
     function getMp3() {
