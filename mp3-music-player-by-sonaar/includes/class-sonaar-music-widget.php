@@ -3897,11 +3897,12 @@ class Sonaar_Music_Widget extends WP_Widget{
                 
                     $album_tracks = $this->importFile($import_file, $a, $combinedtracks = true, $rss_items, $rss_item_title, $isFavorite, $favoriteList);
                 }else{
+                    print_r('$album_tracks');
+
                     $album_tracks = get_post_meta( $a->ID, 'alb_tracklist', true);
-                    print_r($album_tracks);
                     $album_tracks = apply_filters( 'srmp3_album_tracks', $album_tracks, $a->ID );
-                    
                     print_r($album_tracks);
+                    
                 }
 
                 if ( get_post_meta( $a->ID, 'reverse_post_tracklist', true) && is_array($album_tracks)){
