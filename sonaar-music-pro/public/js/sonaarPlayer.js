@@ -285,7 +285,7 @@ IRON.sonaar = {
           $(audioPlayer).attr("duplicating_wave", true);
         }
         $(audioPlayer).attr("trackselected", eq);
-        var params = audioPlayer.data("url-playlist").slice(audioPlayer.data("url-playlist").indexOf("title")).split("&#038;");
+        var params = audioPlayer.data("url-playlist").slice(audioPlayer.data("url-playlist").indexOf("title")).split("&");
         console.log(params)
         console.log(audioPlayer.data("url-playlist"))
         let newParams = [];
