@@ -4134,7 +4134,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 
                     $tracks = array_merge($tracks, $filtered_tracks);
                 } else  {
-            echo "no album_tracks";
+            echo "(no album_tracks)";
 
                 }
             }
