@@ -375,7 +375,6 @@ add_action('wp_ajax_nopriv_check_post_slug', 'check_post_slug');
  */
 function medians_load_station_beats() {
     // Check if the nonce is set and valid
-    check_ajax_referer('check_slug_nonce', 'security');
 
     if (isset($_GET['station_id']) && isset($_GET['load']) && $_GET['load'] == 'station.json') {
 
@@ -389,5 +388,4 @@ function medians_load_station_beats() {
         }
     }
 }
-add_action('wp_ajax_medians_load_station_beats', 'medians_load_station_beats');
-add_action('wp_ajax_nopriv_medians_load_station_beats', 'medians_load_station_beats');
+add_action('init', 'medians_load_station_beats');
