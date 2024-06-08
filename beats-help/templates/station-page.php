@@ -2,6 +2,9 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
+
+include plugin_dir_path(__FILE__) .'../includes/Music/MediansStation.php';
+
 $stations = get_terms(array(
     'taxonomy' => 'station',
     'hide_empty' => false,
@@ -12,18 +15,7 @@ $term = get_queried_object();
 
 $currentKey = array_search($term->term_id, $ids);
 
-$args    = [
-    'post_author'         => get_current_user_id(),
-    'post_type'         => 'beat',
-    'post_status'         => ['publish'],
-    'tax_query'         =>  array(
-        'taxonomy' => 'station',
-        'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
-        'terms'    => array($term->term_id), // Replace with your categories
-    )
-];
-
-$beats = get_posts($args);
+$beats = new MediansPlaylist($term);
 
 ?>
 <?php get_header(); ?>
