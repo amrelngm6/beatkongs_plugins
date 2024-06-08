@@ -111,7 +111,7 @@
             <div class="srp_ext_track" v-if="list.tracks.length >= 1">
               <div class="srp_ext_track_info">
                 <div class="srp_track_title">{{list.tracks[currentTrack].track_title}}</div>
-                <div class="srp_artist">{{list.tracks[currentTrack].track_artist }}</div>
+                <div class="srp_artist">Produced by <span style="color:#F9901D">{{list.tracks[currentTrack].track_artist }}</span></div>
               </div>
             </div>
             <waveform :player="this"></waveform>
