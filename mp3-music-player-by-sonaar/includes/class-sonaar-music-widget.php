@@ -3922,7 +3922,7 @@ class Sonaar_Music_Widget extends WP_Widget{
 
                         $beatItem =  (array) $a ;
                         $beatItem = array_merge(get_post_meta($a->ID), $beatItem) ;
-                    print_r($beatItem);
+
                         $track_artist = ''; // reset artist value.
                         $fileOrStream =  $beatItem['FileOrStream'] ?? 'mp3';
                         $thumb_id = get_post_thumbnail_id($a->ID);
