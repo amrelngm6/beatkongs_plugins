@@ -57,8 +57,9 @@ function dokan_beats_page_query_vars($vars) {
 
 
 function load_custom_station_template($template) {
+    global $wp_query;
 
-    if (is_tax('station')) {
+    if (isset($wp_query->query['station']) && is_tax('station')) {
         $plugin_template = plugin_dir_path(__FILE__) . '../templates/station-page.php';
         if (file_exists($plugin_template)) {
             return $plugin_template;
@@ -72,9 +73,7 @@ add_filter('template_include', 'load_custom_station_template');
 function load_custom_beat_template($template) {
     global $wp_query;
 
-    print_r($wp_query);
-    if (get_post_type() == 'beat') {
-        echo get_post_type();
+    if (isset($wp_query->query['post_type']) && $wp_query->query['post_type'] == 'beat') {
         $plugin_template = plugin_dir_path(__FILE__) . '../templates/beat-page.php';
         if (file_exists($plugin_template)) {
             return $plugin_template;
