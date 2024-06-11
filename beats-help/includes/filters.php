@@ -43,7 +43,7 @@ function add_custom_beats_upload_menu($urls) {
     );
     $urls['beattag'] = array(
         'title' => __('Beattag', 'dokan'),
-        'url'   => site_url('/author-beatagt'),
+        'url'   => site_url('/author-beattag'),
         'icon'  => '<i class="fa fa-microphone-lines"></i>',
         'pos'   => 190,
     );

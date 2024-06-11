@@ -37,6 +37,11 @@ if (!defined('ABSPATH')) {
             ?>
 
         <article class="dokan-product-listing-area">
+            
+            <div class="product-listing-top dokan-clearfix flex">
+                <h4 class="w-full">Beats list</h4>
+            </div>
+
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
                     <div id="user-media-library">
