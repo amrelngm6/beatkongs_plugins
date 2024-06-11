@@ -1409,6 +1409,7 @@ IRON.audioPlayer = (function ($) {
   function setMediaSessionAPI(trackTitle, albumTitle, artistName, albumArt) {
     //WIP: Does not work with the mini-player play button. Works only when click in the tracklist.
     if ('mediaSession' in navigator) {
+      console.log(trackTitle, albumTitle, artistName, albumArt)
       navigator.mediaSession.metadata = new MediaMetadata({
         title: trackTitle,
         artist: albumTitle, // We want to show album Title instead of artist name in the Notification
