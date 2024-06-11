@@ -323,3 +323,4 @@ include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 		</div>
 	</div>
 </div>
+<?php get_footer(); ?>
