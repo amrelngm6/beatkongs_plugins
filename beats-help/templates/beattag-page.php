@@ -114,6 +114,7 @@ if (!defined('ABSPATH')) {
         jQuery('.beattag').addClass('active')
 
         jQuery(document).on('click', '#file-remove', function (){
+            jQuery('#file-name').text(' ');
             jQuery('#beattag-file-demo').html(' ');
             jQuery('#beattag_file_input_id').val('');
             jQuery('#beattag_file_input_path').val('');
