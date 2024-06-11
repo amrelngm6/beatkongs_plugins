@@ -49,13 +49,13 @@ if (!defined('ABSPATH')) {
                 <input type="hidden" name="author_id" value="<?php echo get_current_user_id(); ?>" />
                 <input type="hidden" id="beattag_file_input_id" name="beattag_file_id" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_file_id', true); ?>" />
                 <input type="hidden" id="beattag_file_input_path" name="beattag_file" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>" />
-                <input type="hidden" id="beattag_file_name" name="beattag_filename" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_filename', true); ?>" />
+                <input type="hidden" id="beattag_file_name" name="beattag_file_nane" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_filename', true); ?>" />
                 <div class="w-48"> Watermark </div>
                 <div> 
                     <button class="cursor-pointer " data-preview="#beattag-file-demo" id="open-media-library"> Add or Upload File</button>
                     <p><small>You can choose to play beattag every X seconds.</small></p>
                     <p>
-                        File: <span id="file-name"><?php echo get_user_meta(get_current_user_id(), 'beattag_filename', true); ?></span>
+                        File: <span id="file-name"><?php echo get_user_meta(get_current_user_id(), 'beattag_file_nane', true); ?></span>
                         ( <a id="file-download" href="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>"> Download </a> / <a  id="file-remove">Remove</a>)
                     </p>
                     <div id="beattag-file-demo"></div>
