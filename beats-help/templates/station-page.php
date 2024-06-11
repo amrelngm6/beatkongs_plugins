@@ -166,25 +166,25 @@ $beats = $stationClass->loadStationItems();
                                                                         href="<?php echo get_site_url();?>/beats/night/"
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_self" title="$0.00" aria-label="$0.00"
-                                                                        data-source-post-id="867" data-store-id="0-0"
+                                                                        data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>" data-store-id="0-0"
                                                                         tabindex="1"><i
                                                                             class="fas fa-cart-plus"></i><span
                                                                             class="srp_cta_label">$0.00</span></a><a
                                                                         href="<?php echo get_site_url();?>/beats/night/"
                                                                         class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
                                                                         target="_self" title="View Beat"
-                                                                        aria-label="View Beat" data-source-post-id="867"
+                                                                        aria-label="View Beat" data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                                         data-store-id="0-1" tabindex="1"><i
                                                                             class="sricon-info"></i><span
                                                                             class="srp_cta_label">View Beat</span></a><a
                                                                         href="<?php echo get_site_url();?>/beats/night/"
                                                                         class="song-store sr_store_force_share_bt"
                                                                         target="_self" title="Share" aria-label="Share"
-                                                                        data-source-post-id="867" data-store-id="0-2"
+                                                                        data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>" data-store-id="0-2"
                                                                         tabindex="1"><i class="sricon-share"></i></a><a
                                                                         href="#" class="song-store srp-fav-bt"
                                                                         target="_self" title="Like" aria-label="Like"
-                                                                        data-source-post-id="867" data-store-id="0-3"
+                                                                        data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>" data-store-id="0-3"
                                                                         tabindex="1"><i
                                                                             class="sricon-heart-fill"></i></a></div>
                                                             </div>
@@ -312,25 +312,25 @@ $beats = $stationClass->loadStationItems();
                                                                         href="<?php echo get_site_url();?>/beats/night/"
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_self" title="$0.00" aria-label="$0.00"
-                                                                        data-source-post-id="867" data-store-id="0-0"
+                                                                        data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>" data-store-id="0-0"
                                                                         tabindex="1"><i
                                                                             class="fas fa-cart-plus"></i><span
                                                                             class="srp_cta_label">$0.00</span></a><a
                                                                         href="<?php echo get_site_url();?>/beats/night/"
                                                                         class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
                                                                         target="_self" title="View Beat"
-                                                                        aria-label="View Beat" data-source-post-id="867"
+                                                                        aria-label="View Beat" data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>"
                                                                         data-store-id="0-1" tabindex="1"><i
                                                                             class="sricon-info"></i><span
                                                                             class="srp_cta_label">View Beat</span></a><a
                                                                         href="<?php echo get_site_url();?>/beats/night/"
                                                                         class="song-store sr_store_force_share_bt"
                                                                         target="_self" title="Share" aria-label="Share"
-                                                                        data-source-post-id="867" data-store-id="0-2"
+                                                                        data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>" data-store-id="0-2"
                                                                         tabindex="1"><i class="sricon-share"></i></a><a
                                                                         href="#" class="song-store srp-fav-bt"
                                                                         target="_self" title="Like" aria-label="Like"
-                                                                        data-source-post-id="867" data-store-id="0-3"
+                                                                        data-source-post-id="<?php echo get_the_post_thumbnail_url($beat->ID);?>" data-store-id="0-3"
                                                                         tabindex="1"><i
                                                                             class="sricon-heart-fill"></i></a></div>
                                                             </div>
