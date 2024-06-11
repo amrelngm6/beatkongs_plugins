@@ -53,6 +53,7 @@ if (!defined('ABSPATH')) {
                 <div class="w-48"> Beat Tag </div>
                 <div> 
                     <button class="cursor-pointer " data-preview="#beattag-file-demo" id="open-media-library"> Add or Upload File</button>
+                    <span class="w-full block"><small>You can choose to play Beat Tag every X seconds.</small></span>
                     <p>
                         File: <span id="file-name"><?php echo get_user_meta(get_current_user_id(), 'beattag_file_name', true); ?></span>
                         ( <a id="file-download" href="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>"> Download </a> / <a href="javascript:;" id="file-remove">Remove</a>)
@@ -64,7 +65,7 @@ if (!defined('ABSPATH')) {
             <div class="flex w-full">
                 <div class="w-48"> Loop Beat Tag </div>
                 <div> 
-                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" />  <span><small>You can choose to play Beat Tag every X seconds.</small></span>
+                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" />  
                     <div class="w-full flex">
                         <span class="w-full">0</span>
                         <span>20</span>
