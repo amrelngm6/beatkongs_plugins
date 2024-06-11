@@ -36,6 +36,7 @@ if (!defined('ABSPATH')) {
             do_action( 'dokan_dashboard_content_inside_before' );
             ?>
 
+    <form class="dokan-beat-license-edit-form" role="form" method="post" id="post">
         <article class="dokan-product-listing-area bg-white">
             
             <div class="product-listing-top dokan-clearfix flex">
@@ -43,7 +44,6 @@ if (!defined('ABSPATH')) {
                 <hr />
             </div>
             <div class="flex w-full">
-            <form class="dokan-beat-license-edit-form" role="form" method="post" id="post">
                 <?php wp_nonce_field(basename(__FILE__), 'beat_nonce'); ?>
                 <input type="hidden" name="beat_beattag_edit" value="true" />
                 <input type="hidden" name="author_id" value="<?php echo get_current_user(); ?>" />
@@ -66,8 +66,7 @@ if (!defined('ABSPATH')) {
                 <div> 
                     <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta($beat->post_author, 'beattag_time', true); ?>" />
                     <p>
-                        File: <span id="file-name"></span>
-                        ( <a id="file-download"></a> / <a id="file-remove"></a>)
+                        0
                     </p>
                 </div>
             </div>
@@ -84,7 +83,7 @@ if (!defined('ABSPATH')) {
                 </main><!-- #main -->
             </div><!-- #primary -->
         </article>
-
+    </form>
         <?php
 
                 /**
