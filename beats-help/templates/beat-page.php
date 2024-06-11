@@ -254,12 +254,11 @@ $class->setDefaultValue($postMeta);
 
 
 										<form class="cart"
-											action="https://beatkongs.medianssolutions.com/beats/cinematic-essentials-soundkit/"
+											action="<?php echo get_site_url(); ?>/beat/<?php echo $beat->post_name; ?>"
 											method="post" enctype='multipart/form-data'>
 
 											<div class="quantity">
-												<label class="screen-reader-text" for="quantity_66685c3434798">Cinematic
-													Essentials - SoundKit quantity</label>
+												<label class="screen-reader-text" for="quantity_66685c3434798"><?php echo $beat->post_title; ?></label>
 												<input type="hidden" id="quantity_66685c3434798"
 													class="input-text qty text" name="quantity" value="1"
 													aria-label="Product quantity" size="4" min="1" max="1" step="1"

@@ -50,10 +50,10 @@ if (!defined('ABSPATH')) {
                 <input type="hidden" id="beattag_file_input_id" name="beattag_file_id" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_file_id', true); ?>" />
                 <input type="hidden" id="beattag_file_input_path" name="beattag_file" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>" />
                 <input type="hidden" id="beattag_file_input_name" name="beattag_file_name" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_file_name', true); ?>" />
-                <div class="w-48"> Watermark </div>
+                <div class="w-48"> Beat Tag </div>
                 <div> 
                     <button class="cursor-pointer " data-preview="#beattag-file-demo" id="open-media-library"> Add or Upload File</button>
-                    <p><small>You can choose to play beattag every X seconds.</small></p>
+                    <p><small>You can choose to play Beat Tag every X seconds.</small></p>
                     <p>
                         File: <span id="file-name"><?php echo get_user_meta(get_current_user_id(), 'beattag_file_name', true); ?></span>
                         ( <a id="file-download" href="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>"> Download </a> / <a href="javascript:;" id="file-remove">Remove</a>)
@@ -63,7 +63,7 @@ if (!defined('ABSPATH')) {
             </div>
             <hr />
             <div class="flex w-full">
-                <div class="w-48"> Loop watermark every </div>
+                <div class="w-48"> Loop Beat Tag </div>
                 <div> 
                     <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" />
                     <div class="w-full flex">
