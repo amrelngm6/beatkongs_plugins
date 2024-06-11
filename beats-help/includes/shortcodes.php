@@ -21,12 +21,17 @@ function dokan_licenses_contracts_edit_page_template() {
     include plugin_dir_path(__FILE__) . '../templates/licenses-contracts-edit-page.php';
 }
 
-// Licenses & Contracts edit form shortcode  [media_page]
+// Media upload form shortcode  [media_page]
 function dokan_media_page_template() {
     include plugin_dir_path(__FILE__) . '../templates/media-page.php';
 }
 
-// Licenses & Contracts edit form shortcode  [media_page]
+// Beattag page form shortcode  [beattag_page]
+function dokan_beattag_page_template() {
+    include plugin_dir_path(__FILE__) . '../templates/beattag-page.php';
+}
+
+// Stations page shortcode  [media_page]
 function dokan_media_stations_page_template() {
     include plugin_dir_path(__FILE__) . '../templates/stations-page.php';
 }
