@@ -46,12 +46,23 @@ if (!defined('ABSPATH')) {
                 <div class="w-48"> Watermark </div>
                 <div> 
                     <button class="cursor-pointer " id="open-media-library"> Add or Upload File</button>
+                    <p><small>You can choose to play beattag every X seconds.</small></p>
+                    <p>
+                        File: <span id="file-name"><?php echo get_user_meta($beat->post_author, 'beattag_file', true); ?></span>
+                        ( <a id="file-download"> Download </a> / <a id="file-remove">Remove</a>)
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <div class="flex w-full">
+                <div class="w-48"> Loop watermark every </div>
+                <div> 
+                    <input type="range" min="1" max="20" value="<?php echo get_user_meta($beat->post_author, 'beattag_time', true); ?>" />
                     <p>
                         File: <span id="file-name"></span>
                         ( <a id="file-download"></a> / <a id="file-remove"></a>)
                     </p>
                 </div>
-                
             </div>
 
             <div id="primary" class="content-area">
