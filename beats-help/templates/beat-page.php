@@ -210,7 +210,7 @@ $class->setDefaultValue($postMeta);
 								data-widget_type="woocommerce-product-price.default">
 								<div class="elementor-widget-container">
 									<p class="price">
-                                    <?php echo $class->getLowestPrice($postMeta); ?>
+                                    $<?php echo $class->getLowestPrice($postMeta); ?>
                                     </p>
 								</div>
 							</div>
