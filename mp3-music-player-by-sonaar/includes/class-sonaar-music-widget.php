@@ -4140,8 +4140,11 @@ class Sonaar_Music_Widget extends WP_Widget{
                         if ($isFavorite){
                             $album_tracks[$i]['favorite'] = $trackFavorited;
                         }
-                    
-                }
+                    if (!$audioSrc)
+                    {
+                        $album_tracks[$i] = null;
+                    }
+                }   
                
                 
                 if (is_array($album_tracks)) {
