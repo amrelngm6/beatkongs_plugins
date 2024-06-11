@@ -71,6 +71,19 @@ function load_custom_station_template($template) {
 add_filter('template_include', 'load_custom_station_template');
 
 
+function load_custom_beat_template($template) {
+
+    if (get_post_type() == 'beat') {
+        $plugin_template = plugin_dir_path(__FILE__) . '../templates/beat-page.php';
+        if (file_exists($plugin_template)) {
+            return $plugin_template;
+        }
+    }
+    return $template    ;
+}
+add_filter('template_include', 'load_custom_station_template');
+
+
 
 
 // Move all scripts to footer
