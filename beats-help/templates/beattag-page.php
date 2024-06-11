@@ -46,16 +46,16 @@ if (!defined('ABSPATH')) {
             <div class="flex w-full">
                 <?php wp_nonce_field(basename(__FILE__), 'beat_nonce'); ?>
                 <input type="hidden" name="beat_beattag_edit" value="true" />
-                <input type="hidden" name="author_id" value="<?php echo $beat->post_author; ?>" />
-                <input type="hidden" id="beattag_file_input_id" name="beattag_file_id" value="<?php echo get_user_meta($beat->post_author, 'beattag_file_id', true); ?>" />
-                <input type="hidden" id="beattag_file_input_path" name="beattag_file" value="<?php echo get_user_meta($beat->post_author, 'beattag_file', true); ?>" />
-                <input type="hidden" id="beattag_file_name" name="beattag_filename" value="<?php echo get_user_meta($beat->post_author, 'beattag_filename', true); ?>" />
+                <input type="hidden" name="author_id" value="<?php echo get_current_user_id(); ?>" />
+                <input type="hidden" id="beattag_file_input_id" name="beattag_file_id" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_file_id', true); ?>" />
+                <input type="hidden" id="beattag_file_input_path" name="beattag_file" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>" />
+                <input type="hidden" id="beattag_file_name" name="beattag_filename" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_filename', true); ?>" />
                 <div class="w-48"> Watermark </div>
                 <div> 
                     <button class="cursor-pointer " data-preview="#beattag-file-demo" id="open-media-library"> Add or Upload File</button>
                     <p><small>You can choose to play beattag every X seconds.</small></p>
                     <p>
-                        File: <span id="file-name"><?php echo get_user_meta($beat->post_author, 'beattag_file', true); ?></span>
+                        File: <span id="file-name"><?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?></span>
                         ( <a id="file-download"> Download </a> / <a id="file-remove">Remove</a>)
                     </p>
                     <div id="beattag-file-demo"></div>
@@ -65,7 +65,7 @@ if (!defined('ABSPATH')) {
             <div class="flex w-full">
                 <div class="w-48"> Loop watermark every </div>
                 <div> 
-                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta($beat->post_author, 'beattag_time', true); ?>" />
+                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" />
                     <div class="w-full flex">
                         <span class="w-full">0</span>
                         <span>20</span>
