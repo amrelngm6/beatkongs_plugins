@@ -43,21 +43,28 @@ if (!defined('ABSPATH')) {
                 <hr />
             </div>
             <div class="flex w-full">
+            <form class="dokan-beat-license-edit-form" role="form" method="post" id="post">
+                <?php wp_nonce_field(basename(__FILE__), 'beat_nonce'); ?>
+                <input type="hidden" name="beat_beattag_edit" value="true" />
+                <input type="hidden" name="author_id" value="<?php echo get_current_user(); ?>" />
+                <input type="hidden" id="beattag_file_input_id" name="beattag_file_id" value="<?php echo get_user_meta($beat->post_author, 'beattag_file_id', true); ?>" />
+                <input type="hidden" id="beattag_file_input_path" name="beattag_file" value="<?php echo get_user_meta($beat->post_author, 'beattag_file', true); ?>" />
                 <div class="w-48"> Watermark </div>
                 <div> 
-                    <button class="cursor-pointer " id="open-media-library"> Add or Upload File</button>
+                    <button class="cursor-pointer " data-preview="#beattag-file-demo" id="open-media-library"> Add or Upload File</button>
                     <p><small>You can choose to play beattag every X seconds.</small></p>
                     <p>
                         File: <span id="file-name"><?php echo get_user_meta($beat->post_author, 'beattag_file', true); ?></span>
                         ( <a id="file-download"> Download </a> / <a id="file-remove">Remove</a>)
                     </p>
+                    <div id="beattag-file-demo"></div>
                 </div>
             </div>
             <hr />
             <div class="flex w-full">
                 <div class="w-48"> Loop watermark every </div>
                 <div> 
-                    <input type="range" min="1" max="20" value="<?php echo get_user_meta($beat->post_author, 'beattag_time', true); ?>" />
+                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta($beat->post_author, 'beattag_time', true); ?>" />
                     <p>
                         File: <span id="file-name"></span>
                         ( <a id="file-download"></a> / <a id="file-remove"></a>)
@@ -111,6 +118,7 @@ if (!defined('ABSPATH')) {
         var mediaFrame;
         $('#open-media-library').on('click', function(e) {
             e.preventDefault();
+            var previewElement = $(this).attr('data-preview')
 
             // If the media frame already exists, reopen it.
             if (mediaFrame) {
@@ -125,6 +133,39 @@ if (!defined('ABSPATH')) {
                     text: 'Insert Media'
                 },
                 multiple: true
+            });
+
+            mediaFrame.on('close',function() {
+                // On close, get selections and save to the hidden input
+                // plus other AJAX stuff to refresh the image preview
+                var selection =  mediaFrame.state().get('selection');
+                var gallery_ids = 0;
+                var selected = 0;
+                var i = 0;
+                selection.each(function(attachment) {
+                    selected = attachment.attributes.url;
+                    gallery_ids = attachment['id'];
+                i++;
+                });
+                if(gallery_ids === 0) return true;//if closed withput selecting an image
+                selected ? jQuery(previewElement).html( $('<audio src="'+selected+'"  controls />')) : '';
+
+                // jQuery('#beat-preview-image').attr('src', selected );
+                jQuery('#beattag_file_input_id').val(gallery_ids);
+                jQuery('#beattag_file_input_path').val(selected);
+            });
+
+            mediaFrame.on('open',function() {
+                // // On open, get the id from the hidden input
+                // // and select the appropiate images in the media manager
+                // var selection =  mediaFrame.state().get('selection');
+                // var ids = jQuery('input#beat_image_id').val().split(',');
+                // ids.forEach(function(id) {
+                //     var attachment = wp.media.attachment(id);
+                //     attachment.fetch();
+                //     selection.add( attachment ? [ attachment ] : [] );
+                // });
+
             });
 
             // Finally, open the modal on click

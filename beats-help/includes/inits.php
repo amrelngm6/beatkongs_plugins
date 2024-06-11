@@ -338,6 +338,70 @@ function beats_license_handle_form_submission()
 }
 
 
+
+/**
+ * Submit Author Beattag edit form
+ * Request Type ->  POST
+ * 
+ * @param beattag_time
+ * @param beattag_file
+ * @return WP_Redirect 
+ */
+function beats_beattag_handle_form_submission() 
+{
+    global $beatsErrors, $beatsSucess;
+
+    if (isset($_POST['beat_beattag_edit'])) {
+        
+        if ( ! function_exists('media_handle_upload') ) {
+            require_once(ABSPATH . 'wp-admin/includes/file.php');
+            require_once(ABSPATH . 'wp-admin/includes/media.php');
+            require_once(ABSPATH . 'wp-admin/includes/image.php');
+        }
+
+        $title = sanitize_text_field($_POST['beattag_file']);
+        $type = sanitize_text_field($_POST['beattag_time']);
+        $beat_id = sanitize_text_field($_POST['beat_id']);
+        
+        
+        // Create a new post of custom post type 'usage-terms'
+        $license_post = array(
+            'ID'    => $beat_id,
+            'post_title'    => $title,
+            'post_content'  => '',
+            'post_excerpt'  => '',
+            'post_status'   => 'publish',
+            'post_type'     => $type,
+            'post_parent'     => intval($post_parent),
+            'meta_input'    => array(
+                'usageterms_filetypes' => $usageterms_filetypes,
+                'usageterms_producer_alias' => $usageterms_producer_alias ,
+                'usageterms_num_dist_copies' => $usageterms_num_dist_copies ,
+                'usageterms_num_audio_streams' => $usageterms_num_audio_streams ,
+                'usageterms_num_radio_stations' => $usageterms_num_radio_stations ,
+                'usageterms_num_free_downloads' => $usageterms_num_free_downloads ,
+                'usageterms_num_music_videos' => $usageterms_num_music_videos ,
+                'usageterms_num_monetized_video_streams' => $usageterms_num_monetized_video_streams ,
+                'usageterms_state' => $usageterms_state ,
+                'usageterms_country' => $usageterms_country ,
+                'usageterms_allow_profit_performances' => $usageterms_allow_profit_performances ,
+                'usageterms_contract' => $usageterms_contract,
+            ),
+        );
+        
+        
+        $licenseId = !empty($license_post['ID']) ? wp_update_post($license_post) : wp_insert_post($license_post);
+        
+        if ($licenseId) {
+            wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
+            exit;
+        }
+    }
+
+}
+
+
+
 /**
  * Validate slug and check availability
  */
