@@ -49,7 +49,7 @@ $beat = get_post($wp_query->query['beat']);
 								<div class="elementor-widget-container">
 									<h1
 										class="product_title entry-title elementor-heading-title elementor-size-default">
-										Cinematic Essentials - SoundKit</h1>
+										<?php echo $beat->post_title; ?></h1>
 								</div>
 							</div>
 							<div class="elementor-element elementor-element-af00b6d elementor-widget elementor-widget-heading"
@@ -170,7 +170,7 @@ $beat = get_post($wp_query->query['beat']);
 														data-filters="product_cat,product_tag,instruments,mood,bpm">
 														<li class="sr-playlist-item sr-playlist-item-flex"
 															data-audiopath="" data-showloading=""
-															data-albumTitle="Cinematic Essentials - SoundKit"
+															data-albumTitle="<?php echo $beat->post_title; ?>"
 															data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID); ?>"
 															data-releasedate="" data-date="2022/03/09"
 															data-date-formated="March 9, 2022" data-show-date=""
@@ -292,7 +292,7 @@ $beat = get_post($wp_query->query['beat']);
 							data-widget_type="woocommerce-product-title.default">
 							<div class="elementor-widget-container">
 								<h1 class="product_title entry-title elementor-heading-title elementor-size-default">
-									Share "Cinematic Essentials - SoundKit"</h1>
+									Share "<?php echo $beat->post_title; ?>"</h1>
 							</div>
 						</div>
 						<div class="elementor-element elementor-element-75ed2d1 elementor-share-buttons--view-icon elementor-share-buttons--skin-flat elementor-share-buttons--shape-circle elementor-share-buttons--align-center elementor-share-buttons--color-custom elementor-share-buttons-tablet--align-center elementor-share-buttons-mobile--align-left elementor-grid-0 elementor-widget elementor-widget-share-buttons"
