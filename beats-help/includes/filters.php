@@ -81,7 +81,7 @@ function load_custom_beat_template($template) {
     }
     return $template    ;
 }
-add_filter('template_include', 'load_custom_station_template');
+add_filter('template_include', 'load_custom_beat_template');
 
 
 
