@@ -144,9 +144,9 @@ if (!defined('ABSPATH')) {
                 var gallery_ids = 0;
                 var selected = 0;
                 var i = 0;
-                console.log(selection)
                 selection.each(function(attachment) {
                     selected = attachment.attributes.url;
+                    console.log(attachment)
                     gallery_ids = attachment['id'];
                     name = attachment['name'] ?? '';
                     title = attachment['title'] ?? '';
