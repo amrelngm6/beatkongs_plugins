@@ -56,7 +56,7 @@ if (!defined('ABSPATH')) {
                     <p><small>You can choose to play beattag every X seconds.</small></p>
                     <p>
                         File: <span id="file-name"><?php echo get_user_meta(get_current_user_id(), 'beattag_file_name', true); ?></span>
-                        ( <a id="file-download" href="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>"> Download </a> / <a  id="file-remove">Remove</a>)
+                        ( <a id="file-download" href="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>"> Download </a> / <a href="javascript:;" id="file-remove">Remove</a>)
                     </p>
                     <div id="beattag-file-demo"></div>
                 </div>
