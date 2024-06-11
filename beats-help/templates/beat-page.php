@@ -7,7 +7,6 @@ global $wp_query;
 
 include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 $beat = get_post($wp_query->query['beat']);
-print_r($beat);
 ?>
 <?php get_header(); ?>
 <link rel='stylesheet' id='srp-swiper-style-css' href='<?php echo get_site_url(); ?>/wp-content/plugins/sonaar-music-pro/public/css/swiper-bundle.min.css?ver=9.3.2' media='all' />
@@ -34,9 +33,9 @@ print_r($beat);
 								data-id="6431001" data-element_type="widget" data-widget_type="image.default">
 								<div class="elementor-widget-container">
 									<img fetchpriority="high" width="500" height="500"
-										src="https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2.png"
+										src="<?php echo get_the_post_thumbnail_url($beat->ID); ?>"
 										class="attachment-large size-large wp-image-538" alt=""
-										srcset="https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2.png 500w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-150x150.png 150w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-300x300.png 300w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-450x450.png 450w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-100x100.png 100w"
+										srcset="<?php echo get_the_post_thumbnail_url($beat->ID); ?> 500w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-150x150.png 150w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-300x300.png 300w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-450x450.png 450w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-100x100.png 100w"
 										sizes="(max-width: 500px) 100vw, 500px" />
 								</div>
 							</div>
@@ -172,7 +171,7 @@ print_r($beat);
 														<li class="sr-playlist-item sr-playlist-item-flex"
 															data-audiopath="" data-showloading=""
 															data-albumTitle="Cinematic Essentials - SoundKit"
-															data-albumArt="https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2.png"
+															data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID); ?>"
 															data-releasedate="" data-date="2022/03/09"
 															data-date-formated="March 9, 2022" data-show-date=""
 															data-trackTitle="Track 1&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;/span&gt;"
