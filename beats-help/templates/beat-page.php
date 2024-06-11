@@ -7,6 +7,8 @@ include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 ?>
 <?php get_header(); ?>
 
+<link rel='stylesheet' id='elementor-post-49-css' href='<?php echo get_site_url(); ?>/wp-content/uploads/elementor/css/post-49.css?ver=1715796648' media='all' />
+
 <div data-elementor-type="product" data-elementor-id="49"
 	class="elementor elementor-49 elementor-location-single post-383 product type-product status-publish has-post-thumbnail product_cat-hiphop product_tag-rap first instock sale downloadable virtual sold-individually purchasable product-type-simple product">
 	<div class="elementor-section-wrap">
