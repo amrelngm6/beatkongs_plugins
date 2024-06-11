@@ -36,10 +36,16 @@ if (!defined('ABSPATH')) {
             do_action( 'dokan_dashboard_content_inside_before' );
             ?>
 
-        <article class="dokan-product-listing-area">
+        <article class="dokan-product-listing-area bg-white">
             
             <div class="product-listing-top dokan-clearfix flex">
-                <h4 class="w-full">Beats list</h4>
+                <h4 class="w-full">Beattag</h4>
+                <hr />
+            </div>
+            <div class="flex w-full">
+                <div class="w-96"> Watermark </div>
+                <div> Content </div>
+                
             </div>
 
             <div id="primary" class="content-area">
