@@ -55,7 +55,7 @@ $beat = get_post($wp_query->query['beat']);
 							<div class="elementor-element elementor-element-af00b6d elementor-widget elementor-widget-heading"
 								data-id="af00b6d" data-element_type="widget" data-widget_type="heading.default">
 								<div class="elementor-widget-container">
-									<div class="elementor-heading-title elementor-size-default">admin</div>
+									<div class="elementor-heading-title elementor-size-default"><?php echo get_the_author_meta('display_name', $beat->post_author); ?></div>
 								</div>
 							</div>
 							<div class="elementor-element elementor-element-a862d5c e-flex e-con-boxed e-con e-child"
@@ -72,9 +72,17 @@ $beat = get_post($wp_query->query['beat']);
 
 
 										<span class="posted_in detail-container"><span class="detail-label">Genre</span>
-											<span class="detail-content"><a
-													href="https://beatkongs.medianssolutions.com/stations/hiphop/"
-													rel="tag">Hip Hop</a></span></span>
+											<span class="detail-content">
+                                            <?php 
+                                                $selectedCategory = wp_get_post_terms( $beatId, 'category');
+                                                $selectedStation = wp_get_post_terms( $beatId, 'station');
+                                                foreach ($selectedCategory as $key => $value) {
+                                            ?>
+                                            <a
+													href="<?php echo get_site_url(); ?>/stations/<?php echo $value->slug; ?>"
+													rel="tag"><?php echo $value->name; ?></a>
+                                            <?php  } ?>
+                                            </span></span>
 
 										<span class="tagged_as detail-container"><span class="detail-label">Tag</span>
 											<span class="detail-content"><a
