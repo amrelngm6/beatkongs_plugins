@@ -55,8 +55,8 @@ if (!defined('ABSPATH')) {
                     <button class="cursor-pointer " data-preview="#beattag-file-demo" id="open-media-library"> Add or Upload File</button>
                     <p><small>You can choose to play beattag every X seconds.</small></p>
                     <p>
-                        File: <span id="file-name"><?php $ex = explode('/', get_user_meta(get_current_user_id(), 'beattag_file', true)); echo end($ex) ; ?></span>
-                        ( <a id="file-download"> Download </a> / <a id="file-remove">Remove</a>)
+                        File: <span id="file-name"><?php echo get_user_meta(get_current_user_id(), 'beattag_filename', true); ?></span>
+                        ( <a id="file-download" href="<?php echo get_user_meta(get_current_user_id(), 'beattag_file', true); ?>"> Download </a> / <a  id="file-remove">Remove</a>)
                     </p>
                     <div id="beattag-file-demo"></div>
                 </div>
@@ -112,6 +112,13 @@ if (!defined('ABSPATH')) {
     window.addEventListener("load", (event) => {
         jQuery('.active.dashboard').removeClass('active')
         jQuery('.beattag').addClass('active')
+
+        jQuery(document).on('click', '#file-remove', function (){
+            jQuery('#beattag-file-demo').html(' ');
+            jQuery('#beattag_file_input_id').val('');
+            jQuery('#beattag_file_input_path').val('');
+            jQuery('#beattag_file_name').val('');
+        });
 
         var mediaFrame;
         $('#open-media-library').on('click', function(e) {
