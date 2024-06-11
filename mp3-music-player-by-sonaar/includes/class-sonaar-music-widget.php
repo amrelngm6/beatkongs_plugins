@@ -4183,11 +4183,11 @@ class Sonaar_Music_Widget extends WP_Widget{
                 $uniqueTracks[$key] = $value;
             }
         }
-        print_r($uniqueTracks);
+
         if(!$playlist){
             $playlist['playlist_name'] = $title;
             if ( empty($playlist['playlist_name']) ) $playlist['playlist_name'] = "";
-            $playlist['tracks'] = $uniqueTracks;
+            $playlist['tracks'] = array_values($uniqueTracks);
             if ( empty($playlist['tracks']) ) $playlist['tracks'] = array();
         }
        /* $end_time = microtime(true);
