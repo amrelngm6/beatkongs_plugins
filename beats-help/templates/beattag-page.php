@@ -153,6 +153,7 @@ if (!defined('ABSPATH')) {
                 // jQuery('#beat-preview-image').attr('src', selected );
                 jQuery('#file-download').attr('href', selected);
                 jQuery('#file-name').text(name);
+                jQuery('#beattag_file_name').val(name);
                 jQuery('#beattag_file_input_id').val(gallery_ids);
                 jQuery('#beattag_file_input_path').val(selected);
             });
