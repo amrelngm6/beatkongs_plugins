@@ -113,7 +113,7 @@ if (!defined('ABSPATH')) {
 <script>
     window.addEventListener("load", (event) => {
         jQuery('.active.dashboard').removeClass('active')
-        jQuery('.dokan-media').addClass('active')
+        jQuery('.dokan-beattag').addClass('active')
 
         var mediaFrame;
         $('#open-media-library').on('click', function(e) {
