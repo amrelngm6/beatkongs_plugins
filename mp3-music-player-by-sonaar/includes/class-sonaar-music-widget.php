@@ -4180,7 +4180,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         {
             if ($value['mp3'])
             {
-                $uniqueTracks[$value['ID']] = $value;
+                $uniqueTracks[$key] = $value;
             }
         }
 
