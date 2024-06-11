@@ -43,8 +43,14 @@ if (!defined('ABSPATH')) {
                 <hr />
             </div>
             <div class="flex w-full">
-                <div class="w-96"> Watermark </div>
-                <div> Content </div>
+                <div class="w-48"> Watermark </div>
+                <div> 
+                    <button class="cursor-pointer " id="open-media-library"> Add or Upload File</button>
+                    <p>
+                        File: <span id="file-name"></span>
+                        ( <a id="file-download"></a> / <a id="file-remove"></a>)
+                    </p>
+                </div>
                 
             </div>
 
@@ -55,7 +61,7 @@ if (!defined('ABSPATH')) {
                             <p><b>Upload and Store all your beat files and images.<br />
                             Mp3, Wav and Zip files only.</b></p>
                         </div>
-                        <button class="cursor-pointer" id="open-media-library">Open Media Library</button>
+                        
                     </div>
                 </main><!-- #main -->
             </div><!-- #primary -->
