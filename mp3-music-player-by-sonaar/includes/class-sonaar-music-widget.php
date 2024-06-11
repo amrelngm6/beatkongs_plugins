@@ -3011,7 +3011,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             $url_if_variation = get_permalink( $post_id ); //no add to cart since its a variation and user must choose variation from the single page
             $url_if_no_variation = get_permalink(get_the_ID()) . '?add-to-cart=' . $post_id;
             $storeicon = ( Sonaar_Music::get_option('wc_bt_show_icon', 'srmp3_settings_woocommerce') =='true' ) ? 'fas fa-cart-plus' : '';
-            $pageUrl = ($is_variable_product == 1) ? $url_if_variation : $url_if_no_variation ;
+            $pageUrl = str_replace('beats/', 'beat/', ($is_variable_product == 1) ? $url_if_variation : $url_if_no_variation );
 
             $storeListArgs = [
                 'store-icon'    => $storeicon,
