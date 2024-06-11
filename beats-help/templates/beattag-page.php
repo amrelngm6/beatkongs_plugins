@@ -71,18 +71,8 @@ if (!defined('ABSPATH')) {
                     </div>
                 </div>
             </div>
+            <input type="submit" name="dokan_update_beattag" id="publish" class="dokan-btn dokan-btn-theme dokan-btn-lg dokan-right" value="<?php esc_attr_e( 'Update setting', 'dokan-lite' ); ?>"/>
 
-            <div id="primary" class="content-area">
-                <main id="main" class="site-main" role="main">
-                    <div id="user-media-library">
-                        <div id="selected-media" class="text-center">
-                            <p><b>Upload and Store all your beat files and images.<br />
-                            Mp3, Wav and Zip files only.</b></p>
-                        </div>
-                        
-                    </div>
-                </main><!-- #main -->
-            </div><!-- #primary -->
         </article>
     </form>
         <?php
