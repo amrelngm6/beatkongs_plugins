@@ -4160,7 +4160,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                         }
                     }
                 
-                    $tracks = array_unique(array_merge($tracks, $filtered_tracks));
+                    $tracks = array_merge($tracks, $filtered_tracks);
+
                 } else  {
                     
                     return $albums;
@@ -4171,12 +4172,22 @@ class Sonaar_Music_Widget extends WP_Widget{
             if( $reverse_tracklist && ! (isset( $this->shortcodeParams['lazy_load'] ) && $this->shortcodeParams['lazy_load'] === 'true') ){
                 $tracks = array_reverse($tracks); //reverse tracklist order option
             }
+        }   
+
+        $uniqueTracks = [];
+
+        foreach ($tracks as $key => $value) 
+        {
+            if ($value->mp3)
+            {
+                $uniqueTracks[$value->ID] = $value;
+            }
         }
 
         if(!$playlist){
             $playlist['playlist_name'] = $title;
             if ( empty($playlist['playlist_name']) ) $playlist['playlist_name'] = "";
-            $playlist['tracks'] = $tracks;
+            $playlist['tracks'] = $uniqueTracks;
             if ( empty($playlist['tracks']) ) $playlist['tracks'] = array();
         }
        /* $end_time = microtime(true);
