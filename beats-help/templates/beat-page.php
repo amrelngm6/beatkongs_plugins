@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) {
 include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 ?>
 <?php get_header(); ?>
+<link rel='stylesheet' id='srp-swiper-style-css' href='<?php echo get_site_url(); ?>/wp-content/plugins/sonaar-music-pro/public/css/swiper-bundle.min.css?ver=9.3.2' media='all' />
 
 <link rel='stylesheet' id='elementor-post-49-css' href='<?php echo get_site_url(); ?>/wp-content/uploads/elementor/css/post-49.css?ver=1715796648' media='all' />
 
