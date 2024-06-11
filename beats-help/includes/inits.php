@@ -366,7 +366,7 @@ function beats_beattag_handle_form_submission()
         
         $update = update_user_meta( $post_author, 'beattag_file_id', $file_id );
         
-        $update = update_user_meta( $post_author, 'beattag_file_nane', $filenane );
+        $update = update_user_meta( $post_author, 'beattag_file_name', $filenane );
         
         $update = update_user_meta( $post_author, 'beattag_time', $time );
         
