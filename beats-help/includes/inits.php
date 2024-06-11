@@ -359,40 +359,24 @@ function beats_beattag_handle_form_submission()
             require_once(ABSPATH . 'wp-admin/includes/image.php');
         }
 
-        $title = sanitize_text_field($_POST['beattag_file']);
-        $type = sanitize_text_field($_POST['beattag_time']);
-        $beat_id = sanitize_text_field($_POST['beat_id']);
+        $file = sanitize_text_field($_POST['beattag_file']);
+        $file_id = sanitize_text_field($_POST['beattag_file_id']);
+        $filename = sanitize_text_field($_POST['beattag_file_name']);
+        $time = sanitize_text_field($_POST['beattag_time']);
+        $post_author = sanitize_text_field($_POST['post_author']);
         
+        if ( ! current_user_can( 'edit_user', $post_author ) ) {
+            return false;
+        }
+        $update = update_user_meta( $post_author, 'beattag_file', $file );
         
-        // Create a new post of custom post type 'usage-terms'
-        $license_post = array(
-            'ID'    => $beat_id,
-            'post_title'    => $title,
-            'post_content'  => '',
-            'post_excerpt'  => '',
-            'post_status'   => 'publish',
-            'post_type'     => $type,
-            'post_parent'     => intval($post_parent),
-            'meta_input'    => array(
-                'usageterms_filetypes' => $usageterms_filetypes,
-                'usageterms_producer_alias' => $usageterms_producer_alias ,
-                'usageterms_num_dist_copies' => $usageterms_num_dist_copies ,
-                'usageterms_num_audio_streams' => $usageterms_num_audio_streams ,
-                'usageterms_num_radio_stations' => $usageterms_num_radio_stations ,
-                'usageterms_num_free_downloads' => $usageterms_num_free_downloads ,
-                'usageterms_num_music_videos' => $usageterms_num_music_videos ,
-                'usageterms_num_monetized_video_streams' => $usageterms_num_monetized_video_streams ,
-                'usageterms_state' => $usageterms_state ,
-                'usageterms_country' => $usageterms_country ,
-                'usageterms_allow_profit_performances' => $usageterms_allow_profit_performances ,
-                'usageterms_contract' => $usageterms_contract,
-            ),
-        );
+        $update = update_user_meta( $post_author, 'beattag_file_id', $file_id );
         
+        $update = update_user_meta( $post_author, 'beattag_file_nane', $filenane );
         
-        $licenseId = !empty($license_post['ID']) ? wp_update_post($license_post) : wp_insert_post($license_post);
+        $update = update_user_meta( $post_author, 'beattag_time', $time );
         
-        if ($licenseId) {
+        if ($update) {
             wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
             exit;
         }

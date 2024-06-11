@@ -49,6 +49,7 @@ if (!defined('ABSPATH')) {
                 <input type="hidden" name="author_id" value="<?php echo $beat->post_author; ?>" />
                 <input type="hidden" id="beattag_file_input_id" name="beattag_file_id" value="<?php echo get_user_meta($beat->post_author, 'beattag_file_id', true); ?>" />
                 <input type="hidden" id="beattag_file_input_path" name="beattag_file" value="<?php echo get_user_meta($beat->post_author, 'beattag_file', true); ?>" />
+                <input type="hidden" id="beattag_file_name" name="beattag_filename" value="<?php echo get_user_meta($beat->post_author, 'beattag_filename', true); ?>" />
                 <div class="w-48"> Watermark </div>
                 <div> 
                     <button class="cursor-pointer " data-preview="#beattag-file-demo" id="open-media-library"> Add or Upload File</button>
