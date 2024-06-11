@@ -3216,7 +3216,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         return [
             [
                 'store-icon'    => 'sricon-info',
-                'store-link'    => get_permalink($postId),
+                'store-link'    => get_permalink($postId).'test',
                 'store-name'    => (Sonaar_Music::get_option('force_cta_singlepost_label', 'srmp3_settings_general') && Sonaar_Music::get_option('force_cta_singlepost_label', 'srmp3_settings_general') != '') ? Sonaar_Music::get_option('force_cta_singlepost_label', 'srmp3_settings_general') : __('View Details', 'sonaar-music'),
                 'store-target'  => '_self',
                 'cta-class'  => 'sr_store_force_pl_bt',
