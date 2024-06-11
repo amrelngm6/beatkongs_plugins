@@ -5,9 +5,9 @@ if (!defined('ABSPATH')) {
 
 global $wp_query;
 
-print_r($wp_query);
 include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 $beat = get_post($wp_query->query['beat']);
+print_r($beat);
 ?>
 <?php get_header(); ?>
 <link rel='stylesheet' id='srp-swiper-style-css' href='<?php echo get_site_url(); ?>/wp-content/plugins/sonaar-music-pro/public/css/swiper-bundle.min.css?ver=9.3.2' media='all' />
