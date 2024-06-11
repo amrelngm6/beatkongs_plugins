@@ -6,7 +6,11 @@ if (!defined('ABSPATH')) {
 global $wp_query;
 
 include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
+include plugin_dir_path(__FILE__) . '../includes/Class/BeatPrice.php';
 $beat = get_post($wp_query->query['beat']);
+$class = new BeatPrice;
+$postMeta = get_metadata( 'post', $beat->ID); 
+$class->setDefaultValue($postMeta);
 ?>
 <?php get_header(); ?>
 <link rel='stylesheet' id='srp-swiper-style-css' href='<?php echo get_site_url(); ?>/wp-content/plugins/sonaar-music-pro/public/css/swiper-bundle.min.css?ver=9.3.2' media='all' />
@@ -204,13 +208,9 @@ $beat = get_post($wp_query->query['beat']);
 								data-id="59a6ae0" data-element_type="widget"
 								data-widget_type="woocommerce-product-price.default">
 								<div class="elementor-widget-container">
-									<p class="price"><del aria-hidden="true"><span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>69.99</bdi></span></del>
-										<span class="screen-reader-text">Original price was: &#036;69.99.</span><ins
-											aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>39.99</bdi></span></ins><span
-											class="screen-reader-text">Current price is: &#036;39.99.</span></p>
+									<p class="price">
+                                    <?php echo $class->getLowestPrice($postMeta); ?>
+                                    </p>
 								</div>
 							</div>
 							<div class="elementor-element elementor-element-203e9b0 elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
