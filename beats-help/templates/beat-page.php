@@ -1,3 +1,11 @@
+<?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
+?>
+<?php get_header(); ?>
 
 <div data-elementor-type="product" data-elementor-id="49"
 	class="elementor elementor-49 elementor-location-single post-383 product type-product status-publish has-post-thumbnail product_cat-hiphop product_tag-rap first instock sale downloadable virtual sold-individually purchasable product-type-simple product">
