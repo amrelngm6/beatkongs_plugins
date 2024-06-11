@@ -1408,7 +1408,7 @@ IRON.audioPlayer = (function ($) {
   var random_order = false;
   function setMediaSessionAPI(trackTitle, albumTitle, artistName, albumArt) {
     //WIP: Does not work with the mini-player play button. Works only when click in the tracklist.
-    if ('mediaSession' in navigator) {
+    if ('mediaSession' in navigator && trackTitle) {
       console.log(trackTitle, albumTitle, artistName, albumArt)
       navigator.mediaSession.metadata = new MediaMetadata({
         title: trackTitle,
