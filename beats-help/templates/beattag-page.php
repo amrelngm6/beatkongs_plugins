@@ -139,18 +139,25 @@ if (!defined('ABSPATH')) {
                 // On close, get selections and save to the hidden input
                 // plus other AJAX stuff to refresh the image preview
                 var selection =  mediaFrame.state().get('selection');
+                var title = '';
+                var name = '';
                 var gallery_ids = 0;
                 var selected = 0;
                 var i = 0;
                 selection.each(function(attachment) {
                     selected = attachment.attributes.url;
                     gallery_ids = attachment['id'];
+                    name = attachment['name'] ?? '';
+                    title = attachment['title'] ?? '';
                 i++;
                 });
                 if(gallery_ids === 0) return true;//if closed withput selecting an image
                 selected ? jQuery(previewElement).html( $('<audio src="'+selected+'"  controls />')) : '';
 
                 // jQuery('#beat-preview-image').attr('src', selected );
+                jQuery('#file-download').attr('href', selected);
+                jQuery('#file-name').text(title);
+                jQuery('#open-media-library').text(name);
                 jQuery('#beattag_file_input_id').val(gallery_ids);
                 jQuery('#beattag_file_input_path').val(selected);
             });
