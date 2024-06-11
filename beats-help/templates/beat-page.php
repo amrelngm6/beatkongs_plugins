@@ -9,7 +9,9 @@ include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 <link rel='stylesheet' id='srp-swiper-style-css' href='<?php echo get_site_url(); ?>/wp-content/plugins/sonaar-music-pro/public/css/swiper-bundle.min.css?ver=9.3.2' media='all' />
 
 <link rel='stylesheet' id='elementor-post-49-css' href='<?php echo get_site_url(); ?>/wp-content/uploads/elementor/css/post-49.css?ver=1715796648' media='all' />
-
+<style id='elementor-frontend-inline-css'>
+.elementor-49 .elementor-element.elementor-element-48f0b11::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .elementor-background-video-container::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .e-con-inner > .elementor-background-video-container::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .elementor-background-slideshow::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .e-con-inner > .elementor-background-slideshow::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before{background-image:url("https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2.png");}
+</style>
 <div data-elementor-type="product" data-elementor-id="49"
 	class="elementor elementor-49 elementor-location-single post-383 product type-product status-publish has-post-thumbnail product_cat-hiphop product_tag-rap first instock sale downloadable virtual sold-individually purchasable product-type-simple product">
 	<div class="elementor-section-wrap">
