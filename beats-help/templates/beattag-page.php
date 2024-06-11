@@ -64,12 +64,12 @@ if (!defined('ABSPATH')) {
             <div class="flex w-full">
                 <div class="w-48"> Loop Beat Tag </div>
                 <div> 
-                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" /> <span>.</span>
+                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" />  <span><small>You can choose to play Beat Tag every X seconds.</small></span>
                     <div class="w-full flex">
                         <span class="w-full">0</span>
                         <span>20</span>
                     </div>
-                    <p><small>You can choose to play Beat Tag every X seconds.</small></p>
+                    
                 </div>
             </div>
             <input type="submit" name="dokan_update_beattag" id="publish" class="dokan-btn dokan-btn-theme dokan-btn-lg dokan-right" value="<?php esc_attr_e( 'Update setting', 'dokan-lite' ); ?>"/>
