@@ -75,7 +75,7 @@ $beat = get_post($wp_query->query['beat']);
 											<span class="detail-content">
                                             <?php 
                                                 $selectedCategory = wp_get_post_terms( $beatId, 'category');
-                                                $selectedStation = wp_get_post_terms( $beatId, 'station');
+                                                $selectedTags = wp_get_post_terms( $beatId, 'tag');
                                                 foreach ($selectedCategory as $key => $value) {
                                             ?>
                                             <a
