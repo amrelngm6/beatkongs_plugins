@@ -4160,7 +4160,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         }
                     }
                 
-                    $tracks = array_filter(array_merge($tracks, $filtered_tracks));
+                    $tracks = array_unique(array_merge($tracks, $filtered_tracks));
                 } else  {
                     
                     return $albums;
