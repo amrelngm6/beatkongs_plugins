@@ -65,8 +65,9 @@ if (!defined('ABSPATH')) {
                 <div class="w-48"> Loop watermark every </div>
                 <div> 
                     <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta($beat->post_author, 'beattag_time', true); ?>" />
-                    <p>
-                        0
+                    <p class="w-full flex">
+                        <span class="w-full">0</span>
+                        <span>20</span>
                     </p>
                 </div>
             </div>
