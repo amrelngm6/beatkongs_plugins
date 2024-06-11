@@ -63,6 +63,7 @@ final class MediansStation
         $args    = [
             'post_type'         => 'beat',
             'post_status'         => ['publish'],
+            'orderby'        => 'rand',
             'tax_query'         =>  array(
                 'taxonomy' => 'station',
                 'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
