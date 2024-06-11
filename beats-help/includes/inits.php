@@ -353,17 +353,11 @@ function beats_beattag_handle_form_submission()
 
     if (isset($_POST['beat_beattag_edit'])) {
         
-        if ( ! function_exists('media_handle_upload') ) {
-            require_once(ABSPATH . 'wp-admin/includes/file.php');
-            require_once(ABSPATH . 'wp-admin/includes/media.php');
-            require_once(ABSPATH . 'wp-admin/includes/image.php');
-        }
-
         $file = sanitize_text_field($_POST['beattag_file']);
         $file_id = sanitize_text_field($_POST['beattag_file_id']);
         $filename = sanitize_text_field($_POST['beattag_file_name']);
         $time = sanitize_text_field($_POST['beattag_time']);
-        $post_author = sanitize_text_field($_POST['post_author']);
+        $post_author = sanitize_text_field($_POST['author_id']);
         
         if ( ! current_user_can( 'edit_user', $post_author ) ) {
             return false;
