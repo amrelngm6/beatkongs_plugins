@@ -70,10 +70,12 @@ add_filter('template_include', 'load_custom_station_template');
 
 
 function load_custom_beat_template($template) {
+    global $wp_query;
 
+    print_r($wp_query);
     if (get_post_type() == 'beat') {
         echo get_post_type();
-        // $plugin_template = plugin_dir_path(__FILE__) . '../templates/beat-page.php';
+        $plugin_template = plugin_dir_path(__FILE__) . '../templates/beat-page.php';
         if (file_exists($plugin_template)) {
             return $plugin_template;
         }
