@@ -18,6 +18,7 @@ $class->setDefaultValue($postMeta);
 <link rel='stylesheet' id='elementor-post-49-css' href='<?php echo get_site_url(); ?>/wp-content/uploads/elementor/css/post-49.css?ver=1715796648' media='all' />
 <style id='elementor-frontend-inline-css'>
 .elementor-49 .elementor-element.elementor-element-48f0b11::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .elementor-background-video-container::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .e-con-inner > .elementor-background-video-container::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .elementor-background-slideshow::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .e-con-inner > .elementor-background-slideshow::before, .elementor-49 .elementor-element.elementor-element-48f0b11 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before{background-image:url(<?php echo get_the_post_thumbnail_url($beat->ID);?>);}
+.woocommerce .elementor-49 .elementor-element.elementor-element-59a6ae0 .price { color: #F9901D; font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
 </style>
 <div data-elementor-type="product" data-elementor-id="49"
 	class="elementor elementor-49 elementor-location-single post-383 product type-product status-publish has-post-thumbnail product_cat-hiphop product_tag-rap first instock sale downloadable virtual sold-individually purchasable product-type-simple product">
