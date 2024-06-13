@@ -144,7 +144,12 @@ $beats = $stationClass->loadStationItems();
                                             data-swiper-source="track"
                                             data-params="{loop:false,spaceBetween:5,slidesPerView:1,speed:300,effect:'slide',breakpoints:{ 767: {slidesPerView: 1 }, 1024: {slidesPerView: 1 }, },}">
                                             <div class="swiper-wrapper">
-                                                <?php foreach ($beats as $key => $beat) { ?>
+                                                <?php foreach ($beats as $key => $beat) { 
+                                                    $postMeta = get_metadata( 'post', $beat->ID);
+                                                    $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+                                                    $beatMP3 = wp_get_attachment_url($beatMP3Id);
+                                                ?>
+
                                                 <div class="swiper-slide" data-post-id="<?php echo $beat->ID;?>" data-track-pos="0"
                                                     data-slide-id="<?php echo $key;?>" data-slide-index="<?php echo $key;?>">
                                                     <div class="srp_swiper-album-art"
@@ -168,28 +173,28 @@ $beats = $stationClass->loadStationItems();
                                                             <div class="song-store-list-menu"><i
                                                                     class="fas fa-ellipsis-v"></i>
                                                                 <div class="song-store-list-container"><a
-                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
+                                                                        href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_self" title="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>" aria-label="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>"
-                                                                        data-source-post-id="867" data-store-id="0-0"
+                                                                        data-source-post-id="<?php echo $beat->ID;?>" data-store-id="0-0"
                                                                         tabindex="1"><i
                                                                             class="fas fa-cart-plus"></i><span
                                                                             class="srp_cta_label"><?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?></span></a><a
-                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
+                                                                        href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
                                                                         target="_self" title="View Beat"
-                                                                        aria-label="View Beat" data-source-post-id="867"
+                                                                        aria-label="View Beat" data-source-post-id="<?php echo $beat->ID;?>"
                                                                         data-store-id="0-1" tabindex="1"><i
                                                                             class="sricon-info"></i><span
                                                                             class="srp_cta_label">View Beat</span></a><a
-                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
+                                                                        href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_force_share_bt"
                                                                         target="_self" title="Share" aria-label="Share"
-                                                                        data-source-post-id="867" data-store-id="0-2"
+                                                                        data-source-post-id="<?php echo $beat->ID;?>" data-store-id="0-2"
                                                                         tabindex="1"><i class="sricon-share"></i></a><a
                                                                         href="#" class="song-store srp-fav-bt"
                                                                         target="_self" title="Like" aria-label="Like"
-                                                                        data-source-post-id="867" data-store-id="0-3"
+                                                                        data-source-post-id="<?php echo $beat->ID;?>" data-store-id="0-3"
                                                                         tabindex="1"><i
                                                                             class="sricon-heart-fill"></i></a></div>
                                                             </div>
@@ -314,28 +319,28 @@ $beats = $stationClass->loadStationItems();
                                                             <div class="song-store-list-menu"><i
                                                                     class="fas fa-ellipsis-v"></i>
                                                                 <div class="song-store-list-container"><a
-                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
+                                                                        href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_wc_round_bt"
-                                                                        target="_self" title="$0.00" aria-label="$0.00"
-                                                                        data-source-post-id="867" data-store-id="0-0"
+                                                                        target="_self" title="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>" aria-label="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>"
+                                                                        data-source-post-id="<?php echo $beat->ID;?>" data-store-id="0-0"
                                                                         tabindex="1"><i
                                                                             class="fas fa-cart-plus"></i><span
-                                                                            class="srp_cta_label">$0.00</span></a><a
-                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
+                                                                            class="srp_cta_label"><?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?></span></a><a
+                                                                        href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
                                                                         target="_self" title="View Beat"
-                                                                        aria-label="View Beat" data-source-post-id="867"
+                                                                        aria-label="View Beat" data-source-post-id="<?php echo $beat->ID;?>"
                                                                         data-store-id="0-1" tabindex="1"><i
                                                                             class="sricon-info"></i><span
                                                                             class="srp_cta_label">View Beat</span></a><a
-                                                                        href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
+                                                                        href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_force_share_bt"
                                                                         target="_self" title="Share" aria-label="Share"
-                                                                        data-source-post-id="867" data-store-id="0-2"
+                                                                        data-source-post-id="<?php echo $beat->ID;?>" data-store-id="0-2"
                                                                         tabindex="1"><i class="sricon-share"></i></a><a
                                                                         href="#" class="song-store srp-fav-bt"
                                                                         target="_self" title="Like" aria-label="Like"
-                                                                        data-source-post-id="867" data-store-id="0-3"
+                                                                        data-source-post-id="<?php echo $beat->ID;?>" data-store-id="0-3"
                                                                         tabindex="1"><i
                                                                             class="sricon-heart-fill"></i></a></div>
                                                             </div>
