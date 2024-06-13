@@ -32,6 +32,9 @@
                             ));
                             $beatId =  $_GET['beat_id'] ?? 0;
                             $selectedStation = array_column(wp_get_post_terms( $beatId, 'station'), 'term_id');
+                            usort($list, function($a, $b) {
+                                return $a->term_id - $b->term_id;
+                            });
                             foreach ($list as $key => $value) {
                                 $checked = ($key < 2) ? 'disabled checked' : (in_array($value->term_id, $selectedStation) ? 'checked' : (count($selectedStation) == 3  ? 'disabled' : '')) ;
                             ?>
