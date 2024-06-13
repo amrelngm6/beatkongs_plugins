@@ -7,9 +7,7 @@ include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 include plugin_dir_path(__FILE__) . '../includes/Class/BeatPrice.php';
 global $wp_query;
 
-print_r($wp_query);
 $beat = $wp_query->queried_object;
-print_r($beat);
 $class = new BeatPrice;
 $postMeta = get_metadata( 'post', $beat->ID); 
 $class->setDefaultValue($postMeta);
