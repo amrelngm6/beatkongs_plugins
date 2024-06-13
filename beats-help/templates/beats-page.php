@@ -226,7 +226,7 @@ $bulk_statuses = [
                                     <label for="cb-select-all"></label>
                                     <input id="cb-select-all" class="dokan-checkbox" name="post_id[]" value="<?php echo $beat->ID; ?>" type="checkbox">
                                 </td>
-                                <td><img width="50" src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></td>
+                                <td><a href="<?php echo get_site_url(); ?>/beat/<?php echo $beat->post_name;?>"><img width="50" src="<?php echo get_the_post_thumbnail_url( $beat->ID ); ?>" /></a> </td>
                                 <td><?php echo $beat->post_title; ?></td>
                                 <td><?php echo $beat->post_status; ?></td>
                                 <?php  $postMeta = get_metadata( 'post', $beat->ID); 
