@@ -201,7 +201,9 @@ $class->setDefaultValue($postMeta);
 											var srp_player_params_66685c342fde6 = { "title": "", "store_title_text": "", "albums": "383", "hide_artwork": "true", "sticky_player": "1", "show_album_market": "false", "show_track_market": "false", "hide_timeline": "false", "elementor": "true", "tracks_per_page": "", "titletag_soundwave": "div", "titletag_playlist": "", "show_control_on_hover": "false", "show_playlist": "false", "reverse_tracklist": "", "wave_color": "#0C0C0C", "wave_progress_color": "#F9901D", "spectro": "color1:#FFFFFF|color2:|shadow:|barCount:40|barWidth:4|barGap:2|canvasHeight:40|halign:flex-end|valign:|spectroStyle:bars|sharpFx:|reflectFx:yes|gradientDirection:|enableOnTracklist:true|bounceClass:|bounceBlur:", "shuffle": "", "searchbar": "", "searchbar_placeholder": "", "player_layout": "skin_boxed_tracklist", "show_skip_bt": "false", "show_speed_bt": "false", "show_volume_bt": "false", "show_shuffle_bt": "false", "show_publish_date": "false", "force_cta_dl": "false", "force_cta_singlepost": "false", "force_cta_share": "default", "force_cta_favorite": "default", "cta_track_show_label": "default", "show_meta_duration": "false", "show_tracks_count": "true", "use_play_label": "default", "hide_trackdesc": "1", "artist_wrap": "true", "album_store_position": "top", "tracklist_layout": "list", "player_metas": "meta_track_title", "miniplayer_meta_id": "9cce973,", "hide_track_title": "true", "artwork": "", "orderby": "date", "order": "DESC", "main_settings": "||" }
 											var srp_player_params_args_66685c342fde6 = { "before_widget": "<article id=\"arbitrary-instance-66685c342fde6\" class=\"iron_widget_radio\">", "after_widget": "<\/article>", "before_title": "<span class='heading-t3'><\/span><h3 class=\"widgettitle\">", "after_title": "<\/h3>", "widget_id": "arbitrary-instance-66685c342fde6" }  
 										</script>
-										<script>if (typeof setIronAudioplayers !== "undefined") { setIronAudioplayers("arbitrary-instance-66685c342fde6"); }</script>
+										<script> 
+											if (typeof setIronAudioplayers !== "undefined") { setIronAudioplayers("arbitrary-instance-66685c342fde6"); } 
+										</script>
 									</article>
 								</div>
 							</div>
@@ -252,7 +254,6 @@ $class->setDefaultValue($postMeta);
 
 									<div class="elementor-add-to-cart elementor-product-simple">
 
-
 										<form class="cart"
 											action="<?php echo get_site_url(); ?>/beat/<?php echo $beat->post_name; ?>"
 											method="post" enctype='multipart/form-data'>
@@ -266,8 +267,7 @@ $class->setDefaultValue($postMeta);
 											</div>
 
 											<button type="submit" name="add-to-cart" value="383"
-												class="single_add_to_cart_button button alt wp-element-button">Add to
-												cart</button>
+												class="single_add_to_cart_button button alt wp-element-button">Add to cart</button>
 
 										</form>
 
@@ -307,7 +307,7 @@ $class->setDefaultValue($postMeta);
 							data-id="75ed2d1" data-element_type="widget" data-widget_type="share-buttons.default">
 							<div class="elementor-widget-container">
 								<link rel="stylesheet"
-									href="https://beatkongs.medianssolutions.com/wp-content/plugins/elementor-pro/assets/css/widget-share-buttons.min.css">
+									href="<?php echo get_site_url(); ?>/wp-content/plugins/elementor-pro/assets/css/widget-share-buttons.min.css">
 								<div class="elementor-grid">
 									<div class="elementor-grid-item">
 										<div class="elementor-share-btn elementor-share-btn_facebook" tabindex="0"
