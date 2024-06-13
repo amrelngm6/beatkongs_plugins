@@ -40,7 +40,7 @@ $class->setDefaultValue($postMeta);
 									<img fetchpriority="high" width="500" height="500"
 										src="<?php echo get_the_post_thumbnail_url($beat->ID); ?>"
 										class="attachment-large size-large wp-image-538" alt=""
-										srcset="<?php echo get_the_post_thumbnail_url($beat->ID); ?> 500w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-150x150.png 150w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-300x300.png 300w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-450x450.png 450w, https://beatkongs.medianssolutions.com/wp-content/uploads/2021/03/soundkit_cinematic-2-100x100.png 100w"
+										srcset="<?php echo get_the_post_thumbnail_url($beat->ID); ?> 500w, <?php echo get_site_url(); ?>/wp-content/uploads/2021/03/soundkit_cinematic-2-150x150.png 150w, <?php echo get_site_url(); ?>/wp-content/uploads/2021/03/soundkit_cinematic-2-300x300.png 300w, <?php echo get_site_url(); ?>/wp-content/uploads/2021/03/soundkit_cinematic-2-450x450.png 450w, <?php echo get_site_url(); ?>/wp-content/uploads/2021/03/soundkit_cinematic-2-100x100.png 100w"
 										sizes="(max-width: 500px) 100vw, 500px" />
 								</div>
 							</div>
@@ -91,7 +91,7 @@ $class->setDefaultValue($postMeta);
 
 										<span class="tagged_as detail-container"><span class="detail-label">Tag</span>
 											<span class="detail-content"><a
-													href="https://beatkongs.medianssolutions.com/tag/rap/"
+													href="<?php echo get_site_url(); ?>/tag/rap/"
 													rel="tag">Rap</a></span></span>
 
 
@@ -106,7 +106,7 @@ $class->setDefaultValue($postMeta);
 											id="arbitrary-instance-66685c342fde6-e0b330e2e0"
 											data-id="arbitrary-instance-66685c342fde6" data-track-sw-cursor=""
 											data-lazyload="" data-albums="383" data-category=""
-											data-url-playlist="https://beatkongs.medianssolutions.com/?load=playlist.json&#038;title=&#038;albums=383&#038;category=&#038;posts_not_in=&#038;category_not_in=&#038;feed_title=&#038;feed=&#038;feed_img=&#038;el_widget_id=&#038;artwork=&#038;posts_per_pages=-1&#038;all_category=&#038;single_playlist=1&#038;reverse_tracklist=&#038;audio_meta_field=&#038;repeater_meta_field=&#038;import_file=&#038;rss_items=-1&#038;rss_item_title=&#038;is_favorite=&#038;srp_order=date_DESC"
+											data-url-playlist="<?php echo get_site_url(); ?>/?load=playlist.json&#038;title=&#038;albums=383&#038;category=&#038;posts_not_in=&#038;category_not_in=&#038;feed_title=&#038;feed=&#038;feed_img=&#038;el_widget_id=&#038;artwork=&#038;posts_per_pages=-1&#038;all_category=&#038;single_playlist=1&#038;reverse_tracklist=&#038;audio_meta_field=&#038;repeater_meta_field=&#038;import_file=&#038;rss_items=-1&#038;rss_item_title=&#038;is_favorite=&#038;srp_order=date_DESC"
 											data-sticky-player="1" data-shuffle="" data-playlist_title=""
 											data-scrollbar="" data-wave-color="#0C0C0C"
 											data-wave-progress-color="#F9901D"
@@ -220,7 +220,7 @@ $class->setDefaultValue($postMeta);
 								data-id="203e9b0" data-element_type="widget" data-widget_type="icon-list.default">
 								<div class="elementor-widget-container">
 									<link rel="stylesheet"
-										href="https://beatkongs.medianssolutions.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+										href="<?php echo get_site_url(); ?>/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
 									<ul class="elementor-icon-list-items">
 										<li class="elementor-icon-list-item">
 											<span class="elementor-icon-list-icon">
