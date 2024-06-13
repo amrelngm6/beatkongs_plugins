@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 
 include plugin_dir_path(__FILE__) .'../includes/Music/MediansStation.php';
-
+include plugin_dir_path(__FILE__) . '../includes/Class/BeatPrice.php';
 $stations = get_terms(array(
     'taxonomy' => 'station',
     'hide_empty' => false,
@@ -157,6 +157,11 @@ $beats = $stationClass->loadStationItems();
                                                     </div>
                                                     <div class="srp_swiper-titles">
                                                         <div class="srp_index"><?php echo $key + 1;?></div>
+                                                        <?php 
+                                                        $class = new BeatPrice;
+                                                        $postMeta = get_metadata( 'post', $beat->ID); 
+                                                        $class->setDefaultValue($postMeta);
+                                                        ?>
                                                         <div class="srp_swiper-track-title"><?php echo $beat->post_title;?></div>
                                                         <div class="srp_swiper-track-artist"> Produced by <?php echo get_the_author_meta('display_name', $beat->post_author); ?>
                                                         </div><span class="store-list">
@@ -165,11 +170,11 @@ $beats = $stationClass->loadStationItems();
                                                                 <div class="song-store-list-container"><a
                                                                         href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_wc_round_bt"
-                                                                        target="_self" title="$0.00" aria-label="$0.00"
+                                                                        target="_self" title="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>" aria-label="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>"
                                                                         data-source-post-id="867" data-store-id="0-0"
                                                                         tabindex="1"><i
                                                                             class="fas fa-cart-plus"></i><span
-                                                                            class="srp_cta_label">$0.00</span></a><a
+                                                                            class="srp_cta_label"><?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?></span></a><a
                                                                         href="<?php echo get_site_url();?>/beats/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
                                                                         target="_self" title="View Beat"
