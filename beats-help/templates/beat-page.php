@@ -3,11 +3,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-global $wp_query;
-
 include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 include plugin_dir_path(__FILE__) . '../includes/Class/BeatPrice.php';
+global $wp_query;
+
+print_r($wp_query);
 $beat = get_post($wp_query->query['beat']);
+print_r($beat);
 $class = new BeatPrice;
 $postMeta = get_metadata( 'post', $beat->ID); 
 $class->setDefaultValue($postMeta);
