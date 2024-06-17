@@ -2359,14 +2359,14 @@ class Sonaar_Music_Widget extends WP_Widget{
             return false;
         }
 
-        return get_post_meta($id, 'wc_add_to_cart', true) ?? (get_post_meta($id, 'beat_type', true) == 'sell' ? 'true' : false);
+        return (get_post_meta($id, 'beat_type', true) == 'sell' ? 'true' : false);
     }
     private function wc_buynow_bt($id = null){
         if ($id == null || ( !defined( 'WC_VERSION' ) && get_site_option('SRMP3_ecommerce') != '1' )){
             return false;
         }
 
-        return get_post_meta($id, 'wc_buynow_bt', true) ?? (get_post_meta($id, 'beat_type', true) == 'sell' ? 'true' : false);
+        return (get_post_meta($id, 'beat_type', true) == 'sell' ? 'true' : false);
     }
            
     private function fetch_song_store_list_html($track, $trackIndex, $show_track_market, $key1){
