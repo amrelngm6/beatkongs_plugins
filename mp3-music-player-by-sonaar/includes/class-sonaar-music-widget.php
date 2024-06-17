@@ -3008,7 +3008,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         $product_price = ( $wc_bt_type !='wc_bt_type_label' ) ? html_entity_decode($this->get_wc_price($post_id)) : '';
     
         if( $wc_add_to_cart == 'true' ){
-            $label = (Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') && Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') != '' && Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') != 'Add to Cart') ? Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') : esc_html__('Add to Cart', 'sonaar-music');
+            $label = (Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') && Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') != '' && Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') != 'Add to Cart') ? esc_html__('Add to Cart', 'sonaar-music') : esc_html__('Add to Cart', 'sonaar-music');
             $label = ($wc_bt_type == 'wc_bt_type_price') ? '' : $label . ' '; 
             $url_if_variation = get_permalink( $post_id ); //no add to cart since its a variation and user must choose variation from the single page
             $url_if_no_variation = get_permalink(get_the_ID()) . '?add-to-cart=' . $post_id;
