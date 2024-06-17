@@ -72,7 +72,7 @@
         <div class="metadata">
           <div class="metadata-inner">
             <div class="track-name" @mouseover="scroll">{{list.tracks[currentTrack].track_title}}</div>
-            <div class="track-artist" @mouseover="scroll" > <span v-html="list.tracks[currentTrack].track_artist && typeof sonaar_music.option.show_artist_name != 'undefined' ? (sonaar_music.option.artist_separator) : ''"></span>  <a :href="'/author/'+list.tracks[currentTrack].track_artist" v-html="list.tracks[currentTrack].track_artist"></a></div>
+            <div class="track-artist" @mouseover="scroll" > <span v-html="list.tracks[currentTrack].track_artist && typeof sonaar_music.option.show_artist_name != 'undefined' ? (sonaar_music.option.artist_separator) : ''"></span>  <a style="color:#f9901d" :href="'/author/'+list.tracks[currentTrack].track_artist" v-html="list.tracks[currentTrack].track_artist"></a></div>
             <div class="track-album" @mouseover="scroll" v-if="classes.show_album_title && list.tracks[currentTrack].album_title">{{list.tracks[currentTrack].album_title}}</div>
           </div>
         </div>
