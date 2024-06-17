@@ -139,7 +139,7 @@
                 <cta :player="this" :storeid="'srp-fav-bt'" :label=false></cta>
                 <cta class="srp_ext_cta_share" :player="this" :storeid="'sr_store_force_share_bt'" :label=false></cta>
                   <cta class="srp_ext_cta_addtocart" :player="this" :storeid="'fas fa-cart-plus'" :label=true></cta>
-                  <cta class="srp_ext_cta_buynow" :player="this" :storeid="'fas fa-shopping-cart'" :label=true></cta>
+                  <cta class="srp_ext_cta_buynow" :player="this" :storeid="'fas fa-download'" :label=true></cta>
               </div>
             </div>
           </div>
