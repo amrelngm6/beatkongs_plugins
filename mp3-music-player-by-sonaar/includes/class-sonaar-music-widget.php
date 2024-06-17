@@ -3971,7 +3971,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $audioSrc = '';
                         $song_store_list = isset($beatItem["song_store_list"]) ? $beatItem["song_store_list"] : '' ;
                         $album_store_list = ($wc_add_to_cart == 'true' || $wc_buynow_bt == 'true') ? $this->push_woocart_in_storelist($a, $is_variable_product, $wc_add_to_cart, $wc_buynow_bt) : false;
-                        $song_store_list = $song_store_list ?? $album_store_list;
+                        $song_store_list = $album_store_list;
                        
                       
                         $has_song_store = false;
