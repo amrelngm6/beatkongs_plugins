@@ -158,7 +158,26 @@ Vue.component('cta', {
       },
   },
   template: `
+            <span v-if="(typeof store !== 'undefined' && store['store-link'] !== '')" :class="store['store-link']"><a
+               
+              :href="store['link-option'] == 'popup' || (store['has-variation'] == true && player.classes.wc_variation_lb) ? '#!': store['store-link']"
+              :target="store['store-target'] || store['link-option'] === 'popup' ? '_self' : '_blank'"
+              v-bind:class="[
+                {
+                  'sr_store_round_bt': store['store-type'] === 'wc',
+                  'add_to_cart_button ajax_add_to_cart': player.classes.wc_ajax_add_to_cart && !store['has-variation'],
+                  'sr_store_force_share_bt--sticky': store['cta-class'] === 'sr_store_force_share_bt'
+                },
+                store['cta-class'] // Bind the store['cta-class'] directly to the class attribute
+              ]"
+              :download="player.ifDownloadAttribute(store)"
+              :data-product_id="store['product-id'] !== undefined ? store['product-id'] : false"
+              @click="player.ctaClick(store, $(event.target))"
+            >
             
+              <i :class="store['store-icon']"></i><span>{{ (label)?store['store-name']:'' }}</span>
+            
+            </a></span>
   `
 });
 
