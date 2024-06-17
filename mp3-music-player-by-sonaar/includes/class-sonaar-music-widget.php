@@ -800,6 +800,8 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
             
             $show_track_market = true;
+            print_r($track);
+
             $song_store_list_ar = $this->fetch_song_store_list_html($track, $trackIndex, $show_track_market, $key1);
             $song_store_list = $song_store_list_ar['store_list'];
             $playlist_has_ctas = (isset($playlist_has_ctas) && $playlist_has_ctas == true ) ? $playlist_has_ctas : $song_store_list_ar['playlist_has_ctas'];
@@ -1530,10 +1532,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }else{
                     $widgetPart_slider_content .= $widgetPart_slider_album_title . $widgetPart_slider_track_title;
                 }
-
-                $show_track_market = true;
                 
-                print_r($playlist['tracks'][$trackIndex]);
                 $song_store_list_ar = $this->fetch_song_store_list_html($playlist['tracks'][$trackIndex], $trackIndex,  $show_track_market, $trackIndex);
                 $song_store_list = $song_store_list_ar['store_list'];
                 $playlist_has_ctas = (isset($playlist_has_ctas) && $playlist_has_ctas == true ) ? $playlist_has_ctas : $song_store_list_ar['playlist_has_ctas'];
