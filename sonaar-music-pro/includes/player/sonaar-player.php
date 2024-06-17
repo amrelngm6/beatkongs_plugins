@@ -165,8 +165,8 @@
             </div>
           </div>
          
-          <cta :player="this" :storeid="'fas fa-cart-plus'" :label=true></cta>
-          <cta :player="this" :storeid="'fas fa-shopping-cart'" :label=true></cta>
+          <!-- <cta :player="this" :storeid="'fas fa-cart-plus'" :label=true></cta> -->
+          <!-- <cta :player="this" :storeid="'fas fa-shopping-cart'" :label=true></cta> -->
           <cta :player="this" :storeid="'sr_store_force_dl_bt'" :label=true></cta>
           <cta :player="this" :storeid="'sr_store_force_share_bt'" :label=true></cta>
           <cta :player="this" :storeid="'srp-fav-bt'" :label=true></cta>
