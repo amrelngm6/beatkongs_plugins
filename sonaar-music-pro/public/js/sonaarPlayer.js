@@ -174,7 +174,7 @@ Vue.component('cta', {
               :data-product_id="store['product-id'] !== undefined ? store['product-id'] : false"
               @click="player.ctaClick(store, $(event.target))"
             >
-            {{store}}
+            {{store['store-icon']}}
               <i :class="store['store-icon']"></i><span>{{ (label)?store['store-name']:'' }}</span>
             
             </a></span>
