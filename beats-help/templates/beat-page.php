@@ -128,12 +128,12 @@ $class->setDefaultValue($postMeta);
                                         <li class="elementor-icon-list-item">
                                             <span class="elementor-icon-list-icon">
                                                 <i aria-hidden="true" class="fas fa-drum"></i> </span>
-                                            <span class="elementor-icon-list-text">150 BPM</span>
+                                            <span class="elementor-icon-list-text"><?php echo $postMeta['beat_bpm'][0] ?? '0'; ?> BPM</span>
                                         </li>
                                         <li class="elementor-icon-list-item">
                                             <span class="elementor-icon-list-icon">
                                                 <i aria-hidden="true" class="far fa-eye"></i> </span>
-                                            <span class="elementor-icon-list-text">108 Views</span>
+                                            <span class="elementor-icon-list-text"><?php echo $postMeta['ekit_post_views_count'][0] ?? '0'; ?> Views</span>
                                         </li>
                                     </ul>
                                 </div>
