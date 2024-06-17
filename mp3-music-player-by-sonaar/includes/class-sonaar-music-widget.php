@@ -799,9 +799,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                 $trackIndex =  $trackIndexRelatedToItsPost;
             }
             
-            $show_track_market = true;
-            print_r($track);
-
             $song_store_list_ar = $this->fetch_song_store_list_html($track, $trackIndex, $show_track_market, $key1);
             $song_store_list = $song_store_list_ar['store_list'];
             $playlist_has_ctas = (isset($playlist_has_ctas) && $playlist_has_ctas == true ) ? $playlist_has_ctas : $song_store_list_ar['playlist_has_ctas'];
@@ -3974,6 +3971,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $audioSrc = '';
                         $song_store_list = isset($beatItem["song_store_list"]) ? $beatItem["song_store_list"] : '' ;
                         $album_store_list = ($wc_add_to_cart == 'true' || $wc_buynow_bt == 'true') ? $this->push_woocart_in_storelist($a, $is_variable_product, $wc_add_to_cart, $wc_buynow_bt) : false;
+                        $song_store_list = $song_store_list ?? $album_store_list;
                        
                       
                         $has_song_store = false;
@@ -4072,8 +4070,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $album_tracks[$i]["track_pos"] = ( get_post_meta( $a->ID, 'reverse_post_tracklist', true) )? count($album_tracks) - ($i + 1) : $i ;
                         $album_tracks[$i]["release_date"] = get_post_meta($a->ID, 'alb_release_date', true);
                         $album_tracks[$i]["song_store_list"] = $song_store_list;
-                        // $album_tracks[$i]["has_song_store"] = $has_song_store;
-                        $album_tracks[$i]["has_song_store"] = true;
+                        $album_tracks[$i]["has_song_store"] = $has_song_store;
+                        // $album_tracks[$i]["has_song_store"] = true;
                         $album_tracks[$i]["album_store_list"] = $album_store_list;
                         $album_tracks[$i]['sourcePostID'] = $a->ID;
                         $album_tracks[$i]['has_lyric'] = $has_lyric;
