@@ -383,10 +383,10 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                                                 data-show_option_none="yes">
                                                                 <option value="">Choose an option</option>
                                                                 <option value="basic">Basic</option>
-                                                                <option value="exclusive">Exclusive</option>
-                                                                <option value="premium">Premium</option>
                                                                 <option value="standard">Standard</option>
+                                                                <option value="premium">Premium</option>
                                                                 <option value="unlimited">Unlimited</option>
+                                                                <option value="exclusive">Exclusive</option>
                                                             </select><a class="reset_variations" href="#">Clear</a>
                                                         </td>
                                                     </tr>
