@@ -4067,7 +4067,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                         $album_tracks[$i]["track_pos"] = ( get_post_meta( $a->ID, 'reverse_post_tracklist', true) )? count($album_tracks) - ($i + 1) : $i ;
                         $album_tracks[$i]["release_date"] = get_post_meta($a->ID, 'alb_release_date', true);
                         $album_tracks[$i]["song_store_list"] = $song_store_list;
-                        $album_tracks[$i]["has_song_store"] = $has_song_store;
+                        // $album_tracks[$i]["has_song_store"] = $has_song_store;
+                        $album_tracks[$i]["has_song_store"] = true;
                         $album_tracks[$i]["album_store_list"] = $album_store_list;
                         $album_tracks[$i]['sourcePostID'] = $a->ID;
                         $album_tracks[$i]['has_lyric'] = $has_lyric;
