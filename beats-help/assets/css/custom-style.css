@@ -65,9 +65,11 @@ input.input-pad
   body .cmb-row {
     display: block;
   }
+  body .cmb-row.cmb-type-title,
   body .cmb-th {
     width: 100%;
   }
+  body .cmb-row.cmb-type-title,
   body .cmb2-metabox-description {
     display: block
   }
