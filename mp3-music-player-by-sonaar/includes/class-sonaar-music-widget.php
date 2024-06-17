@@ -1532,6 +1532,8 @@ class Sonaar_Music_Widget extends WP_Widget{
                 }
 
                 $show_track_market = true;
+                
+                print_r($playlist['tracks'][$trackIndex]);
                 $song_store_list_ar = $this->fetch_song_store_list_html($playlist['tracks'][$trackIndex], $trackIndex,  $show_track_market, $trackIndex);
                 $song_store_list = $song_store_list_ar['store_list'];
                 $playlist_has_ctas = (isset($playlist_has_ctas) && $playlist_has_ctas == true ) ? $playlist_has_ctas : $song_store_list_ar['playlist_has_ctas'];
@@ -2380,8 +2382,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         $song_store_list = '<span class="store-list">';
 
        // $playlist_has_ctas = $playlist_has_ctas;
-       print_r($track);
-       print_r($show_track_market);
+
         if($show_track_market && isset($track['album_store_list'][0])){
             $track['song_store_list'] = ( isset($track['song_store_list'][0]) ) ? array_merge($track['song_store_list'], $track['album_store_list']) : $track['album_store_list'];
             $track['has_song_store'] = true;
