@@ -3028,14 +3028,14 @@ class Sonaar_Music_Widget extends WP_Widget{
             array_push($store_list, $storeListArgs);
         }
        
-        if( !empty(get_post_meta($post->ID, 'beat_downloadable', true))) {
+        if( $wc_buynow_bt) {
             // $url_if_no_variation = $checkout_url . '?add-to-cart=' . $post_id;
             // $url_if_variation = $homeurl . $product_permalink . '/' . $product_slug; //no add to cart since its a variation and user must choose variation from the single page;
             // $url_if_no_variation = $checkout_url . '?add-to-cart=' . $post_id;
             // $storeicon = ( Sonaar_Music::get_option('wc_bt_show_icon', 'srmp3_settings_woocommerce') == 'true' ) ? 'fas fa-download' : '';
             $storeicon = 'fas fa-download';
             $label =  esc_html__('Download', 'sonaar-music'); 
-            $pageUrl = get_post_meta($post->ID,'beat_mp3_url',true);
+            $pageUrl = get_post_meta($post_id,'beat_mp3_url',true) ?? get_post_meta($post_id,'beat_mp3',true)  ;
 
             array_push($store_list, [
                 'store-icon'    => $storeicon,
