@@ -72,6 +72,9 @@ class Sonaar_Music_Widget extends WP_Widget{
             if ( isset($_GET['load']) && $_GET['load'] == 'station.json' ) {     
                 $this->print_playlist_json();
             }
+            if ( isset($_GET['load']) && $_GET['load'] == 'beat.json' ) {     
+                $this->print_playlist_json();
+            }
         });
         parent::__construct('sonaar-music', esc_html_x('Sonaar: Music Player', 'Widget', 'sonaar-music'), $widget_ops);
         
@@ -2812,6 +2815,7 @@ class Sonaar_Music_Widget extends WP_Widget{
         $isFavorite = !empty($_GET["is_favorite"]) ? sanitize_text_field($_GET["is_favorite"]) : null;
         $this->shortcodeParams = null;
         $playlist = $this->get_playlist($station_id, $albums, $category, $posts_not_in, $category_not_in, $title, $feed_title, $feed, $feed_img, $el_widget_id, $artwork, $posts_per_pages, $all_category, $single_playlist, $reverse_tracklist, $audio_meta_field, $repeater_meta_field, 'sticky', $track_desc_postcontent, $import_file, $rss_items, $rss_item_title, $isFavorite);
+        
         if(!is_array($playlist) || empty($playlist['tracks']))
         wp_send_json('');
        
@@ -3502,7 +3506,11 @@ class Sonaar_Music_Widget extends WP_Widget{
             // retrieve albums from category
             $returned_data = $this->getAlbumsFromTerms($station_id, $category, $posts_not_in, $category_not_in, $posts_per_pages, true, $player, $reverse_tracklist);             
             $albums = $returned_data['albums'];// true means get post objects. false means get Ids only
-    
+            $beat_id = !empty($_GET["beat_id"]) ? intval($_GET["beat_id"]) : null;
+            if ($beat_id) {
+                
+                $albums = [get_post($beat_id)];
+            } 
         }
 
         if(Sonaar_Music::get_option('show_artist_name', 'srmp3_settings_general') ){
