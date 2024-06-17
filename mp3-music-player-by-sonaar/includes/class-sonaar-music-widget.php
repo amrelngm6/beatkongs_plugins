@@ -3977,7 +3977,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                       
                         $has_song_store = false;
                         if (isset($song_store_list[0])){
-                            // $has_song_store = true; 
+                            $has_song_store = true; 
                         }
                         $icecast_json = false; 
                         $icecast_mount = false; 
