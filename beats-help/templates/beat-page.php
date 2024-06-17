@@ -133,7 +133,7 @@ $class->setDefaultValue($postMeta);
                                         <li class="elementor-icon-list-item">
                                             <span class="elementor-icon-list-icon">
                                                 <i aria-hidden="true" class="far fa-eye"></i> </span>
-                                            <span class="elementor-icon-list-text"><?php echo $postMeta['ekit_post_views_count'][0] ?? '0'; ?> Views</span>
+                                            <span class="elementor-icon-list-text"><?php echo $postMeta['_eael_post_view_count'][0] ?? '0'; ?> Views</span>
                                         </li>
                                     </ul>
                                 </div>
