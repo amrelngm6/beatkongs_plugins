@@ -2367,7 +2367,8 @@ class Sonaar_Music_Widget extends WP_Widget{
             return false;
         }
 
-        return (get_post_meta($id, 'beat_type', true) == 'sell' ? 'true' : false);
+            return false;
+            // return (get_post_meta($id, 'beat_type', true) == 'sell' ? 'true' : false);
     }
            
     private function fetch_song_store_list_html($track, $trackIndex, $show_track_market, $key1){
