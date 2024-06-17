@@ -3028,7 +3028,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             array_push($store_list, $storeListArgs);
         }
        
-        if( $wc_buynow_bt) {
+        if( $wc_buynow_bt || get_post_meta($post_id, 'beat_type', true) == 'free' ) {
             // $url_if_no_variation = $checkout_url . '?add-to-cart=' . $post_id;
             // $url_if_variation = $homeurl . $product_permalink . '/' . $product_slug; //no add to cart since its a variation and user must choose variation from the single page;
             // $url_if_no_variation = $checkout_url . '?add-to-cart=' . $post_id;
