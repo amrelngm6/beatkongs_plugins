@@ -101,7 +101,7 @@ if ( $new_product ) {
 
                 <div class="dokan-form-top-area">
 
-                    <div class="content-half-part dokan-product-meta">
+                    <div class="content-half-part dokan-product-meta" style="padding: 10px">
 
                         <div id="dokan-product-title-area" class="dokan-form-group">
                             <input type="hidden" name="beat_id" id="dokan-beat-id" value="<?php echo esc_attr( $beatId ); ?>"/>
