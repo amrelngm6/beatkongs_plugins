@@ -3009,7 +3009,7 @@ class Sonaar_Music_Widget extends WP_Widget{
     
         if( $wc_add_to_cart == 'true' ){
             $label = (Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') && Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') != '' && Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') != 'Add to Cart') ? Sonaar_Music::get_option('wc_add_to_cart_text', 'srmp3_settings_woocommerce') : esc_html__('Add to Cart', 'sonaar-music');
-            $label = ($wc_bt_type == 'wc_bt_type_price') ? '--' : $label . ' a'; 
+            $label = ($wc_bt_type == 'wc_bt_type_price') ? esc_html__('Add to Cart', 'sonaar-music') : $label . ' '; 
             $url_if_variation = get_permalink( $post_id ); //no add to cart since its a variation and user must choose variation from the single page
             $url_if_no_variation = get_permalink(get_the_ID()) . '?add-to-cart=' . $post_id;
             $storeicon = ( Sonaar_Music::get_option('wc_bt_show_icon', 'srmp3_settings_woocommerce') =='true' ) ? 'fas fa-cart-plus' : '';
@@ -3030,7 +3030,7 @@ class Sonaar_Music_Widget extends WP_Widget{
        
         if( $wc_buynow_bt == 'true' ){
             $label = (Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') && Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') != '' && Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') != 'Buy Now' ) ? Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') : esc_html__('Buy Now', 'sonaar-music');
-            $label = ($wc_bt_type == 'wc_bt_type_price') ? '--' : $label . ' a'; 
+            $label = ($wc_bt_type == 'wc_bt_type_price') ? esc_html__('Buy now', 'sonaar-music') : $label . ' '; 
             $url_if_variation = $homeurl . $product_permalink . '/' . $product_slug; //no add to cart since its a variation and user must choose variation from the single page;
             $url_if_no_variation = $checkout_url . '?add-to-cart=' . $post_id;
             $storeicon = ( Sonaar_Music::get_option('wc_bt_show_icon', 'srmp3_settings_woocommerce') == 'true' ) ? 'fas fa-shopping-cart' : '';
