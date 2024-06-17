@@ -41,4 +41,12 @@ jQuery(document).ready(function($) {
         jQuery('#beat_slug_value').attr('disabled', false).focus()
     })
 
+    jQuery(document).on('change', '#beat_type', function(){
+        let val = jQuery(this).val()
+        console.log(val)
+         (val == 'free') 
+         ?   jQuery('#beat_downloadable_section').hide()
+         :   jQuery('#beat_downloadable_section').show();
+    })
+
 });
