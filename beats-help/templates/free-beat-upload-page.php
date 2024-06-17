@@ -395,7 +395,7 @@ $moods = get_terms(array(
     var input = document.querySelector('input[name=beat_tags]');
     new Tagify(input, {
         maxTags: 3,
-        // keepInvalidTags     : true,
+        keepInvalidTags     : true,
         createInvalidTags: true,
         whitelist: availableTags,
         enforceWhitelist: true,  // Only allow tags from the whitelist
