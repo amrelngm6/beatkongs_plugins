@@ -102,7 +102,7 @@ $class->setDefaultValue($postMeta);
                                         <li class="elementor-icon-list-item">
                                             <span class="elementor-icon-list-icon">
                                                 <i aria-hidden="true" class="far fa-clock"></i> </span>
-                                            <span class="elementor-icon-list-text">November 23, 2022</span>
+                                            <span class="elementor-icon-list-text"><?php echo date("M d, Y", strtotime($beat->post_date)); ?></span>
                                         </li>
                                         <li class="elementor-icon-list-item">
                                             <span class="elementor-icon-list-icon">
@@ -232,8 +232,8 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                                             data-showloading="1" 
                                                             data-albumTitle="<?php echo $beat->post_title; ?>"
 															data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID); ?>"
-                                                            data-releasedate="" data-date="2023/11/23"
-                                                            data-date-formated="November 23, 2023" data-show-date=""
+                                                            data-releasedate="" data-date="<?php echo date("Y-m-d", strtotime($beat->post_date)); ?>"
+                                                            data-date-formated="<?php echo date("M d, Y", strtotime($beat->post_date)); ?>" data-show-date=""
                                                             data-trackTitle="<?php echo $beat->post_title; ?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by <?php echo get_the_author_meta('display_name', $beat->post_author); ?>&lt;/span&gt;"
                                                             data-artist="<?php echo get_the_author_meta('display_name', $beat->post_author); ?>" data-trackID="<?php echo $postMeta['beat_mp3'][0] ?? '0'; ?>"
                                                             data-trackTime="00:00" data-relatedTrack="" data-post-url=""
