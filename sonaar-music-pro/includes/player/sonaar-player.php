@@ -101,7 +101,7 @@
           <div class="srp_ext_header" v-if="list.tracks.length >= 1">
             <i class="sricon-down-arrow srp_collapse_btn" @click="closeExtendedPlayer"></i>
             <div class="srp_playlist_title" @click="closeExtendedPlayer">{{ list.tracks[currentTrack].album_title ?? 'NOW PLAYING' }}</div>
-            <i class="sricon-3-dots-v srp_ellipsis_btn" @click="openExtendedPlayerOverlay" v-if="list.tracks[currentTrack].song_store_list"></i>
+            <i class="sricon-3-dots-v srp_ellipsis_btn" @click="openExtendedPlayerOverlay" ></i>
             <div v-if="!list.tracks[currentTrack].song_store_list"></div>
           </div>
           <div class="srp_ext_artwork" v-if="list.tracks.length >= 1 && hasArtwork">
