@@ -799,6 +799,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 $trackIndex =  $trackIndexRelatedToItsPost;
             }
             
+            $show_track_market = true;
             $song_store_list_ar = $this->fetch_song_store_list_html($track, $trackIndex, $show_track_market, $key1);
             $song_store_list = $song_store_list_ar['store_list'];
             $playlist_has_ctas = (isset($playlist_has_ctas) && $playlist_has_ctas == true ) ? $playlist_has_ctas : $song_store_list_ar['playlist_has_ctas'];
