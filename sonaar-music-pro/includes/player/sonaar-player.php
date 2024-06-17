@@ -161,7 +161,7 @@
             </div>
             <div class="srp_ext_track_info">
               <div class="srp_track_title">{{list.tracks[currentTrack].track_title}}</div>
-              <div class="srp_artist">{{list.tracks[currentTrack].track_artist }}</div>
+              <a :href="'<?php echo get_site_url();?>/author/'+list.tracks[currentTrack].track_artist" class="srp_artist">{{list.tracks[currentTrack].track_artist }}</a>
             </div>
           </div>
          
