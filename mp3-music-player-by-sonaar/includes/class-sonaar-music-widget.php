@@ -2380,7 +2380,8 @@ class Sonaar_Music_Widget extends WP_Widget{
         $song_store_list = '<span class="store-list">';
 
        // $playlist_has_ctas = $playlist_has_ctas;
-       
+       print_r($track);
+       print_r($show_track_market);
         if($show_track_market && isset($track['album_store_list'][0])){
             $track['song_store_list'] = ( isset($track['song_store_list'][0]) ) ? array_merge($track['song_store_list'], $track['album_store_list']) : $track['album_store_list'];
             $track['has_song_store'] = true;
