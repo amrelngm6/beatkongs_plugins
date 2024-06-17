@@ -378,7 +378,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                                     <tr>
                                                         <th class="label"><label for="pa_license" style="color:#333">License</label></th>
                                                         <td class="value">
-                                                            <select id="pa_license" class="" name="attribute_pa_license"
+                                                            <select id="pa_license" class="" style=" color: var(--e-global-color-07ebab1);   background-color: var(--e-global-color-a6a1e3e); border-radius: 84px;" name="attribute_pa_license"
                                                                 data-attribute_name="attribute_pa_license"
                                                                 data-show_option_none="yes">
                                                                 <option value="">Choose an option</option>
