@@ -235,7 +235,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                                             data-date-formated="November 23, 2023" data-show-date=""
                                                             data-trackTitle="<?php echo $beat->post_title; ?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by <?php echo get_the_author_meta('display_name', $beat->post_author); ?>&lt;/span&gt;"
                                                             data-artist="<?php echo get_the_author_meta('display_name', $beat->post_author); ?>" data-trackID="<?php echo $postMeta['beat_mp3'][0] ?? '0'; ?>"
-                                                            data-trackTime="00:00" data-relatedTrack="" data-post-url=""
+                                                            data-trackTime="01:00" data-relatedTrack="" data-post-url=""
                                                             data-post-id="<?php echo $beat->ID; ?>" data-track-pos="0"
                                                             data-peakFile="<?php echo get_site_url(); ?>/wp-content/uploads/audio_peaks/<?php echo $beat->ID; ?>_preview.peak"
                                                             data-peakFile-allow="1" data-is-preview="1"
