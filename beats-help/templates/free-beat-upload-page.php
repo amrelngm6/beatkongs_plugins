@@ -188,7 +188,7 @@ if ( $new_product ) {
                             <input name='beat_tags' value="<?php echo implode(',', array_column($selectedTags, 'name')) ; ?>" placeholder='Choose tags...'>
                         </div>
 
-                        <div class="dokan-form-group" id="beat_downloadable_section">
+                        <div class="dokan-form-group" id="beat_downloadable_section" style="display: <?php echo isset($postMeta['beat_type'][0]) ? 'block' : 'none'; ?>">
                                 <input type="hidden" name="beat_downloadable" id="beat_downloadable_hidden" value="0" />
                             <label>
                                 <input <?php echo !empty($postMeta['beat_downloadable'][0]) ? 'checked=""' : ''; ?> type="checkbox" class="_is_downloadable" name="beat_downloadable" id="_downloadable"> Downloadable <span class="label-tips">Downloadable products give access to a file upon purchase.</span> <i class="fas fa-question-circle "></i>
