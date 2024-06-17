@@ -3029,11 +3029,10 @@ class Sonaar_Music_Widget extends WP_Widget{
         }
        
         if( $wc_buynow_bt == 'true' ){
-            $label = (Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') && Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') != '' && Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') != 'Buy Now' ) ? Sonaar_Music::get_option('wc_buynow_text', 'srmp3_settings_woocommerce') : esc_html__('Buy Now', 'sonaar-music');
-            $label = ($wc_bt_type == 'wc_bt_type_price') ? esc_html__('Buy now', 'sonaar-music') : $label . ' '; 
+            $label = (get_post_meta($post->ID, 'beat_downloadable', true)) ? esc_html__('Download', 'sonaar-music') : ''; 
             $url_if_variation = $homeurl . $product_permalink . '/' . $product_slug; //no add to cart since its a variation and user must choose variation from the single page;
             $url_if_no_variation = $checkout_url . '?add-to-cart=' . $post_id;
-            $storeicon = ( Sonaar_Music::get_option('wc_bt_show_icon', 'srmp3_settings_woocommerce') == 'true' ) ? 'fas fa-shopping-cart' : '';
+            $storeicon = ( Sonaar_Music::get_option('wc_bt_show_icon', 'srmp3_settings_woocommerce') == 'true' ) ? 'fas fa-download' : '';
             $pageUrl = ($is_variable_product == 1) ? $url_if_variation : $url_if_no_variation ;
 
             array_push($store_list, [
