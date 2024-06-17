@@ -62,6 +62,15 @@ input.input-pad
   padding: 6px;
 }
 @media (max-width: 767px) {
+  body .cmb-row {
+    display: block;
+  }
+  body .cmb-th {
+    width: 100%;
+  }
+  body .cmb-th .cmb2-metabox-description {
+    display: block
+  }
   body.dokan-dashboard .dokan-dash-sidebar{
     position: fixed;
     top: 140px;
