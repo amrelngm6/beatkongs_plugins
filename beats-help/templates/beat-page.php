@@ -113,13 +113,13 @@ $class->setDefaultValue($postMeta);
 
                                             <span class="elementor-icon-list-icon">
                                                 <i aria-hidden="true" class="far fa-grin"></i> </span>
-                                            <span class="elementor-icon-list-text"> 
+                                            <span class="elementor-icon-list-text flex gap-2 w-full"> 
 											<?php 
                                                 $selectedCategory = wp_get_post_terms( $beat->ID, 'category');
                                                 $selectedTags = wp_get_post_terms( $beat->ID, 'tag');
                                                 foreach ($selectedCategory as $key => $value) {
                                             ?>
-                                            <a
+                                            <a	style="width: auto"
 													href="<?php echo get_site_url(); ?>/stations/<?php echo $value->slug; ?>"
 													rel="tag"><?php echo $value->name; ?></a>
                                             <?php  } ?>
