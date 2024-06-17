@@ -158,7 +158,7 @@ Vue.component('cta', {
       },
   },
   template: `
-            <span v-if="(typeof store !== 'undefined' && store['store-icon'])"><a
+            <span v-if="(typeof store !== 'undefined' && store['store-icon'] !== '')"><a
                
               :href="store['link-option'] == 'popup' || (store['has-variation'] == true && player.classes.wc_variation_lb) ? '#!': store['store-link']"
               :target="store['store-target'] || store['link-option'] === 'popup' ? '_self' : '_blank'"
@@ -174,7 +174,7 @@ Vue.component('cta', {
               :data-product_id="store['product-id'] !== undefined ? store['product-id'] : false"
               @click="player.ctaClick(store, $(event.target))"
             >
-            {{store['store-icon']}}
+            
               <i :class="store['store-icon']"></i><span>{{ (label)?store['store-name']:'' }}</span>
             
             </a></span>
