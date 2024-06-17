@@ -219,19 +219,25 @@ $class->setDefaultValue($postMeta);
                                                         <div class="srp_notfound--subtitle">Please try another keyword
                                                         </div>
                                                     </div>
+<?php 
+$beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+$beatMP3 = wp_get_attachment_url($beatMP3Id); 
+?>
+
                                                     <ul class="srp_list"
                                                         data-filters="product_cat,product_tag,pa_license,instruments,mood,bpm">
                                                         <li class="sr-playlist-item"
-                                                            data-audiopath="https://beatkongs.com/test/wp-content/uploads/audio_preview/878_Upbeat-Snaps_preview.mp3"
-                                                            data-showloading="1" data-albumTitle="California"
-                                                            data-albumArt="https://beatkongs.com/test/wp-content/uploads/2022/11/Black-Magic-mp3-image.jpg"
-                                                            data-releasedate="" data-date="2022/11/23"
-                                                            data-date-formated="November 23, 2022" data-show-date=""
+                                                            data-audiopath="<?php echo $beatMP3; ?>"
+                                                            data-showloading="1" 
+                                                            data-albumTitle="<?php echo $beat->post_title; ?>"
+															data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID); ?>"
+                                                            data-releasedate="" data-date="2023/11/23"
+                                                            data-date-formated="November 23, 2023" data-show-date=""
                                                             data-trackTitle="<?php echo $beat->post_title; ?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Mike Ruzin&lt;/span&gt;"
-                                                            data-artist="Mike Ruzin" data-trackID="862"
+                                                            data-artist="<?php echo get_the_author_meta('display_name', $beat->post_author); ?>" data-trackID="<?php echo $postMeta['beat_mp3'][0] ?? '0'; ?>"
                                                             data-trackTime="0:36" data-relatedTrack="" data-post-url=""
-                                                            data-post-id="878" data-track-pos="0"
-                                                            data-peakFile="https://beatkongs.com/test/wp-content/uploads/audio_peaks/862_preview.peak"
+                                                            data-post-id="<?php echo $beat->ID; ?>" data-track-pos="0"
+                                                            data-peakFile="<?php echo get_site_url(); ?>/wp-content/uploads/audio_peaks/<?php echo $beat->ID; ?>_preview.peak"
                                                             data-peakFile-allow="1" data-is-preview="1"
                                                             data-track-lyric="" data-icecast_json=""
                                                             data-icecast_mount="">
