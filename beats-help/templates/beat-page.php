@@ -233,7 +233,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
 															data-albumArt="<?php echo get_the_post_thumbnail_url($beat->ID); ?>"
                                                             data-releasedate="" data-date="2023/11/23"
                                                             data-date-formated="November 23, 2023" data-show-date=""
-                                                            data-trackTitle="<?php echo $beat->post_title; ?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by Mike Ruzin&lt;/span&gt;"
+                                                            data-trackTitle="<?php echo $beat->post_title; ?>&lt;span class=&quot;srp_trackartist&quot;&gt;&lt;br&gt; Produced by <?php echo get_the_author_meta('display_name', $beat->post_author); ?>&lt;/span&gt;"
                                                             data-artist="<?php echo get_the_author_meta('display_name', $beat->post_author); ?>" data-trackID="<?php echo $postMeta['beat_mp3'][0] ?? '0'; ?>"
                                                             data-trackTime="00:00" data-relatedTrack="" data-post-url=""
                                                             data-post-id="<?php echo $beat->ID; ?>" data-track-pos="0"
@@ -253,7 +253,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                         var srp_player_params_667089de45454 = {
                                             "title": "",
                                             "store_title_text": "",
-                                            "albums": "878",
+                                            "albums": "0",
                                             "hide_artwork": "true",
                                             "sticky_player": "1",
                                             "show_album_market": "false",
@@ -320,10 +320,10 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                 data-widget_type="woocommerce-product-price.default">
                                 <div class="elementor-widget-container">
                                     <p class="price"><span class="woocommerce-Price-amount amount"><bdi><span
-                                                    class="woocommerce-Price-currencySymbol">&#36;</span>19.99</bdi></span>
-                                        &ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-                                                    class="woocommerce-Price-currencySymbol">&#36;</span>249.99</bdi></span>
+                                                    class="woocommerce-Price-currencySymbol">&#36;</span><?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?></bdi></span>
                                     </p>
+                                    
+
                                 </div>
                             </div>
                             <div class="elementor-element elementor-element-203e9b0 elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
