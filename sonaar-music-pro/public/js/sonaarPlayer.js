@@ -132,7 +132,7 @@ Vue.component('store', {
       <div class="store" v-if="player.list.tracks.length >= 1 && player.albumStoreList.length >= 1">
       
           <ul class="track-store" v-if="player.albumStoreList.length >= 1">
-            <li v-for="(store, storeIndex) in player.albumStoreList">
+            <li v-for="(store, storeIndex) in player.albumStoreList" v-if="store && store['store-link'] && store['store-link'].length > 0">
             <cta :player=player :storeid=storeIndex label=true></cta>
             </li>
           </ul>
