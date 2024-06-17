@@ -158,7 +158,7 @@ Vue.component('cta', {
       },
   },
   template: `
-            <span v-if="(typeof store !== 'undefined' && store['store-link'] !== '')" :class="store['store-link']"><a
+            <span v-if="(typeof store !== 'undefined' && store['store-link'] && store['store-link'].length > 0 )" :class="store['store-link']"><a
                
               :href="store['link-option'] == 'popup' || (store['has-variation'] == true && player.classes.wc_variation_lb) ? '#!': store['store-link']"
               :target="store['store-target'] || store['link-option'] === 'popup' ? '_self' : '_blank'"
