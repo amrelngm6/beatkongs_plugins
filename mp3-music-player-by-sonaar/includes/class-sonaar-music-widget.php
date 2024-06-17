@@ -3035,8 +3035,8 @@ class Sonaar_Music_Widget extends WP_Widget{
             // $storeicon = ( Sonaar_Music::get_option('wc_bt_show_icon', 'srmp3_settings_woocommerce') == 'true' ) ? 'fas fa-download' : '';
             $storeicon = 'fas fa-download';
             $label =  esc_html__('Download', 'sonaar-music'); 
-            $pageUrl = get_post_meta($post_id,'beat_mp3_url',true)  ;
-            $pageUrl = !empty($pageUrl) ? $pageUrl : get_post_meta($post_id,'beat_mp3',true)  ;
+            $pageUrl = get_post_meta($post_id,'beat_mp3',true)  ;
+            $pageUrl = !empty($pageUrl) ? $pageUrl : get_post_meta($post_id,'beat_mp3_url',true)  ;
 
             array_push($store_list, [
                 'store-icon'    => $storeicon,
