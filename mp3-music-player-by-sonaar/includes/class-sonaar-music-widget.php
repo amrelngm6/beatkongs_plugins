@@ -2848,7 +2848,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             return false;
         }
 
-        return false;
+        return true;
         $product = wc_get_product($id);
         if ($product->is_type('variable')) {
             return true;
