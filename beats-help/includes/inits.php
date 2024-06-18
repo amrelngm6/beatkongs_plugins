@@ -376,7 +376,7 @@ function beats_beattag_handle_form_submission()
         
         $update = update_user_meta( $post_author, 'beattag_time', $time );
         
-        if ($update) {
+        if ($update && $createBeattagLoop) {
             wp_redirect(add_query_arg('message', 'success', wp_get_referer()));
             exit;
         }
