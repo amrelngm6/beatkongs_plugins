@@ -1,6 +1,5 @@
 <?php
 include plugin_dir_path(__FILE__) .'../../beats-help/vendor/autoload.php';
-include plugin_dir_path(__FILE__) .'../../beats-help/includes/Music/MediansStation.php';
 
 /**
  * Get MP3 file duration 
