@@ -227,7 +227,7 @@ function beats_handle_form_submission()
             $beatMP3 = wp_get_attachment_url($beatMP3Id);
             $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beatMP3);
 
-            $output = str_replace('.', '_preview.', $beatMP3);
+            $output = str_replace('.', '_preview.', $input);
 
             $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -i $beattag -filter_complex [1]aloop=loop=-1:size=2e+09,asetpts=N/SR/TB[aud]; [0][aud]amix=inputs=2:duration=shortest,volume=2 $output ";
             error_log($command);
