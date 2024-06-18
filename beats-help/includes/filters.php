@@ -133,7 +133,7 @@ function beats_plugin_settings_render() {
             <?php do_settings_sections('beats_plugin_settings'); ?>
             
             <div style="display:flex; gap:20px; width: 100%">
-                <h2>Loop Beat Tag</h2>
+                <h2>Loop Beat Tag ( <?php echo get_option('beats_default_beattag_time') ?? '0'; ?> )</h2>
                 <div style="width:auto"> 
                     <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_option('beats_default_beattag_time'); ?>" />  
                     <div style="display:flex;  width: 100%">
