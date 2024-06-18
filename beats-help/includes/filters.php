@@ -125,7 +125,8 @@ function beats_plugin_settings_page() {
 function beats_plugin_settings_render() {
     ?>
     <div class="wrap">
-        <h1>Custom Plugin Settings</h1>
+        <h1 style="margin-bottom: 20px;">Custom Plugin Settings</h1>
+        <hr style="margin: 20px;" />
         
         <form method="post" enctype="multipart/form-data" action="options.php">
             <?php settings_fields('beats_plugin_options'); ?>
