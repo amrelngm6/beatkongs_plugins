@@ -21,6 +21,12 @@ final class MediansStation
      */
     public $title;
 
+    
+    /**
+     * String $station
+     */
+    public $station;
+
     /**
      * [ MediansBeat() ] $tracks
      */
@@ -31,6 +37,7 @@ final class MediansStation
     {
         $this->id = $term->term_id;
         $this->title = $term->name;
+        $this->station = $term;
     }
 
 
@@ -39,7 +46,7 @@ final class MediansStation
      */
     public function loadStationItems($station)
     {
-        if ($station->slug == 'freshbeats')
+        if ($this->station->slug == 'freshbeats')
         {
             $seven_days_ago = date('Y-m-d H:i:s', strtotime('-7 days'));
             $args    = [
@@ -51,7 +58,7 @@ final class MediansStation
                 ),
             ];
 
-        } elseif ($station->slug == 'beats247') {
+        } elseif ($this->station->slug == 'beats247') {
             
             $args    = [
                 'post_type'         => 'beat',
