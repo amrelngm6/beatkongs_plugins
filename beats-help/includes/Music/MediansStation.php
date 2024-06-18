@@ -75,11 +75,13 @@ final class MediansStation
                 'post_status'         => ['publish'],
                 'orderby' => 'rand',
                 'posts_per_page' => 50,
-                'tax_query'         =>  array(
-                    'taxonomy' => 'station',
-                    'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
-                    'terms'    => array($this->id), // Replace with your categories
-                )
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'station',
+                        'field' => 'id',
+                        'terms' => $this->id,
+                    ),
+                ),
             ];
         }
         error_log(json_encode($args));
