@@ -223,6 +223,12 @@ function beats_handle_form_submission()
             $beattag = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beattag_file);
             $beattag = str_replace('.', '_tag.',  $beattag);
             
+            if (!is_file($beattag))
+            {
+                $beattag = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], get_option('beats_default_beattag'));
+                $beattag = str_replace(['.wav', '.mp3'], ['_tag.wav', '_tag.mp3'], $beattag);
+            }
+
             $beatMP3Id = get_post_meta($beatId, 'beat_mp3', true);
             $beatMP3 = wp_get_attachment_url($beatMP3Id);
             $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beatMP3);
@@ -413,7 +419,7 @@ function beats_plugin_settings_save() {
     if (isset($_POST['beattag_time'])) {
         update_option('beats_default_beattag_time', sanitize_text_field($_POST['beattag_time']));
     }
-    
+
     if (isset($_FILES['beats_plugin_file_upload'])) {
         $uploaded_file = $_FILES['beats_plugin_file_upload'];
         
@@ -423,11 +429,19 @@ function beats_plugin_settings_save() {
         if ($movefile && !isset($movefile['error'])) {
             // File successfully uploaded, handle further actions (e.g., store path in options)
             update_option('beats_default_beattag', $movefile['url']);
+            
         } else {
             // Error handling the file upload
             echo $movefile['error'];
         }
     }
+
+    $time = $_POST['beattag_time'];
+    $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $movefile['url']);
+    $output = str_replace('.', '_tag.', $input);
+    $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
+    $createBeattagLoop = exec($command);
+    
 }
 add_action('admin_init', 'beats_plugin_settings_save');
 
