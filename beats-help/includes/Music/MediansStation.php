@@ -53,6 +53,7 @@ final class MediansStation
                 'post_type'         => 'beat',
                 'orderby' => 'rand',
                 'post_status'       => ['publish'],
+                'posts_per_page' => -1,
                 'date_query' => array(
                     'after' => $seven_days_ago,
                 ),
@@ -63,6 +64,7 @@ final class MediansStation
             $args    = [
                 'post_type'         => 'beat',
                 'orderby' => 'rand',
+                'posts_per_page' => 50,
                 'post_status'       => ['publish'],
             ];
 
@@ -72,6 +74,7 @@ final class MediansStation
                 'post_type'         => 'beat',
                 'orderby' => 'rand',
                 'post_status'         => ['publish'],
+                'posts_per_page' => 50,
                 'tax_query'         =>  array(
                     'taxonomy' => 'station',
                     'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
