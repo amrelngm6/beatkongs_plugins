@@ -119,7 +119,7 @@ Class BeatLicense
         $args = array(
             'post_type' => 'usage-terms',
             'author'    => 1,
-            'orderby' => 'ID',
+            'orderby' => 'menu_order',
             'order' => 'ASC',
         );
 
