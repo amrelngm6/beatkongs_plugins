@@ -446,6 +446,7 @@ function beats_plugin_settings_save() {
     $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
     $createBeattagLoop = exec($command);
     
+    return $createBeattagLoop;
 }
 add_action('admin_init', 'beats_plugin_settings_save');
 
