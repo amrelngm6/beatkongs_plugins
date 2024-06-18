@@ -386,7 +386,7 @@ function beats_beattag_handle_form_submission()
 
         $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $file);
         $output = str_replace(['.mp3', '.wav'], ['_tag.mp3', '_tag.wav'], $input);
-        $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
+        $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -af apad -t $time $output";
         $createBeattagLoop = exec($command);
 
         $update = update_user_meta( $post_author, 'beattag_file', $file );
@@ -441,7 +441,6 @@ function beats_plugin_settings_save() {
     $time = $_POST['beattag_time'];
     $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $movefile['url'] ?? get_option('beats_default_beattag'));
     $output = str_replace(['.mp3', '.wav'], ['_tag.mp3', '_tag.wav'], $input);
-
     $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -af apad -t $time $output" ;
     $createBeattagLoop = exec($command);
     
