@@ -137,6 +137,7 @@ function beats_plugin_settings_render() {
             <input type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
         </form>
     </div>
+    <audio src="<?php echo get_option('beats_default_beattag'); ?>" controls />
     <?php
 }
 
