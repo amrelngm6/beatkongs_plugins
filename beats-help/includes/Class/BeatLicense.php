@@ -114,11 +114,44 @@ Class BeatLicense
     }
 
     
-    public function loadLicensesVariations()
+    public function loadBeatLicensesVariations($post_id)
     {
+        $args = array(
+            'post_type' => 'usage-terms',
+            'author'    => 1,
+            'orderby' => 'ID',
+            'order' => 'ASC',
+        );
+
+        $items = new WP_Query( $args );
+
+        $array = [];
+
+        foreach ($items as $key => $value) {
+            $array[$key] = $this->loadLicenseVariations($post_id, $value);
+        }
+        
+        return array_filter($array);
+        
+    }
+
+    
+    public function loadLicenseVariations($post_id, $license)
+    {
+        
+        $image_id     = get_post_thumbnail_id( $post_id );
+        $image     = get_the_post_thumbnail_url( $post_id );
+        $price = get_post_meta($post_id, $license->post_name.'_wc_file_price', true);
+        $url = get_post_meta($post_id, $license->post_name.'_wc_file_url', true);
+
+        if (!$url)
+        {
+            return null;
+        }
+        
         $array = [];
         $array["attributes"] = [
-            "attribute_pa_license" => "basic"
+            "attribute_pa_license" => $license->post_title
         ];
 
         $array["availability_html"] = "";
@@ -129,46 +162,46 @@ Class BeatLicense
             "height" => ""
         ];
         $array["dimensions_html"] = "N\/A";
-        $array["display_price"] = 19.98999999999999843680598132777959108352661132812;
-        $array["display_regular_price"] = 19.989999999999998436805981327779591083526611328125;
+        $array["display_price"] = $price;
+        $array["display_regular_price"] = $price;
         $array["image"] = [
             "title" => "Black-Magic-mp3-image",
             "caption"=> "",
-            "url"=> "https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image.jpg",
+            "url"=> $image,
             "alt"=> "Black-Magic-mp3-image",
-            "src"=> "https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image.jpg",
-            "srcset"=> "https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image.jpg 400w, https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image-100x100.jpg 100w, https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image-150x150.jpg 150w, https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image-300x300.jpg 300w",
+            "src"=> $image,
+            "srcset"=> "$image 400w, $image 100w, $image 150w, $image 300w",
             "sizes"=> "(max-width: 400px) 100vw, 400px",
-            "full_src"=> "https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image.jpg",
+            "full_src"=> $image,
             "full_src_w"=> 400,
             "full_src_h"=> 400,
-            "gallery_thumbnail_src"=> "https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image-100x100.jpg",
+            "gallery_thumbnail_src"=> $image,
             "gallery_thumbnail_src_w"=> 100,
             "gallery_thumbnail_src_h"=> 100,
-            "thumb_src"=> "https:\/\/beatkongs.com\/test\/wp-content\/uploads\/2022\/11\/Black-Magic-mp3-image.jpg",
+            "thumb_src"=> $image,
             "thumb_src_w"=> 400,
             "thumb_src_h"=> 400,
             "src_w"=> 400,
             "src_h"=> 400
         ];
 
-        $array["image_id"] = 1058;
-        $array["is_downloadable"] = false;
+        $array["image_id"] = $image_id;
+        $array["is_downloadable"] = get_post_meta($post_id, 'beat_downloadable', true) ? true : false;
         $array["is_in_stock"] = true;
         $array["is_purchasable"] = true;
         $array["is_sold_individually"] = "yes";
         $array["is_virtual"] = false;
         $array["max_qty"] = 1;
         $array["min_qty"] = 1;
-        $array["price_html"] = "&lt;span class=\"price\"&gt;&lt;span class=\"woocommerce-Price-amount amount\"&gt;&lt;bdi&gt;&lt;span class=\"woocommerce-Price-currencySymbol\"&gt;&amp;#36;&lt;\/span&gt;19.99&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;";
+        $array["price_html"] = "&lt;span class=\"price\"&gt;&lt;span class=\"woocommerce-Price-amount amount\"&gt;&lt;bdi&gt;&lt;span class=\"woocommerce-Price-currencySymbol\"&gt;&amp;#36;&lt;\/span&gt;$price&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;";
         $array["sku"] = "";
         $array["variation_description"] = "";
-        $array["variation_id"] = 942;
+        $array["variation_id"] = $license->ID;
         $array["variation_is_active"] = true;
         $array["variation_is_visible"] = true;
         $array["weight"] = "";
         $array["weight_html"] = "N\/A";
 
-        return new WP_Query( $args );
+        return $array;
     }
 }
