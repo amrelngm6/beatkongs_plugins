@@ -177,7 +177,7 @@ $beats = $stationClass->loadStationItems();
                                                                         <a
                                                                         href="<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], $beatMP3); ?>"
                                                                         class="song-store sr_store_wc_round_bt"
-                                                                        target="_self"
+                                                                        target="_blank"
                                                                         data-source-post-id="<?php echo $beat->ID;?>" 
                                                                         tabindex="1"><i
                                                                             class="fas fa-download"></i><span
