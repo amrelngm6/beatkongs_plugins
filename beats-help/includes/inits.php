@@ -362,6 +362,12 @@ function beats_beattag_handle_form_submission()
         if ( ! current_user_can( 'edit_user', $post_author ) ) {
             return false;
         }
+
+        $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $file);
+        $output = str_replace('.', '_'.get_current_user_id().'.', $input);
+        $command = "ffmpeg -i $input -af apad -t $time $output";
+        $createBeattagLoop = exec($command);
+
         $update = update_user_meta( $post_author, 'beattag_file', $file );
         
         $update = update_user_meta( $post_author, 'beattag_file_id', $file_id );
