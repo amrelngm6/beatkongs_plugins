@@ -371,12 +371,12 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
 <?php 
 $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
 ?>
-                                        <form class="variations_form cart"
+                                        <form class="variations_forms cart"
                                             action="" method="post"
                                             enctype='multipart/form-data' data-product_id="<?php echo $beat->ID; ?>"
 											data-product_variations='<?php echo str_replace('"', '&quot;', json_encode(array_values($list))) ; ?>'> 
 
-                                            <table class="variations" cellspacing="0" role="presentation">
+                                            <table  cellspacing="0" role="presentation">
                                                 <tbody>
                                                     <tr>
                                                         <th class="label"><label for="beat_license" style="color:#333">License</label></th>
