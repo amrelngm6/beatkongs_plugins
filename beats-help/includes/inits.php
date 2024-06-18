@@ -418,6 +418,7 @@ function beats_plugin_settings_save() {
         if ($movefile && !isset($movefile['error'])) {
             // File successfully uploaded, handle further actions (e.g., store path in options)
             update_option('beats_default_beattag', $movefile['url']);
+            update_option('beats_default_beattag_time', sanitize_text_field($_POST['beattag_time']));
         } else {
             // Error handling the file upload
             echo $movefile['error'];
