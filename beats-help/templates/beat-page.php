@@ -374,7 +374,7 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
                                         <form class="variations_form cart"
                                             action="" method="post"
                                             enctype='multipart/form-data' data-product_id="<?php echo $beat->ID; ?>"
-                                            data-product_variations="<?php echo json_encode($list); ?>">
+                                            data-product_variations="<?php echo json_encode(array_values($list)); ?>">
 
                                             <table class="variations" cellspacing="0" role="presentation">
                                                 <tbody>
