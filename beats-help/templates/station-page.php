@@ -171,14 +171,26 @@ $beats = $stationClass->loadStationItems();
                                                         </div><span class="store-list">
                                                             <div class="song-store-list-menu"><i
                                                                     class="fas fa-ellipsis-v"></i>
-                                                                <div class="song-store-list-container"><a
+                                                                <div class="song-store-list-container">
+                                                                        <a
+                                                                        href="<?php echo get_site_url();?>/beat/<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], get_post_meta($beat->ID, 'beat_file', true)); ?>"
+                                                                        class="song-store sr_store_wc_round_bt"
+                                                                        target="_self"
+                                                                        data-source-post-id="<?php echo $beat->ID;?>" 
+                                                                        tabindex="1"><i
+                                                                            class="fas fa-download"></i><span
+                                                                            class="srp_cta_label"></span></a>
+                                                                            
+                                                                        <a
                                                                         href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_self" title="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>" aria-label="<?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?>"
                                                                         data-source-post-id="<?php echo $beat->ID;?>" data-store-id="0-0"
                                                                         tabindex="1"><i
                                                                             class="fas fa-cart-plus"></i><span
-                                                                            class="srp_cta_label"><?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?></span></a><a
+                                                                            class="srp_cta_label"><?php echo is_numeric($class->getLowestPrice($postMeta)) ? '$'.$class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?></span></a>
+                                                                            
+                                                                        <a
                                                                         href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_force_pl_bt srp_hidden sr_store_wc_round_bt"
                                                                         target="_self" title="View Beat"
