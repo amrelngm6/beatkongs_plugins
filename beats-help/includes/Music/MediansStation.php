@@ -44,7 +44,7 @@ final class MediansStation
     /**
      * Load Station items
      */
-    public function loadStationItems($station)
+    public function loadStationItems()
     {
         if ($this->station->slug == 'freshbeats')
         {
