@@ -161,7 +161,7 @@ Class BeatLicense
             "width" => "",
             "height" => ""
         ];
-        $array["dimensions_html"] = "N\/A";
+        $array["dimensions_html"] = "N/A";
         $array["display_price"] = $price;
         $array["display_regular_price"] = $price;
         $array["image"] = [
@@ -193,14 +193,14 @@ Class BeatLicense
         $array["is_virtual"] = false;
         $array["max_qty"] = 1;
         $array["min_qty"] = 1;
-        $array["price_html"] = "&lt;span class=\"price\"&gt;&lt;span class=\"woocommerce-Price-amount amount\"&gt;&lt;bdi&gt;&lt;span class=\"woocommerce-Price-currencySymbol\"&gt;&amp;#36;&lt;\/span&gt;$price&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;";
+        $array["price_html"] = "$price";
         $array["sku"] = "";
         $array["variation_description"] = "";
         $array["variation_id"] = $license->ID;
         $array["variation_is_active"] = true;
         $array["variation_is_visible"] = true;
         $array["weight"] = "";
-        $array["weight_html"] = "N\/A";
+        $array["weight_html"] = "N/A";
 
         return $array;
     }
