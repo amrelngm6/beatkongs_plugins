@@ -221,7 +221,7 @@ function beats_handle_form_submission()
             
             $beattag_file = get_user_meta(get_current_user_id(), 'beattag_file', true);
             $beattag = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beattag_file);
-            $beattag = str_replace('.', '_tag_'.get_current_user_id().'.', $beattag);
+            $beattag = str_replace('.', '_tag.',  $beattag);
             
             $beatMP3Id = get_post_meta($beatId, 'beat_mp3', true);
             $beatMP3 = wp_get_attachment_url($beatMP3Id);
@@ -379,7 +379,7 @@ function beats_beattag_handle_form_submission()
         }
 
         $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $file);
-        $output = str_replace('.', '_tag_'.get_current_user_id().'.', $input);
+        $output = str_replace('.', '_tag.', $input);
         $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
         $createBeattagLoop = exec($command);
 
