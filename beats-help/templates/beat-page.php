@@ -318,6 +318,10 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                     </article>
                                 </div>
                             </div>
+<?php 							
+if ($lowestPrice != 'FREE') { 
+$list = $beatLicense->loadBeatLicensesVariations($beat->ID);
+?>
                             <div class="elementor-element elementor-element-59a6ae0 elementor-widget elementor-widget-woocommerce-product-price"
                                 data-id="59a6ae0" data-element_type="widget"
                                 data-widget_type="woocommerce-product-price.default">
@@ -369,11 +373,9 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                 <div class="elementor-widget-container">
 
                                     <div class="elementor-add-to-cart elementor-product-variable">
-<?php 
-$list = $beatLicense->loadBeatLicensesVariations($beat->ID);
-if ($lowestPrice != 'FREE') {
-?>
-                                        <form class="variations_forms cart"
+										
+										
+										<form class="variations_forms cart"
                                             action="" method="post"
                                             enctype='multipart/form-data' data-product_id="<?php echo $beat->ID; ?>"
 											data-product_variations='<?php echo str_replace('"', '&quot;', json_encode(array_values($list))) ; ?>'> 
@@ -426,14 +428,14 @@ if ($lowestPrice != 'FREE') {
                                             </div>
 
                                         </form>
-<?php } ?>
                                         <div class="ppc-button-wrapper">
-                                            <div id="ppc-button-ppcp-gateway"></div>
+											<div id="ppc-button-ppcp-gateway"></div>
                                         </div>
                                     </div>
-
+									
                                 </div>
                             </div>
+<?php } ?>
                             <div class="elementor-element elementor-element-d75336f e-con-full e-flex e-con e-child"
                                 data-id="d75336f" data-element_type="container">
                                 <div class="elementor-element elementor-element-c833602 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
