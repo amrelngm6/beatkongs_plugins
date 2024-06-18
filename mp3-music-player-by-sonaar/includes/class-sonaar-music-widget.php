@@ -4072,7 +4072,6 @@ class Sonaar_Music_Widget extends WP_Widget{
                         
                         $album_tracks[$i]["id"] = ( $mp3_id )? $mp3_id : '' ;
                         $album_tracks[$i]["mp3"] = is_file(str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $previewFile)) ? $previewFile : $audioSrc;
-                        $album_tracks[$i]["mp32"] = is_file(str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $previewFile)) ? $previewFile : str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $previewFile);
                         $album_tracks[$i]["loading"] = $showLoading;
                         $album_tracks[$i]["track_title"] = ( $track_title )? $track_title : "Track ". $num++;
                         $album_tracks[$i]["track_artist"] = ( isset( $track_artist ) && $track_artist != '' )? $track_artist : '';
