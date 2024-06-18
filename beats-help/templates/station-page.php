@@ -179,7 +179,7 @@ $beats = $stationClass->loadStationItems();
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_blank"
                                                                         data-source-post-id="<?php echo $beat->ID;?>" 
-                                                                        tabindex="1"><i
+                                                                        tabindex="1" download><i
                                                                             class="fas fa-download"></i><span
                                                                             class="srp_cta_label"></span></a>
                                                                         <?php } ?>
