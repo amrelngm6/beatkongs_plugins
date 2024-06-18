@@ -390,7 +390,7 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
                                                                 <option value="premium">Premium</option>
                                                                 <option value="unlimited">Unlimited</option>
                                                                 <option value="exclusive">Exclusive</option>
-                                                            </select><a class="reset_variations" href="#">Clear</a>
+                                                            </select>
                                                         </td>
                                                     </tr>
                                                 </tbody>
