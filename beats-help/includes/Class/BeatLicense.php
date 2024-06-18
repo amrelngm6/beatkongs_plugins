@@ -131,7 +131,7 @@ Class BeatLicense
             $array[$key] = $this->loadLicenseVariations($post_id, $value);
         }
         
-        return $array;
+        return array_filter($array);
         
     }
 
