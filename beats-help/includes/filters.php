@@ -119,6 +119,8 @@ function beats_plugin_settings_page() {
         'beats-plugin-settings',   // Menu slug (unique identifier)
         'beats_plugin_settings_render' // Callback function to render the page
     );
+    add_action('admin_init', 'beats_plugin_register_settings');
+
 }
 function beats_plugin_settings_render() {
     ?>
@@ -136,5 +138,9 @@ function beats_plugin_settings_render() {
         </form>
     </div>
     <?php
+}
+
+function beats_plugin_register_settings() {
+    register_setting('beats_plugin_options', 'beats_plugin_options', 'beats_plugin_validate_options');
 }
     
