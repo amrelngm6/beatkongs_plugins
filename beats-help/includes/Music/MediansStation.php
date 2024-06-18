@@ -51,7 +51,7 @@ final class MediansStation
             $seven_days_ago = date('Y-m-d H:i:s', strtotime('-7 days'));
             $args    = [
                 'post_type'         => 'beat',
-                'orderby' => 'rand',
+                // 'orderby' => 'rand',
                 'post_status'       => ['publish'],
                 'posts_per_page' => -1,
                 'date_query' => array(
@@ -73,7 +73,7 @@ final class MediansStation
             $args    = [
                 'post_type'         => 'beat',
                 'post_status'         => ['publish'],
-                'orderby' => 'rand',
+                // 'orderby' => 'rand',
                 'posts_per_page' => 50,
                 'tax_query' => array(
                     array(
@@ -97,7 +97,7 @@ final class MediansStation
         $args    = [
             'post_type'         => 'beat',
             'post_status'         => ['publish'],
-            'orderby'        => 'rand',
+            // 'orderby'        => 'rand',
             'tax_query'         =>  array(
                 'taxonomy' => 'station',
                 'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
