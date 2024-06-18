@@ -217,6 +217,22 @@ function beats_handle_form_submission()
             
             $beatId = isset($beat_post['ID']) ? wp_update_post($beat_post) : wp_insert_post($beat_post);
             
+
+            
+            $beattag_file = get_user_meta(get_current_user_id(), 'beattag_file', true);
+            $beattag = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beattag_file);
+            $beattag = str_replace('.', '_tag_'.get_current_user_id().'.', $beattag);
+            
+            $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+            $beatMP3 = wp_get_attachment_url($beatMP3Id);
+            $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beatMP3);
+
+            $output = str_replace('.', '_preview.', $beatMP3);
+
+            $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -i $beattag -filter_complex [1]aloop=loop=-1:size=2e+09,asetpts=N/SR/TB[aud]; [0][aud]amix=inputs=2:duration=shortest,volume=2 $output ";
+            $createBeattagLoop = exec($command);
+
+
             // Save Category
             $cats = $_POST['selected_cats'] ?? null;
             wp_set_post_terms($beatId, $cats, 'category');
@@ -364,9 +380,8 @@ function beats_beattag_handle_form_submission()
         }
 
         $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $file);
-        $output = str_replace('.', '_'.get_current_user_id().'.', $input);
+        $output = str_replace('.', '_tag_'.get_current_user_id().'.', $input);
         $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
-        error_log($command);
         $createBeattagLoop = exec($command);
 
         $update = update_user_meta( $post_author, 'beattag_file', $file );
