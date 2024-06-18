@@ -173,7 +173,7 @@ $beats = $stationClass->loadStationItems();
                                                                     class="fas fa-ellipsis-v"></i>
                                                                 <div class="song-store-list-container">
                                                                         <a
-                                                                        href="<?php echo get_site_url();?>/beat/<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], get_post_meta($beat->ID, 'beat_file', true)); ?>"
+                                                                        href="<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], get_post_meta($beat->ID, 'beat_file', true)); ?>"
                                                                         class="song-store sr_store_wc_round_bt"
                                                                         target="_self"
                                                                         data-source-post-id="<?php echo $beat->ID;?>" 
