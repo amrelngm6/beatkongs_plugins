@@ -126,8 +126,8 @@ function beats_plugin_settings_render() {
         <h1>Custom Plugin Settings</h1>
         
         <form method="post" enctype="multipart/form-data" action="options.php">
-            <?php settings_fields('custom_plugin_options'); ?>
-            <?php do_settings_sections('custom_plugin_settings'); ?>
+            <?php settings_fields('beats_plugin_options'); ?>
+            <?php do_settings_sections('beats_plugin_settings'); ?>
             
             <h2>Upload File</h2>
             <input type="file" name="beats_plugin_file_upload" id="beats_plugin_file_upload" />
