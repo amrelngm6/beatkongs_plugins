@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
 
 include plugin_dir_path(__FILE__) .'../includes/Music/MediansTrack.php';
 include plugin_dir_path(__FILE__) . '../includes/Class/BeatPrice.php';
-include plugin_dir_path(__FILE__) . '../includes/Class/BeatLicense.php';
 global $wp_query;
 
 $beat = $wp_query->queried_object;
