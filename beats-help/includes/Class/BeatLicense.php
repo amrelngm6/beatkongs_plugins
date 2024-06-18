@@ -201,6 +201,6 @@ Class BeatLicense
         $array["weight"] = "";
         $array["weight_html"] = "N/A";
 
-        return $array;
+        return (object) $array;
     }
 }
