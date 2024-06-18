@@ -144,7 +144,7 @@ function beats_plugin_settings_render() {
                 </div>
             </div>
             <hr style="margin: 20px;" />
-            <audio src="<?php echo get_option('beats_default_beattag'); ?>" controls />
+            <audio src="<?php echo get_option('beats_default_beattag'); ?>" controls ></audio>
             <h2>Upload File</h2>
             <input type="file" name="beats_plugin_file_upload" id="beats_plugin_file_upload" />
 
