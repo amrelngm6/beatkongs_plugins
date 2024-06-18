@@ -420,7 +420,7 @@ function beats_plugin_settings_save() {
         update_option('beats_default_beattag_time', sanitize_text_field($_POST['beattag_time']));
     }
 
-    if (isset($_FILES['beats_plugin_file_upload'])) {
+    if (!empty($_FILES['beats_plugin_file_upload'])) {
         $uploaded_file = $_FILES['beats_plugin_file_upload'];
         
         $upload_overrides = array('test_form' => false);
@@ -445,7 +445,7 @@ function beats_plugin_settings_save() {
     }
     $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
     $createBeattagLoop = exec($command);
-    
+
     return $createBeattagLoop;
 }
 add_action('admin_init', 'beats_plugin_settings_save');
