@@ -371,7 +371,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                     <div class="elementor-add-to-cart elementor-product-variable">
 <?php 
 $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
-if ($lowestPrice > 0) {
+if ($lowestPrice != 'FREE') {
 ?>
                                         <form class="variations_forms cart"
                                             action="" method="post"
