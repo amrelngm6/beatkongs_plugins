@@ -142,7 +142,7 @@ $beatLicense = new BeatLicense;
 										<?php if (get_post_meta($beat->ID, 'beat_downloadable',  true) == 'on' || $class->getLowestPrice($postMeta) == 'FREE') { ?>
                                         <li class="elementor-icon-list-item">
                                             <span class="elementor-icon-list-icon">
-											<i class="fas fa-download"></i> </span>
+											<i aria-hidden="true" class="fas fa-download"></i> </span>
                                             <span class="elementor-icon-list-text">
 											<a
 											href="<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], $beatMP3); ?>"
