@@ -437,7 +437,7 @@ function beats_plugin_settings_save() {
     }
 
     $time = $_POST['beattag_time'];
-    $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $movefile['url']);
+    $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $movefile['url'] ?? get_option('beats_default_beattag'));
     $output = str_replace('.', '_tag.', $input);
     $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
     $createBeattagLoop = exec($command);
