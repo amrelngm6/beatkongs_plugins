@@ -99,7 +99,7 @@ $bulk_statuses = [
                         'terms'    => array(sanitize_text_field($_GET['beat_station'])), // Replace with your categories
                 );
             }
-
+            print_r($args);
             $beats_query = get_posts($args);
             ?>
 
