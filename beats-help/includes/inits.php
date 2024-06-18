@@ -221,7 +221,7 @@ function beats_handle_form_submission()
             
             $beattag_file = get_user_meta(get_current_user_id(), 'beattag_file', true);
             $beattag = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beattag_file);
-            $beattag = str_replace('.', '_tag.',  $beattag);
+            $beattag = str_replace(['.mp3', '.wav'], ['_tag.mp3', '_tag.wav'],  $beattag);
             
             if (!is_file($beattag))
             {
@@ -233,7 +233,7 @@ function beats_handle_form_submission()
             $beatMP3 = wp_get_attachment_url($beatMP3Id);
             $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beatMP3);
 
-            $output = str_replace('.', '_preview.', $input);
+            $output = str_replace(['.mp3', '.wav'], ['_preview.mp3', '_preview.wav'], $input);
 
             $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -i $beattag -filter_complex '[1]adelay=0|0[silence];  [silence][1]concat=n=2:v=0:a=1[aud];  [aud]aloop=loop=-1:size=2e+09[looped];  [0][looped]amix=inputs=2:duration=shortest'  -c:a libmp3lame -b:a 192k $output ";
             $createBeattagLoop = is_file($output) ? '' : exec($command);
@@ -385,7 +385,7 @@ function beats_beattag_handle_form_submission()
         }
 
         $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $file);
-        $output = str_replace('.', '_tag.', $input);
+        $output = str_replace(['.mp3', '.wav'], ['_tag.mp3', '_tag.wav'], $input);
         $command = plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output";
         $createBeattagLoop = exec($command);
 
