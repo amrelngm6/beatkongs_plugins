@@ -442,10 +442,7 @@ function beats_plugin_settings_save() {
     $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $movefile['url'] ?? get_option('beats_default_beattag'));
     $output = str_replace(['.mp3', '.wav'], ['_tag.mp3', '_tag.wav'], $input);
 
-    $delete = is_file($output) ? unlink($output) : 1;
-
-    $command = $delete ? plugin_dir_path(__FILE__)."../ffmpeg -i $input -af apad -t $time $output" : '';
-    error_log($command);
+    $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -af apad -t $time $output" ;
     $createBeattagLoop = exec($command);
     
 }
