@@ -1873,6 +1873,10 @@ class Sonaar_Music_Widget extends WP_Widget{
         if (!empty($station_id))
         {
             $station = get_term($station_id);
+            if (!class_exists('MediansStation'))
+            {
+                require_once plugin_dir_path(__FILE__) .'../../beats-help/includes/Music/MediansStation.php';
+            }
             $MediansStation = new MediansStation($station);
             $beats = $this->loadStationItems();
 
