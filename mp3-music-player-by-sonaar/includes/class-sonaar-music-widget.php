@@ -4065,7 +4065,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                             }
                         }
 
-                        $previewFile = str_replace('.','_preview.', $audioSrc);
+                        $previewFile = str_replace(['.mp3', '.wav'],['_preview.mp3', '_preview.wav'], $audioSrc);
 
                         $num = 1;
                         $album_tracks[$i] = array();
