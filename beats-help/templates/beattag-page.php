@@ -63,7 +63,7 @@ if (!defined('ABSPATH')) {
             </div>
             <hr />
             <div class="flex w-full">
-                <div class="w-48"> Loop Beat Tag </div>
+                <div class="w-48"> Loop Beat Tag ( <?php echo get_user_meta(get_current_user_id(), 'beattag_time', true) ?? '0'; ?> )</div>
                 <div> 
                     <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" />  
                     <div class="w-full flex">
