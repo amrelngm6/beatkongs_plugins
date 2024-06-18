@@ -68,7 +68,7 @@ $bulk_statuses = [
             $disable_product_popup   = $one_step_product_create || 'on' === dokan_get_option( 'disable_product_popup', 'dokan_selling', 'off' );
             $new_product_url         = get_site_url().'/upload-free-beat';
             $args    = [
-                'post_author'         => dokan_get_current_user_id(),
+                'post_author'         => get_current_user_id(),
                 'post_type'         => 'beat',
                 's' => sanitize_text_field($_GET['beat_seatch_title']) ?? '',
                 'post_status'         => (sanitize_text_field($_GET['post_status']) && sanitize_text_field($_GET['post_status']) != '-1') ? sanitize_text_field($_GET['post_status']) : ['publish','pending'],
