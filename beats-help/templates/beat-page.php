@@ -410,7 +410,7 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
                                                             step="1" placeholder="" inputmode="numeric"
                                                             autocomplete="off" />
                                                     </div>
-
+													<div id="license-price"></div>
                                                     <button type="submit"
                                                         class="single_add_to_cart_button button alt wp-element-button">Add
                                                         to cart</button>
