@@ -813,4 +813,11 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
 		</div>
 	</div>
 </div> -->
+<script>
+jQuery(document).on('change', '#beat_license', function(e){
+	var selectedOption = $(this).find('option:selected');
+	var price = selectedOption.data('price');
+	jQuery('#license-price').html('$'+price).show('slow')
+})
+</script>
 <?php get_footer(); ?>
