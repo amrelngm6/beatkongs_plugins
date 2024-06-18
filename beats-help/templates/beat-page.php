@@ -322,17 +322,17 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
 if ($lowestPrice != 'FREE') { 
 $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
 ?>
-                            <div class="elementor-element elementor-element-59a6ae0 elementor-widget elementor-widget-woocommerce-product-price"
-                                data-id="59a6ae0" data-element_type="widget"
-                                data-widget_type="woocommerce-product-price.default">
-                                <div class="elementor-widget-container">
-                                    <p class="price"><span class="woocommerce-Price-amount amount"><bdi><span
-                                                    class="woocommerce-Price-currencySymbol">&#36;</span><?php echo $lowestPrice; ?></bdi></span>
-                                    </p>
-                                    
+<div class="elementor-element elementor-element-59a6ae0 elementor-widget elementor-widget-woocommerce-product-price"
+	data-id="59a6ae0" data-element_type="widget"
+	data-widget_type="woocommerce-product-price.default">
+	<div class="elementor-widget-container">
+		<p class="price"><span class="woocommerce-Price-amount amount"><bdi><span
+						class="woocommerce-Price-currencySymbol">&#36;</span><?php echo $lowestPrice; ?></bdi></span>
+		</p>
+		
 
-                                </div>
-                            </div>
+	</div>
+</div>
                             <div class="elementor-element elementor-element-203e9b0 elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
                                 data-id="203e9b0" data-element_type="widget" data-widget_type="icon-list.default">
                                 <div class="elementor-widget-container">
@@ -433,6 +433,16 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
                                         </div>
                                     </div>
 									
+                                </div>
+                            </div>
+<?php } else {?>
+							
+							<div class="elementor-element elementor-element-59a6ae0 elementor-widget elementor-widget-woocommerce-product-price"
+                                data-id="59a6ae0" data-element_type="widget"
+                                data-widget_type="woocommerce-product-price.default">
+                                <div class="elementor-widget-container">
+                                    <p class="price"><span class="woocommerce-Price-amount amount"><bdi><?php echo $lowestPrice; ?></bdi></span>
+                                    </p>
                                 </div>
                             </div>
 <?php } ?>
