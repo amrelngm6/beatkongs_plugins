@@ -173,7 +173,7 @@ $beats = $stationClass->loadStationItems();
                                                                     class="fas fa-ellipsis-v"></i>
                                                                 <div class="song-store-list-container">
 <?php $beatMP3 = wp_get_attachment_url(get_post_meta($beat->ID, 'beat_mp3', true)); ?> 
-
+                                                                        <?php if (get_post_meta($beat->ID, 'beat_downloadable',  true) == 'on') { ?>
                                                                         <a
                                                                         href="<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], $beatMP3); ?>"
                                                                         class="song-store sr_store_wc_round_bt"
@@ -182,7 +182,7 @@ $beats = $stationClass->loadStationItems();
                                                                         tabindex="1"><i
                                                                             class="fas fa-download"></i><span
                                                                             class="srp_cta_label"></span></a>
-                                                                            
+                                                                        <?php } ?>
                                                                         <a
                                                                         href="<?php echo get_site_url();?>/beat/<?php echo $beat->post_name; ?>"
                                                                         class="song-store sr_store_wc_round_bt"
