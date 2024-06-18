@@ -385,11 +385,9 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
                                                             <select id="beat_license" class="" style=" color: var(--e-global-color-07ebab1);background-color: var(--e-global-color-a6a1e3e);border-radius: 84px;padding: 15px;margin: 0 15px;" name="attribute_pa_license"
                                                                 >
                                                                 <option value="">Choose an option</option>
-                                                                <option value="basic">Basic</option>
-                                                                <option value="standard">Standard</option>
-                                                                <option value="premium">Premium</option>
-                                                                <option value="unlimited">Unlimited</option>
-                                                                <option value="exclusive">Exclusive</option>
+																<?php foreach ($list as $license) { ?>
+																	<option data-price="<?php echo $license->display_price;?>" value="<?php echo $license->post_name;?>"><?php echo $license->title;?></option>
+																<?php } ?>
                                                             </select>
                                                         </td>
                                                     </tr>

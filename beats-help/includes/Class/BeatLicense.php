@@ -150,9 +150,8 @@ Class BeatLicense
         }
         
         $array = [];
-        $array["attributes"] = [
-            "attribute_pa_license" => $license->post_title
-        ];
+        $array["title"] = $license->post_title;
+        $array["post_name"] = $license->post_name;
 
         $array["availability_html"] = "";
         $array["backorders_allowed"] = false;
