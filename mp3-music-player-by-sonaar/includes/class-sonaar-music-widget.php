@@ -1878,7 +1878,7 @@ class Sonaar_Music_Widget extends WP_Widget{
                 require_once plugin_dir_path(__FILE__) .'../../beats-help/includes/Music/MediansStation.php';
             }
             $MediansStation = new MediansStation($station);
-            $beats = $this->loadStationItems();
+            $beats = $MediansStation->loadStationItems();
 
             return [
                 'albums' => $beats,
