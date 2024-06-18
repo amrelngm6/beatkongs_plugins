@@ -70,7 +70,8 @@ $bulk_statuses = [
             $args    = [
                 'author'         => get_current_user_id(),
                 'post_type'         => 'beat',
-                // 's' => isset($_GET['beat_seatch_title']) ? sanitize_text_field($_GET['beat_seatch_title']) : null,
+                'posts_per_page' => -1,
+                's' => isset($_GET['beat_seatch_title']) ? sanitize_text_field($_GET['beat_seatch_title']) : null,
                 'post_status'         => (sanitize_text_field($_GET['post_status']) && sanitize_text_field($_GET['post_status']) != '-1') ? sanitize_text_field($_GET['post_status']) : ['publish','pending'],
             ];
 
