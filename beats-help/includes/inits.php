@@ -229,7 +229,7 @@ function beats_handle_form_submission()
 
             $output = str_replace('.', '_preview.', $input);
 
-            $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -i $beattag -filter_complex [1]aloop=loop=-1:size=2e+09,asetpts=N/SR/TB[aud]; [0][aud]amix=inputs=2:duration=shortest,volume=2 $output ";
+            $command = plugin_dir_path(__FILE__)."../ffmpeg -y -i $input -i $beattag -filter_complex '[1]adelay=0|0[silence];  [silence][1]concat=n=2:v=0:a=1[aud];  [aud]aloop=loop=-1:size=2e+09[looped];  [0][looped]amix=inputs=2:duration=shortest'  -c:a libmp3lame -b:a 192k $output ";
             error_log($command);
             $createBeattagLoop = exec($command);
             $createBeattagLoop;
