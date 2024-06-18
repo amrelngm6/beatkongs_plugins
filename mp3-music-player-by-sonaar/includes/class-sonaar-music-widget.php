@@ -1880,7 +1880,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             return [
                 'albums' => $beats,
                 'total_items' => count($beats),
-                'total_pages' => count($beats)
+                'total_pages' => 1
             ];
         }
 
