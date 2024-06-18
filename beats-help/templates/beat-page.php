@@ -11,6 +11,7 @@ $beat = $wp_query->queried_object;
 $class = new BeatPrice;
 $postMeta = get_metadata( 'post', $beat->ID); 
 $class->setDefaultValue($postMeta);
+$lowestPrice = $class->getLowestPrice($postMeta) ?? 0;
 $beatLicense = new BeatLicense;
 ?>
 <?php get_header(); ?>
@@ -322,7 +323,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                 data-widget_type="woocommerce-product-price.default">
                                 <div class="elementor-widget-container">
                                     <p class="price"><span class="woocommerce-Price-amount amount"><bdi><span
-                                                    class="woocommerce-Price-currencySymbol">&#36;</span><?php echo is_numeric($class->getLowestPrice($postMeta)) ? $class->getLowestPrice($postMeta) : $class->getLowestPrice($postMeta); ?></bdi></span>
+                                                    class="woocommerce-Price-currencySymbol">&#36;</span><?php echo $lowestPrice; ?></bdi></span>
                                     </p>
                                     
 
@@ -370,6 +371,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
                                     <div class="elementor-add-to-cart elementor-product-variable">
 <?php 
 $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
+if ($lowestPrice > 0) {
 ?>
                                         <form class="variations_forms cart"
                                             action="" method="post"
@@ -424,7 +426,7 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
                                             </div>
 
                                         </form>
-
+<?php } ?>
                                         <div class="ppc-button-wrapper">
                                             <div id="ppc-button-ppcp-gateway"></div>
                                         </div>
