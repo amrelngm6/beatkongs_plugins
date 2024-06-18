@@ -223,7 +223,7 @@ function beats_handle_form_submission()
             $beattag = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beattag_file);
             $beattag = str_replace('.', '_tag_'.get_current_user_id().'.', $beattag);
             
-            $beatMP3Id = $postMeta['beat_mp3'][0] ?? 0;
+            $beatMP3Id = get_post_meta($beatId, 'beat_mp3', true);
             $beatMP3 = wp_get_attachment_url($beatMP3Id);
             $input = str_replace(get_site_url(), $_SERVER['DOCUMENT_ROOT'], $beatMP3);
 
