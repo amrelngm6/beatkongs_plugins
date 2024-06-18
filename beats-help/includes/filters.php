@@ -132,7 +132,7 @@ function beats_plugin_settings_render() {
             <?php do_settings_sections('beats_plugin_settings'); ?>
             
             <div style="display:flex; gap:20px; width: 100%">
-                <div style="width:auto"> Loop Beat Tag </div>
+                <h2>Loop Beat Tag</h2>
                 <div style="width:auto"> 
                     <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_option('beats_default_beattag_time'); ?>" />  
                     <div style="display:flex;  width: 100%">
@@ -142,7 +142,7 @@ function beats_plugin_settings_render() {
                     
                 </div>
             </div>
-            <hr />
+            <hr style="margin: 20px;" />
             <h2>Upload File</h2>
             <input type="file" name="beats_plugin_file_upload" id="beats_plugin_file_upload" />
             
