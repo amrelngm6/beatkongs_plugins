@@ -17,7 +17,7 @@ $currentKey = array_search($term->term_id, $ids);
 
 $stationClass = new MediansStation($term);
 $beats = $stationClass->loadStationItems();
-
+print_r($beats);
 ?>
 <?php get_header(); ?>
 

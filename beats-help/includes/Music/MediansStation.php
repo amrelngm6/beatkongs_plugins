@@ -72,8 +72,8 @@ final class MediansStation
 
             $args    = [
                 'post_type'         => 'beat',
-                'orderby' => 'rand',
                 'post_status'         => ['publish'],
+                'orderby' => 'rand',
                 'posts_per_page' => 50,
                 'tax_query'         =>  array(
                     'taxonomy' => 'station',
