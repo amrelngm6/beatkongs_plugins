@@ -7,7 +7,7 @@ $post = isset($_GET['beat_id']) ? get_post( $beatId, ARRAY_A ) : null;
 $postMeta = get_metadata( 'post', $beatId);
 ?>
 
-<div class="dokan-other-options dokan-edit-row dokan-clearfix <?php echo esc_attr( $class ); ?>">
+<div class="dokan-other-options dokan-edit-row dokan-clearfix ">
     <div class="dokan-section-heading" data-togglehandler="dokan_other_options">
         <h2><i class="fas fa-cog" aria-hidden="true"></i> <?php esc_html_e( 'Other Options', 'dokan-lite' ); ?></h2>
         <p><?php esc_html_e( 'Set your extra beat options', 'dokan-lite' ); ?></p>
@@ -50,7 +50,7 @@ $postMeta = get_metadata( 'post', $beatId);
         <div class="dokan-form-group">
             <?php
             dokan_post_input_box(
-                $post_id,
+                $_GET['beat_id'] ?? '0',
                 'beat_enable_reviews',
                 [
                     'value' =>  $postMeta['beat_enable_reviews'][0] ?? 'no',
