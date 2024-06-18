@@ -415,6 +415,7 @@ function beats_beattag_handle_form_submission()
  * @return WP_Redirect 
  */
 function beats_plugin_settings_save() {
+    error_log('beats_plugin_settings_save');
 
     if (isset($_POST['beattag_time'])) {
         update_option('beats_default_beattag_time', sanitize_text_field($_POST['beattag_time']));
