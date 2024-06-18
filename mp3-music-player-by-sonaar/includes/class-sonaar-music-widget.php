@@ -1,5 +1,6 @@
 <?php
 include plugin_dir_path(__FILE__) .'../../beats-help/vendor/autoload.php';
+include plugin_dir_path(__FILE__) .'../../beats-help/includes/Music/MediansStation.php';
 
 /**
  * Get MP3 file duration 
@@ -1869,7 +1870,21 @@ class Sonaar_Music_Widget extends WP_Widget{
 
     private function getAlbumsFromTerms($station_id, $terms, $posts_not_in, $category_not_in, $posts_per_page, $returnPostObj = false, $player = null, $reverse_tracklist = false) {
         $fields = $returnPostObj ? 'all' : 'ids';
-    
+        
+        if (!empty($station_id))
+        {
+            $station = get_term($station_id);
+            $MediansStation = new MediansStation($station);
+            $beats = $this->loadStationItems();
+
+            return [
+                'albums' => $beats,
+                'total_items' => count($beats),
+                'total_pages' => count($beats)
+            ];
+        }
+
+        
         $paged = 1;
         $search = '';
         $custom_query_params = '';
@@ -3503,6 +3518,7 @@ class Sonaar_Music_Widget extends WP_Widget{
             $albums = get_posts($args);
         }else{
 
+            
             // retrieve albums from category
             $returned_data = $this->getAlbumsFromTerms($station_id, $category, $posts_not_in, $category_not_in, $posts_per_pages, true, $player, $reverse_tracklist);             
             $albums = $returned_data['albums'];// true means get post objects. false means get Ids only
@@ -3905,8 +3921,8 @@ class Sonaar_Music_Widget extends WP_Widget{
             }
         } else {      
 
+            
             $station = get_term($station_id);
-
             foreach ( $albums as $i => $a ) {
                 $wc_add_to_cart = $this->wc_add_to_cart($a->ID);
                 $wc_buynow_bt =  $this->wc_buynow_bt($a->ID);
