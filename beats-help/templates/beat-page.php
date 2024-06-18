@@ -137,6 +137,25 @@ $beatLicense = new BeatLicense;
                                                 <i aria-hidden="true" class="far fa-eye"></i> </span>
                                             <span class="elementor-icon-list-text"><?php echo $postMeta['_eael_post_view_count'][0] ?? '0'; ?> Views</span>
                                         </li>
+										
+										<?php $beatMP3 = wp_get_attachment_url(get_post_meta($beat->ID, 'beat_mp3', true)); ?> 
+										<?php if (get_post_meta($beat->ID, 'beat_downloadable',  true) == 'on' || $class->getLowestPrice($postMeta) == 'FREE') { ?>
+                                        <li class="elementor-icon-list-item">
+                                            <span class="elementor-icon-list-icon">
+                                                <i aria-hidden="true" class="far fa-eye"></i> </span>
+                                            <span class="elementor-icon-list-text">
+											<a
+											href="<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], $beatMP3); ?>"
+											class="song-store sr_store_wc_round_bt"
+											target="_blank"
+											data-source-post-id="<?php echo $beat->ID;?>" 
+											tabindex="1" download="<?php echo $beat->post_title; ?>"><i
+												class="fas fa-download"></i><span
+												class="srp_cta_label"></span></a>
+											</span>
+                                        </li>
+										<?php } ?>
+
                                     </ul>
                                 </div>
                             </div>
@@ -446,26 +465,6 @@ $list = $beatLicense->loadBeatLicensesVariations($beat->ID);
                                 </div>
                             </div>
 <?php } ?>
-
-							<div class="elementor-element elementor-element-59a6ae0 elementor-widget elementor-widget-woocommerce-product-price"
-                                data-id="59a6ae0" data-element_type="widget"
-                                data-widget_type="woocommerce-product-price.default">
-                                <div class="elementor-widget-container">
-                                    
-								
-								<?php $beatMP3 = wp_get_attachment_url(get_post_meta($beat->ID, 'beat_mp3', true)); ?> 
-								<?php if (get_post_meta($beat->ID, 'beat_downloadable',  true) == 'on' || $class->getLowestPrice($postMeta) == 'FREE') { ?>
-								<a
-								href="<?php echo str_replace(['.mp3','.wav'], ['_preview.mp3', '_preview.wav'], $beatMP3); ?>"
-								class="song-store sr_store_wc_round_bt"
-								target="_blank"
-								data-source-post-id="<?php echo $beat->ID;?>" 
-								tabindex="1" download="<?php echo $beat->post_title; ?>"><i
-									class="fas fa-download"></i><span
-									class="srp_cta_label"></span></a>
-								<?php } ?>
-                                </div>
-                            </div>
 
                             <div class="elementor-element elementor-element-d75336f e-con-full e-flex e-con e-child"
                                 data-id="d75336f" data-element_type="container">
