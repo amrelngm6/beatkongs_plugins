@@ -106,3 +106,35 @@ function remove_footer_design() {
     remove_all_actions('wp_footer'); // Remove all actions hooked to wp_footer
 }
 
+
+
+
+add_action('admin_menu', 'beats_plugin_settings_page');
+// Function to add settings page
+function beats_plugin_settings_page() {
+    add_options_page(
+        'Beats Plugin Settings',   // Page title
+        'Beats Plugin',            // Menu title
+        'manage_options',           // Capability required to access
+        'beats-plugin-settings',   // Menu slug (unique identifier)
+        'beats_plugin_settings_render' // Callback function to render the page
+    );
+}
+function beats_plugin_settings_render() {
+    ?>
+    <div class="wrap">
+        <h1>Custom Plugin Settings</h1>
+        
+        <form method="post" enctype="multipart/form-data" action="options.php">
+            <?php settings_fields('custom_plugin_options'); ?>
+            <?php do_settings_sections('custom_plugin_settings'); ?>
+            
+            <h2>Upload File</h2>
+            <input type="file" name="beats_plugin_file_upload" id="beats_plugin_file_upload" />
+            
+            <input type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
+        </form>
+    </div>
+    <?php
+}
+    

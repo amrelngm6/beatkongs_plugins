@@ -400,6 +400,35 @@ function beats_beattag_handle_form_submission()
 }
 
 
+/**
+ * Submit Default Beattag from Setting page
+ * Request Type ->  POST
+ * 
+ * @param beattag_time
+ * @param beattag_file
+ * @return WP_Redirect 
+ */
+function beats_plugin_settings_save() {
+    if (isset($_FILES['beats_plugin_file_upload'])) {
+        $uploaded_file = $_FILES['beats_plugin_file_upload'];
+        
+        $upload_overrides = array('test_form' => false);
+        $movefile = wp_handle_upload($uploaded_file, $upload_overrides);
+        
+        if ($movefile && !isset($movefile['error'])) {
+            // File successfully uploaded, handle further actions (e.g., store path in options)
+            update_option('beats_default_beattag', $movefile['url']);
+        } else {
+            // Error handling the file upload
+            echo $movefile['error'];
+        }
+    }
+}
+add_action('admin_init', 'beats_plugin_settings_save');
+
+
+
+
 
 /**
  * Validate slug and check availability
