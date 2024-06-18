@@ -127,7 +127,7 @@ Class BeatLicense
 
         $array = [];
 
-        foreach ($items as $key => $value) {
+        foreach ($items->posts as $key => $value) {
             $array[$key] = $this->loadLicenseVariations($post_id, $value);
         }
         
