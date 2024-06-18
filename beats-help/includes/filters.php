@@ -131,6 +131,17 @@ function beats_plugin_settings_render() {
             <?php settings_fields('beats_plugin_options'); ?>
             <?php do_settings_sections('beats_plugin_settings'); ?>
             
+            <div class="flex w-full">
+                <div class="w-48"> Loop Beat Tag </div>
+                <div> 
+                    <input name="beattag_time" type="range" min="1" max="20" value="<?php echo get_user_meta(get_current_user_id(), 'beattag_time', true); ?>" />  
+                    <div class="w-full flex">
+                        <span class="w-full">0</span>
+                        <span>20</span>
+                    </div>
+                    
+                </div>
+            </div>
             <h2>Upload File</h2>
             <input type="file" name="beats_plugin_file_upload" id="beats_plugin_file_upload" />
             
