@@ -37,18 +37,41 @@ final class MediansStation
     /**
      * Load Station items
      */
-    public function loadStationItems()
+    public function loadStationItems($station)
     {
-        
-        $args    = [
-            'post_type'         => 'beat',
-            'post_status'         => ['publish'],
-            'tax_query'         =>  array(
-                'taxonomy' => 'station',
-                'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
-                'terms'    => array($this->id), // Replace with your categories
-            )
-        ];
+        if ($station->slug == 'freshbeats')
+        {
+            $seven_days_ago = date('Y-m-d H:i:s', strtotime('-7 days'));
+            $args    = [
+                'post_type'         => 'beat',
+                'orderby' => 'rand',
+                'post_status'       => ['publish'],
+                'date_query' => array(
+                    'after' => $seven_days_ago,
+                ),
+            ];
+
+        } elseif ($station->slug == 'beats247') {
+            
+            $args    = [
+                'post_type'         => 'beat',
+                'orderby' => 'rand',
+                'post_status'       => ['publish'],
+            ];
+
+        } else {
+
+            $args    = [
+                'post_type'         => 'beat',
+                'orderby' => 'rand',
+                'post_status'         => ['publish'],
+                'tax_query'         =>  array(
+                    'taxonomy' => 'station',
+                    'field'    => 'term_id', // Can be 'term_id', 'name', or 'slug'
+                    'terms'    => array($this->id), // Replace with your categories
+                )
+            ];
+        }
 
         return get_posts($args);
     }
