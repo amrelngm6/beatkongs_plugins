@@ -140,7 +140,7 @@ function beats_handle_form_submission()
             $beat_visibility = sanitize_text_field($_POST['beat_visibility']);
             $beat_enable_reviews = sanitize_text_field($_POST['beat_enable_reviews']);
             $post_excerpt = sanitize_text_field($_POST['post_excerpt']);
-            $post_content = sanitize_text_field($_POST['post_content']);
+            $post_content = sanitize_text_field($_POST['post_content'] ?? '');
             $beat_downloadable = sanitize_text_field($_POST['beat_downloadable']);
             $beat_bpm = sanitize_text_field($_POST['beat_bpm']);
             
@@ -204,9 +204,9 @@ function beats_handle_form_submission()
                     $url = $value->post_name.'_wc_file_url';
                     $id = $value->post_name.'_wc_file_id';
                     $price = $value->post_name.'_wc_file_price';
-                    $beat_post['meta_input'][$url] = sanitize_text_field($_POST[$url]);
-                    $beat_post['meta_input'][$id] = sanitize_text_field($_POST[$id]);
-                    $beat_post['meta_input'][$price] = sanitize_text_field($_POST[$price]);
+                    $beat_post['meta_input'][$url] = sanitize_text_field($_POST[$url] ?? '');
+                    $beat_post['meta_input'][$id] = sanitize_text_field($_POST[$id] ?? '');
+                    $beat_post['meta_input'][$price] = sanitize_text_field($_POST[$price] ?? '');
                 }
             }
             

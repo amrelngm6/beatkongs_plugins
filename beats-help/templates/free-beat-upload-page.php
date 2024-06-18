@@ -48,9 +48,7 @@ $beatMP3 = wp_get_attachment_url($beatMP3Id);
  */
 do_action( 'dokan_product_content_inside_area_before' );
 
-if ( $new_product ) {
-    do_action( 'dokan_new_product_before_product_area' );
-}
+
 ?>
 
 <header class="dokan-dashboard-header dokan-clearfix">
