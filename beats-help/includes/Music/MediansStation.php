@@ -82,7 +82,7 @@ final class MediansStation
                 )
             ];
         }
-
+        error_log(json_encode($args));
         return get_posts($args);
     }
     
